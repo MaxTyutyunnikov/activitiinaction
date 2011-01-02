@@ -11,12 +11,13 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class MainProcessWithCallTest {
+public class MainProcessWithCallTest extends AbstractTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-job.xml");

@@ -13,10 +13,11 @@ import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class RepositoryServiceTest {
+public class RepositoryServiceTest extends AbstractTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
@@ -33,7 +34,8 @@ public class RepositoryServiceTest {
 		assertNotNull(deployment);
 		assertEquals(deploymentID, deployment.getId());
 		
-		ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery().singleResult();
+		ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery()
+				.latestVersion().singleResult();
 		assertNotNull(processDefinition);
 		assertEquals("bookorder", processDefinition.getKey());
 		

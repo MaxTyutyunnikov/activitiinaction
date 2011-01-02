@@ -13,39 +13,31 @@ import org.activiti.engine.identity.User;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class IdentityServiceTest {
+public class IdentityServiceTest extends AbstractTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 	
 	@Test
-	public void createNewUser() {
+	@Deployment(resources = {"chapter3/bookorder.bpmn20.xml"})
+	public void testMembership() {
 		User newUser = activitiRule.getIdentityService().newUser("John Doe");
 		activitiRule.getIdentityService().saveUser(newUser);
 		User user = activitiRule.getIdentityService().createUserQuery().singleResult();
 		assertEquals("John Doe", user.getId());
-	}
-	
-	@Test
-	public void createNewGroup() {
+		
 		Group newGroup = activitiRule.getIdentityService().newGroup("sales");
 		newGroup.setName("Sales");
 		activitiRule.getIdentityService().saveGroup(newGroup);
 		Group group = activitiRule.getIdentityService().createGroupQuery().singleResult();
 		assertEquals("Sales", group.getName());
-	}
-	
-	@Test
-	public void createNewMembership() {
+		
 		activitiRule.getIdentityService().createMembership("John Doe", "sales");
-	}
-	
-	@Test
-	@Deployment(resources = {"chapter3/bookorder.bpmn20.xml"})
-	public void testMembership() {
+		
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("isbn", "123456");

@@ -18,12 +18,4 @@ public class ValidateServiceWithFields implements JavaDelegate {
 		execution.setVariable("validatetime", new Date());
 		System.out.println(validatetext.getValue(execution).toString() + execution.getVariable("validatetime"));
 	}
-	
-	public void setValidatetext(Expression validatetext) {
-		this.validatetext = validatetext;
-	}
-
-	public void setIsbn(Expression isbn) {
-		this.isbn = isbn;
-	}
 }

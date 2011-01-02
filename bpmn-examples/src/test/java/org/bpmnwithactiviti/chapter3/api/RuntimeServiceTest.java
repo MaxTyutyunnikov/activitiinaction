@@ -13,10 +13,11 @@ import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class RuntimeServiceTest {
+public class RuntimeServiceTest extends AbstractTest {
 	
 	private static RuntimeService runtimeService;
 	
@@ -47,7 +48,8 @@ public class RuntimeServiceTest {
 	
 	@Test
 	public void queryProcessInstance() {
-		List<ProcessInstance> instanceList = runtimeService.createProcessInstanceQuery().processDefinitionKey("bookorder").list();
+		List<ProcessInstance> instanceList = runtimeService.createProcessInstanceQuery()
+				.processDefinitionKey("bookorder").list();
 		for (ProcessInstance queryProcessInstance : instanceList) {
 			assertEquals(false, queryProcessInstance.isEnded());
 			System.out.println("id " + queryProcessInstance.getId() + 
