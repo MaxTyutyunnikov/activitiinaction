@@ -9,6 +9,7 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter3/spring-test-application-context.xml")
-public class SpringTest {
+public class SpringTest extends AbstractTest {
 
 	@Autowired
 	private RuntimeService runtimeService;

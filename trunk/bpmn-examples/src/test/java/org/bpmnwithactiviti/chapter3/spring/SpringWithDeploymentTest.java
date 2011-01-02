@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,14 +21,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter3/spring-nodeployment-application-context.xml")
-public class SpringWithDeploymentTest {
+public class SpringWithDeploymentTest extends AbstractTest {
 
 	@Autowired
 	private RuntimeService runtimeService;
 	
-	@Autowired
-	private RepositoryService repositoryService;
-
 	@Autowired
 	private TaskService taskService;
 
@@ -47,7 +44,5 @@ public class SpringWithDeploymentTest {
 		assertEquals("Complete order", task.getName());
 		assertEquals(123456l, runtimeService.getVariable(
 				processInstance.getId(), "isbn"));
-		//org.activiti.engine.repository.Deployment deployment = repositoryService.createDeploymentQuery().singleResult();
-		//repositoryService.deleteDeploymentCascade(deployment.getId());
 	}
 }
