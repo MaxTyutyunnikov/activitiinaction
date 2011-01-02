@@ -1,0 +1,22 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/scripttask">
+	
+	<process id="scriptTest">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
+		<scriptTask id="checkCredit" scriptFormat="groovy">
+			<script>
+				out:println "Checking credit for " + name;
+				creditCheckOk = false;
+				if(income > loanAmount) {
+				  creditCheckOk = true;
+				}
+				out:println "Credit checked for " + name;
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="checkCredit" targetRef="wait" />
+		<userTask id="wait" />
+		<sequenceFlow sourceRef="wait" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

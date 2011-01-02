@@ -1,0 +1,29 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/mainprocesswithcall">
+
+	<process id="outsourcingProcess" name="Oursourcing process example">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="askQuestion" />
+		<callActivity id="askQuestion" calledElement="contractorProcess" />
+		<boundaryEvent id="escalationOutsourcing" cancelActivity="true" attachedToRef="askQuestion">
+			<timerEventDefinition>
+				<timeDuration>PT2S</timeDuration>
+			</timerEventDefinition>
+		</boundaryEvent>
+		<sequenceFlow sourceRef="escalationOutsourcing" targetRef="OutsourcingEscalation" />
+		<scriptTask id="OutsourcingEscalation" scriptFormat="groovy">
+			<script>
+				out:println "This has taken too long, we are ending the contract"
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="OutsourcingEscalation" targetRef="theEnd" />
+		<sequenceFlow sourceRef="askQuestion" targetRef="goodWorkOutsourcing" />
+		<scriptTask id="goodWorkOutsourcing" scriptFormat="groovy">
+			<script>
+				out:println "Good work, we will outsource more work"
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="goodWorkOutsourcing" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

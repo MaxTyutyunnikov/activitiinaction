@@ -1,0 +1,40 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/parallelgateway">
+	
+	<process id="multitaskingProcess">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="fork1" />
+		<parallelGateway id="fork1" />
+		<sequenceFlow sourceRef="fork1" targetRef="twitterTask" />
+		<sequenceFlow sourceRef="fork1" targetRef="doWorkTask" />
+		<scriptTask id="twitterTask" scriptFormat="groovy">
+			<script>
+				out:println "Tweet about movie last night";
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="twitterTask" targetRef="facebookTask" />
+		<scriptTask id="facebookTask" scriptFormat="groovy">
+			<script>
+				out:println "Social work with Facebook";
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="facebookTask" targetRef="backlogEmailTask" />
+		<serviceTask id="backlogEmailTask" activiti:class="org.bpmnwithactiviti.chapter5.parallelgateway.BacklogEmailTask" />
+		<scriptTask id="doWorkTask" scriptFormat="groovy">
+			<script>
+			   	out:println "Working....";
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="backlogEmailTask" targetRef="join1" />
+		<sequenceFlow sourceRef="doWorkTask" targetRef="join1" />
+		<parallelGateway id="join1" />
+		<sequenceFlow sourceRef="join1" targetRef="endOfWorkDayTask" />
+		<scriptTask id="endOfWorkDayTask" scriptFormat="groovy">
+			<script>
+				out:println "A long work day comes to an end";
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="endOfWorkDayTask" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

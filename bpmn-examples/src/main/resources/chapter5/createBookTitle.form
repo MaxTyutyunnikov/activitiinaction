@@ -1,0 +1,23 @@
+<h1>Create book title</h1>
+<table>
+  <tr>
+    <td>
+      <label>
+        Book title:<br/>
+        <input type="text" name="booktitle" value="" />
+        <input type="hidden" name="booktitle_required" value="true" />
+        <input type="hidden" name="booktitle_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        Isbn:<br/>
+        <input type="text" name="isbn" value="" />
+        <input type="hidden" name="isbn_required" value="true" />
+        <input type="hidden" name="isbn_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+</table>

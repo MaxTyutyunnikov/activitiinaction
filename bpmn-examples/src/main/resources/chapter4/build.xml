@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="loanrequest.setup" default="create.loanrequest">
+
+	<property name="activiti.home" value="/opt/activiti" />
+	<property name="activiti.version" value="5.0.rc1" />
+	<property name="dist.dir" value="./dist" />
+	<property name="tomcat.version" value="6.0.29" />
+	<property name="tomcat.home" value="${activiti.home}/apps/apache-tomcat-${tomcat.version}" />
+
+	<target name="dist.mkdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="cfg.create">
+		<jar destfile="${dist.dir}/activiti-cfg.jar" basedir=".." includes="activiti.cfg.xml" />
+	</target>
+	
+	<target name="loanrequest.jar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/loanrequest.jar"
+		       basedir="../../../../target/classes"
+		       includes="org/bpmnwithactiviti/chapter4/loanrequest/**"
+		  />
+	</target>
+	
+	<target name="loanrequest.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/loanrequest.bar"
+		       basedir=".."
+		 	   includes="chapter4/loanrequest/**"
+		  />
+	</target>
+	
+	<target name="create.loanrequest" depends="dist.mkdir, cfg.create, loanrequest.jar, loanrequest.bar"/>
+
+	<target name="deploy.loanrequest" depends="create.loanrequest">
+		<taskdef name="deploy-bar" classname="org.activiti.engine.impl.ant.DeployBarTask">
+			<classpath>
+				<fileset dir="${activiti.home}/apps/apache-tomcat-${tomcat.version}/lib">
+					<include name="h2-1.2.132.jar" />
+				</fileset>
+				<fileset dir="${activiti.home}/lib">
+					<include name="${activiti.home}/apps/activiti-engine-${activiti.version}.jar" />
+				</fileset>
+				<fileset dir="${activiti.home}/examples/activiti-engine-examples/libs-runtime" />
+				<fileset dir="${dist.dir}">
+					<include name="activiti-cfg.jar"/>
+					<include name="loanrequest.jar" />
+				</fileset>
+			</classpath>
+		</taskdef>
+		<deploy-bar file="${dist.dir}/loanrequest.bar" />
+	</target>
+
+</project>

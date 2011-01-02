@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	targetNamespace="http://www.bpmnwithactiviti.org" xmlns:activiti="http://activiti.org/bpmn">
+	<process id="transactionTest">
+		<startEvent id="start" name="Start" />
+		<sequenceFlow id="sequenceflow1" sourceRef="start"
+			targetRef="userTask" />
+		<userTask id="userTask" />
+		<sequenceFlow id="sequenceflow2" sourceRef="userTask"
+			targetRef="end" />
+		<endEvent id="end" name="End" />
+	</process>
+</definitions>

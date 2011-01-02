@@ -1,0 +1,37 @@
+<definitions 
+  xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:activiti="http://activiti.org/bpmn"
+  targetNamespace="http://www.bpmnwithactiviti.org/email">
+  
+  <process id="simpleEmailProcess" >
+    <startEvent id="theStart" />
+    <sequenceFlow sourceRef="theStart" targetRef="sendMail" />
+    <serviceTask id="sendMail" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to">
+          <activiti:string>miss.piggy@localhost</activiti:string>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:string>Hello Miss Piggy!</activiti:string>
+        </activiti:field>
+        <activiti:field name="html">
+          <expression>
+            <![CDATA[
+              <html>
+                <body>
+                  Hello Miss Piggy,<br/><br/>
+                  Just saying hi!<br/><br/>
+                  Kind regards,<br/>
+                  Me.
+                </body>
+              </html>
+            ]]>
+          </expression>
+        </activiti:field>       
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow sourceRef="sendMail" targetRef="theEnd" />
+    <endEvent id="theEnd" />
+  </process>
+
+</definitions>

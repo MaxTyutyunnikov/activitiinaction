@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="taskAssigneeExample"
+  	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:activiti="http://activiti.org/bpmn"
+	targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
+	
+  <process id="loanrequest" name="Process to handle a loan request">
+    <extensionElements>
+      <activiti:listener class="org.bpmnwithactiviti.chapter4.loanrequest.ProcessStartedEventListener" eventName="start" />
+    </extensionElements>
+    <startEvent id='theStart' activiti:formKey="chapter4/loanrequest/loanRequest.form" />
+    <sequenceFlow id='flow1' sourceRef='theStart' targetRef='fork' />
+    <parallelGateway id="fork" />
+    <sequenceFlow id='flow2' sourceRef="fork" targetRef="checkCredit" />
+    <sequenceFlow id='flow3' sourceRef="fork" targetRef="checkRisk" />
+   	<scriptTask id="checkCredit" scriptFormat="groovy">
+			<script>
+				out:print "Checking credit for " + name + "\n";
+				creditCheckOk = false;
+				if(income > loanAmount){
+					out:print "Setting credit check var to true for " + name + "\n";
+					creditCheckOk = true;
+				}
+				out:print "Credit checked for " + name + " and set to " + creditCheckOk + "\n";
+			</script>
+	</scriptTask>
+    <sequenceFlow id='flow4' sourceRef="checkCredit" targetRef="join" />
+    <serviceTask id="checkRisk"
+			activiti:class="org.bpmnwithactiviti.chapter4.loanrequest.RiskChecker">
+	</serviceTask>
+    <sequenceFlow id='flow5' sourceRef="checkRisk" targetRef="join" />
+    <parallelGateway id="join" />
+    <sequenceFlow id='flow6' sourceRef="join" targetRef="createApplication" />
+    <serviceTask id="createApplication"
+			activiti:class="org.bpmnwithactiviti.chapter4.loanrequest.ApplicationCreator">
+	</serviceTask>
+	<sequenceFlow id='flow7' sourceRef="createApplication" targetRef="evaluateLoanRequest" />
+	<userTask id="evaluateLoanRequest" name="Evaluate loan request" activiti:formKey="chapter4/loanrequest/handleLoanRequest.form" 
+		activiti:assignee="fozzie"/>
+	<sequenceFlow id='flow8' sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
+	<boundaryEvent id="escalationTimer" cancelActivity="true" attachedToRef="evaluateLoanRequest">
+		<timerEventDefinition>
+			<timeDuration>PT1M</timeDuration>
+		</timerEventDefinition>
+	</boundaryEvent>
+	<sequenceFlow id='flow9' sourceRef="escalationTimer" targetRef="evaluateRequestByManager" />
+	<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager" 
+	    activiti:formKey="chapter4/loanrequest/handleLoanRequest.form" 
+	    activiti:candidateGroups="management" />
+	<sequenceFlow id='flow10' sourceRef="evaluateRequestByManager" targetRef="approvalGateway" />
+	<exclusiveGateway id="approvalGateway" />
+	<sequenceFlow id='flow11' sourceRef="approvalGateway" targetRef="informCustomer">
+      	<conditionExpression xsi:type="tFormalExpression">${requestApproved == false}</conditionExpression>
+	</sequenceFlow>
+	<sequenceFlow id='flow12' sourceRef="approvalGateway" targetRef="processRequest">
+		<conditionExpression xsi:type="tFormalExpression">${requestApproved == true}</conditionExpression>
+	</sequenceFlow>
+	<serviceTask id="informCustomer" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to" expression="${loanApplication.emailAddres}" />
+        <activiti:field name="subject">
+          <activiti:string>Loan Request Denied</activiti:string>
+        </activiti:field>
+        <activiti:field name="html">
+          <expression>
+            <![CDATA[
+              <html>
+                <body>
+                  Hello ${loanApplication.customerName},<br/><br/>
+                  
+                  Your loan request has been denied for the following reason: ${motivation}.<br/><br/>
+                  
+                  Kind regards,<br/>
+                  
+                  The Loan Sharks Company.
+                </body>
+              </html>
+            ]]>
+          </expression>
+        </activiti:field>      
+      </extensionElements>
+    </serviceTask>
+	<sequenceFlow id='flow13' sourceRef="informCustomer" targetRef="theEnd" />
+	<serviceTask id="processRequest"
+			activiti:class="org.bpmnwithactiviti.chapter4.loanrequest.RequestProcessor">
+	</serviceTask>
+	<sequenceFlow id='flow14' sourceRef="processRequest" targetRef="theEnd" />
+    <endEvent id='theEnd' />
+  </process>
+</definitions>
