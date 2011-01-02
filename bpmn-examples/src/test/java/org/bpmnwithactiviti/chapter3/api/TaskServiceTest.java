@@ -51,18 +51,18 @@ public class TaskServiceTest extends AbstractTest {
 		taskService.saveTask(task);
 		assertNull(task.getAssignee());
 		IdentityService identityService = activitiRule.getIdentityService();
-		User user = identityService.newUser("Jane Doe");
+		User user = identityService.newUser("JohnDoe");
 		identityService.saveUser(user);
-		taskService.addCandidateUser(task.getId(), "Jane Doe");
-		Task queryTask = taskService.createTaskQuery().taskCandidateUser("Jane Doe").singleResult();
+		taskService.addCandidateUser(task.getId(), "JohnDoe");
+		Task queryTask = taskService.createTaskQuery().taskCandidateUser("JohnDoe").singleResult();
 		assertNotNull(queryTask);
 		assertEquals("Test task", queryTask.getName());
 		assertNull(task.getAssignee());
-		taskService.claim(task.getId(), "Jane Doe");
-		Task claimedTask = taskService.createTaskQuery().taskAssignee("Jane Doe").singleResult();
-		assertEquals("Jane Doe", claimedTask.getAssignee());
+		taskService.claim(task.getId(), "JohnDoe");
+		Task claimedTask = taskService.createTaskQuery().taskAssignee("JohnDoe").singleResult();
+		assertEquals("JohnDoe", claimedTask.getAssignee());
 		taskService.complete(task.getId());
-		Task completedTask = taskService.createTaskQuery().taskAssignee("Jane Doe").singleResult();
+		Task completedTask = taskService.createTaskQuery().taskAssignee("JohnDoe").singleResult();
 		assertNull(completedTask);
 	}
 }
