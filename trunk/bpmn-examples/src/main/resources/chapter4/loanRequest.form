@@ -1,0 +1,13 @@
+<h1>Loan Request</h1>
+<table>
+  <tr>
+    <td>
+      <label>
+        Name:<br/>
+        <input type="text" name="name" value="" />
+        <input type="hidden" name="name_required" value="true" />
+        <input type="hidden" name="name_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+</table>
