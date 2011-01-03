@@ -12,10 +12,18 @@ public class AutomaticTest {
 	@Test
 	public void testAutomatic() {
 		PvmProcessDefinition processDefinition = new ProcessDefinitionBuilder()
-				.createActivity("A").initial().behavior(new Automatic())
-				.transition("B").endActivity().createActivity("B")
-				.behavior(new Automatic()).transition("C").endActivity()
-				.createActivity("C").behavior(new WaitState()).endActivity()
+				.createActivity("A")
+					.initial()
+					.behavior(new AutomaticActivity())
+					.transition("B")
+					.endActivity()
+				.createActivity("B")
+					.behavior(new AutomaticActivity())
+					.transition("C")
+					.endActivity()
+				.createActivity("C")
+					.behavior(new WaitState())
+					.endActivity()
 				.buildProcessDefinition();
 
 		PvmProcessInstance processInstance = processDefinition
