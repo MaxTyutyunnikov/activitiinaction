@@ -13,7 +13,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 public class LoanRequestTest {	
-	/*@Rule 
+	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 
 	@Test
@@ -31,5 +31,5 @@ public class LoanRequestTest {
 		LoanApplication la = (LoanApplication) processVariables.get("loanApplication");
 		assertEquals(true, la.isCreditCheckOk());
 		assertEquals(true, la.isRiskCheckOk());
-	}*/
+	}
 }
