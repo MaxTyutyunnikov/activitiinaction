@@ -18,7 +18,7 @@
 			<script>
 				out:print "Checking credit for " + name + "\n";
 				creditCheckOk = false;
-				if(income > loanAmount){
+				if(income > (loanAmount / 2)){
 					out:print "Setting credit check var to true for " + name + "\n";
 					creditCheckOk = true;
 				}
