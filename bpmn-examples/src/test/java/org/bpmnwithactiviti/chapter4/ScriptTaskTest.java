@@ -13,20 +13,28 @@ import org.junit.Test;
 
 public class ScriptTaskTest {
 	
-	/*@Rule 
+	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 
 	@Test
 	@Deployment(resources={"chapter4/scripttask.bpmn20.xml"})
 	public void creditCheckTrue() {
+		assertEquals(true, creditCheck(100,10));
+	}
+
+	@Test
+	@Deployment(resources={"chapter4/scripttask.bpmn20.xml"})
+	public void creditCheckFalse() {
+		assertEquals(false, creditCheck(10,100));
+	}
+
+	private boolean creditCheck(int income, int loanAmount) {
 		Map<String, Object> processVariables = new HashMap<String, Object>();
 		processVariables.put("name", "Miss Piggy");
-		processVariables.put("income", new Integer(100));
-		processVariables.put("loanAmount", new Integer(10));
-		ProcessInstance pi = activitiRule.getRuntimeService()
-			.startProcessInstanceByKey("scriptTest", processVariables);
-		processVariables = activitiRule.getRuntimeService()
-			.getVariables(pi.getId());
-		assertEquals(true, processVariables.get("creditCheckOk"));
-	}*/
+		processVariables.put("income", new Integer(income));
+		processVariables.put("loanAmount", new Integer(loanAmount));
+		ProcessInstance pi = activitiRule.getRuntimeService().startProcessInstanceByKey("scriptTest", processVariables);
+		processVariables = activitiRule.getRuntimeService().getVariables(pi.getId());
+		return (Boolean) processVariables.get("creditCheckOk");
+	}
 }
