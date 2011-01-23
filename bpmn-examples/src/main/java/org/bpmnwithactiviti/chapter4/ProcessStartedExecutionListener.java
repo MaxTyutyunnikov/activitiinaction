@@ -1,9 +1,9 @@
-package org.bpmnwithactiviti.chapter4.loanrequest;
+package org.bpmnwithactiviti.chapter4;
 
 import org.activiti.engine.impl.pvm.delegate.ExecutionListener;
 import org.activiti.engine.impl.pvm.delegate.ExecutionListenerExecution;
 
-public class ProcessStartedEventListener implements ExecutionListener {
+public class ProcessStartedExecutionListener implements ExecutionListener {
 
 	@Override
 	public void notify(ExecutionListenerExecution execution) throws Exception {

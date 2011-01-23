@@ -8,25 +8,21 @@
     <sequenceFlow sourceRef="theStart" targetRef="sendMail" />
     <serviceTask id="sendMail" activiti:type="mail">
       <extensionElements>
-        <activiti:field name="to">
-          <activiti:string>miss.piggy@localhost</activiti:string>
-        </activiti:field>
-        <activiti:field name="subject">
-          <activiti:string>Hello Miss Piggy!</activiti:string>
-        </activiti:field>
+        <activiti:field name="to" stringValue="miss.piggy@localhost" />
+        <activiti:field name="subject" expression="Hello ${name}" />
         <activiti:field name="html">
-          <expression>
+          <activiti:expression>
             <![CDATA[
               <html>
                 <body>
-                  Hello Miss Piggy,<br/><br/>
-                  Just saying hi!<br/><br/>
-                  Kind regards,<br/>
-                  Me.
+                  Hello ${name},<br/><br/>
+                  Your loan request has been denied.<br/><br/>
+              	  Kind regards,<br/>
+                  The Loan Sharks Company.
                 </body>
               </html>
             ]]>
-          </expression>
+          </activiti:expression>
         </activiti:field>       
       </extensionElements>
     </serviceTask>

@@ -21,13 +21,11 @@ public class FormServiceTest {
 	@Deployment(resources={"chapter4/startform.bpmn20.xml",
 			"chapter4/loanRequest.form"})
 	public void startFormSubmit() {
-		activitiRule.getRuntimeService().startProcessInstanceByKey("startFormtest");
 		FormService formservice = activitiRule.getProcessEngine().getFormService();
 	    Map<String, String> formProperties = new HashMap<String, String>();
 	    formProperties.put("name", "Miss Piggy");
 	    ProcessInstance pi = formservice.submitStartFormData("startFormtest:1", formProperties);
-	    Map<String, Object> processVariables = activitiRule.getRuntimeService()
-		.getVariables(pi.getId());
+	    Map<String, Object> processVariables = activitiRule.getRuntimeService().getVariables(pi.getId());
 		assertEquals("Miss Piggy", processVariables.get("name"));
 	}
 
