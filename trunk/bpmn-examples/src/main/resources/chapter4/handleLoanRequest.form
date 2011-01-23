@@ -19,6 +19,6 @@
 <p>
   <label>
     Motivation:<br/>
-    <textarea name="motivation" value=""></textarea>
+    <textarea name="motivation" value="" ></textarea>
   </label>
 </p>

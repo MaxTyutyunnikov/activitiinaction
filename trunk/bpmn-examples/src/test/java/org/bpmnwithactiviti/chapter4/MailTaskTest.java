@@ -2,7 +2,9 @@ package org.bpmnwithactiviti.chapter4;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
 
@@ -24,13 +26,14 @@ public class MailTaskTest {
 		Wiser wiser = new Wiser();
 	    wiser.setPort(1025);
 	    wiser.start();
-		activitiRule.getRuntimeService().startProcessInstanceByKey("simpleEmailProcess");
+		Map<String, Object> processVariables = new HashMap<String, Object>();
+		processVariables.put("name", "Miss Piggy");
+		activitiRule.getRuntimeService().startProcessInstanceByKey("simpleEmailProcess",processVariables);
 		List<WiserMessage> messages = wiser.getMessages();
 	    assertEquals(1, messages.size());
-	    
 	    WiserMessage message = messages.get(0);
 	    MimeMessage mimeMessage = message.getMimeMessage();
-	    assertEquals("Hello Miss Piggy!", mimeMessage.getHeader("Subject", null));
+	    assertEquals("Hello Miss Piggy", mimeMessage.getHeader("Subject", null));
 		wiser.stop();
 	}
 

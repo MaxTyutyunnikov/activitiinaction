@@ -2,7 +2,7 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/usertaskwithform">
 	
 	<process id="startFormtest">
-		<startEvent id="theStart" activiti:formKey="chapter4/loanrequest/loanRequest.form" />
+		<startEvent id="theStart" activiti:formKey="chapter4/loanRequest.form" />
 		<sequenceFlow sourceRef="theStart" targetRef="wait" />
 		<userTask id="wait" />
 		<sequenceFlow sourceRef="wait" targetRef="theEnd" />

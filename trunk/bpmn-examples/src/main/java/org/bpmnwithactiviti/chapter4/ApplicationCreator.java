@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter4.loanrequest;
+package org.bpmnwithactiviti.chapter4;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;

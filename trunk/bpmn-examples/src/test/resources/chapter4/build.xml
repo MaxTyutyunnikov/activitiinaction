@@ -2,8 +2,9 @@
 
 <project name="loanrequest.setup" default="create.loanrequest">
 
-	<property name="activiti.home" value="/opt/activiti" />
-	<property name="activiti.version" value="5.0.rc1" />
+	<!-- <property name="activiti.home" value="/opt/activiti" /> -->
+	<property name="activiti.home" value="C:\Java\activiti-5.1" />
+	<property name="activiti.version" value="5.1" />
 	<property name="dist.dir" value="./dist" />
 	<property name="tomcat.version" value="6.0.29" />
 	<property name="tomcat.home" value="${activiti.home}/apps/apache-tomcat-${tomcat.version}" />
@@ -13,20 +14,20 @@
 	</target>
 	
 	<target name="cfg.create">
-		<jar destfile="${dist.dir}/activiti-cfg.jar" basedir=".." includes="activiti.cfg.xml" />
+		<jar destfile="${dist.dir}/activiti-cfg.jar" basedir="../../../../src/main/resources" includes="activiti.cfg.xml" />
 	</target>
-	
+
 	<target name="loanrequest.jar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/loanrequest.jar"
 		       basedir="../../../../target/classes"
-		       includes="org/bpmnwithactiviti/chapter4/loanrequest/**"
+		       includes="org/bpmnwithactiviti/chapter4/**"
 		  />
 	</target>
 	
 	<target name="loanrequest.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/loanrequest.bar"
-		       basedir=".."
-		 	   includes="chapter4/loanrequest/**"
+		       basedir="../../../../src/main/resources"
+		 	   includes="chapter4/**"
 		  />
 	</target>
 	
@@ -35,17 +36,7 @@
 	<target name="deploy.loanrequest" depends="create.loanrequest">
 		<taskdef name="deploy-bar" classname="org.activiti.engine.impl.ant.DeployBarTask">
 			<classpath>
-				<fileset dir="${activiti.home}/apps/apache-tomcat-${tomcat.version}/lib">
-					<include name="h2-1.2.132.jar" />
-				</fileset>
-				<fileset dir="${activiti.home}/lib">
-					<include name="${activiti.home}/apps/activiti-engine-${activiti.version}.jar" />
-				</fileset>
-				<fileset dir="${activiti.home}/examples/activiti-engine-examples/libs-runtime" />
-				<fileset dir="${dist.dir}">
-					<include name="activiti-cfg.jar"/>
-					<include name="loanrequest.jar" />
-				</fileset>
+				<fileset dir="${activiti.home}/apps/apache-tomcat-${tomcat.version}/webapps/activiti-rest/WEB-INF/lib" />
 			</classpath>
 		</taskdef>
 		<deploy-bar file="${dist.dir}/loanrequest.bar" />

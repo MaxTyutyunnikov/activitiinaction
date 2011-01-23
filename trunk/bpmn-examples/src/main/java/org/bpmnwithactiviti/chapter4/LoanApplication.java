@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter4.loanrequest;
+package org.bpmnwithactiviti.chapter4;
 
 import java.io.Serializable;
 
