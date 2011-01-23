@@ -111,6 +111,10 @@ public class LoanRequestTest {
 	    assertEquals("Loan Request Denied", mimeMessage.getHeader("Subject", null));
 	}
 	
+	/*
+	 * The next test takes 80 seconds to complete. Therefore it is disabled by default.
+	 * In order to enable the test remove the comments before the @Test annotation.
+	 */
 	// @Test
 	@Deployment(resources={"chapter4/loanrequest.bpmn20.xml","chapter4/loanRequest.form","chapter4/handleLoanRequest.form"})
 	public void testEscalation() throws Exception {
