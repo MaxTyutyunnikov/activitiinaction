@@ -10,7 +10,7 @@
 
 	<context:component-scan base-package="org.bpmnwithactiviti.chapter5.jpa"/>
 	
-	<bean id="dataSource"
+	<bean id="activitiDataSource"
 		class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy">
 		<property name="targetDataSource">
 			<bean class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
@@ -22,15 +22,10 @@
 		</property>
 	</bean>
 
-	<bean id="transactionManager"
+	<bean id="activitiTransactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="activitiDataSource" />
 	</bean>
-  
-   	<tx:annotation-driven transaction-manager="jpaTransactionManager" proxy-target-class="false"/>
-  	<bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-    	<property name="entityManagerFactory" ref="entityManagerFactory"/>
-  	</bean>
   	
   	<bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
 		<property name="persistenceXmlLocation">
@@ -42,10 +37,15 @@
 		<property name="persistenceUnitManager" ref="persistenceUnitManager"/>
 	</bean>
 
+  	<bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    	<property name="entityManagerFactory" ref="entityManagerFactory"/>
+  	</bean>
+   	<tx:annotation-driven transaction-manager="jpaTransactionManager" proxy-target-class="false"/>
+
 	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
 		<property name="databaseType" value="h2" />
-		<property name="dataSource" ref="dataSource" />
-		<property name="transactionManager" ref="transactionManager" />
+		<property name="dataSource" ref="activitiDataSource" />
+		<property name="transactionManager" ref="activitiTransactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="jpaEntityManagerFactory" ref="entityManagerFactory" />
     	<property name="jpaHandleTransaction" value="true" />
