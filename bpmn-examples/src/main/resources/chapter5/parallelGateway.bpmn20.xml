@@ -3,10 +3,10 @@
 	
 	<process id="multitaskingProcess">
 		<startEvent id="theStart" />
-		<sequenceFlow sourceRef="theStart" targetRef="fork1" />
-		<parallelGateway id="fork1" />
-		<sequenceFlow sourceRef="fork1" targetRef="twitterTask" />
-		<sequenceFlow sourceRef="fork1" targetRef="doWorkTask" />
+		<sequenceFlow sourceRef="theStart" targetRef="fork" />
+		<parallelGateway id="fork" />
+		<sequenceFlow sourceRef="fork" targetRef="twitterTask" />
+		<sequenceFlow sourceRef="fork" targetRef="doWorkTask" />
 		<scriptTask id="twitterTask" scriptFormat="groovy">
 			<script>
 				out:println "Tweet about movie last night";
@@ -25,10 +25,10 @@
 			   	out:println "Working....";
 			</script>
 		</scriptTask>
-		<sequenceFlow sourceRef="backlogEmailTask" targetRef="join1" />
-		<sequenceFlow sourceRef="doWorkTask" targetRef="join1" />
-		<parallelGateway id="join1" />
-		<sequenceFlow sourceRef="join1" targetRef="endOfWorkDayTask" />
+		<sequenceFlow sourceRef="backlogEmailTask" targetRef="join" />
+		<sequenceFlow sourceRef="doWorkTask" targetRef="join" />
+		<parallelGateway id="join" />
+		<sequenceFlow sourceRef="join" targetRef="endOfWorkDayTask" />
 		<scriptTask id="endOfWorkDayTask" scriptFormat="groovy">
 			<script>
 				out:println "A long work day comes to an end";

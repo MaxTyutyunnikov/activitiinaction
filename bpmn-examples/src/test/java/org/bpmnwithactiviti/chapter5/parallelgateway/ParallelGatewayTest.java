@@ -12,12 +12,14 @@ import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
+import org.junit.Test;
 
 public class ParallelGatewayTest extends AbstractTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 	
+	@Test
 	@Deployment(resources={"chapter5/parallelGateway.bpmn20.xml"})
 	public void doMultiTasking() {
 		ProcessInstance processInstance = activitiRule.getProcessEngine().getRuntimeService().startProcessInstanceByKey("multitaskingProcess");
@@ -41,5 +43,6 @@ public class ParallelGatewayTest extends AbstractTest {
 				order++;
 			}
 		}
+		assertEquals(5,order);
 	}
 }
