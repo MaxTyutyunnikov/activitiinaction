@@ -6,32 +6,24 @@
 	targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
 	
   <process id="loanrequest" name="Process to handle a loan request">
-    <extensionElements>
-      <activiti:listener class="org.bpmnwithactiviti.chapter4.ProcessStartedExecutionListener" eventName="start" />
-    </extensionElements>
-    <startEvent id='theStart' activiti:formKey="chapter4/loanRequest.form" />
-    <sequenceFlow sourceRef='theStart' targetRef='fork' />
-    <parallelGateway id="fork" />
-    <sequenceFlow sourceRef="fork" targetRef="checkCredit" />
-    <sequenceFlow sourceRef="fork" targetRef="checkRisk" />
+    <startEvent id="theStart" activiti:formKey="chapter4/loanRequest.form" />
+    <sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
    	<scriptTask id="checkCredit" scriptFormat="groovy">
 			<script>
 				out:println "Checking credit for " + name;
 				creditCheckOk = false;
-				if(income > loanAmount){
-					out:println "Setting credit check var to true for " + name;
+				if((income / 2) > loanAmount){
 					creditCheckOk = true;
 				}
+				out:println "Checked credit for " + name + " outcome is " + creditCheckOk;
 			</script>
 	</scriptTask>
-    <sequenceFlow sourceRef="checkCredit" targetRef="join" />
-    <serviceTask id="checkRisk"	activiti:class="org.bpmnwithactiviti.chapter4.RiskChecker" />
-    <sequenceFlow sourceRef="checkRisk" targetRef="join" />
-    <parallelGateway id="join" />
-    <sequenceFlow sourceRef="join" targetRef="createApplication" />
+    <sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
     <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter4.ApplicationCreator" />
 	<sequenceFlow sourceRef="createApplication" targetRef="evaluateLoanRequest" />
-	<userTask id="evaluateLoanRequest" name="Evaluate loan request" activiti:formKey="chapter4/handleLoanRequest.form" activiti:assignee="fozzie"/>
+	<userTask id="evaluateLoanRequest" name="Evaluate loan request" 
+		activiti:formKey="chapter4/handleLoanRequest.form" 
+		activiti:assignee="fozzie"/>
 	<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
 	<boundaryEvent id="escalationTimer" cancelActivity="true" attachedToRef="evaluateLoanRequest">
 		<timerEventDefinition>
@@ -39,7 +31,9 @@
 		</timerEventDefinition>
 	</boundaryEvent>
 	<sequenceFlow sourceRef="escalationTimer" targetRef="evaluateRequestByManager" />
-	<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager" activiti:formKey="chapter4/handleLoanRequest.form" activiti:candidateGroups="management" />
+	<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager"
+		activiti:formKey="chapter4/handleLoanRequest.form"
+		activiti:candidateGroups="management" />
 	<sequenceFlow sourceRef="evaluateRequestByManager" targetRef="approvalGateway" />
 	<exclusiveGateway id="approvalGateway" />
 	<sequenceFlow sourceRef="approvalGateway" targetRef="informCustomer">
@@ -72,8 +66,8 @@
       </extensionElements>
     </serviceTask>
 	<sequenceFlow sourceRef="informCustomer" targetRef="theEnd" />
-	<serviceTask id="processRequest" activiti:class="org.bpmnwithactiviti.chapter4.RequestProcessor" />
+	<userTask id="processRequest" name="Process the loan request" activiti:assignee="fozzie" />
 	<sequenceFlow sourceRef="processRequest" targetRef="theEnd" />
-    <endEvent id='theEnd' />
+    <endEvent id="theEnd" />
   </process>
 </definitions>

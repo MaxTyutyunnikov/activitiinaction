@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions id="taskAssigneeExample"
-  xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.activiti.org/bpmn2.0">
+  	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:activiti="http://activiti.org/bpmn"
+	targetNamespace="http://www.activiti.org/bpmn2.0">
+	
   <process id="loanrequest" name="Process to handle a loan request">
-    <startEvent id='theStart' />
-    <sequenceFlow sourceRef='theStart' targetRef='fork' />
-    <parallelGateway id="fork" />
-    <sequenceFlow sourceRef="fork" targetRef="checkCredit" />
-    <sequenceFlow sourceRef="fork" targetRef="checkRisk" />
+    <startEvent id="theStart" />
+    <sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
    	<scriptTask id="checkCredit" scriptFormat="groovy">
 			<script>
 				out:println "Checking credit for " + name;
 				creditCheckOk = false;
-				if(income > loanAmount) {
+				if((income / 2) > loanAmount) {
 				  creditCheckOk = true;
 				}
+				out:println "Checked credit for " + name + " outcome is " + creditCheckOk;
 			</script>
 	</scriptTask>
-    <sequenceFlow sourceRef="checkCredit" targetRef="join" />
-    <serviceTask id="checkRisk" activiti:class="org.bpmnwithactiviti.chapter4.RiskChecker" />
-    <sequenceFlow sourceRef="checkRisk" targetRef="join" />
-    <parallelGateway id="join" />
-    <sequenceFlow sourceRef="join" targetRef="createApplication" />
+    <sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
     <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter4.ApplicationCreator" />
-	<sequenceFlow sourceRef="createApplication" targetRef="wait" />
-	<userTask id='wait' />
-	<sequenceFlow sourceRef="wait" targetRef="theEnd" />
-    <endEvent id='theEnd' />
+	<sequenceFlow sourceRef="createApplication" targetRef="theEnd" />
+    <endEvent id="theEnd" />
   </process>
 </definitions>

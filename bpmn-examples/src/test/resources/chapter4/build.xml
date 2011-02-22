@@ -9,7 +9,11 @@
 	<property name="tomcat.version" value="6.0.29" />
 	<property name="tomcat.home" value="${activiti.home}/apps/apache-tomcat-${tomcat.version}" />
 
-	<target name="dist.mkdir">
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
 		<mkdir dir="${dist.dir}" />
 	</target>
 	

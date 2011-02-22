@@ -61,7 +61,6 @@ public class LoanRequestTest {
 	    processVariables = activitiRule.getRuntimeService().getVariables(pi.getId());
 		LoanApplication la = (LoanApplication) processVariables.get("loanApplication");
 		assertEquals(true, la.isCreditCheckOk());
-		assertEquals(true, la.isRiskCheckOk());
 		List<Task> tasks = activitiRule.getTaskService().createTaskQuery().taskAssignee("fozzie").list();
 	    assertEquals(1, tasks.size());
 	    Task task = tasks.get(0);
@@ -94,7 +93,6 @@ public class LoanRequestTest {
 	    processVariables = activitiRule.getRuntimeService().getVariables(pi.getId());
 		LoanApplication la = (LoanApplication) processVariables.get("loanApplication");
 		assertEquals(false, la.isCreditCheckOk());
-		assertEquals(true, la.isRiskCheckOk());
 		List<Task> tasks = activitiRule.getTaskService().createTaskQuery().taskAssignee("fozzie").list();
 	    assertEquals(1, tasks.size());
 	    Task task = tasks.get(0);
