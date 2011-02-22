@@ -11,7 +11,7 @@
     <property name="jdbcUsername" value="sa" />
     <property name="jdbcPassword" value="" />
 
-    <property name="mailServerPort" value="25"/>
+    <property name="mailServerPort" value="1025"/>
     
     <property name="jobExecutorActivate" value="true" />
     

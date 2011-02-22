@@ -3,10 +3,10 @@
   ${loanApplication.customerName} would like to loan ${loanApplication.requestedAmount} dollars.
 </p>
 <p>
-  Credit check succeeded : ${loanApplication.creditCheckOk}
+  The current income is ${loanApplication.income} dollars.
 </p>
 <p>
-  Risk check succeeded : ${loanApplication.riskCheckOk}
+  Credit check succeeded : ${loanApplication.creditCheckOk}
 </p>
 <p>
   Do you approve this?
@@ -19,6 +19,6 @@
 <p>
   <label>
     Motivation:<br/>
-    <textarea name="motivation" value="" ></textarea>
+    <textarea name="motivation" value=""></textarea>
   </label>
 </p>

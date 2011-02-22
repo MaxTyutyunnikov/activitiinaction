@@ -8,7 +8,7 @@
 	<name>BPMN 2.0 with Activiti - Examples</name>
 
 	<properties>
-		<activiti-version>5.1</activiti-version>
+		<activiti-version>5.2</activiti-version>
 		<spring-version>3.0.3.RELEASE</spring-version>
 	</properties>
 

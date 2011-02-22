@@ -21,20 +21,28 @@ public class MailTaskTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-mail.xml");
 
 	@Test
-	@Deployment(resources={"chapter4/testSimpleTextMail.bpmn20.xml"})
-	public void bookAvalaible() throws Exception {
+	@Deployment(resources={"chapter4/testSimpleMail.bpmn20.xml"})
+	public void sendMailLocalTest() throws Exception {
 		Wiser wiser = new Wiser();
 	    wiser.setPort(1025);
 	    wiser.start();
 		Map<String, Object> processVariables = new HashMap<String, Object>();
 		processVariables.put("name", "Miss Piggy");
-		activitiRule.getRuntimeService().startProcessInstanceByKey("simpleEmailProcess",processVariables);
+		activitiRule.getRuntimeService().startProcessInstanceByKey("simpleEmailProcess", processVariables);
 		List<WiserMessage> messages = wiser.getMessages();
-	    assertEquals(1, messages.size());
-	    WiserMessage message = messages.get(0);
-	    MimeMessage mimeMessage = message.getMimeMessage();
-	    assertEquals("Hello Miss Piggy", mimeMessage.getHeader("Subject", null));
+    assertEquals(1, messages.size());
+    WiserMessage message = messages.get(0);
+    MimeMessage mimeMessage = message.getMimeMessage();
+    assertEquals("Hello Miss Piggy", mimeMessage.getHeader("Subject", null));
 		wiser.stop();
 	}
+	
+	@Test
+  @Deployment(resources={"chapter4/testSimpleMail.bpmn20.xml"})
+  public void sendMailRemoteTest() throws Exception {
+    Map<String, Object> processVariables = new HashMap<String, Object>();
+    processVariables.put("name", "Miss Piggy");
+    activitiRule.getRuntimeService().startProcessInstanceByKey("simpleEmailProcess", processVariables);
+  }
 
 }
