@@ -1,0 +1,13 @@
+<h1>JIRA issue should be completed</h1>
+<table>
+  <tr>
+    <td>
+      <label>
+        JIRA issue:<br/>
+        <input type="text" name="issueNumber" value="" />
+        <input type="hidden" name="issueNumber_required" value="true" />
+        <input type="hidden" name="issueNumber_type" value="Integer" />
+      </label><br/>
+    </td>
+  </tr>
+</table>

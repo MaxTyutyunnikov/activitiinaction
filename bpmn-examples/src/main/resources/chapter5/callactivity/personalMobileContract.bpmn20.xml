@@ -1,0 +1,28 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/personalmobilecontract">
+
+	<process id="personalMobileContract" name="Personal mobile contract">
+		<startEvent id="theStart" activiti:formKey="personalContract.form"/>
+		<sequenceFlow sourceRef="theStart" targetRef="creditCheck" />
+		<callActivity id="creditCheck" calledElement="creditCheckProcess">
+			<extensionElements>
+				<activiti:in source="customerNumber" target="customerID" />
+				<activiti:in source="contractType" target="contractType" />
+				<activiti:out source="creditCheckApproved" target="creditApproved" />
+			</extensionElements>
+		</callActivity>
+		<sequenceFlow sourceRef="creditCheck" targetRef="creditApproved" />
+		<exclusiveGateway id="creditApproved"/>
+		<sequenceFlow sourceRef="creditApproved" targetRef="sendMobileAgreement">
+			<conditionExpression>${creditApproved == true}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="creditApproved" targetRef="sendDenial">
+			<conditionExpression>${creditApproved == false}</conditionExpression>
+		</sequenceFlow>
+		<userTask id="sendMobileAgreement" name="Send mobile contract" activiti:candidateGroups="sales"/>
+		<sequenceFlow sourceRef="sendMobileAgreement" targetRef="theEnd" />
+		<userTask id="sendDenial" name="Send letter of denial" activiti:candidateGroups="sales"/>
+		<sequenceFlow sourceRef="sendMobileAgreement" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

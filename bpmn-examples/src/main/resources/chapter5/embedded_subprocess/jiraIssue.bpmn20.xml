@@ -1,0 +1,53 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/subprocess">
+	
+	<process id="escalationProcess" name="Escalation process example">
+		<startEvent id="theStart" activiti:formKey="jiraIssue.form"/>
+		<sequenceFlow sourceRef="theStart" targetRef="LogIssue" />
+		<scriptTask id="LogIssue" scriptFormat="groovy">
+			<script>
+				out:println "Project manager asks developer to complete JIRA issue " + issueNumber
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="LogIssue" targetRef="developerSubProcess" />
+		<subProcess id="developerSubProcess">
+			<startEvent id="theStartDeveloperSubProcess" />
+			<sequenceFlow sourceRef="theStartDeveloperSubProcess" targetRef="DeveloperTask" />
+			<userTask id="DeveloperTask" name="Complete JIRA issue" activiti:candidateGroups="engineering">
+				<documentation>JIRA issue is ${issueNumber}</documentation>
+			</userTask>
+			<sequenceFlow sourceRef="DeveloperTask" targetRef="TestTask" />
+			<userTask id="TestTask" name="Test solution" activiti:formKey="testSolution.form"
+					activiti:candidateGroups="engineering">
+				<documentation>JIRA issue is ${issueNumber}</documentation>
+			</userTask>
+			<sequenceFlow sourceRef="TestTask" targetRef="TestOK" />
+			<exclusiveGateway id="TestOK"/>
+			<sequenceFlow sourceRef="TestOK" targetRef="DeveloperReady">
+				<conditionExpression>${solutionApproved == true}</conditionExpression>
+			</sequenceFlow>
+			<sequenceFlow sourceRef="TestOK" targetRef="DeveloperTask">
+				<conditionExpression>${solutionApproved == false}</conditionExpression>
+			</sequenceFlow>
+			<scriptTask id="DeveloperReady" scriptFormat="groovy">
+				<script>
+					out:println "Developer is ready with JIRA issue " + issueNumber
+				</script>
+			</scriptTask>
+			<sequenceFlow sourceRef="DeveloperReady" targetRef="theEndDeveloperSubProcess" />
+			<endEvent id="theEndDeveloperSubProcess" />
+		</subProcess>
+		<boundaryEvent id="escalationTimerDeveloper" cancelActivity="true" attachedToRef="developerSubProcess">
+			<timerEventDefinition>
+		    	<timeDuration>PT1M</timeDuration>
+		  	</timerEventDefinition>
+		</boundaryEvent>
+		<sequenceFlow sourceRef="escalationTimerDeveloper" targetRef="ProjectManagerEscalationTask" />
+		<userTask id="ProjectManagerEscalationTask" name="JIRA issue is not completed in time" activiti:candidateGroups="management">
+			<documentation>JIRA issue is ${issueNumber}</documentation>
+		</userTask>
+		<sequenceFlow sourceRef="ProjectManagerEscalationTask" targetRef="theEnd" />
+		<sequenceFlow sourceRef="developerSubProcess" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="callactivity" default="create.callactivity">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="callactivity.jar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/callactivity.jar"
+		       basedir="../../../../../target/classes"
+		       includes="org/bpmnwithactiviti/chapter5/callactivity/**"
+		  />
+	</target>
+	
+	<target name="callactivity.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/callactivity.bar"
+		       basedir="."
+		 	   includes="*"
+		  />
+	</target>
+	
+	<target name="create.callactivity" depends="dist.mkdir, callactivity.jar, callactivity.bar"/>
+
+</project>
