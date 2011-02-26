@@ -1,0 +1,11 @@
+<h1>Test the JIRA solution</h1>
+<p>
+  JIRA issue number is: ${issueNumber} 
+</p>
+<p>
+Do you approve the solution? 
+<select name="solutionApproved">
+	<option value="true">Yes</option>
+    <option value="false">No</option>
+</select>
+<input type="hidden" name="solutionApproved_type" value="Boolean" />

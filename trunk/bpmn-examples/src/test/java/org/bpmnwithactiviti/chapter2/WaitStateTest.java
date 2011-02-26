@@ -1,7 +1,7 @@
 package org.bpmnwithactiviti.chapter2;
 
+import static org.junit.Assert.assertNotNull;
 import junit.framework.AssertionFailedError;
-import junit.framework.TestCase;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
@@ -11,7 +11,7 @@ import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.junit.Test;
 
-public class WaitStateTest extends TestCase {
+public class WaitStateTest {
 
 	@Test
 	public void testWaitState() {

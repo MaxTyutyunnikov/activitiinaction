@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="jiraissue" default="create.jiraissue">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="jiraissue.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/jiraissue.bar"
+		       basedir="."
+		 	   includes="*"
+		  />
+	</target>
+	
+	<target name="create.jiraissue" depends="dist.mkdir, jiraissue.bar"/>
+
+</project>

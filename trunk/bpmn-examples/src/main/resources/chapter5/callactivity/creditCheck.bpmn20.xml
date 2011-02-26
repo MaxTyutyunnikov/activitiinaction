@@ -1,0 +1,21 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/creditcheck">
+	
+	<process id="creditCheckProcess" name="Check the credit of a customer">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="checkCreditHistory" />
+		<serviceTask id="checkCreditHistory" activiti:class="org.bpmnwithactiviti.chapter5.callactivity.CreditCheckService"/>
+		<sequenceFlow sourceRef="checkCreditHistory" targetRef="historyOK" />
+		<exclusiveGateway id="historyOK"/>
+		<sequenceFlow sourceRef="historyOK" targetRef="theEnd">
+			<conditionExpression>${creditCheckApproved == true}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="historyOK" targetRef="personalCreditCheck">
+			<conditionExpression>${creditCheckApproved == false}</conditionExpression>
+		</sequenceFlow>
+		<userTask id="personalCreditCheck" name="Personal credit check" 
+			activiti:formKey="creditCheck.form" activiti:candidateGroups="sales"/>
+		<sequenceFlow sourceRef="personalCreditCheck" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
