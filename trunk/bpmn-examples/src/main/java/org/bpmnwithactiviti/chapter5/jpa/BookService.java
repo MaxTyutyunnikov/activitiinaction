@@ -1,20 +1,20 @@
 package org.bpmnwithactiviti.chapter5.jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.transaction.annotation.Transactional;
 
 public class BookService {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	@Transactional
-	public Book createBook(String title, String isbn) {
+	public Book createBook(List<String> authorList) {
 		Book book = new Book();
-		book.setTitle(title);
-		book.setIsbn(isbn);
+		for (String author : authorList) {
+      book.getAuthors().add(author);
+    }
 		entityManager.persist(book);
 		return book;
 	}

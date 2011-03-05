@@ -1,6 +1,11 @@
 package org.bpmnwithactiviti.chapter5.jpa;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -16,6 +21,9 @@ public class Book {
 	private String subTitle;
 	
 	private String isbn;
+	
+	@ElementCollection(fetch=FetchType.EAGER)
+	private List<String> authors;
 	
 	public int getId() {
 		return id;
@@ -41,4 +49,13 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+  public List<String> getAuthors() {
+    if(authors == null) {
+      authors = new ArrayList<String>();
+    }
+    return authors;
+  }
+  public void setAuthors(List<String> authors) {
+    this.authors = authors;
+  }
 }

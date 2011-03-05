@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="parallel" default="create.parallel">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="parallel.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/parallel.bar"
+		       basedir="."
+		 	   includes="*"
+		  />
+	</target>
+	
+	<target name="create.parallel" depends="dist.mkdir, parallel.bar"/>
+
+</project>

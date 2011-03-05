@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter5.event;
+package org.bpmnwithactiviti.chapter5.listener;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -20,8 +20,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:chapter5/gossip-application-context.xml")
-public class ProcessEventListenerTest extends AbstractTest {
+@ContextConfiguration("classpath:chapter5/listener/gossip-application-context.xml")
+public class ProcessListenerTest extends AbstractTest {
 	
 	@Autowired
 	private RuntimeService runtimeService;
