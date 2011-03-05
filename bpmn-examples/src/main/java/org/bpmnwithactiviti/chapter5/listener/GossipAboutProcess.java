@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter5.event;
+package org.bpmnwithactiviti.chapter5.listener;
 
 import org.activiti.engine.impl.pvm.delegate.ExecutionListener;
 import org.activiti.engine.impl.pvm.delegate.ExecutionListenerExecution;

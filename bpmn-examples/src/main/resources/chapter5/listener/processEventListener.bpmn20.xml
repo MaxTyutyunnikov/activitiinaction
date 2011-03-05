@@ -3,8 +3,8 @@
 
 	<process id="gossipProcess">
 		<extensionElements>
-			<activiti:executionListener class="org.bpmnwithactiviti.chapter5.event.GossipAboutProcess" event="start" />
-			<activiti:executionListener class="org.bpmnwithactiviti.chapter5.event.GossipAboutProcess" event="end" />
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter5.listener.GossipAboutProcess" event="start" />
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter5.listener.GossipAboutProcess" event="end" />
 		</extensionElements>
 		<startEvent id="theStart" />
 		<sequenceFlow sourceRef="theStart" targetRef="bradLeavesHouseTask">
@@ -24,12 +24,8 @@
 		<sequenceFlow sourceRef="bradLeavesHouseTask" targetRef="bradHasADrinkTask" />
 		<userTask id="bradHasADrinkTask" activiti:assignee="Brad">
 			<extensionElements>
-				<activiti:taskListener class="org.bpmnwithactiviti.chapter5.event.GossipAboutUserTask" event="create">
-					<activiti:field name="event" stringValue="create" />
-				</activiti:taskListener>
-				<activiti:taskListener class="org.bpmnwithactiviti.chapter5.event.GossipAboutUserTask" event="assignment">
-					<activiti:field name="event" stringValue="assignment" />
-				</activiti:taskListener>
+				<activiti:taskListener expression="${gossipUserTask.gossipTask(task, task.eventName)}" event="create" />
+				<activiti:taskListener expression="${gossipUserTask.gossipTask(task, task.eventName)}" event="assignment" />
 				<activiti:taskListener expression="${execution.setVariable('readyDrinking', true)}" event="complete"/>
 			</extensionElements>
 		</userTask>

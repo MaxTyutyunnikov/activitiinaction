@@ -1,16 +1,11 @@
-package org.bpmnwithactiviti.chapter5.event;
+package org.bpmnwithactiviti.chapter5.listener;
 
 import org.activiti.engine.delegate.DelegateTask;
-import org.activiti.engine.impl.el.Expression;
 import org.activiti.engine.impl.pvm.delegate.TaskListener;
 
-public class GossipAboutUserTask implements TaskListener {
+public class GossipAboutUserTask {
 	
-	private Expression event;
-
-	@Override
-	public void notify(DelegateTask task) {
-		String eventName = event.getValue(task.getExecution()).toString();
+	public void gossipTask(DelegateTask task, String eventName) {
 		if(TaskListener.EVENTNAME_CREATE.equals(eventName)) {
 			task.setAssignee("John");
 			System.out.println("Drink user task is created and assigned to John");

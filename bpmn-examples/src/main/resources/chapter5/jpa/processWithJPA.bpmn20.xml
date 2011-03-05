@@ -1,0 +1,36 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/jpa">
+	
+	<process id="jpaTest">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="createBook" />
+		<serviceTask id="createBook" activiti:expression="${bookService.createBook(authorList)}"
+		     activiti:resultVariableName="book"/>
+		<sequenceFlow sourceRef="createBook" targetRef="fillBookInfo" />
+		<userTask id="fillBookInfo" activiti:assignee="kermit" activiti:formKey="createBookTitle.form">
+			<extensionElements>
+				<activiti:formProperty id="booktitle" expression="#{book.title}" required="true" />
+				<activiti:formProperty id="isbn" expression="#{book.isbn}" required="true" />
+			</extensionElements>
+		</userTask>
+		<sequenceFlow sourceRef="fillBookInfo" targetRef="makeSubtitle" />
+		<exclusiveGateway id="makeSubtitle"/>
+		<sequenceFlow id="makeSubtitleYes" sourceRef="makeSubtitle" targetRef="createSubtitle">
+			<conditionExpression>${book.title == 'Activiti in Action'}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow id="makeSubtitleNo" sourceRef="makeSubtitle" targetRef="makeSubtitleReady">
+			<conditionExpression>${book.title != 'Activiti in Action'}</conditionExpression>
+		</sequenceFlow>
+		<scriptTask id="createSubtitle" scriptFormat="groovy">
+			<script>
+			  book.subTitle = "Executable business processes in BPMN 2.0";
+				out:println "book subTitle is set to " + book.subTitle;
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="createSubtitle" targetRef="makeSubtitleReady" />
+		<exclusiveGateway id="makeSubtitleReady"/>
+		<sequenceFlow id="toEnd" sourceRef="makeSubtitleReady" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
