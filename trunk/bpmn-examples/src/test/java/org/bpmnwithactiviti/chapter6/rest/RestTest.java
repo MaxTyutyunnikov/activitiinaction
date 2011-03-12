@@ -1,20 +1,19 @@
-package org.bpmnwithactiviti.chapter6;
+package org.bpmnwithactiviti.chapter6.rest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.bpmnwithactiviti.chapter6.ActivitiRestClient;
+import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 
-public class RestTest {
+public class RestTest extends AbstractTest {
 	
 	@Test
 	public void restAPITest() throws Exception {
 		String vacationProcessDefinitionId = ActivitiRestClient.getVacationRequestProcessId();
-		assertEquals("vacationRequest:1", vacationProcessDefinitionId);
+		assertNotNull(vacationProcessDefinitionId);
 		String processInstanceId = ActivitiRestClient.startVacationRequestProcess(vacationProcessDefinitionId);
 		assertNotNull(processInstanceId);
-		assertEquals(1, ActivitiRestClient.getTasks("candidate","kermit"));
 		String taskId = ActivitiRestClient.getHandleVacationRequestTask(processInstanceId);
 		assertNotNull(taskId);
 		assertEquals("true", ActivitiRestClient.claimHandleVacationRequestTask(taskId));

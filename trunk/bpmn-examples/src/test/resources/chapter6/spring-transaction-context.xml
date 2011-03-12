@@ -43,9 +43,11 @@
 
 	<bean id="runtimeService" factory-bean="processEngine"
 		factory-method="getRuntimeService" />
-
-	<bean id="someBean" class="org.bpmnwithactiviti.chapter6.SomeBean">
-		<property name="runtimeService" ref="runtimeService" />
+	
+	<bean id="activitiRule" class="org.activiti.engine.test.ActivitiRule">
+		<property name="processEngine" ref="processEngine" />
 	</bean>
+
+	<bean id="transactionalBean" class="org.bpmnwithactiviti.chapter6.transaction.TransactionalBean"/>
 
 </beans>
