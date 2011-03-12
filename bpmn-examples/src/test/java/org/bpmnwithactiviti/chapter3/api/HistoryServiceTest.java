@@ -65,7 +65,7 @@ public class HistoryServiceTest extends AbstractTest {
 		startAndComplete();
 		HistoryService historyService = activitiRule.getHistoryService();
 		List<HistoricActivityInstance> activityList = historyService.createHistoricActivityInstanceQuery().list();
-		assertEquals(4, activityList.size());
+		assertEquals(3, activityList.size());
 		for (HistoricActivityInstance historicActivityInstance : activityList) {
 			assertNotNull(historicActivityInstance.getActivityId());
 			System.out.println("history activity " + historicActivityInstance.getActivityName() +
