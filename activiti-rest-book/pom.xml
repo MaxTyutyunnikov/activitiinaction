@@ -137,6 +137,11 @@
 			<id>Activiti</id>
 			<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
 		</repository>
+		<repository>
+      <id>spring-extensions-milestone</id>
+      <name>Spring Extensions Milestone Repository</name>
+      <url>http://extensions.springframework.org/milestone</url>
+    </repository>
 	</repositories>
 
 
