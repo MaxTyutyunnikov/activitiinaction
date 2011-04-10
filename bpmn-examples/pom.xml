@@ -11,6 +11,7 @@
 		<activiti-version>5.3</activiti-version>
 		<spring-version>3.0.3.RELEASE</spring-version>
 		<spring-surf-version>1.0.0-RC2</spring-surf-version>
+		<cxf-version>2.3.3</cxf-version>
 	</properties>
 
 	<dependencies>
@@ -56,15 +57,15 @@
 			<version>1.6.1</version>
 		</dependency>
 		<dependency>
-	      <groupId>org.slf4j</groupId>
-    	  <artifactId>jcl-over-slf4j</artifactId>
-	      <version>1.6.1</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.slf4j</groupId>
-    	  <artifactId>jul-to-slf4j</artifactId>
-	      <version>1.6.1</version>
-	    </dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -137,10 +138,20 @@
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-	    <groupId>org.apache.geronimo.specs</groupId>
-	    <artifactId>geronimo-servlet_2.5_spec</artifactId>
-	    <version>1.2</version>
-		</dependency>	
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf-version}</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -148,6 +159,11 @@
 			<id>Activiti</id>
 			<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
 		</repository>
+		<repository>
+      <id>spring-extensions-milestone</id>
+      <name>Spring Extensions Milestone Repository</name>
+      <url>http://extensions.springframework.org/milestone</url>
+    </repository>
 		<repository>
 			<id>maven-restlet</id>
 			<name>Public online Restlet repository</name>
@@ -171,15 +187,29 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<inherited>true</inherited>
-				<configuration>
-					<classpathContainers>
-						<classpathContainer>ACTIVITI_REST_CLASSPATH</classpathContainer>
-					</classpathContainers>
-				</configuration>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf-version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>generated/cxf</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>src/main/resources/chapter6/errorevent/wsdl/customerService.wsdl</wsdl>
+									<wsdlLocation>http://localhost:8081/sales-webapp-book/services/customer?wsdl</wsdlLocation>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
