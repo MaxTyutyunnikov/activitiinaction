@@ -21,8 +21,7 @@
 	
 	<target name="callactivity.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/callactivity.bar"
-		       basedir="."
-		 	   includes="*"
+		       basedir="." includes="*.bpmn20.xml, *.form"
 		  />
 	</target>
 	

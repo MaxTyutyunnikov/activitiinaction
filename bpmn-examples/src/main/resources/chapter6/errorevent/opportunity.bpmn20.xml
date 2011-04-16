@@ -1,0 +1,60 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/errorevent">
+
+	<process id="salesOpportunityProcess" name="Sales opportunity example">
+		<startEvent id="theStart" activiti:formKey="opportunityInput.form" />
+		<sequenceFlow sourceRef="theStart" targetRef="customerNumberProvided" />
+		<exclusiveGateway id="customerNumberProvided" />
+		<sequenceFlow sourceRef="customerNumberProvided" targetRef="AdditionalCustomerInfoTask">
+			<conditionExpression>${customerNumber &lt;= 0}</conditionExpression>
+		</sequenceFlow>
+		<userTask id="AdditionalCustomerInfoTask" name="Provide additional customer info"
+				activiti:formKey="clientAdditionalInfo.form"
+				activiti:candidateGroups="sales">
+			<documentation>Additional info needed for sales opportunity for product ${product}</documentation>
+		</userTask>
+		<sequenceFlow sourceRef="AdditionalCustomerInfoTask" targetRef="toSubProcess" />
+		<exclusiveGateway id="toSubProcess" />
+		<sequenceFlow sourceRef="customerNumberProvided" targetRef="toSubProcess">
+			<conditionExpression>${customerNumber > 0}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow id="toRetrieveCustomer" sourceRef="toSubProcess" targetRef="retrieveCustomerSubProcess" />
+		<subProcess id="retrieveCustomerSubProcess">
+			<startEvent id="theStartCustomerSubProcess" />
+			<sequenceFlow sourceRef="theStartCustomerSubProcess" targetRef="RetrieveCustomerTask" />
+			<serviceTask id="RetrieveCustomerTask" activiti:class="org.bpmnwithactiviti.chapter6.errorevent.RetrieveCustomerTask" />
+			<sequenceFlow sourceRef="RetrieveCustomerTask" targetRef="customerFound" />
+			<exclusiveGateway id="customerFound" />
+			<sequenceFlow sourceRef="customerFound" targetRef="customerNotFoundError">
+				<conditionExpression>${customer.customerFound == false}</conditionExpression>
+			</sequenceFlow>
+			<endEvent id="customerNotFoundError">
+				<errorEventDefinition errorRef="customerNotFound" />
+			</endEvent>
+			<sequenceFlow sourceRef="customerFound" targetRef="theEndCustomerSubProcess">
+				<conditionExpression>${customer.customerFound == true}</conditionExpression>
+			</sequenceFlow>
+			<endEvent id="theEndCustomerSubProcess" />
+		</subProcess>
+		<boundaryEvent id="handleCustomerNotFound" attachedToRef="retrieveCustomerSubProcess">
+			<errorEventDefinition errorRef="customerNotFound" />
+		</boundaryEvent>
+		<sequenceFlow sourceRef="handleCustomerNotFound" targetRef="HandleCustomerNotFoundTask" />
+		<userTask id="HandleCustomerNotFoundTask" name="Handle customer not found"
+				activiti:formKey="notFoundInput.form"
+				activiti:candidateGroups="sales">
+			<documentation>Customer could not be found for opportunity: product=${product}, description=${description}</documentation>
+		</userTask>
+		<sequenceFlow sourceRef="HandleCustomerNotFoundTask" targetRef="CopyCustomerId" />
+		<scriptTask id="CopyCustomerId" scriptFormat="groovy">
+			<script>
+				customer.customerId = customerAddedNumber;
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="CopyCustomerId" targetRef="StoreOpportunityTask" />
+		<serviceTask id="StoreOpportunityTask" activiti:class="org.bpmnwithactiviti.chapter6.errorevent.StoreOpportunityTask" />
+		<sequenceFlow sourceRef="retrieveCustomerSubProcess" targetRef="StoreOpportunityTask" />
+		<sequenceFlow sourceRef="StoreOpportunityTask" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

@@ -1,0 +1,43 @@
+<h1>Provide info for sales opportunity</h1>
+<table>
+	<tr>
+    <td>
+      <label>
+        Product:<br/>
+        <input type="text" name="product" value="" />
+        <input type="hidden" name="product_required" value="true" />
+        <input type="hidden" name="product_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        Quantity:<br/>
+        <input type="text" name="quantity" value="" />
+        <input type="hidden" name="quantity_required" value="true" />
+        <input type="hidden" name="quantity_type" value="Integer" />
+      </label><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        Description:<br/>
+        <input type="text" name="description" value="" />
+        <input type="hidden" name="description_required" value="true" />
+        <input type="hidden" name="description_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        Customer number (0 if not known):<br/>
+        <input type="text" name="customerNumber" value="" />
+        <input type="hidden" name="customerNumber_required" value="true" />
+        <input type="hidden" name="customerNumber_type" value="Integer" />
+      </label><br/>
+    </td>
+  </tr>
+</table>

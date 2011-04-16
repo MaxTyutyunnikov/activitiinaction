@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="errorevent" default="create.errorevent">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="errorevent.jar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/errorevent.jar"
+		       basedir="../../../../../target/classes"
+		       includes="org/bpmnwithactiviti/chapter6/ws/**, org/bpmnwithactiviti/chapter6/errorevent/**"
+		  />
+	</target>
+	
+	<target name="errorevent.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/errorevent.bar"
+		       basedir="." includes="*.bpmn20.xml, *.form" />
+	</target>
+	
+	<target name="create.errorevent" depends="dist.mkdir, errorevent.jar, errorevent.bar"/>
+
+</project>
