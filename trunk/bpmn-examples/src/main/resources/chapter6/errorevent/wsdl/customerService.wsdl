@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CustomerServiceService" targetNamespace="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.chapter6.bpmnwithactiviti.org/" version="1.0" xmlns:tns="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="findCustomer" type="tns:findCustomer"/>
+<xs:element name="findCustomerById" type="tns:findCustomerById"/>
+<xs:element name="findCustomerByIdResponse" type="tns:findCustomerByIdResponse"/>
+<xs:element name="findCustomerResponse" type="tns:findCustomerResponse"/>
+<xs:element name="storeSalesOpportunity" type="tns:storeSalesOpportunity"/>
+<xs:element name="storeSalesOpportunityResponse" type="tns:storeSalesOpportunityResponse"/>
+<xs:complexType name="findCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactperson" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="findCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactPerson" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerAddress" type="xs:string"/>
+      <xs:element name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="saleOpportunities" nillable="true" type="tns:salesOpportunity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="salesOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="expectedQuantity" type="xs:int"/>
+      <xs:element name="opportunityId" type="xs:long"/>
+      <xs:element minOccurs="0" name="product" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="findCustomerById">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="findCustomerByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="storeSalesOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" type="xs:string"/>
+      <xs:element name="expectedQuantity" type="xs:int"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="customerId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="storeSalesOpportunityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="findCustomerResponse">
+    <wsdl:part element="tns:findCustomerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeSalesOpportunityResponse">
+    <wsdl:part element="tns:storeSalesOpportunityResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeSalesOpportunity">
+    <wsdl:part element="tns:storeSalesOpportunity" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findCustomerByIdResponse">
+    <wsdl:part element="tns:findCustomerByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findCustomerById">
+    <wsdl:part element="tns:findCustomerById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findCustomer">
+    <wsdl:part element="tns:findCustomer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CustomerService">
+    <wsdl:operation name="findCustomer">
+      <wsdl:input message="tns:findCustomer" name="findCustomer">
+    </wsdl:input>
+      <wsdl:output message="tns:findCustomerResponse" name="findCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findCustomerById">
+      <wsdl:input message="tns:findCustomerById" name="findCustomerById">
+    </wsdl:input>
+      <wsdl:output message="tns:findCustomerByIdResponse" name="findCustomerByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeSalesOpportunity">
+      <wsdl:input message="tns:storeSalesOpportunity" name="storeSalesOpportunity">
+    </wsdl:input>
+      <wsdl:output message="tns:storeSalesOpportunityResponse" name="storeSalesOpportunityResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerServiceServiceSoapBinding" type="tns:CustomerService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findCustomer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findCustomerById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findCustomerById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findCustomerByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeSalesOpportunity">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="storeSalesOpportunity">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="storeSalesOpportunityResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerServiceService">
+    <wsdl:port binding="tns:CustomerServiceServiceSoapBinding" name="CustomerServicePort">
+      <soap:address location="http://localhost:8081/book-sales-webapp/services/customer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

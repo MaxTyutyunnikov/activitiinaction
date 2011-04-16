@@ -14,8 +14,7 @@
 	
 	<target name="jiraissue.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/jiraissue.bar"
-		       basedir="."
-		 	   includes="*"
+		       basedir="." includes="*.bpmn20.xml, *.form"
 		  />
 	</target>
 	

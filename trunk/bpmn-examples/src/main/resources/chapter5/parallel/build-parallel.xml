@@ -14,8 +14,7 @@
 	
 	<target name="parallel.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/parallel.bar"
-		       basedir="."
-		 	   includes="*"
+		       basedir="." includes="*.bpmn20.xml"
 		  />
 	</target>
 	
