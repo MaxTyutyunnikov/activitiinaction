@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.errorevent;
+package org.bpmnwithactiviti.chapter6.errorjava;
 
 import java.io.Serializable;
 import java.util.ArrayList;

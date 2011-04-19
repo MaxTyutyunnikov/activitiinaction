@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.errorevent;
+package org.bpmnwithactiviti.chapter6.errorjava;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
