@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="errorjava" default="create.errorjava">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="errorjava.jar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/errorjava.jar"
+		       basedir="../../../../../target/classes"
+		       includes="org/bpmnwithactiviti/chapter6/ws/**, org/bpmnwithactiviti/chapter6/errorjava/**"
+		  />
+	</target>
+	
+	<target name="errorjava.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/errorjava.bar"
+		       basedir="." includes="*.bpmn20.xml, *.form" />
+	</target>
+	
+	<target name="create.errorjava" depends="dist.mkdir, errorjava.jar, errorjava.bar"/>
+
+</project>

@@ -199,7 +199,7 @@
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>src/main/resources/chapter6/errorevent/wsdl/customerService.wsdl</wsdl>
-									<wsdlLocation>http://localhost:8081/sales-webapp-book/services/customer?wsdl</wsdlLocation>
+									<wsdlLocation>http://localhost:8081/book-sales-webapp/services/customer?wsdl</wsdlLocation>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>

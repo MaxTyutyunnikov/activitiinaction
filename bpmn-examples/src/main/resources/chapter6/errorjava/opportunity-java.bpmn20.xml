@@ -1,0 +1,41 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/errorjava">
+
+	<process id="salesOpportunityJava" name="Sales opportunity java example">
+		<startEvent id="theStart" activiti:formKey="opportunityInput.form" />
+		<sequenceFlow sourceRef="theStart" targetRef="customerNumberProvided" />
+		<exclusiveGateway id="customerNumberProvided" />
+		<sequenceFlow sourceRef="customerNumberProvided" targetRef="AdditionalCustomerInfoTask">
+			<conditionExpression>${customerNumber &lt;= 0}</conditionExpression>
+		</sequenceFlow>
+		<userTask id="AdditionalCustomerInfoTask" name="Provide additional customer info"
+				activiti:formKey="clientAdditionalInfo.form"
+				activiti:candidateGroups="sales">
+			<documentation>Additional info needed for sales opportunity for product ${product}</documentation>
+		</userTask>
+		<sequenceFlow sourceRef="AdditionalCustomerInfoTask" targetRef="toRetrieve" />
+		<exclusiveGateway id="toRetrieve" />
+		<sequenceFlow sourceRef="customerNumberProvided" targetRef="toRetrieve">
+			<conditionExpression>${customerNumber > 0}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow id="retrieveflow" sourceRef="toRetrieve" targetRef="RetrieveCustomerTask" />
+		<serviceTask id="RetrieveCustomerTask" activiti:class="org.bpmnwithactiviti.chapter6.errorjava.RetrieveCustomerTask" />
+		<sequenceFlow id="customerNotFound" sourceRef="RetrieveCustomerTask" targetRef="HandleCustomerNotFoundTask" />
+		<userTask id="HandleCustomerNotFoundTask" name="Handle customer not found"
+				activiti:formKey="notFoundInput.form"
+				activiti:candidateGroups="sales">
+			<documentation>Customer could not be found for opportunity: product=${product}, description=${description}</documentation>
+		</userTask>
+		<sequenceFlow sourceRef="HandleCustomerNotFoundTask" targetRef="CopyCustomerId" />
+		<scriptTask id="CopyCustomerId" scriptFormat="groovy">
+			<script>
+				customer.customerId = customerAddedNumber;
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="CopyCustomerId" targetRef="StoreOpportunityTask" />
+		<serviceTask id="StoreOpportunityTask" activiti:class="org.bpmnwithactiviti.chapter6.errorjava.StoreOpportunityTask" />
+		<sequenceFlow id="customerFound" sourceRef="RetrieveCustomerTask" targetRef="StoreOpportunityTask" />
+		<sequenceFlow sourceRef="StoreOpportunityTask" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
