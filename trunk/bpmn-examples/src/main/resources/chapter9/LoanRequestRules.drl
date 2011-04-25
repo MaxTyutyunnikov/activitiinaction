@@ -1,0 +1,42 @@
+package org.bpmnwithactiviti.chapter9.rules
+
+import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter9.LoanApplication;
+import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
+
+rule "CreditCheckRule"
+    
+	when
+		la: LoanApplicant(income > (2 * loanAmount))
+		res : CreditCheckResult()
+	then
+		res.setCreditCheckPassed(true);
+
+end
+
+rule "LoanApplicationEvaluationRule_1"
+    
+	when
+		la: LoanApplication((creditCheckOk == true) && (requestedAmount < 100000))
+	then
+		la.setStatus("approved");
+
+end
+
+rule "LoanApplicationEvaluationRule_2"
+    
+	when
+		la: LoanApplication((creditCheckOk == true) && (requestedAmount >= 100000))
+	then
+		la.setStatus("needsManagerApproval");
+
+end
+
+rule "LoanApplicationEvaluationRule_3"
+    
+	when
+		la: LoanApplication(creditCheckOk == false)
+	then
+		la.setStatus("denied");
+
+end

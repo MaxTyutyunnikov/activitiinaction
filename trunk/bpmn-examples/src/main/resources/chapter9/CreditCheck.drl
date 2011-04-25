@@ -1,0 +1,14 @@
+package org.bpmnwithactiviti.chapter9.rules
+
+import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
+
+rule "CreditCheckRule"
+    
+	when
+		la: LoanApplicant(income > (2 * loanAmount))
+		res : CreditCheckResult()
+	then
+		res.setCreditCheckPassed(true);
+
+end
