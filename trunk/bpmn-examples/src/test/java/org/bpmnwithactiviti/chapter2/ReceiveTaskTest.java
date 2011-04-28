@@ -1,7 +1,7 @@
 package org.bpmnwithactiviti.chapter2;
 
 import static org.junit.Assert.assertNotNull;
-import junit.framework.AssertionFailedError;
+import static org.junit.Assert.assertNull;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
@@ -11,42 +11,27 @@ import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.junit.Test;
 
-public class WaitStateTest {
+public class ReceiveTaskTest {
 
 	@Test
-	public void testWaitState() {
+	public void testWaitStateBehavior() {
 		ProcessEngine processEngine = ProcessEngineConfiguration
 			.createStandaloneInMemProcessEngineConfiguration()
-			.setDatabaseSchemaUpdate("true")
-			.setJobExecutorActivate(false)
 	 		.buildProcessEngine();
 		RuntimeService runtimeService = processEngine.getRuntimeService();
 		RepositoryService repositoryService = processEngine
 				.getRepositoryService();
 		repositoryService.createDeployment()
-				.addClasspathResource("chapter2/waitstateTask.bpmn20.xml").deploy();
+				.addClasspathResource("chapter2/receiveTask.bpmn20.xml").deploy();
 
 		ProcessInstance pi = runtimeService
-				.startProcessInstanceByKey("waitStateTask");
+				.startProcessInstanceByKey("receiveTaskTest");
 		Execution execution = runtimeService.createExecutionQuery()
 				.processInstanceId(pi.getId()).activityId("waitState")
 				.singleResult();
 		assertNotNull(execution);
 		runtimeService.signal(execution.getId());
-		assertProcessEnded(processEngine, pi.getId());
+		pi = runtimeService.createProcessInstanceQuery().processInstanceId(pi.getId()).singleResult();
+		assertNull(pi);
 	}
-
-	public void assertProcessEnded(ProcessEngine processEngine,
-			final String processInstanceId) {
-		ProcessInstance processInstance = processEngine.getRuntimeService()
-				.createProcessInstanceQuery()
-				.processInstanceId(processInstanceId).singleResult();
-
-		if (processInstance != null) {
-			throw new AssertionFailedError(
-					"expected finished process instance '" + processInstanceId
-							+ "' but it was still in the db");
-		}
-	}
-
 }

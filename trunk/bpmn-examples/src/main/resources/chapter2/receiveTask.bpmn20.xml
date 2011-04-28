@@ -6,11 +6,12 @@
   	typeLanguage="http://www.w3.org/2001/XMLSchema"
   	expressionLanguage="http://www.w3.org/1999/XPath" 
   	targetNamespace="http://www.activiti.org/bpmn2.0">
-  <process id="waitStateTask">
+  
+  <process id="receiveTaskTest">
     <startEvent id="theStart" />
-    <sequenceFlow id="flow1" sourceRef="theStart" targetRef="waitState" />
+    <sequenceFlow sourceRef="theStart" targetRef="waitState" />
     <receiveTask id="waitState" name="Wait State" />
-    <sequenceFlow id="flow2" sourceRef="waitState" targetRef="theEnd" /> 
+    <sequenceFlow sourceRef="waitState" targetRef="theEnd" /> 
     <endEvent id="theEnd" />  
   </process>
 </definitions>
