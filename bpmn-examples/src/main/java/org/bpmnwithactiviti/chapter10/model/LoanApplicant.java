@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.model;
+package org.bpmnwithactiviti.chapter10.model;
 
 import java.io.Serializable;
 

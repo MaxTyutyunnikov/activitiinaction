@@ -1,12 +1,12 @@
-package org.bpmnwithactiviti.chapter9;
+package org.bpmnwithactiviti.chapter10;
 
 import java.util.Collection;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
-import org.bpmnwithactiviti.chapter9.LoanApplication;
-import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
-import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter10.LoanApplication;
+import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 
 public class ApplicationCreator implements JavaDelegate {
 

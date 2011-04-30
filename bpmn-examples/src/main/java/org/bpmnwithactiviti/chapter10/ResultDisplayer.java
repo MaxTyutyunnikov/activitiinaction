@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9;
+package org.bpmnwithactiviti.chapter10;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
