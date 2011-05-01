@@ -1,7 +1,7 @@
-package org.bpmnwithactiviti.chapter9.rules
+package org.bpmnwithactiviti.chapter10.rules
 
-import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
-import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
 
 rule "CreditCheckRule"
     

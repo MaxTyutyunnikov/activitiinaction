@@ -1,6 +1,6 @@
-package org.bpmnwithactiviti.chapter9.rules
+package org.bpmnwithactiviti.chapter10.rules
 
-import org.bpmnwithactiviti.chapter9.model.Person;
+import org.bpmnwithactiviti.chapter10.model.Person;
 
 rule "AdultCheckRule"
     

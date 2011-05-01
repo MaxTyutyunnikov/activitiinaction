@@ -1,29 +1,29 @@
-package org.bpmnwithactiviti.chapter9;
+package org.bpmnwithactiviti.chapter10;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.bpmnwithactiviti.chapter9.logic.CreditCheckDecisionTableRunner;
-import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
-import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter10.logic.CreditCheckRuleRunner;
+import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.junit.Test;
 
-public class CreditCheckDecisionTableTest {
+public class CreditCheckTest {
 	
 	@Test
 	public void testCreditCheckFailed(){
 		LoanApplicant piggy = new LoanApplicant();
 		piggy.setName("Miss Piggy");
 		piggy.setIncome(100);
-		piggy.setLoanAmount(50);
+		piggy.setLoanAmount(90);
 		
 		CreditCheckResult result = null;
 		
 		try {
-			 result = CreditCheckDecisionTableRunner.runRules(piggy);
+			 result = CreditCheckRuleRunner.runRules(piggy);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}	
 		assertFalse(result.isCreditCheckPassed());
 	}
 	
@@ -31,13 +31,13 @@ public class CreditCheckDecisionTableTest {
 	public void testCreditCheckPassed(){
 		LoanApplicant kermit = new LoanApplicant();
 		kermit.setName("Kermit");
-		kermit.setIncome(500);
-		kermit.setLoanAmount(100);
+		kermit.setIncome(1000);
+		kermit.setLoanAmount(10);
 		
 		CreditCheckResult result = null;
 		
 		try {
-			 result = CreditCheckDecisionTableRunner.runRules(kermit);
+			 result = CreditCheckRuleRunner.runRules(kermit);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9;
+package org.bpmnwithactiviti.chapter10;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -13,7 +13,7 @@ import java.util.Set;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter9.model.Person;
+import org.bpmnwithactiviti.chapter10.model.Person;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
@@ -26,8 +26,8 @@ public class RulesDeployerTest extends AbstractTest {
 
 	@SuppressWarnings("unchecked")
 	@Test
-	@Deployment(resources = { "chapter9/rules.bpmn20.xml",
-			"chapter9/AdultCheck.drl" })
+	@Deployment(resources = { "chapter10/rules.bpmn20.xml",
+			"chapter10/AdultCheck.drl" })
 	public void testRulesDeployment() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		
