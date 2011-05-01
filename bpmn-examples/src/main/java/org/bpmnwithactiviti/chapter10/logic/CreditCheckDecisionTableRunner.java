@@ -1,9 +1,9 @@
-package org.bpmnwithactiviti.chapter9.logic;
+package org.bpmnwithactiviti.chapter10.logic;
 
 import java.io.File;
 
-import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
-import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.drools.KnowledgeBase;
 import org.drools.builder.DecisionTableConfiguration;
 import org.drools.builder.DecisionTableInputType;
@@ -45,7 +45,7 @@ public class CreditCheckDecisionTableRunner {
 		
 		String drl = DecisionTableFactory
 		.loadFromInputStream(ResourceFactory
-			.newClassPathResource("chapter9"
+			.newClassPathResource("chapter10"
 					+ File.separator + "CreditCheck.xls")
 			.getInputStream(), dtconf);
 
@@ -54,7 +54,7 @@ public class CreditCheckDecisionTableRunner {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
 				.newKnowledgeBuilder();
 		kbuilder.add(
-				ResourceFactory.newClassPathResource("chapter9"
+				ResourceFactory.newClassPathResource("chapter10"
 						+ File.separator + "CreditCheck.xls"),
 				ResourceType.DTABLE, dtconf);
 		

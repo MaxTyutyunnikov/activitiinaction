@@ -1,11 +1,11 @@
-package org.bpmnwithactiviti.chapter9.logic;
+package org.bpmnwithactiviti.chapter10.logic;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bpmnwithactiviti.chapter9.model.CreditCheckResult;
-import org.bpmnwithactiviti.chapter9.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
@@ -55,7 +55,7 @@ public class CreditCheckRuleRunner {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
 				.newKnowledgeBuilder();
 		kbuilder.add(
-				ResourceFactory.newClassPathResource("chapter9" + File.separator + "CreditCheck.drl"),
+				ResourceFactory.newClassPathResource("chapter10" + File.separator + "CreditCheck.drl"),
 				ResourceType.DRL);
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();
 		if (errors.size() > 0) {

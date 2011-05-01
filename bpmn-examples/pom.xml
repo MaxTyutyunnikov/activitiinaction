@@ -152,6 +152,26 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>5.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>5.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-decisiontables</artifactId>
+			<version>5.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-transformer-xstream</artifactId>
+			<version>5.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
