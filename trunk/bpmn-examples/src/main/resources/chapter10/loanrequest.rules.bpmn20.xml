@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="taskAssigneeExample"
+	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
+
+	<process id="loanrequestWithRules" name="Process to handle a loan request">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
+		<businessRuleTask id="checkCredit"
+			activiti:ruleVariablesInput="${loanApplicant}, ${CreditCheckResult}"
+			activiti:resultVariable="rulesOutput" activiti:rules="CreditCheckRule" />
+		<sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
+		<serviceTask id="createApplication"
+			activiti:class="org.bpmnwithactiviti.chapter9.ApplicationCreator" />
+		<sequenceFlow sourceRef="createApplication" targetRef="evaluateLoanRequest" />
+
+		<businessRuleTask id="evaluateLoanRequest"
+			activiti:ruleVariablesInput="${loanApplication}"
+			activiti:resultVariable="rulesOutput" activiti:rules="LoanApplicationEvaluationRule_1, LoanApplicationEvaluationRule_2, LoanApplicationEvaluationRule_3" />
+
+		<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
+
+		<exclusiveGateway id="approvalGateway" />
+
+		<sequenceFlow sourceRef="approvalGateway" targetRef="displayResult">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status
+				== 'denied'}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="approvalGateway" targetRef="displayResult">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status
+				== 'needsManagerApproval'}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="approvalGateway" targetRef="displayResult">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status
+				== 'approved'}</conditionExpression>
+		</sequenceFlow>
+
+		<serviceTask id="displayResult"
+			activiti:class="org.bpmnwithactiviti.chapter9.ResultDisplayer" />
+		<sequenceFlow sourceRef="displayResult" targetRef="receiveTask" />
+
+		<receiveTask id="receiveTask" />
+		<sequenceFlow sourceRef="receiveTask" targetRef="end" />
+
+		<endEvent id="end" />
+	</process>
+</definitions>
+
+
