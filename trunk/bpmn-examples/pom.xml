@@ -8,7 +8,7 @@
 	<name>BPMN 2.0 with Activiti - Examples</name>
 
 	<properties>
-		<activiti-version>5.3</activiti-version>
+		<activiti-version>5.4</activiti-version>
 		<spring-version>3.0.3.RELEASE</spring-version>
 		<spring-surf-version>1.0.0-RC2</spring-surf-version>
 		<cxf-version>2.3.3</cxf-version>
@@ -30,6 +30,11 @@
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring</artifactId>
 			<version>${activiti-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-camel</artifactId>
+			<version>5.5-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
