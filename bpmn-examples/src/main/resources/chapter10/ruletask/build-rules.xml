@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ruletask" default="create.ruletask">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="ruletask.jar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/ruletask.jar"
+		       basedir="../../../../../target/classes"
+		       includes="org/bpmnwithactiviti/chapter5/callactivity/**"
+		  />
+	</target>
+	
+	<target name="ruletask.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/ruletask.bar"
+		       basedir="." includes="*.bpmn20.xml, *.drl"
+		  />
+	</target>
+	
+	<target name="create.ruletask" depends="dist.mkdir, ruletask.jar, ruletask.bar"/>
+
+</project>

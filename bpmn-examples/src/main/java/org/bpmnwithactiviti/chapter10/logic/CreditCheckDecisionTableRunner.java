@@ -46,16 +46,16 @@ public class CreditCheckDecisionTableRunner {
 		String drl = DecisionTableFactory
 		.loadFromInputStream(ResourceFactory
 			.newClassPathResource("chapter10"
-					+ File.separator + "CreditCheck.xls")
+					+ File.separator + "decisiontable" + File.separator + "CreditCheck.xls")
 			.getInputStream(), dtconf);
 
 		System.out.println(drl);
-
+		
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
 				.newKnowledgeBuilder();
 		kbuilder.add(
 				ResourceFactory.newClassPathResource("chapter10"
-						+ File.separator + "CreditCheck.xls"),
+						+ File.separator + "decisiontable" + File.separator + "CreditCheck.xls"),
 				ResourceType.DTABLE, dtconf);
 		
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();

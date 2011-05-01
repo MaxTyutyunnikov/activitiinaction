@@ -55,7 +55,8 @@ public class CreditCheckRuleRunner {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
 				.newKnowledgeBuilder();
 		kbuilder.add(
-				ResourceFactory.newClassPathResource("chapter10" + File.separator + "CreditCheck.drl"),
+				ResourceFactory.newClassPathResource("chapter10" + File.separator + "rules" 
+				        + File.separator + "CreditCheck.drl"),
 				ResourceType.DRL);
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();
 		if (errors.size() > 0) {

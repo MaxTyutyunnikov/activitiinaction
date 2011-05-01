@@ -11,7 +11,7 @@
 			activiti:resultVariable="rulesOutput" activiti:rules="CreditCheckRule" />
 		<sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
 		<serviceTask id="createApplication"
-			activiti:class="org.bpmnwithactiviti.chapter9.ApplicationCreator" />
+			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.ApplicationCreator" />
 		<sequenceFlow sourceRef="createApplication" targetRef="evaluateLoanRequest" />
 
 		<businessRuleTask id="evaluateLoanRequest"
@@ -36,7 +36,7 @@
 		</sequenceFlow>
 
 		<serviceTask id="displayResult"
-			activiti:class="org.bpmnwithactiviti.chapter9.ResultDisplayer" />
+			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.ResultDisplayer" />
 		<sequenceFlow sourceRef="displayResult" targetRef="receiveTask" />
 
 		<receiveTask id="receiveTask" />
