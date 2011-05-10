@@ -3,6 +3,8 @@
 <project name="ruletask" default="create.ruletask">
 
 	<property name="dist.dir" value="./dist" />
+	<property name="m2.repo" value="${user.home}/.m2/repository/" />
+	<property name="drools.version" value="5.1.1" />
 
 	<target name="dist.rmdir">
 		<delete dir="${dist.dir}" />
@@ -13,10 +15,13 @@
 	</target>
 	
 	<target name="ruletask.jar" depends="dist.mkdir">
-		 <jar destfile="${dist.dir}/ruletask.jar"
-		       basedir="../../../../../target/classes"
-		       includes="org/bpmnwithactiviti/chapter5/callactivity/**"
-		  />
+	 <jar destfile="${dist.dir}/ruletask.jar"
+	       basedir="../../../../../target/classes"
+	       includes="org/bpmnwithactiviti/chapter10/ruletask/**"
+	  />
+		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-api/${drools.version}/drools-api-${drools.version}.jar"/>
+		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-core/${drools.version}/drools-core-${drools.version}.jar"/>
+		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-compiler/${drools.version}/drools-compiler-${drools.version}.jar"/>
 	</target>
 	
 	<target name="ruletask.bar" depends="dist.mkdir">
