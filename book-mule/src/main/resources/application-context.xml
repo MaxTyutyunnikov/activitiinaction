@@ -1,0 +1,22 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" 
+	xmlns:script="http://www.mulesoft.org/schema/mule/scripting"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  				http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
+		     	http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd
+         	http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.1/mule-vm.xsd">
+
+	<spring:beans>
+		<spring:import resource="activiti-application-context.xml" />
+	</spring:beans>
+  
+  <flow name="test">
+		<vm:inbound-endpoint path="in" exchange-pattern="request-response" />
+		<script:transformer>
+			<script:script engine="groovy">return 10</script:script>
+		</script:transformer>
+	</flow>
+
+</mule>
