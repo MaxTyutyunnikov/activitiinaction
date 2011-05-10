@@ -11,7 +11,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<activiti-version>5.0</activiti-version>
+		<activiti-version>5.3</activiti-version>
 		<spring-version>3.0.3.RELEASE</spring-version>
 	</properties>
 

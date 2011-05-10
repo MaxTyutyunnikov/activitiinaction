@@ -32,11 +32,6 @@
 			<version>${activiti-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-camel</artifactId>
-			<version>5.5-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.2.132</version>
