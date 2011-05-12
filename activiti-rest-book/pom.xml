@@ -4,13 +4,13 @@
 
 	<name>Activiti - Rest</name>
 	<groupId>org.bpmnwithactivti</groupId>
-	<artifactId>activiti-rest-book</artifactId>
+	<artifactId>book-rest-app</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 
 	<properties>
-		<activiti-version>5.3</activiti-version>
-		<spring-version>3.0.3.RELEASE</spring-version>
+		<activiti-version>5.5</activiti-version>
+		<spring-version>3.0.4.RELEASE</spring-version>
 		<spring-surf-version>1.0.0-RC2</spring-surf-version>
 	</properties>
 
@@ -30,7 +30,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<warName>activiti-rest</warName>
+					<warName>book-rest-app</warName>
 					<attachClasses>true</attachClasses>
 				</configuration>
 			</plugin>
