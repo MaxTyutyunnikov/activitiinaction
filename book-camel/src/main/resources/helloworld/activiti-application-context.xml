@@ -26,7 +26,7 @@
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="deploymentResources"
-			value="classpath*:bookorder.bpmn20.xml" />
+			value="classpath*:helloworld/helloworld.bpmn20.xml" />
 		<property name="history" value="audit" />
 		<property name="jobExecutorActivate" value="false" />
 	</bean>
