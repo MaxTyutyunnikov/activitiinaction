@@ -5,7 +5,7 @@
 	<artifactId>book-camel</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>BPMN 2.0 with Activiti - Mule examples</name>
+	<name>BPMN 2.0 with Activiti - Camel examples</name>
 
 	<properties>
 		<activiti-version>5.5</activiti-version>

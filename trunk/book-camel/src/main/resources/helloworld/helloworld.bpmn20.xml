@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	targetNamespace="http://www.bpmnwithactiviti.org"
+	xmlns:activiti="http://activiti.org/bpmn">
+
+	<process id="helloCamelProcess">
+		<startEvent id="start" />
+		<sequenceFlow sourceRef="start" targetRef="serviceTask1" />
+		<serviceTask id="serviceTask1"
+			activiti:delegateExpression="${camel}" />
+		<sequenceFlow sourceRef="serviceTask1" targetRef="userTask1" />
+		<userTask id="userTask1" name="HelloTask" activiti:assignee="kermit"/>
+		<sequenceFlow sourceRef="userTask1" targetRef="end" />
+		<endEvent id="end" />
+	</process>
+</definitions>

@@ -6,7 +6,7 @@
 
 	<camelContext id="camelProcess" xmlns="http://camel.apache.org/schema/spring">
 		<packageScan>
-			<package>org.bpmnwithactiviti.chapter9.camel</package>
+			<package>org.bpmnwithactiviti.chapter9.camel.helloworld</package>
 		</packageScan>
 	</camelContext>
 
@@ -15,7 +15,7 @@
 		<constructor-arg index="0">
 			<list>
 				<bean class="org.activiti.camel.SimpleContextProvider">
-					<constructor-arg index="0" value="bookorder" />
+					<constructor-arg index="0" value="helloCamelProcess" />
 					<constructor-arg index="1" ref="camelProcess" />
 				</bean>
 			</list>

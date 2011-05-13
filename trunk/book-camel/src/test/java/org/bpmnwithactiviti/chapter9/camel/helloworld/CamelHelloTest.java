@@ -1,9 +1,10 @@
-package org.bpmnwithactiviti.chapter9.camel;
+package org.bpmnwithactiviti.chapter9.camel.helloworld;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
 
+import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
@@ -18,12 +19,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:application-context.xml")
-public class CamelTest extends AbstractTest {
+@ContextConfiguration("classpath:helloworld/application-context.xml")
+public class CamelHelloTest extends AbstractTest {
 
 	@Autowired
 	private CamelContext camelContext;
 
+	@Autowired
+  private RuntimeService runtimeService;
+	
 	@Autowired
 	private TaskService taskService;
 	
@@ -34,9 +38,10 @@ public class CamelTest extends AbstractTest {
 	@Test
 	public void simpleProcessTest() {
     ProducerTemplate tpl = camelContext.createProducerTemplate();
-    String instanceId = (String) tpl.requestBody("direct:start", Collections.singletonMap("isbn", "1234"));
+    String instanceId = (String) tpl.requestBody("direct:start", Collections.singletonMap("var1", "hello"));
+    assertEquals("world", runtimeService.getVariable(instanceId, "var2"));
 		Task task = taskService.createTaskQuery().singleResult();
-		assertEquals("Complete order", task.getName());
+		assertEquals("HelloTask", task.getName());
 		taskService.complete(task.getId());
 	}
 }
