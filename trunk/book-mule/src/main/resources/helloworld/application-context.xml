@@ -12,10 +12,10 @@
 		<spring:import resource="activiti-application-context.xml" />
 	</spring:beans>
   
-  <flow name="test">
+  <flow name="MuleHello">
 		<vm:inbound-endpoint path="in" exchange-pattern="request-response" />
 		<script:transformer>
-			<script:script engine="groovy">return 10</script:script>
+			<script:script engine="groovy">return 'world'</script:script>
 		</script:transformer>
 	</flow>
 

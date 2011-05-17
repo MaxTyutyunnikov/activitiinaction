@@ -47,8 +47,18 @@
       <version>${mule-version}</version>
     </dependency>
     <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-file</artifactId>
+      <version>${mule-version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.mule.modules</groupId>
       <artifactId>mule-module-scripting</artifactId>
+      <version>${mule-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mule.modules</groupId>
+      <artifactId>mule-module-xml</artifactId>
       <version>${mule-version}</version>
     </dependency>
 		<dependency>

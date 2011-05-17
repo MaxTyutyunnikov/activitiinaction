@@ -10,7 +10,6 @@
 		</packageScan>
 	</camelContext>
 
-
 	<bean id="camel" class="org.activiti.camel.CamelBehaviour">
 		<constructor-arg index="0">
 			<list>
