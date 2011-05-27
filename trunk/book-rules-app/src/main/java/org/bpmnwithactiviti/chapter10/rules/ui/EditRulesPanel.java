@@ -53,16 +53,16 @@ public class EditRulesPanel extends Panel {
 		deploymentTable = new DeploymentTable();
 		try {
 			Collection<Deployment> deployments = ActivitiDelegate.getDeployments();
-			for (final Deployment d : deployments) {
+			for (final Deployment deployment : deployments) {
 				Button rulesButton = new Button("show rules");
-				rulesButton.setData(d);
+				rulesButton.setData(deployment);
 				rulesButton.addListener(new Button.ClickListener() {
 
 					private static final long serialVersionUID = 1L;
 
 					public void buttonClick(ClickEvent event) {
 						List<String> deployedFileNames = ActivitiDelegate
-								.getDeployedResourceNames(d.getId());
+								.getDeployedResourceNames(deployment.getId());
 						Collection<String> deployedRuleFiles = new ArrayList<String>();
 						for (String s : deployedFileNames) {
 							if (s.endsWith(".drl")) {
@@ -71,8 +71,7 @@ public class EditRulesPanel extends Panel {
 							}
 						}
 						if (deployedRuleFiles.size() > 0) {
-							initRuleFileTable(layout, d,
-									deployedRuleFiles);
+							initRuleFileTable(layout, deployment, deployedRuleFiles);
 						} else {
 							viewManager
 									.getApplication()
@@ -84,9 +83,8 @@ public class EditRulesPanel extends Panel {
 					}
 				});
 				rulesButton.addStyleName("link");
-				deploymentTable
-						.addItem(new Object[] { d.getId(), d.getName(),
-								rulesButton }, d.getId());
+				deploymentTable.addItem(new Object[] { deployment.getId(), 
+						deployment.getName(), rulesButton }, deployment.getId());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +94,7 @@ public class EditRulesPanel extends Panel {
 
 	protected void initRuleFileTable(GridLayout layout,
 			final Deployment d, Collection<String> ruleFileNames) {
-		System.out.println("Initing rule table");
+		
 		RuleFileTable ruleTable = new RuleFileTable();
 		layout.addComponent(ruleTable);
 		for (final String s : ruleFileNames) {
@@ -106,7 +104,6 @@ public class EditRulesPanel extends Panel {
 
 				private static final long serialVersionUID = 1L;
 
-				@SuppressWarnings("deprecation")
 				public void buttonClick(ClickEvent event) {
 					String ruleFileContent;
 					try {
@@ -116,7 +113,7 @@ public class EditRulesPanel extends Panel {
 						addComponent(vl);
 						final TextArea ruleField = new TextArea();
 						ruleField.setRows(20);
-						ruleField.setColumns(48);
+						ruleField.setColumns(70);
 						ruleField.setValue(ruleFileContent);
 						vl.addComponent(ruleField);
 						Button deployEditedRuleButton = new Button("Deploy Edited Rule");

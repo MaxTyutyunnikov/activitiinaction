@@ -70,14 +70,19 @@ public class ActivitiDelegate {
 		}
 	}
 
-	public static void deployEditedRule(Deployment d, String ruleFileName,
-			String drlContent) {
-		logger.info("Ready to deploy " + ruleFileName + " in deployment " + d.getId());
+	public static void deployEditedRule(Deployment deployment, String ruleFileName, String drlContent) {
+		logger.info("Ready to deploy " + ruleFileName + " in deployment " + deployment.getId());
 		RepositoryService repositoryService = processEngine.getRepositoryService();
+		List<String> fileNames = getRepositoryService().getDeploymentResourceNames(deployment.getId());
 		DeploymentBuilder builder = repositoryService.createDeployment();
-		builder.addClasspathResource("loanrequest.bpmn20.xml");
+		for (String file : fileNames) {
+			if(file.endsWith(".drl") == false && file.endsWith(".DRL") == false) {
+				InputStream resourceStream = getRepositoryService().getResourceAsStream(deployment.getId(), file);
+				builder.addInputStream(file, resourceStream);
+			}
+		}
 		builder.addString(ruleFileName, drlContent);
-		builder.name(d.getName());
+		builder.name(deployment.getName());
 		builder.deploy();
 	}
 
