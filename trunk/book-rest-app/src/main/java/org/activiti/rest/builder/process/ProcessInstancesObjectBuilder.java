@@ -1,15 +1,14 @@
 package org.activiti.rest.builder.process;
 
+import java.util.List;
+import java.util.Map;
+
 import org.activiti.engine.history.HistoricProcessInstance;
-import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.rest.builder.BaseJSONObjectBuilder;
 import org.activiti.rest.util.JSONUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.List;
-import java.util.Map;
 
 public class ProcessInstancesObjectBuilder extends BaseJSONObjectBuilder {
 

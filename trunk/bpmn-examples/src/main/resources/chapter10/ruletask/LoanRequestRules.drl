@@ -1,23 +1,21 @@
 package org.bpmnwithactiviti.chapter10.rules
 
 import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
-import org.bpmnwithactiviti.chapter10.LoanApplication;
-import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
+import org.bpmnwithactiviti.chapter10.model.LoanApplication;
 
 rule "CreditCheckRule"
     
 	when
 		la: LoanApplicant(income > (2 * loanAmount))
-		res : CreditCheckResult()
 	then
-		res.setCreditCheckPassed(true);
+		la.setCheckCreditOk(true);
 
 end
 
 rule "LoanApplicationEvaluationRule_1"
     
 	when
-		la: LoanApplication((creditCheckOk == true) && (requestedAmount < 100000))
+		la: LoanApplication((applicant.isCheckCreditOk == true) && (applicant.getLoanAmount < 100000))
 	then
 		la.setStatus("approved");
 
@@ -26,16 +24,16 @@ end
 rule "LoanApplicationEvaluationRule_2"
     
 	when
-		la: LoanApplication((creditCheckOk == true) && (requestedAmount >= 100000))
+		la: LoanApplication((applicant.isCheckCreditOk == true) && (applicant.getLoanAmount >= 100000))
 	then
-		la.setStatus("needsManagerApproval");
+		la.setStatus("needs manager approval");
 
 end
 
 rule "LoanApplicationEvaluationRule_3"
     
 	when
-		la: LoanApplication(creditCheckOk == false)
+		la: LoanApplication(applicant.isCheckCreditOk == false)
 	then
 		la.setStatus("denied");
 

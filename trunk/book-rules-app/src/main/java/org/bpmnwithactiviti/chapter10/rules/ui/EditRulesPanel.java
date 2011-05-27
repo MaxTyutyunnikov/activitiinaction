@@ -9,12 +9,12 @@ import org.apache.log4j.Logger;
 import org.bpmnwithactiviti.chapter10.rules.ActivitiDelegate;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
-import com.vaadin.ui.TextField;
+import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Window.Notification;
 import com.vaadin.ui.themes.Reindeer;
 
@@ -114,7 +114,7 @@ public class EditRulesPanel extends Panel {
 						initSubTitle();
 						VerticalLayout vl = new VerticalLayout();
 						addComponent(vl);
-						final TextField ruleField = new TextField();
+						final TextArea ruleField = new TextArea();
 						ruleField.setRows(20);
 						ruleField.setColumns(48);
 						ruleField.setValue(ruleFileContent);

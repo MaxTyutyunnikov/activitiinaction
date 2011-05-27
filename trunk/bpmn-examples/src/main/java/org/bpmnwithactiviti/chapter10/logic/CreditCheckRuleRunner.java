@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
 import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -13,6 +12,7 @@ import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderErrors;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
+import org.drools.command.Command;
 import org.drools.command.CommandFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
@@ -21,20 +21,16 @@ import org.drools.runtime.ExecutionResults;
 import org.drools.runtime.StatelessKnowledgeSession;
 
 public class CreditCheckRuleRunner {
-	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static CreditCheckResult runRules(
-			LoanApplicant loanApplicant)
-			throws Exception {
+
+	public static boolean runRules(LoanApplicant loanApplicant) throws Exception {
 
 		KnowledgeBase kbase = readKnowledgeBase();
 		StatelessKnowledgeSession ksession = kbase.newStatelessKnowledgeSession();
 	
-		List cmds = new ArrayList();
+		@SuppressWarnings("rawtypes")
+		List<Command> cmds = new ArrayList<Command>();
 
-		cmds.add(CommandFactory.newInsert(loanApplicant, loanApplicant.getName()));
-		cmds.add(CommandFactory.newInsert(new CreditCheckResult(), "creditCheckResult"));
-
+		cmds.add(CommandFactory.newInsert(loanApplicant, "loanApplicant"));
 
 		KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory
 				.newFileLogger(ksession, "CreditChecker");
@@ -43,17 +39,16 @@ public class CreditCheckRuleRunner {
 		ExecutionResults results = ksession.execute(CommandFactory
 				.newBatchExecution(cmds));
 
-		CreditCheckResult creditCheckResult = (CreditCheckResult) results.getValue("creditCheckResult");
+		loanApplicant = (LoanApplicant) results.getValue("loanApplicant");
 		logger.close();
 
-		System.out.println("Done firing.. --> result = " + creditCheckResult.isCreditCheckPassed());
+		System.out.println("Done firing.. --> result = " + loanApplicant.isCheckCreditOk());
 
-		return creditCheckResult;
+		return loanApplicant.isCheckCreditOk();
 	}
 
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
-		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
-				.newKnowledgeBuilder();
+		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbuilder.add(
 				ResourceFactory.newClassPathResource("chapter10" + File.separator + "rules" 
 				        + File.separator + "CreditCheck.drl"),
