@@ -26,6 +26,10 @@ public class EditRulesPanel extends Panel {
 	// ui
 	protected Label titleLabel;
 	private DeploymentTable deploymentTable;
+	private RuleFileTable ruleTable;
+	private TextArea ruleField;
+	private Deployment selectedDeployment;
+	private String selectedRuleFile;
 
 	// dependencies
 	protected ViewManager viewManager;
@@ -47,6 +51,8 @@ public class EditRulesPanel extends Panel {
 		layout.setSpacing(true);
 		addComponent(layout);
 		initProcessTable(layout);
+		initRuleFileTable(layout);
+		initRuleField();
 	}
 
 	protected void initProcessTable(final GridLayout layout) {
@@ -61,6 +67,9 @@ public class EditRulesPanel extends Panel {
 					private static final long serialVersionUID = 1L;
 
 					public void buttonClick(ClickEvent event) {
+						if(ruleField != null) {
+							ruleField.setValue("");
+						}
 						List<String> deployedFileNames = ActivitiDelegate
 								.getDeployedResourceNames(deployment.getId());
 						Collection<String> deployedRuleFiles = new ArrayList<String>();
@@ -71,7 +80,7 @@ public class EditRulesPanel extends Panel {
 							}
 						}
 						if (deployedRuleFiles.size() > 0) {
-							initRuleFileTable(layout, deployment, deployedRuleFiles);
+							fillRuleFileTable(deployment, deployedRuleFiles);
 						} else {
 							viewManager
 									.getApplication()
@@ -91,51 +100,59 @@ public class EditRulesPanel extends Panel {
 		}
 		layout.addComponent(deploymentTable);
 	}
+	
+	protected void initRuleFileTable(GridLayout layout) {
+		ruleTable = new RuleFileTable();
+		layout.addComponent(ruleTable, 1, 0);
+	}
+	
+	protected void initRuleField() {
+		initSubTitle();
+		VerticalLayout vl = new VerticalLayout();
+		addComponent(vl);
+		ruleField = new TextArea();
+		ruleField.setRows(20);
+		ruleField.setColumns(70);
+		vl.addComponent(ruleField);
+		Button deployEditedRuleButton = new Button("Deploy Edited Rule");
+		deployEditedRuleButton.setWidth("300px");
+		deployEditedRuleButton.addListener(new Button.ClickListener() {
 
-	protected void initRuleFileTable(GridLayout layout,
-			final Deployment d, Collection<String> ruleFileNames) {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				ActivitiDelegate.deployEditedRule(selectedDeployment, selectedRuleFile, ruleField.getValue().toString());
+				viewManager.switchWorkArea(ViewManager.EDIT_RULES, new EditRulesPanel(viewManager));
+			}
+		});
+		Label emptyLabel = new Label("");
+		emptyLabel.setHeight("1.5em");
+		vl.addComponent(emptyLabel);
+		vl.addComponent(deployEditedRuleButton);
+	}
+	
+	protected void fillRuleFileTable(final Deployment deployment, 
+			Collection<String> ruleFileNames) {
 		
-		RuleFileTable ruleTable = new RuleFileTable();
-		layout.addComponent(ruleTable);
-		for (final String s : ruleFileNames) {
+		selectedDeployment = deployment;
+		ruleTable.removeAllItems();
+		for (final String ruleFile : ruleFileNames) {
 			Button ruleButton = new Button("show rule");
-			ruleButton.setData(s);
+			ruleButton.setData(ruleFile);
 			ruleButton.addListener(new Button.ClickListener() {
-
+				
 				private static final long serialVersionUID = 1L;
 
 				public void buttonClick(ClickEvent event) {
-					String ruleFileContent;
 					try {
-						ruleFileContent = ActivitiDelegate.getRuleResource(d.getId(), s);
-						initSubTitle();
-						VerticalLayout vl = new VerticalLayout();
-						addComponent(vl);
-						final TextArea ruleField = new TextArea();
-						ruleField.setRows(20);
-						ruleField.setColumns(70);
+						String ruleFileContent = ActivitiDelegate.getRuleResource(deployment.getId(), ruleFile);
 						ruleField.setValue(ruleFileContent);
-						vl.addComponent(ruleField);
-						Button deployEditedRuleButton = new Button("Deploy Edited Rule");
-						deployEditedRuleButton.setWidth("300px");
-						deployEditedRuleButton.addListener(new Button.ClickListener() {
-
-							private static final long serialVersionUID = 1L;
-
-							@Override
-							public void buttonClick(ClickEvent event) {
-								ActivitiDelegate.deployEditedRule(d, s, ruleField.getValue().toString());
-								viewManager.switchWorkArea(ViewManager.EDIT_RULES, new EditRulesPanel(viewManager));
-							}
-						});
-						Label emptyLabel = new Label("");
-						emptyLabel.setHeight("1.5em");
-						vl.addComponent(emptyLabel);
-						vl.addComponent(deployEditedRuleButton);
+						selectedRuleFile = ruleFile;
+						
 					} catch (Exception e) {
 						e.printStackTrace();
-						viewManager
-								.getApplication()
+						viewManager.getApplication()
 								.getMainWindow()
 								.showNotification(
 										"Something went wrong reading the file..",
@@ -144,7 +161,7 @@ public class EditRulesPanel extends Panel {
 				}
 			});
 			ruleButton.addStyleName("link");
-			ruleTable.addItem(new Object[] { s, ruleButton }, s);
+			ruleTable.addItem(new Object[] { ruleFile, ruleButton }, ruleFile);
 		}
 
 	}
