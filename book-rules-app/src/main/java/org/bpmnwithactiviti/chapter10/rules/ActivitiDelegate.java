@@ -75,7 +75,7 @@ public class ActivitiDelegate {
 		logger.info("Ready to deploy " + ruleFileName + " in deployment " + d.getId());
 		RepositoryService repositoryService = processEngine.getRepositoryService();
 		DeploymentBuilder builder = repositoryService.createDeployment();
-		builder.addClasspathResource("chapter9/loanrequest.bpmn20.xml");
+		builder.addClasspathResource("loanrequest.bpmn20.xml");
 		builder.addString(ruleFileName, drlContent);
 		builder.name(d.getName());
 		builder.deploy();

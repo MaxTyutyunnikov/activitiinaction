@@ -2,7 +2,6 @@ package org.bpmnwithactiviti.chapter10.logic;
 
 import java.io.File;
 
-import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
 import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.drools.KnowledgeBase;
 import org.drools.builder.DecisionTableConfiguration;
@@ -12,47 +11,25 @@ import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderErrors;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
-import org.drools.compiler.DecisionTableFactory;
 import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
+import org.drools.runtime.StatelessKnowledgeSession;
 
 public class CreditCheckDecisionTableRunner {
 
-	public static CreditCheckResult runRules(LoanApplicant loanApplicant)
-			throws Exception {
-		
+	public static boolean runRules(LoanApplicant loanApplicant) throws Exception {
 		KnowledgeBase kbase = readKnowledgeBase();
-		StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-
-		ksession.insert(loanApplicant);
-		
-		CreditCheckResult result = new CreditCheckResult();
-		ksession.setGlobal("result", result);
-
+		StatelessKnowledgeSession ksession = kbase.newStatelessKnowledgeSession();
 		System.out.println("Fire the rules!");
-		ksession.fireAllRules();
-
-		ksession.dispose();
-
-		return result;
+		ksession.execute(loanApplicant);
+		return loanApplicant.isCheckCreditOk();
 	}
 
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
 		DecisionTableConfiguration dtconf = KnowledgeBuilderFactory
 				.newDecisionTableConfiguration();
 		dtconf.setInputType(DecisionTableInputType.XLS);
-		dtconf.setWorksheetName("CreditCheck");
 		
-		String drl = DecisionTableFactory
-		.loadFromInputStream(ResourceFactory
-			.newClassPathResource("chapter10"
-					+ File.separator + "decisiontable" + File.separator + "CreditCheck.xls")
-			.getInputStream(), dtconf);
-
-		System.out.println(drl);
-		
-		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory
-				.newKnowledgeBuilder();
+		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbuilder.add(
 				ResourceFactory.newClassPathResource("chapter10"
 						+ File.separator + "decisiontable" + File.separator + "CreditCheck.xls"),
@@ -61,11 +38,12 @@ public class CreditCheckDecisionTableRunner {
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();
 		if (errors.size() > 0) {
 			for (KnowledgeBuilderError error : errors) {
-				System.err.println(error);
+				System.err.println("Error parsing " + error);
 			}
 			throw new IllegalArgumentException("Could not parse knowledge.");
 		}
 		KnowledgeBase kbase = kbuilder.newKnowledgeBase();
+		kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
 		return kbase;
 	}
 

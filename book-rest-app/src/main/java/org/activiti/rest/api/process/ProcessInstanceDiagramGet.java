@@ -1,19 +1,19 @@
 package org.activiti.rest.api.process;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
+
 import org.activiti.engine.impl.RepositoryServiceImpl;
 import org.activiti.engine.impl.bpmn.diagram.ProcessDiagramGenerator;
-import org.activiti.engine.impl.repository.ProcessDefinitionEntity;
-import org.activiti.engine.impl.runtime.ExecutionEntity;
+import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
+import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
 import org.activiti.engine.impl.util.IoUtil;
 import org.activiti.rest.util.ActivitiRequest;
 import org.activiti.rest.util.ActivitiStreamingWebScript;
 import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
 import org.springframework.extensions.webscripts.WebScriptResponse;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
 
 
 public class ProcessInstanceDiagramGet extends ActivitiStreamingWebScript {

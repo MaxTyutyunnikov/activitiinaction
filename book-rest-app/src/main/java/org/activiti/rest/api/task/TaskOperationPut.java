@@ -12,14 +12,13 @@
  */
 package org.activiti.rest.api.task;
 
+import java.util.Map;
+
 import org.activiti.rest.util.ActivitiRequest;
-import org.activiti.rest.util.ActivitiRequestObject;
 import org.activiti.rest.util.ActivitiWebScript;
 import org.springframework.extensions.webscripts.Cache;
 import org.springframework.extensions.webscripts.Status;
 import org.springframework.extensions.webscripts.WebScriptException;
-
-import java.util.Map;
 
 /**
  * Performs a given action on a task.

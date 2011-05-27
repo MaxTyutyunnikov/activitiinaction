@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.bpmnwithactiviti.chapter10.logic.CreditCheckDecisionTableRunner;
-import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
 import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.junit.Test;
 
@@ -17,14 +16,13 @@ public class CreditCheckDecisionTableTest {
 		piggy.setIncome(100);
 		piggy.setLoanAmount(50);
 		
-		CreditCheckResult result = null;
-		
+		boolean result = false;
 		try {
 			 result = CreditCheckDecisionTableRunner.runRules(piggy);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		assertFalse(result.isCreditCheckPassed());
+		assertFalse(result);
 	}
 	
 	@Test
@@ -32,17 +30,15 @@ public class CreditCheckDecisionTableTest {
 		LoanApplicant kermit = new LoanApplicant();
 		kermit.setName("Kermit");
 		kermit.setIncome(500);
-		kermit.setLoanAmount(100);
+		kermit.setLoanAmount(50);
 		
-		CreditCheckResult result = null;
-		
+		boolean result = false;
 		try {
 			 result = CreditCheckDecisionTableRunner.runRules(kermit);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		assertTrue(result.isCreditCheckPassed());
+		assertTrue(result);
 	}
 	
 }

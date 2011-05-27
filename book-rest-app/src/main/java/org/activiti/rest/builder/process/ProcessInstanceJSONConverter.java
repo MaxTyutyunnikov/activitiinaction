@@ -16,7 +16,6 @@ package org.activiti.rest.builder.process;
 import java.util.List;
 
 import org.activiti.engine.impl.pvm.PvmProcessInstance;
-import org.activiti.engine.impl.runtime.ExecutionEntity;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.rest.builder.JSONConverter;
 import org.activiti.rest.util.JSONUtil;

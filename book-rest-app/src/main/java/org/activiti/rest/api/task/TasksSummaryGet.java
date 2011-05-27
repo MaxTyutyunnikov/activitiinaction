@@ -12,17 +12,17 @@
  */
 package org.activiti.rest.api.task;
 
-import org.activiti.engine.TaskService;
-import org.activiti.engine.identity.Group;
-import org.activiti.rest.util.ActivitiRequest;
-import org.activiti.engine.identity.GroupQuery;
-import org.activiti.rest.util.ActivitiWebScript;
-import org.springframework.extensions.webscripts.Cache;
-import org.springframework.extensions.webscripts.Status;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.activiti.engine.TaskService;
+import org.activiti.engine.identity.Group;
+import org.activiti.engine.identity.GroupQuery;
+import org.activiti.rest.util.ActivitiRequest;
+import org.activiti.rest.util.ActivitiWebScript;
+import org.springframework.extensions.webscripts.Cache;
+import org.springframework.extensions.webscripts.Status;
 
 /**
  * Creates a summary of a users tasks.
