@@ -11,7 +11,6 @@ import java.util.Map;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter10.model.CreditCheckResult;
 import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
@@ -35,22 +34,19 @@ public class SimpleCreditCheckTest extends AbstractTest {
 		piggy.setLoanAmount(90);
 		
 		variableMap.put("missPiggy", piggy);
-		variableMap.put("CreditCheckResult", new CreditCheckResult());
-
+		
 		ProcessInstance processInstance = activitiRule.getRuntimeService()
 				.startProcessInstanceByKey("creditCheckRuleProcess", variableMap);
 		assertNotNull(processInstance);
-		assertTrue(processInstance.getProcessDefinitionId().startsWith(
-				"creditCheckRuleProcess:1"));
-
+		
 		Collection<Object> ruleOutputList = (Collection<Object>) activitiRule
 				.getRuntimeService().getVariable(processInstance.getId(),
 						"rulesOutput");
 		assertNotNull(ruleOutputList);
 		
 		for(Object obj : ruleOutputList){
-			if(obj instanceof CreditCheckResult){
-				assertFalse(((CreditCheckResult) obj).isCreditCheckPassed());
+			if(obj instanceof LoanApplicant) {
+				assertFalse(((LoanApplicant) obj).isCheckCreditOk());
 			}
 		}
 	}
@@ -67,22 +63,19 @@ public class SimpleCreditCheckTest extends AbstractTest {
 		piggy.setLoanAmount(40);
 		
 		variableMap.put("missPiggy", piggy);
-		variableMap.put("CreditCheckResult", new CreditCheckResult());
-
+		
 		ProcessInstance processInstance = activitiRule.getRuntimeService()
 				.startProcessInstanceByKey("creditCheckRuleProcess", variableMap);
 		assertNotNull(processInstance);
-		assertTrue(processInstance.getProcessDefinitionId().startsWith(
-				"creditCheckRuleProcess:1"));
-
+		
 		Collection<Object> ruleOutputList = (Collection<Object>) activitiRule
 				.getRuntimeService().getVariable(processInstance.getId(),
 						"rulesOutput");
 		assertNotNull(ruleOutputList);
 		
 		for(Object obj : ruleOutputList){
-			if(obj instanceof CreditCheckResult){
-				assertTrue(((CreditCheckResult) obj).isCreditCheckPassed());
+			if(obj instanceof LoanApplicant) {
+				assertTrue(((LoanApplicant) obj).isCheckCreditOk());
 			}
 		}
 	}

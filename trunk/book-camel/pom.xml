@@ -8,8 +8,8 @@
 	<name>BPMN 2.0 with Activiti - Camel examples</name>
 
 	<properties>
-		<activiti-version>5.5</activiti-version>
-		<spring-version>3.0.4.RELEASE</spring-version>
+		<activiti-version>5.6</activiti-version>
+		<spring-version>3.0.5.RELEASE</spring-version>
 	</properties>
 
 	<dependencies>
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-camel</artifactId>
-			<version>5.6-SNAPSHOT</version>
+			<version>5.6</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>

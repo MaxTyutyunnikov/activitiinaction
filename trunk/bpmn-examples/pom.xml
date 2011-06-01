@@ -8,10 +8,10 @@
 	<name>BPMN 2.0 with Activiti - Examples</name>
 
 	<properties>
-		<activiti-version>5.4</activiti-version>
-		<spring-version>3.0.3.RELEASE</spring-version>
+		<activiti-version>5.6</activiti-version>
+		<spring-version>3.0.5.RELEASE</spring-version>
 		<spring-surf-version>1.0.0-RC2</spring-surf-version>
-		<cxf-version>2.3.3</cxf-version>
+		<cxf-version>2.3.4</cxf-version>
 	</properties>
 
 	<dependencies>

@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-version>3.0.5.RELEASE</spring-version>
-		<cxf-version>2.3.3</cxf-version>
+		<cxf-version>2.3.4</cxf-version>
 	</properties>
 
 	<build>
@@ -71,7 +71,6 @@
 	</repositories>
 
 	<dependencies>
-		<!-- Activiti dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
