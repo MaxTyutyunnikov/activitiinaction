@@ -45,16 +45,8 @@ public class RulesDeployerTest extends AbstractTest {
 		ProcessInstance processInstance = activitiRule.getRuntimeService()
 				.startProcessInstanceByKey("rulesDeployment", variableMap);
 		assertNotNull(processInstance);
-		assertTrue(processInstance.getProcessDefinitionId().startsWith(
-				"rulesDeployment:1"));
 		
-		String procId = processInstance.getId();
-
-		Map<String, Object> procVars = activitiRule.getRuntimeService().getVariables(procId);
-		Set<String> keys = procVars.keySet();
-		for(String s : keys){
-			System.out.println("Var = " + s);
-		}
+		Map<String, Object> procVars = activitiRule.getRuntimeService().getVariables(processInstance.getProcessInstanceId());
 		
 		Collection<Object> ruleOutputList = (Collection<Object>) activitiRule
 				.getRuntimeService().getVariable(processInstance.getId(),

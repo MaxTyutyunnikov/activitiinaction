@@ -8,8 +8,8 @@
 	<name>BPMN 2.0 with Activiti - Mule examples</name>
 
 	<properties>
-		<activiti-version>5.6-SNAPSHOT</activiti-version>
-		<spring-version>3.0.4.RELEASE</spring-version>
+		<activiti-version>5.6</activiti-version>
+		<spring-version>3.0.5.RELEASE</spring-version>
 		<mule-version>3.1.1</mule-version>
 	</properties>
 
@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-mule</artifactId>
-			<version>5.6-SNAPSHOT</version>
+			<version>${activiti-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>

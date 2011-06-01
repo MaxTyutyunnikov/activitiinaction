@@ -17,7 +17,6 @@ import org.drools.command.CommandFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
-import org.drools.runtime.ExecutionResults;
 import org.drools.runtime.StatelessKnowledgeSession;
 
 public class CreditCheckRuleRunner {
@@ -36,10 +35,8 @@ public class CreditCheckRuleRunner {
 				.newFileLogger(ksession, "CreditChecker");
 
 		System.out.println("Fire the rules!");
-		ExecutionResults results = ksession.execute(CommandFactory
-				.newBatchExecution(cmds));
-
-		loanApplicant = (LoanApplicant) results.getValue("loanApplicant");
+		ksession.execute(CommandFactory.newBatchExecution(cmds));
+		
 		logger.close();
 
 		System.out.println("Done firing.. --> result = " + loanApplicant.isCheckCreditOk());
