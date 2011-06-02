@@ -18,7 +18,9 @@
 		<sequenceFlow sourceRef="updateCreditCheck" targetRef="evaluateLoanRequest" />
 		<businessRuleTask id="evaluateLoanRequest"
 			activiti:ruleVariablesInput="${loanApplication}"
-			activiti:resultVariable="rulesOutput" activiti:rules="LoanApplicationEvaluationRule_1, LoanApplicationEvaluationRule_2, LoanApplicationEvaluationRule_3" />
+			activiti:resultVariable="rulesOutput"
+			activiti:rules="CreditCheckRule"
+			activiti:exclude="true"/>
 		<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
 		<exclusiveGateway id="approvalGateway" />
 		<sequenceFlow sourceRef="approvalGateway" targetRef="displayResult">

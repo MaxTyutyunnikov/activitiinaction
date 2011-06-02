@@ -12,21 +12,24 @@
 	
 	<target name="dist.mkdir" depends="dist.rmdir">
 		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}/enginelibs" />
+		<mkdir dir="${dist.dir}/deploy" />
 	</target>
 	
 	<target name="ruletask.jar" depends="dist.mkdir">
-	 <jar destfile="${dist.dir}/ruletask.jar"
+	 <jar destfile="${dist.dir}/enginelibs/ruletask.jar"
 	       basedir="../../../../../target/classes"
 	       includes="org/bpmnwithactiviti/chapter10/ruletask/**, org/bpmnwithactiviti/chapter10/model/**"
 	  />
-		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-api/${drools.version}/drools-api-${drools.version}.jar"/>
-		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-core/${drools.version}/drools-core-${drools.version}.jar"/>
-		<copy todir="${dist.dir}" file="${m2.repo}/org/drools/drools-compiler/${drools.version}/drools-compiler-${drools.version}.jar"/>
-		<copy todir="${dist.dir}" file="${m2.repo}/org/mvel/mvel2/2.0.16/mvel2-2.0.16.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-api/${drools.version}/drools-api-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-core/${drools.version}/drools-core-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-compiler/${drools.version}/drools-compiler-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/mvel/mvel2/2.0.16/mvel2-2.0.16.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="activiti-cfg.jar"/>
 	</target>
 	
 	<target name="ruletask.bar" depends="dist.mkdir">
-		 <jar destfile="${dist.dir}/ruletask.bar"
+		 <jar destfile="${dist.dir}/deploy/ruletask.bar"
 		       basedir="." includes="*.bpmn20.xml, *.drl, *.form"
 		  />
 	</target>
