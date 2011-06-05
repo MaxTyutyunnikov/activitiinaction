@@ -39,7 +39,5 @@ public class BookOrderTest {
 		Task task = taskService.createTaskQuery().taskCandidateUser("kermit").singleResult();
 		assertNotNull(task);
 		System.out.println("found task " + task.getName());
-		taskService.complete(task.getId());
 	}
-
 }
