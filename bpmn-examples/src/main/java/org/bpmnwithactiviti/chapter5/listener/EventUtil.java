@@ -3,13 +3,13 @@ package org.bpmnwithactiviti.chapter5.listener;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.DelegateTask;
-import org.activiti.engine.impl.pvm.delegate.ExecutionListenerExecution;
 
 public class EventUtil {
 	
 	@SuppressWarnings("unchecked")
-	public static void addEvent(ExecutionListenerExecution execution, String source) {
+	public static void addEvent(DelegateExecution execution, String source) {
 		List<String> eventList = (List<String>) execution.getVariable("eventList");
 		if(eventList == null) {
 			eventList = new ArrayList<String>();

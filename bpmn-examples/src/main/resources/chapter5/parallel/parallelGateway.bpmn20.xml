@@ -14,10 +14,10 @@
 		<userTask id="backlogEmailTask" name="Read e-mail backlog" activiti:assignee="kermit"/>
 		<sequenceFlow sourceRef="backlogEmailTask" targetRef="join" />
 		<intermediateCatchEvent id="coffeebreak">
-        <timerEventDefinition>
-            <timeDuration>PT30S</timeDuration>
-        </timerEventDefinition>
-    </intermediateCatchEvent>
+	        <timerEventDefinition>
+	            <timeDuration>PT30S</timeDuration>
+	        </timerEventDefinition>
+	    </intermediateCatchEvent>
 		<sequenceFlow sourceRef="coffeebreak" targetRef="doWorkTask" />
 		<userTask id="doWorkTask" name="Do work" activiti:assignee="kermit" />
 		<sequenceFlow sourceRef="doWorkTask" targetRef="join" />
