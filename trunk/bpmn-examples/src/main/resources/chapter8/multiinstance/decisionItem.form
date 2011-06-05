@@ -1,0 +1,23 @@
+<h1>Tentative decision</h1>
+<table>
+  <tr>
+    <td>
+      <label>
+        Decision info:<br/>
+        <input type="text" name="decisionInfo" value="" />
+        <input type="hidden" name="decisionInfo_required" value="true" />
+        <input type="hidden" name="decisionInfo_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        Participants (comma separated):<br/>
+        <input type="text" name="participants" value="" />
+        <input type="hidden" name="participants_required" value="true" />
+        <input type="hidden" name="participants_type" value="String" />
+      </label><br/>
+    </td>
+  </tr>
+</table>

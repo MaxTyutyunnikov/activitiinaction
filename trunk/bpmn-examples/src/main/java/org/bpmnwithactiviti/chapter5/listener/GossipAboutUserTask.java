@@ -1,7 +1,7 @@
 package org.bpmnwithactiviti.chapter5.listener;
 
 import org.activiti.engine.delegate.DelegateTask;
-import org.activiti.engine.impl.pvm.delegate.TaskListener;
+import org.activiti.engine.delegate.TaskListener;
 
 public class GossipAboutUserTask {
 	
