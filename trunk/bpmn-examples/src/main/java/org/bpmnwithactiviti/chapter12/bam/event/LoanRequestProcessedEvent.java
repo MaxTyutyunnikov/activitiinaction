@@ -24,4 +24,9 @@ public class LoanRequestProcessedEvent {
 	public boolean isRequestApproved() {
 		return requestApproved;
 	}
+	
+	@Override
+	public String toString() {
+		return "LoanRequestProcessedEvent{processInstanceId="+processInstanceId+",processedTime="+processedTime+",requestApproved="+requestApproved+"}";
+	}
 }
