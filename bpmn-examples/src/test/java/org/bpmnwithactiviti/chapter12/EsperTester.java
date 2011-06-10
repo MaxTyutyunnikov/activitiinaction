@@ -1,5 +1,7 @@
 package org.bpmnwithactiviti.chapter12;
 
+import junit.framework.Assert;
+
 import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestProcessedEvent;
 import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestReceivedEvent;
 import org.junit.Before;
@@ -17,57 +19,53 @@ import com.espertech.esper.client.time.CurrentTimeEvent;
 
 public class EsperTester {
 	
-	private EPServiceProvider epService;
+	private EPRuntime epRuntime;
+	private EPAdministrator epAdmin;
 
-	private static final long MS_HOUR = 60 * 60 * 1000; // Number of milliseconds per hour
-	
 	@Before
 	public void Setup() {
 		Configuration configuration = new Configuration();
 		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter12.bam.event");
-		epService = EPServiceProviderManager.getDefaultProvider(configuration);
+		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(configuration);
+		epRuntime = epService.getEPRuntime();
+		epAdmin = epService.getEPAdministrator();
 	}
 	
 	@Test
 	public void testMonitoringIncome()
 	{
-		EPAdministrator epAdmin = epService.getEPAdministrator();
-
-		// Monitor income
-		EPStatement epStatement = epAdmin.createEPL(
-			"select avg(income) as avgIncome, max(income) as maxIncome, sum(income) as sumIncome" +
-			" from LoanRequestReceivedEvent.win:time(1 day)");
-		epStatement.addListener(new UpdateListener () {
-			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				System.out.println(">>> avgIncome="+newEvents[0].get("avgIncome")+
-								     ", maxIncome="+newEvents[0].get("maxIncome")+
-								     ", sumIncome="+newEvents[0].get("sumIncome"));
-			}
-		} );
-		
 		// Monitor requestedAmount
-		epStatement = epAdmin.createEPL(
+		EPStatement epStatement = epAdmin.createEPL(
 			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
-			" from LoanRequestReceivedEvent.win:time(4 hours)");
+			" from LoanRequestReceivedEvent.win:time(1 sec)");
 		epStatement.addListener(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				System.out.println(">>> avgRequestedAmount="+newEvents[0].get("avgRequestedAmount")+
+				Assert.assertEquals(1, newEvents.length);
+				Assert.assertNull(oldEvents);
+				System.out.println("<<< avgRequestedAmount="+newEvents[0].get("avgRequestedAmount")+
 								     ", maxRequestedAmount="+newEvents[0].get("maxRequestedAmount")+
 								     ", sumRequestedAmount="+newEvents[0].get("sumRequestedAmount"));
 			}
 		} );
 		
+		sendTestEvents();
+	}
+		
+	@Test
+	public void testMonitoringProcessDuration() {
 		// Monitor process duration.
-		epStatement = epAdmin.createEPL( 
+		EPStatement epStatement = epAdmin.createEPL( 
 			"select avg(endEvent.processedTime - beginEvent.receiveTime) as avgProcessDuration," +
 			" max(endEvent.processedTime - beginEvent.receiveTime) as maxProcessDuration" +
 			" from pattern [" +
 			"	every beginEvent=LoanRequestReceivedEvent" +
 			"   -> endEvent=LoanRequestProcessedEvent(processInstanceId=beginEvent.processInstanceId)" +
-			" ]");
+			" ].win:time(1 hour)");
 		epStatement.addListener(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				System.out.println(">>> avgProcessDuration="+newEvents[0].get("avgProcessDuration")+
+				Assert.assertEquals(1, newEvents.length);
+				Assert.assertNull(oldEvents);
+				System.out.println("<<< avgProcessDuration="+newEvents[0].get("avgProcessDuration")+
 					     		     ", maxProcessDuration="+newEvents[0].get("maxProcessDuration"));
 			}
 		} );
@@ -80,21 +78,29 @@ public class EsperTester {
 
 		// Monitor "Evaluate Loan Request" task duration.
 		// ToDo
+	}
 
-		EPRuntime epRuntime = epService.getEPRuntime();
 
-		// Reset the clock which Esper uses for the time windows.
-		long time = 0;
+	private void sendTestEvents() {
+		sendLoanRequestReceivedEvent (   0, "1", 100);
+		sendLoanRequestReceivedEvent ( 300, "2", 200);
+		sendLoanRequestProcessedEvent( 500, "2", true);
+		sendLoanRequestProcessedEvent( 600, "1", false);
+		sendLoanRequestReceivedEvent (1100, "3", 300);
+		sendLoanRequestProcessedEvent(1400, "3", true);
+	}
+	
+	private void sendLoanRequestReceivedEvent(long time, String processInstanceId, int requestedAmount) {
+		sendEvent(time, new LoanRequestReceivedEvent(processInstanceId, time, requestedAmount));
+	}
+
+	private void sendLoanRequestProcessedEvent(long time, String processInstanceId, boolean requestApproved) {
+		sendEvent(time, new LoanRequestProcessedEvent(processInstanceId, time, requestApproved));
+	}
+	
+	private void sendEvent(long time, Object event) {
+		System.out.println(">>> "+time+" : "+event);
 		epRuntime.sendEvent(new CurrentTimeEvent(time));
-		epRuntime.sendEvent(new LoanRequestReceivedEvent("1", time, 100, 5000));
-		time = 1* 60 * 1000;
-		epRuntime.sendEvent(new CurrentTimeEvent(time));
-		epRuntime.sendEvent(new LoanRequestReceivedEvent("2", time, 500, 4000));
-		time = 10 * 60 * 1000;
-		epRuntime.sendEvent(new CurrentTimeEvent(time));
-		epRuntime.sendEvent(new LoanRequestProcessedEvent("1", time, true));
-		time = 20 * 60 * 1000;
-		epRuntime.sendEvent(new CurrentTimeEvent(time));
-		epRuntime.sendEvent(new LoanRequestProcessedEvent("2", time, false));
+		epRuntime.sendEvent(event);
 	}
 }
