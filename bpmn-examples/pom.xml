@@ -172,6 +172,11 @@
 			<artifactId>drools-transformer-xstream</artifactId>
 			<version>5.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.espertech</groupId>
+			<artifactId>esper</artifactId>
+			<version>4.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
