@@ -33,7 +33,7 @@ public class EsperTester {
 	{
 		EPAdministrator epAdmin = epService.getEPAdministrator();
 
-		// Monitoring income
+		// Monitor income
 		EPStatement epStatement = epAdmin.createEPL(
 			"select avg(income) as avgIncome, max(income) as maxIncome, sum(income) as sumIncome" +
 			" from LoanRequestReceivedEvent.win:time(1 day)");
@@ -45,7 +45,7 @@ public class EsperTester {
 			}
 		} );
 		
-		// Monitoring requestedAmount
+		// Monitor requestedAmount
 		epStatement = epAdmin.createEPL(
 			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
 			" from LoanRequestReceivedEvent.win:time(4 hours)");
@@ -57,7 +57,7 @@ public class EsperTester {
 			}
 		} );
 		
-		// Monitoring process duration.
+		// Monitor process duration.
 		epStatement = epAdmin.createEPL( 
 			"select avg(endEvent.processedTime - beginEvent.receiveTime) as avgProcessDuration," +
 			" max(endEvent.processedTime - beginEvent.receiveTime) as maxProcessDuration" +
@@ -72,6 +72,14 @@ public class EsperTester {
 			}
 		} );
 
+		// Monitor number of approved vs. disapproved loan requests.
+		// ToDo
+		
+		// Monitor "Evaluate Loan Request" task workload.
+		// ToDo
+
+		// Monitor "Evaluate Loan Request" task duration.
+		// ToDo
 
 		EPRuntime epRuntime = epService.getEPRuntime();
 
