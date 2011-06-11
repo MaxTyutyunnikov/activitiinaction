@@ -6,11 +6,13 @@ public class LoanRequestProcessedEvent {
 	private final String processInstanceId;
 	private final long processedTime;
 	private final boolean requestApproved;
+	private final int requestedAmount;
 
-	public LoanRequestProcessedEvent(String processInstanceId, long processedTime, boolean requestApproved) {
+	public LoanRequestProcessedEvent(String processInstanceId, long processedTime, boolean requestApproved, int requestedAmount) {
 		this.processInstanceId = processInstanceId;
 		this.processedTime = processedTime;
 		this.requestApproved = requestApproved;
+		this.requestedAmount = requestedAmount;
 	}
 
 	public String getProcessInstanceId() {
@@ -25,8 +27,12 @@ public class LoanRequestProcessedEvent {
 		return requestApproved;
 	}
 	
+	public int getRequestedAmount() {
+		return requestedAmount;
+	}
+
 	@Override
 	public String toString() {
-		return "LoanRequestProcessedEvent{processInstanceId="+processInstanceId+",processedTime="+processedTime+",requestApproved="+requestApproved+"}";
+		return "LoanRequestProcessedEvent{processInstanceId="+processInstanceId+",processedTime="+processedTime+",requestApproved="+requestApproved+",requestedAmount="+requestedAmount+"}";
 	}
 }

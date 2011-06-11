@@ -45,7 +45,7 @@ public class EsperTester {
 		
 		EPStatement epStatement = epAdmin.createEPL(
 			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
-			" from LoanRequestReceivedEvent.win:time(1 sec)");
+			" from LoanRequestReceivedEvent.win:length(3)");
 		
 		epStatement.addListener(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
@@ -62,19 +62,14 @@ public class EsperTester {
 		} );
 		
 		assertMRA(null, null, null);
-		sendLoanRequestReceivedEvent (   0, "1", 100);
+		sendEvent(new LoanRequestReceivedEvent("1",   0, 100));
 		assertMRA(100.0, 100, 100);
-		sendLoanRequestReceivedEvent ( 300, "2", 200);
+		sendEvent(new LoanRequestReceivedEvent("2", 300, 200));
 		assertMRA(150.0, 200, 300);
-		sendLoanRequestProcessedEvent( 500, "2", true);
-		assertMRA(null, null, null);
-		sendLoanRequestProcessedEvent( 600, "1", false);
-		assertMRA(null, null, null);
-		sendLoanRequestReceivedEvent (1100, "3", 300);
-		assertMRA(200.0, 200, 200);
-		assertMRA(250.0, 300, 500);
-		sendLoanRequestProcessedEvent(1400, "3", true);
-		assertMRA(300.0, 300, 300);
+		sendEvent(new LoanRequestReceivedEvent("3", 600, 300));
+		assertMRA(200.0, 300, 600);
+		sendEvent(new LoanRequestReceivedEvent("4", 900, 400));
+		assertMRA(300.0, 400, 900);
 		
 		epStatement.destroy();
 	}
@@ -84,6 +79,52 @@ public class EsperTester {
 		Assert.assertEquals(avgRequestedAmount, avgRequestedAmountQueue.poll());
 		Assert.assertEquals(maxRequestedAmount, maxRequestedAmountQueue.poll());
 		Assert.assertEquals(sumRequestedAmount, sumRequestedAmountQueue.poll());
+	}
+
+	private Queue<Long> numLoansQueue = new LinkedList<Long>();
+	private Queue<Integer> sumLoanedAmountQueue = new LinkedList<Integer>();
+	
+	@Test
+	public void testMonitoringLoanedAmount() {
+		System.out.println("---------- Start monitoring loaned amount ----------");
+		
+		EPStatement epStatement = epAdmin.createEPL(
+			"select count(*) as numLoans, sum(requestedAmount) as sumLoanedAmount from LoanRequestProcessedEvent(requestApproved=true).win:time(1 sec)");
+		
+		epStatement.addListener(new UpdateListener () {
+			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
+				Assert.assertEquals(1, newEvents.length);
+				Assert.assertNull(oldEvents);
+				Long numLoans = (Long) newEvents[0].get("numLoans");
+				Integer sumLoanedAmount = (Integer) newEvents[0].get("sumLoanedAmount");
+				System.out.println("<<< numLoans="+numLoans+", sumLoanedAmount="+sumLoanedAmount);
+				numLoansQueue.add(numLoans);
+				sumLoanedAmountQueue.add(sumLoanedAmount);
+			}
+		} );
+		
+		assertMAP(null, null);
+		sendLoanRequestProcessedEvent(   0, "1", true, 100);
+		assertMAP(1L, 100);
+		sendLoanRequestProcessedEvent( 300, "2", true, 200);
+		assertMAP(2L, 300);
+		sendLoanRequestProcessedEvent( 600, "3", false, 1000);
+		assertMAP(null, null);
+		sendLoanRequestProcessedEvent( 900, "4", true, 300);
+		assertMAP(3L, 600);
+		sendLoanRequestProcessedEvent(1200, "5", true, 400);
+		assertMAP(2L, 500);
+		assertMAP(3L, 900);
+		sendLoanRequestProcessedEvent(1400, "6", false, 900);
+		assertMAP(2L, 700);
+		
+		epStatement.destroy();
+	}
+
+	// Assert Monitored Approved Requests
+	private void assertMAP(Long numLoans, Integer sumLoanedAmount) {
+		Assert.assertEquals(numLoans, numLoansQueue.poll());
+		Assert.assertEquals(sumLoanedAmount, sumLoanedAmountQueue.poll());
 	}
 
 	private Queue<Double> avgProcessDurationQueue = new LinkedList<Double>();
@@ -118,13 +159,13 @@ public class EsperTester {
 		assertMPD(null, null);
 		sendLoanRequestReceivedEvent ( 300, "2", 200);
 		assertMPD(null, null);
-		sendLoanRequestProcessedEvent( 400, "2", true);
+		sendLoanRequestProcessedEvent( 400, "2", true, 200);
 		assertMPD(100.0, 100L);
-		sendLoanRequestProcessedEvent( 600, "1", false);
+		sendLoanRequestProcessedEvent( 600, "1", true, 100);
 		assertMPD(350.0, 600L);
 		sendLoanRequestReceivedEvent (1100, "3", 300);
 		assertMPD(null, null);
-		sendLoanRequestProcessedEvent(1400, "3", true);
+		sendLoanRequestProcessedEvent(1400, "3", true, 300);
 		assertMPD(600.0, 600L);
 		assertMPD(450.0, 600L);
 
@@ -137,21 +178,19 @@ public class EsperTester {
 		Assert.assertEquals(maxProcessDuration, maxProcessDurationQueue.poll());
 	}
 
-	@Test
-	public void testMonitoringDisapprovedRequests() {
-		// Monitor number of approved vs. disapproved loan requests.
-		// ToDo
-		
-	}
-
 	private void sendLoanRequestReceivedEvent(long time, String processInstanceId, int requestedAmount) {
 		sendEvent(time, new LoanRequestReceivedEvent(processInstanceId, time, requestedAmount));
 	}
 
-	private void sendLoanRequestProcessedEvent(long time, String processInstanceId, boolean requestApproved) {
-		sendEvent(time, new LoanRequestProcessedEvent(processInstanceId, time, requestApproved));
+	private void sendLoanRequestProcessedEvent(long time, String processInstanceId, boolean requestApproved, int loanedAmount) {
+		sendEvent(time, new LoanRequestProcessedEvent(processInstanceId, time, requestApproved, loanedAmount));
 	}
 	
+	private void sendEvent(Object event) {
+		System.out.println(">>> "+event);
+		epRuntime.sendEvent(event);
+	}
+
 	private void sendEvent(long time, Object event) {
 		System.out.printf(">>> %1$4d : %2$s\n", time, event);
 		epRuntime.sendEvent(new CurrentTimeEvent(time));
