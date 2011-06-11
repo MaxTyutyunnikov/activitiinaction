@@ -20,7 +20,7 @@ import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 import com.espertech.esper.client.time.CurrentTimeEvent;
 
-public class EsperTester {
+public class EsperTest {
 	
 	private EPRuntime epRuntime;
 	private EPAdministrator epAdmin;
