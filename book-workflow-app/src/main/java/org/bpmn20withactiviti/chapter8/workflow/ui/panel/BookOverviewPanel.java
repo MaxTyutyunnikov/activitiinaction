@@ -10,23 +10,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bpmn20withactiviti.chapter7.workflow.ui.panel;
+package org.bpmn20withactiviti.chapter8.workflow.ui.panel;
 
-import org.bpmn20withactiviti.chapter7.workflow.ui.ViewManager;
-import org.bpmn20withactiviti.chapter7.workflow.ui.context.ContextHelper;
-import org.bpmn20withactiviti.chapter7.workflow.ui.popup.ErrorPopupWindow;
+import java.util.List;
 
-import com.vaadin.ui.Button;
+import org.activiti.engine.runtime.ProcessInstance;
+import org.bpmn20withactiviti.chapter8.workflow.ui.ViewManager;
+import org.bpmn20withactiviti.chapter8.workflow.ui.context.ContextHelper;
+import org.bpmn20withactiviti.chapter8.workflow.ui.table.BookProjectTable;
+
+import com.vaadin.data.Item;
 import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.Reindeer;
 
-public class CreateBookProjectPanel extends Panel {
+public class BookOverviewPanel extends Panel {
 
 	protected static final long serialVersionUID = -2074647293591779784L;
 
@@ -37,12 +39,13 @@ public class CreateBookProjectPanel extends Panel {
 	protected Label titleLabel;
 	protected TextField nameField;
 	protected TextField descriptionField;
+	protected Table projectTable;
 
 	// dependencies
 	protected ViewManager viewManager;
 	protected ContextHelper context;
 
-	public CreateBookProjectPanel(ViewManager viewManager) {
+	public BookOverviewPanel(ViewManager viewManager) {
 		this.viewManager = viewManager;
 		init();
 	}
@@ -63,12 +66,12 @@ public class CreateBookProjectPanel extends Panel {
 
 		initNameField(layout);
 		initDescriptionField(layout);
-		initButtons(layout);
+		initProjectTable(layout);
 	}
 
 	protected void initTitle() {
 		VerticalLayout verticalLayout = new VerticalLayout();
-		titleLabel = new Label("Create book project");
+		titleLabel = new Label("My books");
 		titleLabel.setStyleName(Reindeer.LABEL_H1);
 		verticalLayout.addComponent(titleLabel);
 
@@ -98,34 +101,18 @@ public class CreateBookProjectPanel extends Panel {
 		layout.addComponent(descriptionField);
 	}
 
-	protected void initButtons(GridLayout layout) {
-		final Button startButton = new Button("Start process");
-		startButton.addListener(new Button.ClickListener() {
+	protected void initProjectTable(GridLayout layout) {
+	    projectTable = new BookProjectTable();
+	    List<ProcessInstance> instanceList = context.getRuntimeService().createProcessInstanceQuery().list();
+	    for (ProcessInstance processInstance : instanceList) {
+	    	Object newItemId = projectTable.addItem();
+	        Item newItem = projectTable.getItem(newItemId);
 
-			private static final long serialVersionUID = 1L;
-
-			public void buttonClick(ClickEvent event) {
-				try {
-					context.getRuntimeService().startProcessInstanceByKey("bookdevelopment");
-					Panel successPanel = new Panel();
-					successPanel.setStyleName(Reindeer.PANEL_LIGHT);
-					Label successLabel = new Label(
-							"Process successfully deployed");
-					successPanel.addComponent(successLabel);
-					viewManager.switchWorkArea(
-							ViewManager.PROJECT_CREATED,
-							successPanel);
-				} catch (Exception e) {
-					viewManager.showPopupWindow(new ErrorPopupWindow(e));
-				}
-			}
-		});
-
-		HorizontalLayout footer = new HorizontalLayout();
-		footer.setSpacing(true);
-		footer.addComponent(startButton);
-		layout.addComponent(new Label());
-		layout.addComponent(footer);
-	}
+	        newItem.getItemProperty("id").setValue(processInstance.getProcessInstanceId());
+	        newItem.getItemProperty("name").setValue(processInstance.getBusinessKey());
+		}
+	    layout.addComponent(new Label("Book projects"));
+	    layout.addComponent(projectTable);
+	  }
 
 }

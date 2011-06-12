@@ -1,4 +1,4 @@
-package org.bpmn20withactiviti.chapter7.workflow.ui.context;
+package org.bpmn20withactiviti.chapter8.workflow.ui.context;
 
 import javax.servlet.ServletContext;
 
