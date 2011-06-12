@@ -1,4 +1,4 @@
-package org.bpmn20withactiviti.chapter7.workflow.ui.table;
+package org.bpmn20withactiviti.chapter8.workflow.ui.table;
 
 import com.vaadin.ui.Table;
 

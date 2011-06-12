@@ -1,6 +1,6 @@
-package org.bpmn20withactiviti.chapter7.workflow.ui.panel;
+package org.bpmn20withactiviti.chapter8.workflow.ui.panel;
 
-import org.bpmn20withactiviti.chapter7.workflow.ui.ViewManager;
+import org.bpmn20withactiviti.chapter8.workflow.ui.ViewManager;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Panel;

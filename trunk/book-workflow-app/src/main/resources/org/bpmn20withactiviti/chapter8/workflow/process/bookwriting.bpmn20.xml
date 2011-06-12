@@ -1,0 +1,37 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/multiinstance">
+
+	<process id="bookWritingProcess" name="Book writing process">
+		<startEvent id="theStart"/>
+		<sequenceFlow sourceRef="theStart" targetRef="fillInBookInfo" />
+		<userTask id="fillInBookInfo" activiti:candidateGroups="manning" />
+		<sequenceFlow sourceRef="fillInBookInfo" targetRef="createBookProject"/>
+		<serviceTask id="createBookProject" activiti:class="org.bpmnwithactiviti.chapter8.book.CreateBookProject" />
+		<sequenceFlow sourceRef="createBookProject" targetRef="bookWritingSubProcess"/>
+		<subProcess id="bookWritingSubProcess">
+			<multiInstanceLoopCharacteristics isSequential="false" 
+		     		activiti:collection="bookProject.chapterList" activiti:elementVariable="chapter" />
+		     		
+			<startEvent id="theStartSubProcess" />
+			<sequenceFlow sourceRef="theStartSubProcess" targetRef="decisionTask" />
+			<userTask id="submitChapterDraft" name="Submit chapter draft" activiti:candidateUsers="${bookProject.authors}" />
+			<sequenceFlow sourceRef="submitChapterDraft" targetRef="reviewChapter" />
+			<userTask id="reviewChapter" name="Review chapter" activiti:assignee="${bookProject.reviewer}" />
+			<sequenceFlow sourceRef="reviewChapter" targetRef="fillChapterInfo" />
+			<serviceTask id="fillChapterInfo" activiti:class="org.bpmnwithactiviti.chapter8.book.FillChapterInfo" />
+			<sequenceFlow sourceRef="fillChapterInfo" targetRef="chapterApproval" />
+			<exclusiveGateway id="chapterApproval" />
+			<sequenceFlow sourceRef="chapterApproval" targetRef="theEndSubProcess">
+				<conditionExpression>${chapter.approved == true}</conditionExpression>
+			</sequenceFlow>
+			<sequenceFlow sourceRef="chapterApproval" targetRef="submitChapterDraft">
+				<conditionExpression>${chapter.approved == false}</conditionExpression>
+			</sequenceFlow>
+			<endEvent id="theEndSubProcess" />
+		</subProcess>
+		<sequenceFlow sourceRef="bookWritingSubProcess" targetRef="productionTask" />
+		<userTask id="productionTask" activiti:candidateGroups="manning" />
+		<sequenceFlow sourceRef="productionTask" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

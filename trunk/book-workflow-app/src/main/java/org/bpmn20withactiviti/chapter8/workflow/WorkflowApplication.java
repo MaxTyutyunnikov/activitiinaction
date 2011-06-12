@@ -1,8 +1,8 @@
-package org.bpmn20withactiviti.chapter7.workflow;
+package org.bpmn20withactiviti.chapter8.workflow;
 
-import org.bpmn20withactiviti.chapter7.workflow.ui.ViewManager;
-import org.bpmn20withactiviti.chapter7.workflow.ui.panel.ActionsPanel;
-import org.bpmn20withactiviti.chapter7.workflow.ui.panel.BookOverviewPanel;
+import org.bpmn20withactiviti.chapter8.workflow.ui.ViewManager;
+import org.bpmn20withactiviti.chapter8.workflow.ui.panel.ActionsPanel;
+import org.bpmn20withactiviti.chapter8.workflow.ui.panel.BookOverviewPanel;
 
 import com.vaadin.Application;
 import com.vaadin.ui.CustomLayout;
