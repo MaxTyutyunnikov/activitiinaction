@@ -31,7 +31,7 @@
 		<init-param>
 			<description>Vaadin application class to start</description>
 			<param-name>application</param-name>
-			<param-value>org.bpmn20withactiviti.chapter8.workflow.WorkflowApplication</param-value>
+			<param-value>org.bpmnwithactiviti.chapter8.workflow.WorkflowApplication</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
