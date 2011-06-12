@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bpmn20withactiviti.chapter8.workflow.ui.popup;
+package org.bpmnwithactiviti.chapter8.workflow.ui.popup;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;

@@ -30,8 +30,6 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
-		<property name="deploymentResources"
-			value="classpath*:org/bpmn20withactiviti/chapter8/workflow/process/bookwriting.bpmn20.xml" />
 		<property name="jobExecutorActivate" value="false" />
 	</bean>
 
