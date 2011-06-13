@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter12.process;
+package org.bpmnwithactiviti.chapter12.test;
 
 import java.util.Date;
 
