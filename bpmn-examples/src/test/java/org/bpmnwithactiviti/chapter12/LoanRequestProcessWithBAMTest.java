@@ -32,7 +32,7 @@ public class LoanRequestProcessWithBAMTest extends AbstractTest {
 	private static String LOANED_AMOUNT_STATEMENT_NAME = "loanedAmount";
 	private static String PROCESS_DURATION_STATEMENT_NAME = "processDuration";
 	private EPAdministrator epAdmin;
-
+	
 	@Before
 	public void Setup() {
 		Configuration configuration = new Configuration();

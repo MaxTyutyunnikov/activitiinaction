@@ -5,8 +5,8 @@
 
 	<process id="loanrequest_withbam" name="Process to handle a loan request with BAM">
 		<extensionElements>
-			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.process.ProcessStartExecutionListener" event="start" />
-			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.process.ProcessEndExecutionListener" event="end" />
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.test.ProcessStartExecutionListener" event="start" />
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.test.ProcessEndExecutionListener" event="end" />
 		</extensionElements>
 		<startEvent id="theStart" activiti:formKey="chapter12/loanRequest.form" />
 		<sequenceFlow sourceRef="theStart" targetRef="evaluateLoanRequest" />

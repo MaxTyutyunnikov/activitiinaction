@@ -1,10 +1,20 @@
 package org.bpmnwithactiviti.chapter12.bam.event;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "loanRequestReceivedEvent")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LoanRequestReceivedEvent {
 
 	// For correlating the events.
+	@XmlElement
 	private final String processInstanceId;
+	@XmlElement
 	private final long receiveTime;
+	@XmlElement
 	private final int requestedAmount;
 	
 	public LoanRequestReceivedEvent(String processInstanceId, long receiveTime, int requestedAmount) {
