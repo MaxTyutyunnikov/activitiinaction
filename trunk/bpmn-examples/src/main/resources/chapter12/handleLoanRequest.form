@@ -1,0 +1,15 @@
+<h1>Loan Request Approval</h1>
+<p>
+  ${loanApplication.customerName} would like to loan ${loanApplication.requestedAmount} dollars.
+</p>
+<p>
+  The current income is ${loanApplication.income} dollars.
+</p>
+<p>
+  Do you approve this?
+  <select name="requestApproved">
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+   </select>
+   <input type="hidden" name="requestApproved_type" value="Boolean" />
+</p>
