@@ -23,7 +23,7 @@ import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.SafeIterator;
 import com.espertech.esper.client.UpdateListener;
 
-public class LoanRequestProcessWithBAMTest extends AbstractTest {	
+public class LoanRequestProcessWithEsperTest extends AbstractTest {	
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
@@ -57,7 +57,7 @@ public class LoanRequestProcessWithBAMTest extends AbstractTest {
 	}
 
 	@Test
-	@Deployment(resources={"chapter12/loanrequest_withbam.bpmn20.xml"})
+	@Deployment(resources={"chapter12/loanrequest_withespertest.bpmn20.xml"})
 	public void firstTest() {
 		final RuntimeService runtimeService = activitiRule.getRuntimeService();
 		final TaskService taskService = activitiRule.getTaskService();
@@ -67,7 +67,7 @@ public class LoanRequestProcessWithBAMTest extends AbstractTest {
 		processVariables.put("name", "Miss Piggy");
 		processVariables.put("income", 100);
 		processVariables.put("loanAmount", 10);
-		runtimeService.startProcessInstanceByKey("loanrequest_withbam", processVariables);
+		runtimeService.startProcessInstanceByKey("loanrequest_withespertest", processVariables);
 		
 		// The monitor is started here to illustrate the case when the monitor is started after process instances are already created.
 		startMonitor();
@@ -87,7 +87,7 @@ public class LoanRequestProcessWithBAMTest extends AbstractTest {
 		processVariables.put("name", "Kermit");
 		processVariables.put("income", 200);
 		processVariables.put("loanAmount", 20);
-		runtimeService.startProcessInstanceByKey("loanrequest_withbam", processVariables);
+		runtimeService.startProcessInstanceByKey("loanrequest_withespertest", processVariables);
 		assertMonitoredRequestedAmountEquals(15.0, 20, 30);
 
 		// Evaluate second loan request

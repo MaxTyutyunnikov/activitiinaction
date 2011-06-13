@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn"
+	targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
+
+	<process id="loanrequest_withespertest" name="Process to handle a loan request with BAM">
+		<extensionElements>
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.test.ProcessStartExecutionListener" event="start" />
+			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.test.ProcessEndExecutionListener" event="end" />
+		</extensionElements>
+		<startEvent id="theStart" activiti:formKey="chapter12/loanRequest.form" />
+		<sequenceFlow sourceRef="theStart" targetRef="evaluateLoanRequest" />
+		<userTask id="evaluateLoanRequest" name="Evaluate loan request"
+			activiti:formKey="chapter12/handleLoanRequest.form"
+			activiti:assignee="fozzie" />
+		<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
