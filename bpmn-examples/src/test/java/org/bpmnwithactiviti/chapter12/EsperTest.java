@@ -111,7 +111,7 @@ public class EsperTest {
 		epStatement.destroy();
 	}
 
-	// Assert Monitored Request Amount
+	// Assert Monitored Requested Amount
 	private void assertMRA(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
 		Assert.assertEquals(avgRequestedAmount, avgRequestedAmountQueue.poll());
 		Assert.assertEquals(maxRequestedAmount, maxRequestedAmountQueue.poll());
@@ -140,26 +140,26 @@ public class EsperTest {
 			}
 		} );
 		
-		assertMAP(null, null);
+		assertMLA(null, null);
 		sendLoanRequestProcessedEvent(   0, "1", true, 100);
-		assertMAP(1L, 100);
+		assertMLA(1L, 100);
 		sendLoanRequestProcessedEvent( 300, "2", true, 200);
-		assertMAP(2L, 300);
+		assertMLA(2L, 300);
 		sendLoanRequestProcessedEvent( 600, "3", false, 1000);
-		assertMAP(null, null);
+		assertMLA(null, null);
 		sendLoanRequestProcessedEvent( 900, "4", true, 300);
-		assertMAP(3L, 600);
+		assertMLA(3L, 600);
 		sendLoanRequestProcessedEvent(1200, "5", true, 400);
-		assertMAP(2L, 500);
-		assertMAP(3L, 900);
+		assertMLA(2L, 500);
+		assertMLA(3L, 900);
 		sendLoanRequestProcessedEvent(1400, "6", false, 900);
-		assertMAP(2L, 700);
+		assertMLA(2L, 700);
 		
 		epStatement.destroy();
 	}
 
-	// Assert Monitored Approved Requests
-	private void assertMAP(Long numLoans, Integer sumLoanedAmount) {
+	// Assert Monitored Loaned Amount
+	private void assertMLA(Long numLoans, Integer sumLoanedAmount) {
 		Assert.assertEquals(numLoans, numLoansQueue.poll());
 		Assert.assertEquals(sumLoanedAmount, sumLoanedAmountQueue.poll());
 	}
