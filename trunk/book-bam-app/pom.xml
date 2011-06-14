@@ -7,10 +7,11 @@
 	<groupId>org.bpmn20withactiviti</groupId>
 	<artifactId>book-bam-app</artifactId>
 	<packaging>war</packaging>
-    <version>1.0</version>
+	<version>1.0</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cxf-version>2.3.4</cxf-version>
 	</properties>
 
 	<build>
@@ -28,14 +29,19 @@
 
 	<dependencies>
 		<dependency>
-        	<groupId>com.vaadin</groupId>
-        	<artifactId>vaadin</artifactId>
-        	<version>6.6.0</version>
-      	</dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin</artifactId>
+			<version>6.6.0</version>
+		</dependency>
 		<dependency>
 			<groupId>com.espertech</groupId>
 			<artifactId>esper</artifactId>
 			<version>4.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>${cxf-version}</version>
 		</dependency>
 	</dependencies>
 
