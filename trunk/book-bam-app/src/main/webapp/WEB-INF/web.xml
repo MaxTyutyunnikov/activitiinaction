@@ -38,6 +38,6 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Vaadin Application Servlet</servlet-name>
-		<url-pattern>/vaadin/*</url-pattern>
+		<url-pattern>/ui/*</url-pattern>
 	</servlet-mapping>
 </web-app>
