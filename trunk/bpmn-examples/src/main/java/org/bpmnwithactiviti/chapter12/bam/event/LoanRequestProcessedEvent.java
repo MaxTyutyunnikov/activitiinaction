@@ -1,12 +1,31 @@
 package org.bpmnwithactiviti.chapter12.bam.event;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "LoanRequestProcessedEvent")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LoanRequestProcessedEvent {
 	
 	// For correlating the events.
+	@XmlElement
 	private final String processInstanceId;
+	@XmlElement
 	private final long processedTime;
+	@XmlElement
 	private final boolean requestApproved;
+	@XmlElement
 	private final int requestedAmount;
+	
+	@SuppressWarnings("unused")
+	private LoanRequestProcessedEvent() {
+		processInstanceId = null;
+		processedTime = 0L;
+		requestApproved = false;
+		requestedAmount = 0;
+	}
 
 	public LoanRequestProcessedEvent(String processInstanceId, long processedTime, boolean requestApproved, int requestedAmount) {
 		this.processInstanceId = processInstanceId;

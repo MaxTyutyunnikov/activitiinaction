@@ -17,6 +17,13 @@ public class LoanRequestReceivedEvent {
 	@XmlElement
 	private final int requestedAmount;
 	
+	@SuppressWarnings("unused")
+	private LoanRequestReceivedEvent() {
+		processInstanceId = null;
+		receiveTime = 0L;
+		requestedAmount = 0;
+	}
+	
 	public LoanRequestReceivedEvent(String processInstanceId, long receiveTime, int requestedAmount) {
 		this.processInstanceId = processInstanceId;
 		this.receiveTime = receiveTime;
