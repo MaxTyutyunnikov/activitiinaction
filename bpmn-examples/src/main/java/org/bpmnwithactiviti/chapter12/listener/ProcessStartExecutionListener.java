@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.ExecutionListener;
-import org.bpmnwithactiviti.chapter12.bam.event.EventSender;
 import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestReceivedEvent;
 
 public class ProcessStartExecutionListener implements ExecutionListener {
