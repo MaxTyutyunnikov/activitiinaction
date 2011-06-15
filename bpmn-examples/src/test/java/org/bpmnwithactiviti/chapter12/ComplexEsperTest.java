@@ -21,7 +21,7 @@ import com.espertech.esper.client.SafeIterator;
 import com.espertech.esper.client.UpdateListener;
 import com.espertech.esper.client.time.CurrentTimeEvent;
 
-public class EsperTest {
+public class ComplexEsperTest {
 	
 	private EPRuntime epRuntime;
 	private EPAdministrator epAdmin;
