@@ -30,6 +30,10 @@
 			<param-name>application</param-name>
 			<param-value>org.bpmnwithactiviti.chapter12.bam.BAMApplication</param-value>
 		</init-param>
+		<init-param>
+			<param-name>widgetset</param-name>
+			<param-value>com.github.wolfie.refresher.RefresherApplicationWidgetset</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CXFJAX-RSServlet</servlet-name>
