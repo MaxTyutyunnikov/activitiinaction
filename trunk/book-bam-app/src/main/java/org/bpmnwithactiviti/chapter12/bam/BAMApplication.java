@@ -6,6 +6,7 @@ import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 import com.github.wolfie.refresher.Refresher;
 import com.vaadin.Application;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.CloseEvent;
@@ -16,18 +17,58 @@ public class BAMApplication extends Application {
 	private UpdateListener requestedAmountListener;
 	private UpdateListener loanedAmountListener;
 	private UpdateListener processDurationListener;
-	private Label avgRequestedAmountLabel;
+	private Label avgRequestedAmountLabel = new Label();
+	private Label maxRequestedAmountLabel = new Label();
+	private Label sumRequestedAmountLabel = new Label();
+	private Label numLoansLabel = new Label();
+	private Label sumLoanedAmountLabel = new Label();
+	private Label avgProcessDurationLabel = new Label();
+	private Label maxProcessDurationLabel = new Label();
 	
 	@Override
 	public void init() {
 		System.out.println(">>> Starting the application");
 		setMainWindow( new Window("Business Application Monitor"));
-		avgRequestedAmountLabel = new Label();
-		getMainWindow().addComponent(avgRequestedAmountLabel);
-		startMonitor();
+		
+		HorizontalLayout layout = new HorizontalLayout();
+		layout.addComponent(new Label("Average requested amount:"));
+		layout.addComponent(avgRequestedAmountLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("Maximum requested amount:"));
+		layout.addComponent(maxRequestedAmountLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("Sum of requested amount:"));
+		layout.addComponent(sumRequestedAmountLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("Number of loans:"));
+		layout.addComponent(numLoansLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("Sum of loaned amount:"));
+		layout.addComponent(sumLoanedAmountLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("Average process duration:"));
+		layout.addComponent(avgProcessDurationLabel);
+		getMainWindow().addComponent(layout);
+		
+		layout = new HorizontalLayout();
+		layout.addComponent(new Label("maximum process duration:"));
+		layout.addComponent(maxProcessDurationLabel);
+		getMainWindow().addComponent(layout);
+		
 		Refresher refresher = new Refresher();
 		refresher.setRefreshInterval(1000);
 		getMainWindow().addComponent(refresher);
+		
 		getMainWindow().addListener(new Window.CloseListener() {
 			@Override
 			public void windowClose(CloseEvent e) {
@@ -39,22 +80,14 @@ public class BAMApplication extends Application {
 				getMainWindow().getApplication().close();
 			}
 		});
-	}
-
-	private void startMonitor() {
-		EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
 		
-		// Start monitoring requested amount
+		// Create the Esper event listeners and hook them up to the labels
+		EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
 		requestedAmountListener = new UpdateListener() {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				Double avgRequestedAmount = (Double) newEvents[0].get("avgRequestedAmount");
-				Integer maxRequestedAmount = (Integer) newEvents[0].get("maxRequestedAmount");
-				Integer sumRequestedAmount = (Integer) newEvents[0].get("sumRequestedAmount");
-				if (avgRequestedAmount == null) {
-					avgRequestedAmount = 0.0;
-				}
-				showMonitoredRequestedAmountInfo(avgRequestedAmount, maxRequestedAmount, sumRequestedAmount);
-				avgRequestedAmountLabel.setValue(avgRequestedAmount);
+				avgRequestedAmountLabel.setValue(newEvents[0].get("avgRequestedAmount"));
+				maxRequestedAmountLabel.setValue(newEvents[0].get("maxRequestedAmount"));
+				sumRequestedAmountLabel.setValue(newEvents[0].get("sumRequestedAmount"));
 			}
 		};
 		epAdmin.getStatement(EsperStatementsCreator.REQUESTED_AMOUNT_STATEMENT_NAME).addListenerWithReplay(requestedAmountListener);
@@ -62,9 +95,8 @@ public class BAMApplication extends Application {
 		// Start monitoring loaned amount
 		loanedAmountListener = new UpdateListener() {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				Long numLoans = (Long) newEvents[0].get("numLoans");
-				Integer sumLoanedAmount = (Integer) newEvents[0].get("sumLoanedAmount");
-				showMonitoredLoanedAmountInfo(numLoans, sumLoanedAmount);
+				numLoansLabel.setValue(newEvents[0].get("numLoans"));
+				sumLoanedAmountLabel.setValue(newEvents[0].get("sumLoanedAmount"));
 			}
 		};
 		epAdmin.getStatement(EsperStatementsCreator.LOANED_AMOUNT_STATEMENT_NAME).addListenerWithReplay(loanedAmountListener);
@@ -75,10 +107,13 @@ public class BAMApplication extends Application {
 				Double avgProcessDuration = (Double) newEvents[0].get("avgProcessDuration");
 				Long maxProcessDuration = (Long) newEvents[0].get("maxProcessDuration");
 				showMonitoredProcessDurationInfo(avgProcessDuration, maxProcessDuration);
+				avgProcessDurationLabel.setValue(newEvents[0].get("avgProcessDuration"));
+				maxProcessDurationLabel.setValue(newEvents[0].get("maxProcessDuration"));
 			}
 		};
 		epAdmin.getStatement(EsperStatementsCreator.PROCESS_DURATION_STATEMENT_NAME).addListenerWithReplay(processDurationListener);
 	}
+
 
 	private void showMonitoredRequestedAmountInfo(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
 		System.out.println("<<< avgRequestedAmount=" + avgRequestedAmount + ", maxRequestedAmount="
