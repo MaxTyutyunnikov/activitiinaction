@@ -6,7 +6,6 @@ import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 import com.github.wolfie.refresher.Refresher;
 import com.vaadin.Application;
-import com.vaadin.data.util.ObjectProperty;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.CloseEvent;
