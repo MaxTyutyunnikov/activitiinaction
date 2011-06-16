@@ -32,7 +32,7 @@
 		</init-param>
 		<init-param>
 			<param-name>widgetset</param-name>
-			<param-value>com.github.wolfie.refresher.RefresherApplicationWidgetset</param-value>
+			<param-value>CustomWidgetSet</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

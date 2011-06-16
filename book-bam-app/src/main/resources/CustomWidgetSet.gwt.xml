@@ -4,6 +4,5 @@
     "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
 <module>
 	<inherits name="com.vaadin.terminal.gwt.DefaultWidgetSet" />
-	<!-- Other widgets are auto-discovered by Vaadin maven plugin -->
 	<inherits name="com.github.wolfie.refresher.RefresherApplicationWidgetset" />
 </module> 
