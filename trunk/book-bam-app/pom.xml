@@ -24,6 +24,51 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<configuration>
+					<webappDirectory>src/main/webapp/VAADIN/widgetsets</webappDirectory>
+					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+					<runTarget>vaadin-mvn-addon</runTarget>
+					<soyc>false</soyc>
+				</configuration>
+				<!-- Explecitely set GWT dependencies, as advised in http://vaadin.com/forum/-/message_boards/view_message/429868 -->
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>2.3.0</version>
+					</dependency>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-dev</artifactId>
+						<version>2.3.0</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<executions>
+					<execution>
+						<configuration>
+						</configuration>
+						<goals>
+							<goal>update-widgetset</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
