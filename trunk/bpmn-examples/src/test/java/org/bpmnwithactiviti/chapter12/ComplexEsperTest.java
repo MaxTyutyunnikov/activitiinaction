@@ -17,7 +17,6 @@ import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
 import com.espertech.esper.client.EPStatement;
 import com.espertech.esper.client.EventBean;
-import com.espertech.esper.client.SafeIterator;
 import com.espertech.esper.client.UpdateListener;
 import com.espertech.esper.client.time.CurrentTimeEvent;
 
@@ -48,7 +47,7 @@ public class ComplexEsperTest {
 			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
 			" from LoanRequestReceivedEvent.win:length(3)");
 		
-		epStatement.addListener(new UpdateListener () {
+		epStatement.addListenerWithReplay(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 				Assert.assertEquals(1, newEvents.length);
 				Assert.assertNull(oldEvents);
@@ -75,42 +74,6 @@ public class ComplexEsperTest {
 		epStatement.destroy();
 	}
 		
-	@Test
-	public void testMonitoringRequestedAmountUsingSafeIterator()
-	{
-		System.out.println("---------- Start monitoring requested amount using iterator ----------");
-		
-		EPStatement epStatement = epAdmin.createEPL(
-			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
-			" from LoanRequestReceivedEvent.win:length(3)","requestedAmount");
-		
-		sendEvent(new LoanRequestReceivedEvent("1",   0, 100));
-		sendEvent(new LoanRequestReceivedEvent("2", 300, 200));
-		sendEvent(new LoanRequestReceivedEvent("3", 600, 300));
-		sendEvent(new LoanRequestReceivedEvent("4", 900, 400));
-		
-		epStatement = epAdmin.getStatement("requestedAmount");
-		SafeIterator<EventBean> eventIterator = epStatement.safeIterator();
-		try 
-		{
-			Assert.assertEquals(true, eventIterator.hasNext());
-			EventBean event = eventIterator.next();
-		    Double avgRequestedAmount = (Double) event.get("avgRequestedAmount");
-			Integer maxRequestedAmount = (Integer) event.get("maxRequestedAmount");
-			Integer sumRequestedAmount = (Integer) event.get("sumRequestedAmount");
-			Assert.assertEquals(300.0, avgRequestedAmount);
-			Assert.assertEquals(400, maxRequestedAmount.intValue());
-			Assert.assertEquals(900,sumRequestedAmount.intValue());
-			System.out.println("<<< avgRequestedAmount="+avgRequestedAmount+", maxRequestedAmount="+maxRequestedAmount+", sumRequestedAmount="+sumRequestedAmount);
-			Assert.assertEquals(false, eventIterator.hasNext());
-		}
-		finally {
-		  eventIterator.close(); // Note: safe iterators must be closed
-		}
-		
-		epStatement.destroy();
-	}
-
 	// Assert Monitored Requested Amount
 	private void assertMRA(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
 		Assert.assertEquals(avgRequestedAmount, avgRequestedAmountQueue.poll());
@@ -128,7 +91,7 @@ public class ComplexEsperTest {
 		EPStatement epStatement = epAdmin.createEPL(
 			"select count(*) as numLoans, sum(requestedAmount) as sumLoanedAmount from LoanRequestProcessedEvent(requestApproved=true).win:time(1 sec)");
 		
-		epStatement.addListener(new UpdateListener () {
+		epStatement.addListenerWithReplay(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 				Assert.assertEquals(1, newEvents.length);
 				Assert.assertNull(oldEvents);
@@ -140,7 +103,7 @@ public class ComplexEsperTest {
 			}
 		} );
 		
-		assertMLA(null, null);
+		assertMLA(0L, null);
 		sendLoanRequestProcessedEvent(   0, "1", true, 100);
 		assertMLA(1L, 100);
 		sendLoanRequestProcessedEvent( 300, "2", true, 200);
@@ -179,7 +142,7 @@ public class ComplexEsperTest {
 			"   -> endEvent=LoanRequestProcessedEvent(processInstanceId=beginEvent.processInstanceId)" +
 			" ].win:time(1 sec)");
 		
-		epStatement.addListener(new UpdateListener () {
+		epStatement.addListenerWithReplay(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 				Assert.assertEquals(1, newEvents.length);
 				Assert.assertNull(oldEvents);
