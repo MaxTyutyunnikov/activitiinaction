@@ -2,17 +2,26 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/multiinstance">
 
 	<process id="decisionProcess" name="Decision making process">
-		<startEvent id="theStart" activiti:formKey="decisionItem.form"/>
-		<sequenceFlow sourceRef="theStart" targetRef="createAssigneeList"/>
-		<serviceTask id="createAssigneeList" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.CreateAssigneeList"/>
-		<sequenceFlow sourceRef="createAssigneeList" targetRef="decisionTask"/>
-		<userTask id="decisionTask" name="Decision task" activiti:assignee="${assignee}">
-		  <multiInstanceLoopCharacteristics isSequential="false" 
-		     activiti:collection="assigneeList" activiti:elementVariable="assignee" >
-		    <completionCondition>${nrOfCompletedInstances/nrOfInstances > 0.5 }</completionCondition>
-		  </multiInstanceLoopCharacteristics>
-		</userTask>
-		<sequenceFlow sourceRef="decisionTask" targetRef="theEnd" />
+		<startEvent id="theStart" activiti:formKey="decisionItem.form" />
+		<sequenceFlow sourceRef="theStart" targetRef="createAssigneeList" />
+		<serviceTask id="createAssigneeList" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.CreateAssigneeList" />
+		<sequenceFlow sourceRef="createAssigneeList" targetRef="decisionSubProcess"/>
+		<subProcess id="decisionSubProcess">
+			<multiInstanceLoopCharacteristics isSequential="false" 
+		     		activiti:collection="assigneeList" activiti:elementVariable="assignee" >
+		    	<completionCondition>${nrOfCompletedInstances/nrOfInstances > 0.5 }</completionCondition>
+		  	</multiInstanceLoopCharacteristics>
+			<startEvent id="theStartSubProcess" />
+			<sequenceFlow sourceRef="theStartSubProcess" targetRef="decisionTask" />
+			<userTask id="decisionTask" name="Decision task" activiti:assignee="${assignee}" />
+			<sequenceFlow sourceRef="decisionTask" targetRef="gatherDecisionVote" />
+			<serviceTask id="gatherDecisionVote" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.AddDecisionVote" />
+			<sequenceFlow sourceRef="gatherDecisionVote" targetRef="theEndSubProcess" />
+			<endEvent id="theEndSubProcess" />
+		</subProcess>
+		<sequenceFlow sourceRef="decisionSubProcess" targetRef="outcomeTask" />
+		<serviceTask id="outcomeTask" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.PublishVotePoll" />
+		<sequenceFlow sourceRef="outcomeTask" targetRef="theEnd" />
 		<endEvent id="theEnd" />
 	</process>
 </definitions>

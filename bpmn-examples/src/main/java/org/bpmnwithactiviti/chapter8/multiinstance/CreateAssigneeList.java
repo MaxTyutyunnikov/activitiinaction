@@ -16,6 +16,7 @@ public class CreateAssigneeList implements JavaDelegate {
 			assigneeList.add(assignee);
 		}
 		execution.setVariable("assigneeList", assigneeList);
+		execution.setVariable("voteOutcome", new DecisionVoting());
 	}
 
 }
