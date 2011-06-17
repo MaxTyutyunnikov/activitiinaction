@@ -16,7 +16,6 @@ public class EventSender {
 
 	public static void send(Object event) {
 		HttpURLConnection connection = null;
-		OutputStream out = null;
 		try {
 			log.info("Throwing event: " + event);
 			URL url = new URL(HOST + event.getClass().getSimpleName());
@@ -25,7 +24,7 @@ public class EventSender {
 			connection.setDoOutput(true);
 			connection.setAllowUserInteraction(false);
 			connection.setRequestProperty("Content-type", "application/xml; charset=UTF-8");
-			out = connection.getOutputStream();
+			OutputStream out = connection.getOutputStream();
 			JAXBContext.newInstance(event.getClass()).createMarshaller().marshal(event, out);
 			out.close();
 			int rc = connection.getResponseCode();
