@@ -6,11 +6,10 @@ import java.net.URL;
 
 import javax.xml.bind.JAXBContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 public class EventSender {
-	private static final Log log = LogFactory.getLog(EventSender.class);
+	private static final Logger log = Logger.getLogger(EventSender.class);
 
 	private static String HOST = "http://localhost:8081/book-bam-app/events/";
 

@@ -8,10 +8,10 @@
 			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.listener.ProcessStartExecutionListener" event="start" />
 			<activiti:executionListener class="org.bpmnwithactiviti.chapter12.listener.ProcessEndExecutionListener" event="end" />
 		</extensionElements>
-		<startEvent id="theStart" activiti:formKey="chapter12/loanRequest.form" />
+		<startEvent id="theStart" activiti:formKey="loanRequest.form" />
 		<sequenceFlow sourceRef="theStart" targetRef="evaluateLoanRequest" />
 		<userTask id="evaluateLoanRequest" name="Evaluate loan request"
-			activiti:formKey="chapter12/handleLoanRequest.form"
+			activiti:formKey="handleLoanRequest.form"
 			activiti:assignee="fozzie" />
 		<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="theEnd" />
 		<endEvent id="theEnd" />
