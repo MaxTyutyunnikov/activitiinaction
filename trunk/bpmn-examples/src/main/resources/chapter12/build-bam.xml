@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="bam" default="create.bam">
+
+	<property name="dist.dir" value="./dist" />
+
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="bam.jar" depends="dist.mkdir">
+	 <jar destfile="${dist.dir}/bam.jar"
+	       basedir="../../../../target/classes"
+	       includes="org/bpmnwithactiviti/chapter12/bam/**, org/bpmnwithactiviti/chapter12/listener/**"
+	  />
+	</target>
+	
+	<target name="bam.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/bam.bar"
+		       basedir="." includes="*.bpmn20.xml, *.form"
+		  />
+	</target>
+	
+	<target name="create.bam" depends="dist.mkdir, bam.jar, bam.bar"/>
+
+</project>
