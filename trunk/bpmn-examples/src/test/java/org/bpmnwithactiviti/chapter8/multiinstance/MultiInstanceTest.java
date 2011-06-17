@@ -2,12 +2,14 @@ package org.bpmnwithactiviti.chapter8.multiinstance;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import org.activiti.engine.history.HistoricDetail;
+import org.activiti.engine.history.HistoricVariableUpdate;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
@@ -19,7 +21,7 @@ import org.junit.Test;
 public class MultiInstanceTest extends AbstractTest {
 	
 	@Rule 
-	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
+	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
 	
 	@Test
 	@Deployment(resources={"chapter8/multiinstance/multiinstance.bpmn20.xml"})
@@ -28,14 +30,33 @@ public class MultiInstanceTest extends AbstractTest {
 		variableMap.put("decisionInfo", "test");
 		variableMap.put("participants", "kermit,fonzie,gonzo");
 		ProcessInstance processInstance = activitiRule.getRuntimeService()
-				.startProcessInstanceByKey("decisionProcess");
+				.startProcessInstanceByKey("decisionProcess", variableMap);
 		assertNotNull(processInstance);
 		List<Task> taskList = activitiRule.getTaskService().createTaskQuery().list();
-		assertEquals(2, taskList.size());
-		variableMap = activitiRule.getRuntimeService().getVariables(processInstance.getProcessInstanceId());
-		Set<String> variableNameSet = variableMap.keySet();
-		for(String variableName : variableNameSet) {
-			System.out.println("name " + variableName + ", value " + variableMap.get(variableName));
+		assertEquals(3, taskList.size());
+		int counter = 0;
+		for (Task task : taskList) {
+			Map<String, Object> taskMap = new HashMap<String, Object>();
+			taskMap.put("vote", true);
+			if(counter < 2) {
+				activitiRule.getTaskService().complete(task.getId(), taskMap);
+			}
+			counter++;
 		}
+		boolean voteOutcomeTested = false;
+		List<HistoricDetail> historicVariableUpdateList = activitiRule.getHistoryService().createHistoricDetailQuery().variableUpdates().orderByTime().desc().list();
+		for (HistoricDetail historicDetail : historicVariableUpdateList) {
+			HistoricVariableUpdate historicVariableUpdate = (HistoricVariableUpdate) historicDetail;
+			if("voteOutcome".equals(historicVariableUpdate.getVariableName())) {
+				DecisionVoting voting = (DecisionVoting) historicVariableUpdate.getValue();
+				assertTrue(voting.isDecisionVotingOutcome());
+				voteOutcomeTested = true;
+				for (Vote vote : voting.getVotes()) {
+					assertTrue(vote.isApproved());
+				}
+				break;
+			}
+		}
+		assertTrue(voteOutcomeTested);
 	}
 }
