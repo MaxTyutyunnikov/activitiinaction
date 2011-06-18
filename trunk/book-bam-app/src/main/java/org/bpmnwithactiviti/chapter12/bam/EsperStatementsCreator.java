@@ -37,10 +37,10 @@ public class EsperStatementsCreator implements ServletContextListener {
 		
 		epAdmin.createEPL(
 			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
-			" from LoanRequestReceivedEvent.win:length(2)",REQUESTED_AMOUNT_STATEMENT_NAME);
+			" from LoanRequestReceivedEvent.win:length(10)",REQUESTED_AMOUNT_STATEMENT_NAME);
 		
 		epAdmin.createEPL(
-			"select count(*) as numLoans, sum(requestedAmount) as sumLoanedAmount from LoanRequestProcessedEvent(requestApproved=true).win:length(2)",LOANED_AMOUNT_STATEMENT_NAME);
+			"select count(*) as numLoans, sum(requestedAmount) as sumLoanedAmount from LoanRequestProcessedEvent(requestApproved=true).win:time(10 sec)",LOANED_AMOUNT_STATEMENT_NAME);
 
 		epAdmin.createEPL( 
 			"select avg(endEvent.processedTime - beginEvent.receiveTime) as avgProcessDuration," +
@@ -48,6 +48,6 @@ public class EsperStatementsCreator implements ServletContextListener {
 			" from pattern [" +
 			"	every beginEvent=LoanRequestReceivedEvent" +
 			"   -> endEvent=LoanRequestProcessedEvent(processInstanceId=beginEvent.processInstanceId)" +
-			" ].win:length(2)",PROCESS_DURATION_STATEMENT_NAME);
+			" ].win:time(10 sec)",PROCESS_DURATION_STATEMENT_NAME);
 	}
 }
