@@ -1,18 +1,27 @@
 package org.bpmnwithactiviti.chapter12.bam;
 
+import java.text.DecimalFormat;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.espertech.esper.client.EPAdministrator;
 import com.espertech.esper.client.EPServiceProviderManager;
 import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 import com.github.wolfie.refresher.Refresher;
 import com.vaadin.Application;
-import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.CloseEvent;
 
 @SuppressWarnings("serial")
 public class BAMApplication extends Application {
+	
+	private static final Log log = LogFactory.getLog(BAMApplication.class);
 
 	private UpdateListener requestedAmountListener;
 	private UpdateListener loanedAmountListener;
@@ -25,44 +34,23 @@ public class BAMApplication extends Application {
 	private Label avgProcessDurationLabel = new Label();
 	private Label maxProcessDurationLabel = new Label();
 	
+	private static final DecimalFormat avgRequestedAmountformatter = new DecimalFormat("##0.0");
+	private static final DecimalFormat avgProcessDurationformatter = new DecimalFormat("###0");
+
 	@Override
 	public void init() {
-		System.out.println(">>> Starting the application");
+		log.info("Starting BAM application");
 		setMainWindow( new Window("Business Application Monitor"));
 		
-		HorizontalLayout layout = new HorizontalLayout();
-		layout.addComponent(new Label("Average requested amount:"));
-		layout.addComponent(avgRequestedAmountLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("Maximum requested amount:"));
-		layout.addComponent(maxRequestedAmountLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("Sum of requested amount:"));
-		layout.addComponent(sumRequestedAmountLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("Number of loans:"));
-		layout.addComponent(numLoansLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("Sum of loaned amount:"));
-		layout.addComponent(sumLoanedAmountLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("Average process duration:"));
-		layout.addComponent(avgProcessDurationLabel);
-		getMainWindow().addComponent(layout);
-		
-		layout = new HorizontalLayout();
-		layout.addComponent(new Label("maximum process duration:"));
-		layout.addComponent(maxProcessDurationLabel);
+		GridLayout layout = new GridLayout(2,7);
+		layout.setSpacing(true);
+		addLabelAndValue(layout, "Average requested amount", avgRequestedAmountLabel);
+		addLabelAndValue(layout, "Maximum requested amount", maxRequestedAmountLabel);
+		addLabelAndValue(layout, "Sum of requested amount", sumRequestedAmountLabel);
+		addLabelAndValue(layout, "Number of loans", numLoansLabel);
+		addLabelAndValue(layout, "Sum of loaned amount", sumLoanedAmountLabel);
+		addLabelAndValue(layout, "Average process duration", avgProcessDurationLabel);
+		addLabelAndValue(layout, "Maximum process duration", maxProcessDurationLabel);
 		getMainWindow().addComponent(layout);
 		
 		Refresher refresher = new Refresher();
@@ -72,7 +60,7 @@ public class BAMApplication extends Application {
 		getMainWindow().addListener(new Window.CloseListener() {
 			@Override
 			public void windowClose(CloseEvent e) {
-				System.out.println(">>> Closing the application");
+				log.info("Closing BAM application");
 				EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
 				epAdmin.getStatement(EsperStatementsCreator.REQUESTED_AMOUNT_STATEMENT_NAME).removeListener(requestedAmountListener);
 				epAdmin.getStatement(EsperStatementsCreator.LOANED_AMOUNT_STATEMENT_NAME).removeListener(loanedAmountListener);
@@ -85,7 +73,8 @@ public class BAMApplication extends Application {
 		EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
 		requestedAmountListener = new UpdateListener() {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				avgRequestedAmountLabel.setValue(newEvents[0].get("avgRequestedAmount"));
+				Object avgRequestedAmount = newEvents[0].get("avgRequestedAmount");
+				avgRequestedAmountLabel.setValue((avgRequestedAmount!=null)?avgRequestedAmountformatter.format(avgRequestedAmount):"");
 				maxRequestedAmountLabel.setValue(newEvents[0].get("maxRequestedAmount"));
 				sumRequestedAmountLabel.setValue(newEvents[0].get("sumRequestedAmount"));
 			}
@@ -104,28 +93,19 @@ public class BAMApplication extends Application {
 		// Start monitoring process duration
 		processDurationListener = new UpdateListener() {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				Double avgProcessDuration = (Double) newEvents[0].get("avgProcessDuration");
-				Long maxProcessDuration = (Long) newEvents[0].get("maxProcessDuration");
-				showMonitoredProcessDurationInfo(avgProcessDuration, maxProcessDuration);
-				avgProcessDurationLabel.setValue(newEvents[0].get("avgProcessDuration"));
+				Object avgProcessDuration = newEvents[0].get("avgProcessDuration");
+				avgProcessDurationLabel.setValue((avgProcessDuration!=null)?avgProcessDurationformatter.format(avgProcessDuration):"");
 				maxProcessDurationLabel.setValue(newEvents[0].get("maxProcessDuration"));
 			}
 		};
 		epAdmin.getStatement(EsperStatementsCreator.PROCESS_DURATION_STATEMENT_NAME).addListenerWithReplay(processDurationListener);
 	}
 
-
-	private void showMonitoredRequestedAmountInfo(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
-		System.out.println("<<< avgRequestedAmount=" + avgRequestedAmount + ", maxRequestedAmount="
-				+ maxRequestedAmount + ", sumRequestedAmount=" + sumRequestedAmount);
-	}
-
-	private void showMonitoredLoanedAmountInfo(Long numLoans, Integer sumLoanedAmount) {
-		System.out.println("<<< numLoans=" + numLoans + ", sumLoanedAmount=" + sumLoanedAmount);
-	}
-
-	private void showMonitoredProcessDurationInfo(Double avgProcessDuration, Long maxProcessDuration) {
-		System.out.println("<<< avgProcessDuration=" + avgProcessDuration + ", maxProcessDuration="
-				+ maxProcessDuration);
+	private void addLabelAndValue(GridLayout layout, String labelText, Component value) {
+		Label label = new Label(labelText+":");
+		layout.addComponent(label);
+		layout.setComponentAlignment(label, Alignment.MIDDLE_RIGHT);
+		layout.addComponent(value);
+		layout.setComponentAlignment(value, Alignment.MIDDLE_RIGHT);
 	}
 }
