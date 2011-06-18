@@ -70,32 +70,29 @@
 				</executions>
 			</plugin>
 			<plugin>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>maven-jetty-plugin</artifactId>
-        <version>6.1.24</version>
-        <configuration>
-          <connectors>
-            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-              <port>8081</port>
-              <maxIdleTime>60000</maxIdleTime>
-            </connector>
-          </connectors>
-          <stopPort>9966</stopPort>
-          <!--
-            Redeploy every x seconds if changes are detected, 0 for no
-            automatic redeployment
-          -->
-          <scanIntervalSeconds>0</scanIntervalSeconds>
-          <!-- make sure Jetty also finds the widgetset -->
-          <webAppConfig>
-            <contextPath>/book-bam-app</contextPath>
-            <baseResource implementation="org.mortbay.resource.ResourceCollection">
-              <resourcesAsCSV>src/main/webapp,${project.build.directory}/${project.build.finalName}
-              </resourcesAsCSV>
-            </baseResource>
-          </webAppConfig>
-        </configuration>
-      </plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.24</version>
+				<configuration>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8081</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<stopPort>9966</stopPort>
+					<!-- Redeploy every x seconds if changes are detected, 0 for no automatic 
+						redeployment -->
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<!-- make sure Jetty also finds the widgetset -->
+					<webAppConfig>
+						<contextPath>/book-bam-app</contextPath>
+						<baseResource implementation="org.mortbay.resource.ResourceCollection">
+							<resourcesAsCSV>src/main/webapp,${project.build.directory}/${project.build.finalName}</resourcesAsCSV>
+						</baseResource>
+					</webAppConfig>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -111,10 +108,10 @@
 			<version>4.2.0</version>
 		</dependency>
 		<dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-servlet_2.5_spec</artifactId>
-      <version>1.2</version>
-    </dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
@@ -124,6 +121,11 @@
 			<groupId>org.vaadin.addons</groupId>
 			<artifactId>refresher</artifactId>
 			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>visualizationsforvaadin</artifactId>
+			<version>1.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
