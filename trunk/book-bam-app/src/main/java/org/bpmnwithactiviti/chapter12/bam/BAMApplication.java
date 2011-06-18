@@ -16,6 +16,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.CloseEvent;
@@ -35,7 +36,7 @@ public class BAMApplication extends Application {
 	private Label sumLoanedAmountLabel = new Label();
 	private Label avgProcessDurationLabel = new Label();
 	private Label maxProcessDurationLabel = new Label();
-	private Window subWindow;
+	private Panel requstedAmountPanel;
 	private Gauge gauge;
 
 	private static final DecimalFormat avgRequestedAmountformatter = new DecimalFormat("##0.0");
@@ -50,6 +51,10 @@ public class BAMApplication extends Application {
 	private void initGraphicalVisualization() {
 		setMainWindow(new Window("Business Application Monitor"));
 		
+		Refresher refresher = new Refresher();
+		refresher.setRefreshInterval(1000);
+		getMainWindow().addComponent(refresher);
+
 		getMainWindow().addListener(new Window.CloseListener() {
 			@Override
 			public void windowClose(CloseEvent e) {
@@ -60,30 +65,32 @@ public class BAMApplication extends Application {
 			}
 		});
 		
-		Refresher refresher = new Refresher();
-		refresher.setRefreshInterval(1000);
-		getMainWindow().addComponent(refresher);
-		
-		createSubWindow("Guage", "536px", "436px");
-		getMainWindow().addWindow(subWindow);
+	
+		requstedAmountPanel = new Panel("Requested Amount");
+		VerticalLayout layout = (VerticalLayout) requstedAmountPanel.getContent();
+		layout.setMargin(true);
+		layout.setSpacing(true);
+		layout.setSizeFull();
+		requstedAmountPanel.setHeight("200px");
+		requstedAmountPanel.setWidth("436px");
+
+		getMainWindow().addComponent(requstedAmountPanel);
 
 		// Create the Esper event listeners and hook them up to the labels
 		EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
 		requestedAmountListener = new UpdateListener() {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				// gauge.add("maxRequestedAmount", (Integer)newEvents[0].get("maxRequestedAmount"));
-				// gauge.add("sumRequestedAmount", (Integer)newEvents[0].get("sumRequestedAmount"));
 				if (gauge != null) {
-					subWindow.removeComponent(gauge);
+					requstedAmountPanel.removeComponent(gauge);
 				}
-				createGauge((Double) newEvents[0].get("avgRequestedAmount"));
-				subWindow.addComponent(gauge);
+				createGauge((Double) newEvents[0].get("avgRequestedAmount"), (Integer)newEvents[0].get("maxRequestedAmount"), (Integer)newEvents[0].get("sumRequestedAmount"));
+				requstedAmountPanel.addComponent(gauge);
 			}
 		};
 		epAdmin.getStatement(EsperStatementsCreator.REQUESTED_AMOUNT_STATEMENT_NAME).addListenerWithReplay(requestedAmountListener);
 	}
 
-	private void createGauge(Double avgRequestedAmount) {
+	private void createGauge(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
 		gauge = new Gauge();
 		gauge.setOption("redFrom", 90);
 		gauge.setOption("redTo", 100);
@@ -91,17 +98,9 @@ public class BAMApplication extends Application {
 		gauge.setOption("yellowTo", 90);
 		gauge.setOption("minorTicks", 20);
 		gauge.setSizeFull();
-		gauge.add("", (avgRequestedAmount!=null)?avgRequestedAmount.intValue():0);
-	}
-
-	private void createSubWindow(String type, String height, String width) {
-		subWindow = new Window("A subwindow showing " + type);
-		VerticalLayout layout = (VerticalLayout) subWindow.getContent();
-		layout.setMargin(true);
-		layout.setSpacing(true);
-		layout.setSizeFull();
-		subWindow.setHeight(height);
-		subWindow.setWidth(width);
+		gauge.add("avg", (avgRequestedAmount!=null)?avgRequestedAmount.intValue():0);
+		gauge.add("max", (maxRequestedAmount!=null)?maxRequestedAmount:0);
+		gauge.add("sum", (sumRequestedAmount!=null)?sumRequestedAmount:0);
 	}
 
 	@SuppressWarnings("unused")
