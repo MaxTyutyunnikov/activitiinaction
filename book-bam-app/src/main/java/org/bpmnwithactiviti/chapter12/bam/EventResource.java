@@ -7,8 +7,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestProcessedEvent;
 import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestReceivedEvent;
 
@@ -19,7 +18,7 @@ import com.espertech.esper.client.EPServiceProviderManager;
 @Consumes("application/xml")
 public class EventResource {
 	
-	private static final Log log = LogFactory.getLog(EventResource.class);
+	private static final Logger log = Logger.getLogger(EventResource.class);
 
 	@POST
 	@Path("LoanRequestReceivedEvent")
