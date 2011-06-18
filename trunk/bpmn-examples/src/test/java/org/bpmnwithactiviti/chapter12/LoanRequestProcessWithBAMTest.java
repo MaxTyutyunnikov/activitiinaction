@@ -2,6 +2,7 @@ package org.bpmnwithactiviti.chapter12;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
@@ -11,25 +12,37 @@ import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class LoanRequestProcessWithBAM extends AbstractTest {	
+public class LoanRequestProcessWithBAMTest extends AbstractTest {	
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
-	
+
+	private RuntimeService runtimeService;
+	private TaskService taskService;
+	private Random random;
+
 	@Test
 	@Deployment(resources={"chapter12/loanrequest_withbam.bpmn20.xml"})
-	public void testBAM() {
-		final RuntimeService runtimeService = activitiRule.getRuntimeService();
-		final TaskService taskService = activitiRule.getTaskService();
+	public void testBAM() throws InterruptedException {
+		runtimeService = activitiRule.getRuntimeService();
+		taskService = activitiRule.getTaskService();
+		random = new Random();
+
+		for (int i = 0; i < 20; i++) {
+			System.out.println(">>> Creating process: "+i);
+			startRandomLoanRequestProcess("Person "+Integer.toString(i));
+		}
+	}
 		
-		// Start first loan request
+	private void startRandomLoanRequestProcess(String name) throws InterruptedException {
 		Map<String, Object> processVariables = new HashMap<String, Object>();
-		processVariables.put("name", "Miss Piggy");
-		processVariables.put("income", 100);
-		processVariables.put("loanAmount", 10);
+		processVariables.put("name", name);
+		processVariables.put("income", 1000);
+		processVariables.put("loanAmount", random.nextInt(100));
 		runtimeService.startProcessInstanceByKey("loanrequest_withbam", processVariables);
 		
 		// Evaluate first loan request
+		Thread.sleep(500+random.nextInt(1000));
 		processVariables = new HashMap<String, Object>();
 		processVariables.put("requestApproved",true);
 		taskService.complete(taskService.createTaskQuery().singleResult().getId(), processVariables);
