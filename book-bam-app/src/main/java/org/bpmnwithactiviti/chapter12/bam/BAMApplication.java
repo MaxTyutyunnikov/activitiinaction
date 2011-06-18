@@ -3,6 +3,7 @@ package org.bpmnwithactiviti.chapter12.bam;
 import java.text.DecimalFormat;
 
 import org.apache.log4j.Logger;
+import org.vaadin.vaadinvisualizations.Gauge;
 import org.vaadin.vaadinvisualizations.PieChart;
 
 import com.espertech.esper.client.EPAdministrator;
@@ -34,6 +35,8 @@ public class BAMApplication extends Application {
 	private Label sumLoanedAmountLabel = new Label();
 	private Label avgProcessDurationLabel = new Label();
 	private Label maxProcessDurationLabel = new Label();
+	private Window subWindow;
+	private Gauge gauge;
 
 	private static final DecimalFormat avgRequestedAmountformatter = new DecimalFormat("##0.0");
 	private static final DecimalFormat avgProcessDurationformatter = new DecimalFormat("###0");
@@ -45,36 +48,60 @@ public class BAMApplication extends Application {
 	}
 
 	private void initGraphicalVisualization() {
-		Window mainWindow = new Window("Testvisualizations Application");
-		Label label = new Label("Hello Vaadin user");
-		mainWindow.addComponent(label);
-		PieChart pc = new PieChart();
-		pc.setSizeFull();
-		pc.add("Work", 7);
-		pc.add("Play", 3);
-		pc.add("Eat", 1);
-		pc.add("Sleep", 6);
-		pc.add("Do Vaadin", 7);
-		pc.setOption("width", 400);
-		pc.setOption("height", 400);
-		pc.setOption("is3D", true);
-		mainWindow.addWindow(createSubWindow(pc, "Pie Chart", "536px", "436px"));
-		setMainWindow(mainWindow);
+		setMainWindow(new Window("Business Application Monitor"));
+		
+		getMainWindow().addListener(new Window.CloseListener() {
+			@Override
+			public void windowClose(CloseEvent e) {
+				log.info("Closing BAM application");
+				EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
+				epAdmin.getStatement(EsperStatementsCreator.REQUESTED_AMOUNT_STATEMENT_NAME).removeListener(requestedAmountListener);
+				getMainWindow().getApplication().close();
+			}
+		});
+		
+		Refresher refresher = new Refresher();
+		refresher.setRefreshInterval(1000);
+		getMainWindow().addComponent(refresher);
+		
+		createSubWindow("Guage", "536px", "436px");
+		getMainWindow().addWindow(subWindow);
+
+		// Create the Esper event listeners and hook them up to the labels
+		EPAdministrator epAdmin = EPServiceProviderManager.getDefaultProvider().getEPAdministrator();
+		requestedAmountListener = new UpdateListener() {
+			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
+				// gauge.add("maxRequestedAmount", (Integer)newEvents[0].get("maxRequestedAmount"));
+				// gauge.add("sumRequestedAmount", (Integer)newEvents[0].get("sumRequestedAmount"));
+				if (gauge != null) {
+					subWindow.removeComponent(gauge);
+				}
+				createGauge((Double) newEvents[0].get("avgRequestedAmount"));
+				subWindow.addComponent(gauge);
+			}
+		};
+		epAdmin.getStatement(EsperStatementsCreator.REQUESTED_AMOUNT_STATEMENT_NAME).addListenerWithReplay(requestedAmountListener);
 	}
 
-	private Window createSubWindow(Component component, String type, String height, String width) {
-		Window subwindow = new Window("A subwindow showing " + type);
-		// Configure the windws layout; by default a VerticalLayout
-		VerticalLayout layout = (VerticalLayout) subwindow.getContent();
+	private void createGauge(Double avgRequestedAmount) {
+		gauge = new Gauge();
+		gauge.setOption("redFrom", 90);
+		gauge.setOption("redTo", 100);
+		gauge.setOption("yellowFrom", 75);
+		gauge.setOption("yellowTo", 90);
+		gauge.setOption("minorTicks", 20);
+		gauge.setSizeFull();
+		gauge.add("", (avgRequestedAmount!=null)?avgRequestedAmount.intValue():0);
+	}
+
+	private void createSubWindow(String type, String height, String width) {
+		subWindow = new Window("A subwindow showing " + type);
+		VerticalLayout layout = (VerticalLayout) subWindow.getContent();
 		layout.setMargin(true);
 		layout.setSpacing(true);
 		layout.setSizeFull();
-		// layout.setHeight("400px");
-		// layout.setWidth("400px");
-		subwindow.setHeight(height);
-		subwindow.setWidth(width);
-		subwindow.addComponent(component);
-		return subwindow;
+		subWindow.setHeight(height);
+		subWindow.setWidth(width);
 	}
 
 	@SuppressWarnings("unused")
