@@ -3,8 +3,7 @@ package org.bpmnwithactiviti.chapter12.bam;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPAdministrator;
@@ -13,7 +12,7 @@ import com.espertech.esper.client.EPServiceProviderManager;
 
 public class EsperStatementsCreator implements ServletContextListener {
 
-	private static final Log log = LogFactory.getLog(EsperStatementsCreator.class);
+	private static final Logger log = Logger.getLogger(EsperStatementsCreator.class);
 
 	public static String REQUESTED_AMOUNT_STATEMENT_NAME = "requestedAmount";
 	public static String LOANED_AMOUNT_STATEMENT_NAME = "loanedAmount";

@@ -2,8 +2,7 @@ package org.bpmnwithactiviti.chapter12.bam;
 
 import java.text.DecimalFormat;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import com.espertech.esper.client.EPAdministrator;
 import com.espertech.esper.client.EPServiceProviderManager;
@@ -21,7 +20,7 @@ import com.vaadin.ui.Window.CloseEvent;
 @SuppressWarnings("serial")
 public class BAMApplication extends Application {
 	
-	private static final Log log = LogFactory.getLog(BAMApplication.class);
+	private static final Logger log = Logger.getLogger(BAMApplication.class);
 
 	private UpdateListener requestedAmountListener;
 	private UpdateListener loanedAmountListener;
