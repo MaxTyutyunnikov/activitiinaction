@@ -71,7 +71,7 @@ public class BAMApplication extends Application {
 		});
 		
 		// Panel containing 2 gauges with loan information.
-		loanInfoPanel = new Panel("Loan Information");
+		loanInfoPanel = new Panel("Number of loans + Sum of loaned amount");
 		loanInfoPanel.setHeight("170px");
 		loanInfoPanel.setWidth("300px");
 		HorizontalLayout horizontalLayout = new HorizontalLayout();
@@ -82,7 +82,7 @@ public class BAMApplication extends Application {
 		mainWindowLayout.addComponent(loanInfoPanel,0,1);
 
 		// Panel containing 2 gauges with process information.
-		processInfoPanel = new Panel("Process Information");
+		processInfoPanel = new Panel("Average + Maximum process duration");
 		processInfoPanel.setHeight("170px");
 		processInfoPanel.setWidth("300px");
 		horizontalLayout = new HorizontalLayout();
@@ -93,20 +93,20 @@ public class BAMApplication extends Application {
 		mainWindowLayout.addComponent(processInfoPanel,0,2);
 		
 		// Panel containing a textual representation
-		Panel textualRepresentationPanel = new Panel("Textual Representation");
+		Panel textualRepresentationPanel = new Panel("Detailed information");
 		// textualRepresentationPanel.setHeight("90%");
 		textualRepresentationPanel.setWidth("300px");
-		GridLayout gridLayout = new GridLayout(2, 7);
+		GridLayout gridLayout = new GridLayout(3, 7);
 		textualRepresentationPanel.setContent(gridLayout);
 		gridLayout.setMargin(true);
 		gridLayout.setSpacing(true);
-		addLabelAndValue(gridLayout, "Average requested amount", avgRequestedAmountLabel);
-		addLabelAndValue(gridLayout, "Maximum requested amount", maxRequestedAmountLabel);
-		addLabelAndValue(gridLayout, "Sum of requested amount", sumRequestedAmountLabel);
-		addLabelAndValue(gridLayout, "Number of loans", numLoansLabel);
-		addLabelAndValue(gridLayout, "Sum of loaned amount", sumLoanedAmountLabel);
-		addLabelAndValue(gridLayout, "Average process duration", avgProcessDurationLabel);
-		addLabelAndValue(gridLayout, "Maximum process duration", maxProcessDurationLabel);
+		addLabelAndValue(gridLayout, "Average requested amount", avgRequestedAmountLabel,"€");
+		addLabelAndValue(gridLayout, "Maximum requested amount", maxRequestedAmountLabel, "€");
+		addLabelAndValue(gridLayout, "Sum of requested amount", sumRequestedAmountLabel, "€");
+		addLabelAndValue(gridLayout, "Number of loans", numLoansLabel, "");
+		addLabelAndValue(gridLayout, "Sum of loaned amount", sumLoanedAmountLabel, "€");
+		addLabelAndValue(gridLayout, "Average process duration", avgProcessDurationLabel, "ms.");
+		addLabelAndValue(gridLayout, "Maximum process duration", maxProcessDurationLabel, "ms.");
 		mainWindowLayout.addComponent(textualRepresentationPanel,1,1,1,2);
 
 		// Monitor requested amount
@@ -136,22 +136,24 @@ public class BAMApplication extends Application {
 				loanInfoPanel.removeAllComponents();
 				
 				Gauge numLoansGauge= new Gauge();
+				numLoansGauge.setOption("max", 20);
 				numLoansGauge.setOption("redFrom", 0);
-				numLoansGauge.setOption("redTo", 10);
-				numLoansGauge.setOption("yellowFrom", 10);
-				numLoansGauge.setOption("yellowTo", 30);
+				numLoansGauge.setOption("redTo", 3);
+				numLoansGauge.setOption("yellowFrom", 3);
+				numLoansGauge.setOption("yellowTo", 6);
 				numLoansGauge.setOption("minorTicks",5);
 				numLoansGauge.setSizeFull();
-				numLoansGauge.add("#", numLoans*10);
+				numLoansGauge.add("#", numLoans);
 				
 				Gauge sumLoanedAmountGauge= new Gauge();
+				sumLoanedAmountGauge.setOption("max", 800);
 				sumLoanedAmountGauge.setOption("redFrom", 0);
-				sumLoanedAmountGauge.setOption("redTo", 30);
-				sumLoanedAmountGauge.setOption("yellowFrom", 30);
-				sumLoanedAmountGauge.setOption("yellowTo", 60);
-				sumLoanedAmountGauge.setOption("minorTicks",10);
+				sumLoanedAmountGauge.setOption("redTo", 150);
+				sumLoanedAmountGauge.setOption("yellowFrom", 150);
+				sumLoanedAmountGauge.setOption("yellowTo", 300);
+				sumLoanedAmountGauge.setOption("minorTicks",4);
 				sumLoanedAmountGauge.setSizeFull();
-				sumLoanedAmountGauge.add("€", (sumLoanedAmount!=null)?sumLoanedAmount/10:0);
+				sumLoanedAmountGauge.add("€", (sumLoanedAmount!=null)?sumLoanedAmount:0);
 				
 				loanInfoPanel.addComponent(numLoansGauge);
 				loanInfoPanel.addComponent(sumLoanedAmountGauge);
@@ -171,22 +173,24 @@ public class BAMApplication extends Application {
 				processInfoPanel.removeAllComponents();
 				
 				Gauge avgProcessDurationGauge= new Gauge();
-				avgProcessDurationGauge.setOption("yellowFrom", 70);
-				avgProcessDurationGauge.setOption("yellowTo", 85);
-				avgProcessDurationGauge.setOption("redFrom", 85);
-				avgProcessDurationGauge.setOption("redTo", 100);
+				avgProcessDurationGauge.setOption("max", 2000);
+				avgProcessDurationGauge.setOption("yellowFrom", 1600);
+				avgProcessDurationGauge.setOption("yellowTo", 1800);
+				avgProcessDurationGauge.setOption("redFrom", 1800);
+				avgProcessDurationGauge.setOption("redTo", 2000);
 				avgProcessDurationGauge.setOption("minorTicks",5);
 				avgProcessDurationGauge.setSizeFull();
-				avgProcessDurationGauge.add("avg", (avgProcessDuration!=null) ? new Double(avgProcessDuration/20).intValue() : 0);
+				avgProcessDurationGauge.add("ms.", (avgProcessDuration!=null) ? avgProcessDuration.intValue() : 0);
 				
 				Gauge maxProcessDurationGauge= new Gauge();
-				maxProcessDurationGauge.setOption("yellowFrom", 70);
-				maxProcessDurationGauge.setOption("yellowTo", 85);
-				maxProcessDurationGauge.setOption("redFrom", 85);
-				maxProcessDurationGauge.setOption("redTo", 100);
-				maxProcessDurationGauge.setOption("minorTicks",5);
+				maxProcessDurationGauge.setOption("max",2800);
+				maxProcessDurationGauge.setOption("yellowFrom", 1600);
+				maxProcessDurationGauge.setOption("yellowTo", 1800);
+				maxProcessDurationGauge.setOption("redFrom", 1800);
+				maxProcessDurationGauge.setOption("redTo", 2800);
+				maxProcessDurationGauge.setOption("minorTicks",7);
 				maxProcessDurationGauge.setSizeFull();
-				maxProcessDurationGauge.add("max", (maxProcessDuration!=null) ? maxProcessDuration/20 : 0);
+				maxProcessDurationGauge.add("ms.", (maxProcessDuration!=null) ? maxProcessDuration : 0);
 				
 				processInfoPanel.addComponent(avgProcessDurationGauge);
 				processInfoPanel.addComponent(maxProcessDurationGauge);
@@ -195,11 +199,14 @@ public class BAMApplication extends Application {
 		epAdmin.getStatement(EsperStatementsCreator.PROCESS_DURATION_STATEMENT_NAME).addListenerWithReplay(	processDurationListener);
 	}
 
-	private void addLabelAndValue(GridLayout layout, String labelText, Component value) {
+	private void addLabelAndValue(GridLayout layout, String labelText, Component value, String unitText) {
 		Label label = new Label(labelText + ":");
 		layout.addComponent(label);
 		layout.setComponentAlignment(label, Alignment.MIDDLE_RIGHT);
 		layout.addComponent(value);
 		layout.setComponentAlignment(value, Alignment.MIDDLE_RIGHT);
+		label = new Label(unitText);
+		layout.addComponent(label);
+		layout.setComponentAlignment(label, Alignment.MIDDLE_LEFT);
 	}
 }
