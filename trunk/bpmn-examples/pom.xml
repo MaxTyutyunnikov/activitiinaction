@@ -8,9 +8,8 @@
 	<name>BPMN 2.0 with Activiti - Examples</name>
 
 	<properties>
-		<activiti-version>5.6</activiti-version>
+		<activiti-version>5.7</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
-		<spring-surf-version>1.0.0-RC2</spring-surf-version>
 		<cxf-version>2.3.4</cxf-version>
 	</properties>
 
@@ -101,11 +100,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.extensions.surf</groupId>
-			<artifactId>spring-webscripts-api</artifactId>
-			<version>${spring-surf-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
