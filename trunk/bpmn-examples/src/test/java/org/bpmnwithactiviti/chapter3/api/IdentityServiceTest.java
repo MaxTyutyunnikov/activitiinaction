@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.activiti.engine.IdentityService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.identity.Group;
@@ -36,7 +37,10 @@ public class IdentityServiceTest extends AbstractTest {
 		Group group = activitiRule.getIdentityService().createGroupQuery().singleResult();
 		assertEquals("Sales", group.getName());
 		
-		activitiRule.getIdentityService().createMembership("John Doe", "sales");
+		IdentityService identityService = activitiRule.getIdentityService();
+		identityService.createMembership("John Doe", "sales");
+		
+		identityService.setAuthenticatedUserId("John Doe");
 		
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Map<String, Object> variableMap = new HashMap<String, Object>();

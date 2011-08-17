@@ -5,7 +5,7 @@
 	<artifactId>bpmn-examples</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>BPMN 2.0 with Activiti - Examples</name>
+	<name>Activiti in Action - Examples</name>
 
 	<properties>
 		<activiti-version>5.7</activiti-version>
