@@ -15,6 +15,7 @@ import org.activiti.engine.FormService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
+import org.bpmnwithactiviti.chapter6.jpa.Book;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;

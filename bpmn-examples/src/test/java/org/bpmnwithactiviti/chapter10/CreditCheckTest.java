@@ -3,8 +3,8 @@ package org.bpmnwithactiviti.chapter10;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.bpmnwithactiviti.chapter10.logic.CreditCheckRuleRunner;
-import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter12.logic.CreditCheckRuleRunner;
+import org.bpmnwithactiviti.chapter12.model.LoanApplicant;
 import org.junit.Test;
 
 public class CreditCheckTest {

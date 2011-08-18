@@ -11,7 +11,7 @@ import java.util.Map;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter10.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter12.model.LoanApplicant;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;

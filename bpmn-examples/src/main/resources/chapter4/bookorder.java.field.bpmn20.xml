@@ -5,7 +5,7 @@
 		
 	<process id="bookorder" name="bookorder">
 		<startEvent id="startevent1" name="Start"/>
-		<serviceTask id="serviceTask1" name="Validate order" activiti:class="org.bpmnwithactiviti.chapter3.java.ValidateServiceWithFields">
+		<serviceTask id="serviceTask1" name="Validate order" activiti:class="org.bpmnwithactiviti.chapter4.java.ValidateServiceWithFields">
 			<extensionElements>
 				<activiti:field name="validatetext" stringValue="Validaton done at "/>
 			    <activiti:field name="isbn">

@@ -1,12 +1,10 @@
-package org.bpmnwithactiviti.chapter12.test;
+package org.bpmnwithactiviti.chapter14.listener;
 
 import java.util.Date;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.ExecutionListener;
 import org.bpmnwithactiviti.chapter14.bam.event.LoanRequestReceivedEvent;
-
-import com.espertech.esper.client.EPServiceProviderManager;
 
 public class ProcessStartExecutionListener implements ExecutionListener {
 
@@ -16,9 +14,6 @@ public class ProcessStartExecutionListener implements ExecutionListener {
 			execution.getId(), 
 			new Date().getTime(), 
 			(Integer) execution.getVariable("loanAmount"));
-		System.out.println(">>> Throwing event: "+event);
-		EPServiceProviderManager.getDefaultProvider().getEPRuntime()
-			.getEventSender("LoanRequestReceivedEvent")
-			.sendEvent(event);
+		EventSender.send(event);
 	}
 }
