@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter4;
+package org.bpmnwithactiviti.chapter5;
 
 import java.util.HashMap;
 import java.util.Map;
