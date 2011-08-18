@@ -1,0 +1,33 @@
+<definitions 
+  xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:activiti="http://activiti.org/bpmn"
+  targetNamespace="http://www.bpmnwithactiviti.org/email">
+  
+  <process id="simpleEmailProcess" >
+    <startEvent id="theStart" />
+    <sequenceFlow sourceRef="theStart" targetRef="sendMail" />
+    <serviceTask id="sendMail" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to" stringValue="miss.piggy@localhost" />
+        <activiti:field name="subject" expression="Hello ${name}" />
+        <activiti:field name="html">
+          <activiti:expression>
+            <![CDATA[
+              <html>
+                <body>
+                  Hello ${name},<br/><br/>
+                  Your loan request has been denied.<br/><br/>
+              	  Kind regards,<br/>
+                  The Loan Sharks Company.
+                </body>
+              </html>
+            ]]>
+          </activiti:expression>
+        </activiti:field>       
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow sourceRef="sendMail" targetRef="theEnd" />
+    <endEvent id="theEnd" />
+  </process>
+
+</definitions>

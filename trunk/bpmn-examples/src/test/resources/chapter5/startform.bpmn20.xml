@@ -1,0 +1,9 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/usertaskwithform">
+	
+	<process id="startFormTest">
+		<startEvent id="theStart" activiti:formKey="chapter4/loanRequest.form" />
+		<sequenceFlow sourceRef="theStart" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>
