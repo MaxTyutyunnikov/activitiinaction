@@ -52,6 +52,6 @@
 		<property name="processEngine" ref="processEngine" />
 	</bean>
 
-	<bean id="order" class="org.bpmnwithactiviti.chapter3.spring.OrderService" />
+	<bean id="order" class="org.bpmnwithactiviti.chapter4.spring.OrderService" />
 
 </beans>

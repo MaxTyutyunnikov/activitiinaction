@@ -24,7 +24,7 @@ public class IdentityServiceTest extends AbstractTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 	
 	@Test
-	@Deployment(resources = {"chapter3/bookorder.bpmn20.xml"})
+	@Deployment(resources = {"chapter4/bookorder.bpmn20.xml"})
 	public void testMembership() {
 		User newUser = activitiRule.getIdentityService().newUser("John Doe");
 		activitiRule.getIdentityService().saveUser(newUser);

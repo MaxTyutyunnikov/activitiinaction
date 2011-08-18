@@ -44,7 +44,7 @@ public class HistoryServiceTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.bpmn20.xml"})
 	public void queryHistoricInstances() {
 		String processInstanceID = startAndComplete();
 		HistoryService historyService = activitiRule.getHistoryService();
@@ -60,7 +60,7 @@ public class HistoryServiceTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.bpmn20.xml"})
 	public void queryHistoricActivities() {
 		startAndComplete();
 		HistoryService historyService = activitiRule.getHistoryService();
@@ -77,7 +77,7 @@ public class HistoryServiceTest extends AbstractTest {
 	}
 
 	@Test
-	@Deployment(resources={"chapter3/bookorder.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.bpmn20.xml"})
 	public void queryHistoricVariableUpdates() {
 		startAndComplete();
 		HistoryService historyService = activitiRule.getHistoryService();

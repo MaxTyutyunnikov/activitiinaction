@@ -31,7 +31,7 @@ public class TaskServiceTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.bpmn20.xml"})
 	public void queryTask() {
 		startProcessInstance();
 		TaskService taskService = activitiRule.getTaskService();

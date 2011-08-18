@@ -20,7 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:chapter3/spring-nodeployment-application-context.xml")
+@ContextConfiguration("classpath:chapter4/spring-nodeployment-application-context.xml")
 public class SpringWithDeploymentTest extends AbstractTest {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class SpringWithDeploymentTest extends AbstractTest {
 	public ActivitiRule activitiSpringRule;
 
 	@Test
-	@Deployment(resources = { "chapter3/bookorder.spring.bpmn20.xml" })
+	@Deployment(resources = { "chapter4/bookorder.spring.bpmn20.xml" })
 	public void simpleProcessTest() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("isbn", Long.valueOf("123456"));
