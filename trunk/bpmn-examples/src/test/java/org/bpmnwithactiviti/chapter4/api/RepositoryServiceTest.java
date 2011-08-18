@@ -26,7 +26,7 @@ public class RepositoryServiceTest extends AbstractTest {
 	public void deleteDeployment() {
 		RepositoryService repositoryService = activitiRule.getRepositoryService();
 		String deploymentID = repositoryService.createDeployment()
-			.addClasspathResource("chapter3/bookorder.bpmn20.xml")
+			.addClasspathResource("chapter4/bookorder.bpmn20.xml")
 			.deploy()
 			.getId();
 		
@@ -48,7 +48,7 @@ public class RepositoryServiceTest extends AbstractTest {
 		assertNotNull(processInstance);
 		assertEquals(processDefinition.getId(), processInstance.getProcessDefinitionId());
 		
-		repositoryService.deleteDeploymentCascade(deploymentID);
+		repositoryService.deleteDeployment(deploymentID, true);
 		
 		deployment = repositoryService.createDeploymentQuery().singleResult();
 		assertNull(deployment);

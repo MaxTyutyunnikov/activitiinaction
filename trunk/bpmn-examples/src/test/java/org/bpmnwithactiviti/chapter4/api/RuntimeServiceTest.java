@@ -30,7 +30,7 @@ public class RuntimeServiceTest extends AbstractTest {
 		
 		RepositoryService repositoryService = processEngine.getRepositoryService();
 		repositoryService.createDeployment()
-			.addClasspathResource("chapter3/bookorder.bpmn20.xml")
+			.addClasspathResource("chapter4/bookorder.bpmn20.xml")
 			.deploy();
 		
 		runtimeService = processEngine.getRuntimeService();

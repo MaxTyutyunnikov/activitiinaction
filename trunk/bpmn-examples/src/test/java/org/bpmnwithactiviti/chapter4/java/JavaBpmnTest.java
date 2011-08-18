@@ -28,7 +28,7 @@ public class JavaBpmnTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.java.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.java.bpmn20.xml"})
 	public void executeJavaService() {
 		ProcessInstance processInstance = startProcessInstance();
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
@@ -38,7 +38,7 @@ public class JavaBpmnTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.java.field.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.java.field.bpmn20.xml"})
 	public void executeJavaServiceWithExtensions() {
 		ProcessInstance processInstance = startProcessInstance();
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
@@ -48,7 +48,7 @@ public class JavaBpmnTest extends AbstractTest {
 	}
 	
 	@Test
-	@Deployment(resources={"chapter3/bookorder.java.expression.bpmn20.xml"})
+	@Deployment(resources={"chapter4/bookorder.java.expression.bpmn20.xml"})
 	public void executeJavaExpression() {
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		BookOrder bookOrder = new BookOrder();

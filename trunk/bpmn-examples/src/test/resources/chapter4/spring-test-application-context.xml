@@ -26,7 +26,7 @@
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="deploymentResources"
-			value="classpath*:chapter3/bookorder.spring.bpmn20.xml" />
+			value="classpath*:chapter4/bookorder.spring.bpmn20.xml" />
 		<property name="history" value="audit" />
 		<property name="jobExecutorActivate" value="false" />
 	</bean>
@@ -50,6 +50,6 @@
 		<property name="processEngine" ref="processEngine" />
 	</bean>
 
-	<bean id="order" class="org.bpmnwithactiviti.chapter3.spring.OrderService" />
+	<bean id="order" class="org.bpmnwithactiviti.chapter4.spring.OrderService" />
 
 </beans>
