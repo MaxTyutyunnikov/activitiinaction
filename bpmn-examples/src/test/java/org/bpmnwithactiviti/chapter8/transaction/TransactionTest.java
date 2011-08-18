@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter7.transaction;
+package org.bpmnwithactiviti.chapter8.transaction;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
