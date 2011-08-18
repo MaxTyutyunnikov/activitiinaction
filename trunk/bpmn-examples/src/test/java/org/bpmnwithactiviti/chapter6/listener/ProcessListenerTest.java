@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter5.listener;
+package org.bpmnwithactiviti.chapter6.listener;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

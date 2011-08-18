@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.errorevent;
+package org.bpmnwithactiviti.chapter7.errorevent;
 
 import static org.junit.Assert.assertNull;
 
