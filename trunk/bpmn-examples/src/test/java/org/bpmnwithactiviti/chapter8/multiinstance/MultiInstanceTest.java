@@ -14,6 +14,8 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
+import org.bpmnwithactiviti.chapter10.multiinstance.DecisionVoting;
+import org.bpmnwithactiviti.chapter10.multiinstance.Vote;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;

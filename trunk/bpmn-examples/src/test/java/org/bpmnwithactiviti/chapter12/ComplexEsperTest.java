@@ -5,8 +5,8 @@ import java.util.Queue;
 
 import junit.framework.Assert;
 
-import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestProcessedEvent;
-import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestReceivedEvent;
+import org.bpmnwithactiviti.chapter14.bam.event.LoanRequestProcessedEvent;
+import org.bpmnwithactiviti.chapter14.bam.event.LoanRequestReceivedEvent;
 import org.junit.Before;
 import org.junit.Test;
 

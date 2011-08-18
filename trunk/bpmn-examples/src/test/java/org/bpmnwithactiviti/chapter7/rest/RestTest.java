@@ -3,7 +3,7 @@ package org.bpmnwithactiviti.chapter7.rest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.bpmnwithactiviti.chapter7.rest.ActivitiRestClient;
+import org.bpmnwithactiviti.chapter8.rest.ActivitiRestClient;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 
