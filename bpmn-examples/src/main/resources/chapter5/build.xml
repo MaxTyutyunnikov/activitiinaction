@@ -12,24 +12,20 @@
 		<mkdir dir="${dist.dir}" />
 	</target>
 	
-	<target name="cfg.create">
-		<jar destfile="${dist.dir}/activiti-cfg.jar" basedir="../../../../src/main/resources" includes="activiti.cfg.xml" />
-	</target>
-
 	<target name="loanrequest.jar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/loanrequest.jar"
 		       basedir="../../../../target/classes"
-		       includes="org/bpmnwithactiviti/chapter4/**"
+		       includes="org/bpmnwithactiviti/chapter5/**"
 		  />
 	</target>
 	
 	<target name="loanrequest.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/loanrequest.bar"
-		       basedir="../../../../src/main/resources"
-		 	   includes="chapter4/**"
+		       basedir="."
+		 	     includes="*.bpmn20.xml"
 		  />
 	</target>
 	
-	<target name="create.loanrequest" depends="dist.mkdir, cfg.create, loanrequest.jar, loanrequest.bar"/>
+	<target name="create.loanrequest" depends="dist.mkdir, loanrequest.jar, loanrequest.bar"/>
 
 </project>

@@ -19,7 +19,7 @@
 			</script>
 	</scriptTask>
     <sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
-    <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter4.ApplicationCreator" />
+    <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter5.CreateApplicationTask" />
 	<sequenceFlow sourceRef="createApplication" targetRef="theEnd" />
     <endEvent id="theEnd" />
   </process>
