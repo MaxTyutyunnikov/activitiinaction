@@ -22,7 +22,7 @@ public class LoanRequestTest extends AbstractTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
 
 	@Test
-	@Deployment(resources={"chapter4/loanrequest_firstpart.bpmn20.xml"})
+	@Deployment(resources={"chapter5/loanrequest_firstpart.bpmn20.xml"})
 	public void creditCheckTrue() {
 		Map<String, Object> processVariables = new HashMap<String, Object>();
 		processVariables.put("name", "Miss Piggy");

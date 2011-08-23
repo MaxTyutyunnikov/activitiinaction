@@ -2,7 +2,14 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/usertaskwithform">
 	
 	<process id="startFormTest">
-		<startEvent id="theStart" activiti:formKey="chapter4/loanRequest.form" />
+		<startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="name" name="Name" required="true" type="string" />
+        <activiti:formProperty id="emailAddress" name="Email address" required="true" type="string" />
+        <activiti:formProperty id="income" name="Income" required="true" type="long" />
+        <activiti:formProperty id="loanAmount" name="Loan amount" required="true" type="long" />
+      </extensionElements>
+    </startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="theEnd" />
 		<endEvent id="theEnd" />
 	</process>

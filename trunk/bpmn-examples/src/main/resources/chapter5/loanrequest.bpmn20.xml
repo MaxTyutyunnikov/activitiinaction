@@ -6,7 +6,14 @@
 	targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
 	
   <process id="loanrequest" name="Process to handle a loan request">
-    <startEvent id="theStart" activiti:formKey="chapter4/loanRequest.form" />
+    <startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="name" name="Name" required="true" type="string" />
+        <activiti:formProperty id="emailAddress" name="Email address" required="true" type="string" />
+        <activiti:formProperty id="income" name="Income" required="true" type="long" />
+        <activiti:formProperty id="loanAmount" name="Loan amount" required="true" type="long" />
+      </extensionElements>
+    </startEvent>
     <sequenceFlow sourceRef="theStart" targetRef="checkCredit" />
    	<scriptTask id="checkCredit" scriptFormat="groovy">
 			<script>
@@ -17,32 +24,52 @@
 				}
 				out:println "Checked credit for " + name + " outcome is " + creditCheckOk;
 			</script>
-	</scriptTask>
+    </scriptTask>
     <sequenceFlow sourceRef="checkCredit" targetRef="createApplication" />
-    <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter4.ApplicationCreator" />
-	<sequenceFlow sourceRef="createApplication" targetRef="evaluateLoanRequest" />
-	<userTask id="evaluateLoanRequest" name="Evaluate loan request" 
-		activiti:formKey="chapter4/handleLoanRequest.form" 
-		activiti:assignee="fozzie"/>
-	<sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
-	<boundaryEvent id="escalationTimer" cancelActivity="true" attachedToRef="evaluateLoanRequest">
-		<timerEventDefinition>
-			<timeDuration>PT1M</timeDuration>
-		</timerEventDefinition>
-	</boundaryEvent>
-	<sequenceFlow sourceRef="escalationTimer" targetRef="evaluateRequestByManager" />
-	<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager"
-		activiti:formKey="chapter4/handleLoanRequest.form"
-		activiti:candidateGroups="management" />
-	<sequenceFlow sourceRef="evaluateRequestByManager" targetRef="approvalGateway" />
-	<exclusiveGateway id="approvalGateway" />
-	<sequenceFlow sourceRef="approvalGateway" targetRef="informCustomer">
-      	<conditionExpression xsi:type="tFormalExpression">${requestApproved == false}</conditionExpression>
-	</sequenceFlow>
-	<sequenceFlow sourceRef="approvalGateway" targetRef="processRequest">
-		<conditionExpression xsi:type="tFormalExpression">${requestApproved == true}</conditionExpression>
-	</sequenceFlow>
-	<serviceTask id="informCustomer" activiti:type="mail">
+    <serviceTask id="createApplication"	activiti:class="org.bpmnwithactiviti.chapter5.CreateApplicationTask" />
+    <sequenceFlow sourceRef="createApplication" targetRef="evaluateLoanRequest" />
+    <userTask id="evaluateLoanRequest" name="Evaluate loan request" activiti:assignee="fozzie">
+      <extensionElements>
+        <activiti:formProperty id="customerName" name="Customer name" expression="${loanApplication.customerName}" writable="false"/>
+        <activiti:formProperty id="income" name="Income of customer" expression="${loanApplication.income}" writable="false"/>
+        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="${loanApplication.requestedAmount}" writable="false"/>
+        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="${loanApplication.creditCheckOk}" writable="false"/>
+        <activiti:formProperty id="requestApproved" name="Do you approve the request?" required="true" type="enum">
+          <activiti:value id="true" name="Yes"/>
+          <activiti:value id="false" name="No"/>
+        </activiti:formProperty>
+        <activiti:formProperty id="motivation" name="Motivation"/>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
+    <boundaryEvent id="escalationTimer" cancelActivity="true" attachedToRef="evaluateLoanRequest">
+      <timerEventDefinition>
+        <timeDuration>PT1M</timeDuration>
+	   </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow sourceRef="escalationTimer" targetRef="evaluateRequestByManager" />
+    <userTask id="evaluateRequestByManager" name="Evaluate loan request by manager" activiti:candidateGroups="management">
+      <extensionElements>
+        <activiti:formProperty id="customerName" name="Customer name" expression="${loanApplication.customerName}" writable="false"/>
+        <activiti:formProperty id="income" name="Income of customer" expression="${loanApplication.income}" writable="false"/>
+        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="${loanApplication.requestedAmount}" writable="false"/>
+        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="${loanApplication.creditCheckOk}" writable="false"/>
+        <activiti:formProperty id="requestApproved" name="Do you approve the request?" required="true" type="enum">
+          <activiti:value id="true" name="Yes"/>
+          <activiti:value id="false" name="No"/>
+        </activiti:formProperty>
+        <activiti:formProperty id="motivation" name="Motivation"/>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow sourceRef="evaluateRequestByManager" targetRef="approvalGateway" />
+    <exclusiveGateway id="approvalGateway" />
+    <sequenceFlow sourceRef="approvalGateway" targetRef="informCustomer">
+      <conditionExpression xsi:type="tFormalExpression">${requestApproved == false}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow sourceRef="approvalGateway" targetRef="processRequest">
+		  <conditionExpression xsi:type="tFormalExpression">${requestApproved == true}</conditionExpression>
+    </sequenceFlow>
+    <serviceTask id="informCustomer" activiti:type="mail">
       <extensionElements>
         <activiti:field name="to" expression="${loanApplication.emailAddres}" />
         <activiti:field name="subject" stringValue="Loan Request Denied" />
@@ -65,9 +92,9 @@
         </activiti:field>      
       </extensionElements>
     </serviceTask>
-	<sequenceFlow sourceRef="informCustomer" targetRef="theEnd" />
-	<userTask id="processRequest" name="Process the loan request" activiti:assignee="fozzie" />
-	<sequenceFlow sourceRef="processRequest" targetRef="theEnd" />
+    <sequenceFlow sourceRef="informCustomer" targetRef="theEnd" />
+    <userTask id="processRequest" name="Process the loan request" activiti:assignee="fozzie" />
+    <sequenceFlow sourceRef="processRequest" targetRef="theEnd" />
     <endEvent id="theEnd" />
   </process>
 </definitions>

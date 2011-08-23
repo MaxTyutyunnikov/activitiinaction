@@ -22,7 +22,7 @@ public class MailTaskTest extends AbstractTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-mail.xml");
 
 	@Test
-	@Deployment(resources={"chapter4/testSimpleMail.bpmn20.xml"})
+	@Deployment(resources={"chapter5/testSimpleMail.bpmn20.xml"})
 	public void sendMailLocalTest() throws Exception {
 		Wiser wiser = new Wiser();
 	    wiser.setPort(1025);

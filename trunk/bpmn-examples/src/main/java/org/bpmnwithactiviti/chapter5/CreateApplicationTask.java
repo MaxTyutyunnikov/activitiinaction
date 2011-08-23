@@ -9,9 +9,10 @@ public class CreateApplicationTask implements JavaDelegate {
 		LoanApplication la = new LoanApplication();
 		la.setCreditCheckOk((Boolean) execution.getVariable("creditCheckOk"));
 		la.setCustomerName((String) execution.getVariable("name"));
-		la.setIncome((Integer) execution.getVariable("income"));
-		la.setRequestedAmount((Integer) execution.getVariable("loanAmount"));
-		la.setEmailAddres((String) execution.getVariable("emailAddress"));
+		la.setIncome((Long) execution.getVariable("income"));
+		la.setRequestedAmount((Long) execution.getVariable("loanAmount"));
+		la.setEmailAddress((String) execution.getVariable("emailAddress"));
+		System.out.println("name " + la.getCustomerName());
 		execution.setVariable("loanApplication", la);
 	}
 

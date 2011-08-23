@@ -13,7 +13,7 @@ public class BarDeployer {
 	public static void main(String[] args) throws Exception {
 		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 		RepositoryService repositoryService = processEngine.getRepositoryService();
-		String barFileName = "src/test/resources/chapter4/dist/loanrequest.bar";
+		String barFileName = "src/main/resources/chapter5/dist/loanrequest.bar";
 		ZipInputStream inputStream = new ZipInputStream(new FileInputStream(barFileName));
 		String deploymentID = repositoryService.createDeployment().name(barFileName).addZipInputStream(inputStream).deploy().getId();
 		List<String> deployedResources = repositoryService.getDeploymentResourceNames(deploymentID);
