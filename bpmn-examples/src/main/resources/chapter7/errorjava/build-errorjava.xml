@@ -15,13 +15,13 @@
 	<target name="errorjava.jar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/errorjava.jar"
 		       basedir="../../../../../target/classes"
-		       includes="org/bpmnwithactiviti/chapter6/ws/**, org/bpmnwithactiviti/chapter6/errorjava/**"
+		       includes="org/bpmnwithactiviti/chapter7/ws/**, org/bpmnwithactiviti/chapter7/errorjava/**"
 		  />
 	</target>
 	
 	<target name="errorjava.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/errorjava.bar"
-		       basedir="." includes="*.bpmn20.xml, *.form" />
+		       basedir="." includes="*.bpmn20.xml" />
 	</target>
 	
 	<target name="create.errorjava" depends="dist.mkdir, errorjava.jar, errorjava.bar"/>

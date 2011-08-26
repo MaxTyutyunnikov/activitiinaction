@@ -14,7 +14,7 @@ public class StoreOpportunityTask implements JavaDelegate {
   public void execute(DelegateExecution execution) throws Exception {
     CustomerVariable customer = (CustomerVariable) execution.getVariable("customer");
     String product = (String) execution.getVariable("product");
-    Integer expectedQuantity = (Integer) execution.getVariable("quantity");
+    Long expectedQuantity = (Long) execution.getVariable("quantity");
     String description = (String) execution.getVariable("description");
     System.out.println("Storing sales opportunity for customer " + customer.getCustomerId());
     Customer responseCustomer = customerService.getCustomerServicePort().storeSalesOpportunity(product, expectedQuantity, 

@@ -12,7 +12,7 @@ public class RetrieveCustomerTask implements ActivityBehavior {
 
   @Override
   public void execute(ActivityExecution execution) throws Exception {
-    Integer customerId = (Integer) execution.getVariable("customerNumber");
+    Long customerId = (Long) execution.getVariable("customerNumber");
     Customer customer = null;
     if(customerId > 0) {
       customer = customerService.getCustomerServicePort().findCustomerById(customerId);
