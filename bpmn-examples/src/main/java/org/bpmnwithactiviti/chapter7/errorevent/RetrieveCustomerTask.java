@@ -2,8 +2,8 @@ package org.bpmnwithactiviti.chapter7.errorevent;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
-import org.bpmnwithactiviti.chapter6.ws.Customer;
-import org.bpmnwithactiviti.chapter6.ws.CustomerServiceService;
+import org.bpmnwithactiviti.chapter7.ws.Customer;
+import org.bpmnwithactiviti.chapter7.ws.CustomerServiceService;
 
 public class RetrieveCustomerTask implements JavaDelegate {
   
@@ -11,7 +11,7 @@ public class RetrieveCustomerTask implements JavaDelegate {
 
   @Override
   public void execute(DelegateExecution execution) throws Exception {
-    Integer customerId = (Integer) execution.getVariable("customerNumber");
+	  Long customerId = (Long) execution.getVariable("customerNumber");
     Customer customer = null;
     if(customerId > 0) {
       customer = customerService.getCustomerServicePort().findCustomerById(customerId);

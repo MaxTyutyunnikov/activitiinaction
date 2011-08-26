@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="CustomerServiceService" targetNamespace="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="CustomerServiceService" targetNamespace="http://ws.chapter7.bpmnwithactiviti.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.chapter7.bpmnwithactiviti.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-<xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.chapter6.bpmnwithactiviti.org/" version="1.0" xmlns:tns="http://ws.chapter6.bpmnwithactiviti.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.chapter7.bpmnwithactiviti.org/" version="1.0" xmlns:tns="http://ws.chapter7.bpmnwithactiviti.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:element name="findCustomer" type="tns:findCustomer"/>
 <xs:element name="findCustomerById" type="tns:findCustomerById"/>
 <xs:element name="findCustomerByIdResponse" type="tns:findCustomerByIdResponse"/>
@@ -31,7 +31,7 @@
 <xs:complexType name="salesOpportunity">
     <xs:sequence>
       <xs:element minOccurs="0" name="description" type="xs:string"/>
-      <xs:element name="expectedQuantity" type="xs:int"/>
+      <xs:element name="expectedQuantity" type="xs:long"/>
       <xs:element name="opportunityId" type="xs:long"/>
       <xs:element minOccurs="0" name="product" type="xs:string"/>
     </xs:sequence>
@@ -49,7 +49,7 @@
 <xs:complexType name="storeSalesOpportunity">
     <xs:sequence>
       <xs:element minOccurs="0" name="product" type="xs:string"/>
-      <xs:element name="expectedQuantity" type="xs:int"/>
+      <xs:element name="expectedQuantity" type="xs:long"/>
       <xs:element minOccurs="0" name="description" type="xs:string"/>
       <xs:element name="customerId" type="xs:long"/>
     </xs:sequence>
@@ -137,7 +137,7 @@
   </wsdl:binding>
   <wsdl:service name="CustomerServiceService">
     <wsdl:port binding="tns:CustomerServiceServiceSoapBinding" name="CustomerServicePort">
-      <soap:address location="http://localhost:8081/book-sales-webapp/services/customer"/>
+      <soap:address location="http://localhost:8081/book-sales-app/services/customer"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

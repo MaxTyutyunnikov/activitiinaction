@@ -31,7 +31,7 @@
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="deploymentResources"
-			value="classpath*:chapter5/listener/processEventListener.bpmn20.xml" />
+			value="classpath*:chapter6/listener/processEventListener.bpmn20.xml" />
 		<property name="history" value="full" />
 		<property name="jobExecutorActivate" value="false" />
 	</bean>
@@ -51,10 +51,10 @@
 	<bean id="managementService" factory-bean="processEngine"
 		factory-method="getManagementService" />
 
-	<bean id="gossipActivity" class="org.bpmnwithactiviti.chapter5.listener.GossipAboutActivity" />
+	<bean id="gossipActivity" class="org.bpmnwithactiviti.chapter6.listener.GossipAboutActivity" />
 	
-	<bean id="gossipTransition" class="org.bpmnwithactiviti.chapter5.listener.GossipAboutTransition" />
+	<bean id="gossipTransition" class="org.bpmnwithactiviti.chapter6.listener.GossipAboutTransition" />
 	
-	<bean id="gossipUserTask" class="org.bpmnwithactiviti.chapter5.listener.GossipAboutUserTask" />
+	<bean id="gossipUserTask" class="org.bpmnwithactiviti.chapter6.listener.GossipAboutUserTask" />
 
 </beans>

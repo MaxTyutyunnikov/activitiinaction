@@ -15,13 +15,13 @@
 	<target name="callactivity.jar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/callactivity.jar"
 		       basedir="../../../../../target/classes"
-		       includes="org/bpmnwithactiviti/chapter5/callactivity/**"
+		       includes="org/bpmnwithactiviti/chapter6/callactivity/**"
 		  />
 	</target>
 	
 	<target name="callactivity.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/callactivity.bar"
-		       basedir="." includes="*.bpmn20.xml, *.form"
+		       basedir="." includes="*.bpmn20.xml"
 		  />
 	</target>
 	

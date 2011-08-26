@@ -2,7 +2,11 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/subprocess">
 	
 	<process id="escalationProcess" name="Escalation process example">
-		<startEvent id="theStart" activiti:formKey="jiraIssue.form"/>
+		<startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="issueNumber" name="Issue number" required="true" type="long" />
+      </extensionElements>
+    </startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="LogIssue" />
 		<scriptTask id="LogIssue" scriptFormat="groovy">
 			<script>
@@ -17,9 +21,14 @@
 				<documentation>JIRA issue is ${issueNumber}</documentation>
 			</userTask>
 			<sequenceFlow sourceRef="DeveloperTask" targetRef="TestTask" />
-			<userTask id="TestTask" name="Test solution" activiti:formKey="testSolution.form"
+			<userTask id="TestTask" name="Test solution"
 					activiti:candidateGroups="engineering">
-				<documentation>JIRA issue is ${issueNumber}</documentation>
+				<extensionElements>
+          <activiti:formProperty id="solutionApproved" name="Do you approve the solution?" required="true" type="enum">
+            <activiti:value id="true" name="Yes"/>
+            <activiti:value id="false" name="No"/>
+          </activiti:formProperty>
+        </extensionElements>
 			</userTask>
 			<sequenceFlow sourceRef="TestTask" targetRef="TestOK" />
 			<exclusiveGateway id="TestOK"/>

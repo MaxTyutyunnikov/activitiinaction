@@ -4,7 +4,7 @@
              version="2.0">
 	<persistence-unit name="bookStore" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-   	<class>org.bpmnwithactiviti.chapter5.jpa.Book</class>
+   	<class>org.bpmnwithactiviti.chapter6.jpa.Book</class>
    	<exclude-unlisted-classes>true</exclude-unlisted-classes>
  		<properties>
     	<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>

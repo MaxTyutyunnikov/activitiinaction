@@ -24,7 +24,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:chapter5/jpa/jpa-application-context.xml")
+@ContextConfiguration("classpath:chapter6/jpa/jpa-application-context.xml")
 public class JPABookTest extends AbstractTest {
 	
 	@PersistenceContext

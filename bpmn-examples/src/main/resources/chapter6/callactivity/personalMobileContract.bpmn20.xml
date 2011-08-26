@@ -2,7 +2,16 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/personalmobilecontract">
 
 	<process id="personalMobileContract" name="Personal mobile contract">
-		<startEvent id="theStart" activiti:formKey="personalContract.form"/>
+		<startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="customerNumber" name="Customer number" required="true" type="string" />
+        <activiti:formProperty id="contractType" name="Contract type" required="true" type="enum">
+          <activiti:value id="100min" name="100 minutes"/>
+          <activiti:value id="200min" name="200 minutes"/>
+          <activiti:value id="500min" name="500 minutes"/>
+        </activiti:formProperty>
+      </extensionElements>
+    </startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="creditCheck" />
 		<callActivity id="creditCheck" calledElement="creditCheckProcess">
 			<extensionElements>
