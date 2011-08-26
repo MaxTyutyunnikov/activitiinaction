@@ -3,8 +3,8 @@ package org.bpmnwithactiviti.chapter7.errorjava;
 import org.activiti.engine.impl.pvm.PvmTransition;
 import org.activiti.engine.impl.pvm.delegate.ActivityBehavior;
 import org.activiti.engine.impl.pvm.delegate.ActivityExecution;
-import org.bpmnwithactiviti.chapter6.ws.Customer;
-import org.bpmnwithactiviti.chapter6.ws.CustomerServiceService;
+import org.bpmnwithactiviti.chapter7.ws.Customer;
+import org.bpmnwithactiviti.chapter7.ws.CustomerServiceService;
 
 public class RetrieveCustomerTask implements ActivityBehavior {
   
