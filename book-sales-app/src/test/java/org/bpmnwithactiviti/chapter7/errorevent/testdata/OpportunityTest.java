@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.errorevent.testdata;
+package org.bpmnwithactiviti.chapter7.errorevent.testdata;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import org.bpmnwithactiviti.chapter6.data.model.Customer;
-import org.bpmnwithactiviti.chapter6.data.model.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.data.model.Customer;
+import org.bpmnwithactiviti.chapter7.data.model.SalesOpportunity;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

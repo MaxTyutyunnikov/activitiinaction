@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.data.model;
+package org.bpmnwithactiviti.chapter7.data.model;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class Customer {
   private String customerAddress;
   private String contactPerson;
   
-  @ElementCollection(targetClass=org.bpmnwithactiviti.chapter6.data.model.SalesOpportunity.class, fetch=FetchType.EAGER)
+  @ElementCollection(targetClass=org.bpmnwithactiviti.chapter7.data.model.SalesOpportunity.class, fetch=FetchType.EAGER)
   private List<SalesOpportunity> saleOpportunities;
 
   public long getCustomerId() {

@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.data.dao;
+package org.bpmnwithactiviti.chapter7.data.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.bpmnwithactiviti.chapter6.data.model.Customer;
-import org.bpmnwithactiviti.chapter6.data.model.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.data.model.Customer;
+import org.bpmnwithactiviti.chapter7.data.model.SalesOpportunity;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

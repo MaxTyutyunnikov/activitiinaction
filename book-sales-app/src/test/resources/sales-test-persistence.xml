@@ -4,8 +4,8 @@
 	version="2.0">
 	<persistence-unit name="order" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>org.bpmnwithactiviti.chapter6.data.model.Customer</class>
-		<class>org.bpmnwithactiviti.chapter6.data.model.SalesOpportunity</class>
+		<class>org.bpmnwithactiviti.chapter7.data.model.Customer</class>
+		<class>org.bpmnwithactiviti.chapter7.data.model.SalesOpportunity</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
