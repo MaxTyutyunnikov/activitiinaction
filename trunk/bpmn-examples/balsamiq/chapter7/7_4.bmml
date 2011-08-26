@@ -1,0 +1,145 @@
+<mockup version="1.0" skin="sketch" measuredW="1240" measuredH="592" mockupW="900" mockupH="447">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="340" y="146" w="505" h="295" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="366" y="146" w="-1" h="-1" measuredW="291" measuredH="23" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tomcat%20%28port%208080%29%3A%20activiti-explorer%20application</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="610" y="179" w="211" h="227" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="661" y="182" w="107" h="27" measuredW="99" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>Service%20tasks</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Canvas" x="1074" y="486" w="146" h="106" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="1097" y="514" w="99" h="50" measuredW="153" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>H2%20opportunity%20database</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Canvas" x="366" y="180" w="164" h="226" measuredW="100" measuredH="70" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="374" y="181" w="148" h="27" measuredW="132" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>Process%20definition</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Canvas" x="634" y="219" w="181" h="50" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Arrow" x="521" y="240" w="108" h="10" measuredW="150" measuredH="100" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="958" y="146" w="282" h="295" measuredW="100" measuredH="70" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Canvas" x="374" y="209" w="147" h="174" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Label" x="378" y="263" w="141" h="71" measuredW="189" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>Sales%20opportunity%20process</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="635" y="230" w="177" h="27" measuredW="161" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>RetrieveCustomerTask</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Canvas" x="634" y="313" w="181" h="50" measuredW="100" measuredH="70" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="644" y="324" w="171" h="27" measuredW="162" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>StoreOpportunityTask</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Arrow" x="521" y="333" w="108" h="10" measuredW="150" measuredH="100" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="962" y="145" w="-1" h="-1" measuredW="273" measuredH="23" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Jetty%20%28port%208081%29%3A%20book-sales-app%20application</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Canvas" x="993" y="179" w="57" h="227" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Label" x="1008" y="181" w="27" h="222" measuredW="27" measuredH="206" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>CustomerService%20webservice</text>
+        <textOrientation>up</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Canvas" x="1074" y="251" w="131" h="84" measuredW="100" measuredH="70" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Label" x="1085" y="276" w="107" h="33" measuredW="103" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>CustomerDAO</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Arrow" x="815" y="239" w="172" h="10" measuredW="150" measuredH="100" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Arrow" x="815" y="333" w="172" h="10" measuredW="150" measuredH="100" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Label" x="866" y="209" w="-1" h="-1" measuredW="61" measuredH="23" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>WS%20HTTP</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Label" x="866" y="301" w="-1" h="-1" measuredW="61" measuredH="23" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>WS%20HTTP</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Arrow" x="1132" y="441" w="10" h="39" measuredW="150" measuredH="100" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
