@@ -1,11 +1,11 @@
-package org.bpmnwithactiviti.chapter6.errorevent.testdata;
+package org.bpmnwithactiviti.chapter7.errorevent.testdata;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import org.bpmnwithactiviti.chapter6.data.model.Customer;
+import org.bpmnwithactiviti.chapter7.data.model.Customer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

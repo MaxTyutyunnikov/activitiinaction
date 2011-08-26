@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter6.data.model;
+package org.bpmnwithactiviti.chapter7.data.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

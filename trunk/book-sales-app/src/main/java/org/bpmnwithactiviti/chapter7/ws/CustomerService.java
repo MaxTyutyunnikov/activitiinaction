@@ -1,12 +1,12 @@
-package org.bpmnwithactiviti.chapter6.ws;
+package org.bpmnwithactiviti.chapter7.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import org.bpmnwithactiviti.chapter6.data.dao.CustomerDAO;
-import org.bpmnwithactiviti.chapter6.data.model.Customer;
-import org.bpmnwithactiviti.chapter6.data.model.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.data.dao.CustomerDAO;
+import org.bpmnwithactiviti.chapter7.data.model.Customer;
+import org.bpmnwithactiviti.chapter7.data.model.SalesOpportunity;
 
 
 @WebService
