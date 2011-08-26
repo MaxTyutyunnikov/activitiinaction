@@ -2,9 +2,9 @@ package org.bpmnwithactiviti.chapter7.errorjava;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
-import org.bpmnwithactiviti.chapter6.ws.Customer;
-import org.bpmnwithactiviti.chapter6.ws.CustomerServiceService;
-import org.bpmnwithactiviti.chapter6.ws.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.ws.Customer;
+import org.bpmnwithactiviti.chapter7.ws.CustomerServiceService;
+import org.bpmnwithactiviti.chapter7.ws.SalesOpportunity;
 
 public class StoreOpportunityTask implements JavaDelegate {
   

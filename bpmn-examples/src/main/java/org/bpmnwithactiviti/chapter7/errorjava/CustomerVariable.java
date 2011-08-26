@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bpmnwithactiviti.chapter6.ws.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.ws.SalesOpportunity;
 
 public class CustomerVariable implements Serializable {
 

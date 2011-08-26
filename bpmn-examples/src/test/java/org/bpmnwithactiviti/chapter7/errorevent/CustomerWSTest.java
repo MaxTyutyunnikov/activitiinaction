@@ -2,8 +2,8 @@ package org.bpmnwithactiviti.chapter7.errorevent;
 
 import static org.junit.Assert.assertNull;
 
-import org.bpmnwithactiviti.chapter6.ws.Customer;
-import org.bpmnwithactiviti.chapter6.ws.CustomerServiceService;
+import org.bpmnwithactiviti.chapter7.ws.Customer;
+import org.bpmnwithactiviti.chapter7.ws.CustomerServiceService;
 import org.junit.Test;
 
 

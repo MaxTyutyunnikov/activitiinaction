@@ -217,8 +217,8 @@
 							<sourceRoot>generated/cxf</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>src/main/resources/chapter6/errorevent/wsdl/customerService.wsdl</wsdl>
-									<wsdlLocation>http://localhost:8081/book-sales-webapp/services/customer?wsdl</wsdlLocation>
+									<wsdl>src/main/resources/chapter7/errorevent/wsdl/customerService.wsdl</wsdl>
+									<wsdlLocation>http://localhost:8081/book-sales-app/services/customer?wsdl</wsdlLocation>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
