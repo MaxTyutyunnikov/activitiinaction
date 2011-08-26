@@ -2,9 +2,9 @@ package org.bpmnwithactiviti.chapter7.errorevent;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
-import org.bpmnwithactiviti.chapter6.ws.Customer;
-import org.bpmnwithactiviti.chapter6.ws.CustomerServiceService;
-import org.bpmnwithactiviti.chapter6.ws.SalesOpportunity;
+import org.bpmnwithactiviti.chapter7.ws.Customer;
+import org.bpmnwithactiviti.chapter7.ws.CustomerServiceService;
+import org.bpmnwithactiviti.chapter7.ws.SalesOpportunity;
 
 public class StoreOpportunityTask implements JavaDelegate {
   
@@ -14,7 +14,7 @@ public class StoreOpportunityTask implements JavaDelegate {
   public void execute(DelegateExecution execution) throws Exception {
     CustomerVariable customer = (CustomerVariable) execution.getVariable("customer");
     String product = (String) execution.getVariable("product");
-    Integer expectedQuantity = (Integer) execution.getVariable("quantity");
+    Long expectedQuantity = (Long) execution.getVariable("quantity");
     String description = (String) execution.getVariable("description");
     System.out.println("Storing sales opportunity for customer " + customer.getCustomerId());
     Customer responseCustomer = customerService.getCustomerServicePort().storeSalesOpportunity(product, expectedQuantity, 

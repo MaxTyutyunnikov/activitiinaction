@@ -20,7 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:chapter5/listener/gossip-application-context.xml")
+@ContextConfiguration("classpath:chapter6/listener/gossip-application-context.xml")
 public class ProcessListenerTest extends AbstractTest {
 	
 	@Autowired

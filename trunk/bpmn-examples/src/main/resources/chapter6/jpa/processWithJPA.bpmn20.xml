@@ -8,10 +8,10 @@
 		<serviceTask id="createBook" activiti:expression="${bookService.createBook(authorList)}"
 		     activiti:resultVariableName="book"/>
 		<sequenceFlow sourceRef="createBook" targetRef="fillBookInfo" />
-		<userTask id="fillBookInfo" activiti:assignee="kermit" activiti:formKey="createBookTitle.form">
+		<userTask id="fillBookInfo" activiti:assignee="kermit">
 			<extensionElements>
-				<activiti:formProperty id="booktitle" expression="#{book.title}" required="true" />
-				<activiti:formProperty id="isbn" expression="#{book.isbn}" required="true" />
+				<activiti:formProperty id="booktitle" name="Book title" expression="#{book.title}" required="true" />
+				<activiti:formProperty id="isbn" name="Isbn" expression="#{book.isbn}" required="true" />
 			</extensionElements>
 		</userTask>
 		<sequenceFlow sourceRef="fillBookInfo" targetRef="makeSubtitle" />

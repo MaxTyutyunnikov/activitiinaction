@@ -20,7 +20,7 @@
   	
   <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
 		<property name="persistenceXmlLocation">
-			<value>classpath:chapter5/jpa/jpa-persistence.xml</value>
+			<value>classpath:chapter6/jpa/jpa-persistence.xml</value>
 		</property>
 	</bean>
 	
@@ -41,7 +41,7 @@
     <property name="jpaHandleTransaction" value="true" />
     <property name="jpaCloseEntityManager" value="true" />
 		<property name="deploymentResources"
-			value="classpath*:chapter5/jpa/processWithJPA.bpmn20.xml" />
+			value="classpath*:chapter6/jpa/processWithJPA.bpmn20.xml" />
 		<property name="jobExecutorActivate" value="false" />
 	</bean>
 
@@ -62,6 +62,6 @@
 	<bean id="formService" factory-bean="processEngine"
 		factory-method="getFormService" />
 	
-	<bean id="bookService" class="org.bpmnwithactiviti.chapter5.jpa.BookService"/>
+	<bean id="bookService" class="org.bpmnwithactiviti.chapter6.jpa.BookService"/>
 
 </beans>

@@ -4,7 +4,7 @@
 	<process id="creditCheckProcess" name="Check the credit of a customer">
 		<startEvent id="theStart" />
 		<sequenceFlow sourceRef="theStart" targetRef="checkCreditHistory" />
-		<serviceTask id="checkCreditHistory" activiti:class="org.bpmnwithactiviti.chapter5.callactivity.CreditCheckService"/>
+		<serviceTask id="checkCreditHistory" activiti:class="org.bpmnwithactiviti.chapter6.callactivity.CreditCheckService"/>
 		<sequenceFlow sourceRef="checkCreditHistory" targetRef="historyOK" />
 		<exclusiveGateway id="historyOK"/>
 		<sequenceFlow sourceRef="historyOK" targetRef="theEnd">
@@ -13,9 +13,23 @@
 		<sequenceFlow sourceRef="historyOK" targetRef="personalCreditCheck">
 			<conditionExpression>${creditCheckApproved == false}</conditionExpression>
 		</sequenceFlow>
-		<userTask id="personalCreditCheck" name="Personal credit check" 
-			activiti:formKey="creditCheck.form" activiti:candidateGroups="sales"/>
-		<sequenceFlow sourceRef="personalCreditCheck" targetRef="theEnd" />
+		<userTask id="personalCreditCheck" name="Personal credit check" activiti:candidateGroups="sales">
+      <extensionElements>
+        <activiti:formProperty id="customerID" name="Customer number" expression="${customerID}" writable="false"/>
+        <activiti:formProperty id="contract" name="Contract type" expression="${contractType}" writable="false"/>
+        <activiti:formProperty id="creditCheckApprovedForm" name="Do you approve this?" required="true" type="enum">
+          <activiti:value id="true" name="Yes"/>
+          <activiti:value id="false" name="No"/>
+        </activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow sourceRef="personalCreditCheck" targetRef="copyFormOutcome" />
+    <scriptTask id="copyFormOutcome" scriptFormat="groovy">
+      <script>
+        creditCheckApproved = creditCheckApprovedForm;
+      </script>
+    </scriptTask>
+		<sequenceFlow sourceRef="copyFormOutcome" targetRef="theEnd" />
 		<endEvent id="theEnd" />
 	</process>
 </definitions>
