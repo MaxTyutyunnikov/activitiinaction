@@ -1,7 +1,0 @@
-<webscript>
-  <shortname>History Processes</shortname>
-  <description>Returns information about history processes</description>
-  <url>/history-processes?start={startIndex}&amp;size={pageSize}&amp;sort={&lt;tableColumn&gt;}&amp;order={asc|desc}&amp;processDefinitionId={processDefinitionId}</url>
-  <authentication>user</authentication>
-  <format default="json">argument</format>
-</webscript>
