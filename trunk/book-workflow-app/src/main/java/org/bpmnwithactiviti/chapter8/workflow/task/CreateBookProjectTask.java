@@ -18,7 +18,8 @@ public class CreateBookProjectTask implements JavaDelegate {
 	  bookProject.setToProductionDate(productionCal.getTime());
 	  for(int i = 1; i < bookProject.getNrOfChapters(); i++) {
 	  	bookProject.addChapter(new Chapter().setChapterNumber(i)
-	  			.setTitle(bookProject.getTitle() + " chapter " + i));
+	  			.setBookTitle(bookProject.getTitle())
+	  			.setChapterTitle(bookProject.getTitle() + " chapter " + i));
 	  }
 	  execution.setVariable("bookProject", bookProject);
   }

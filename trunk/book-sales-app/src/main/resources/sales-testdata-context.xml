@@ -21,7 +21,7 @@
 	<bean id="persistenceUnitManager"
 		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
 		<property name="persistenceXmlLocation">
-			<value>classpath:sales-persistence.xml</value>
+			<value>classpath:sales-testdata-persistence.xml</value>
 		</property>
 	</bean>
 

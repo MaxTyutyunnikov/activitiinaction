@@ -4,9 +4,9 @@
 	
 	<process id="transactionTest">
 		<startEvent id="start" name="Start" />
-		<sequenceFlow sourceRef="start" targetRef="userTask" />
-		<userTask id="userTask" activiti:assignee="kermit"/>
-		<sequenceFlow sourceRef="userTask" targetRef="end" />
+		<sequenceFlow sourceRef="start" targetRef="serviceTask" />
+		<serviceTask id="serviceTask" activiti:class="org.bpmnwithactiviti.chapter8.transaction.ErrorServiceTask"/>
+		<sequenceFlow sourceRef="serviceTask" targetRef="end" />
 		<endEvent id="end" name="End" />
 	</process>
 </definitions>

@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.bpmnwithactiviti.chapter8.workflow.model.BookProject;
+import org.bpmnwithactiviti.chapter8.workflow.model.User;
 import org.bpmnwithactiviti.chapter8.workflow.ui.ViewManager;
 
 import com.vaadin.ui.Button;
@@ -139,12 +140,24 @@ public class CreateBookProjectPanel extends Panel {
 					viewManager.showErrorMessage("Nr of chapters is required");
 				
 				} else {
-					System.out.println(authorsSelect.getValue());
+					User reviewer = null;
+					Map<String, User> userMap = viewManager.getApplication().getUserMap();
+					for (User user : userMap.values()) {
+	          if(user.getRole().equals(User.ROLE_REVIEWER)) {
+	          	
+	          	if(reviewer == null || user.getNumberOfReviews() < reviewer.getNumberOfReviews()) {
+	          		reviewer = user;
+	          	}
+	          }
+          }
+					reviewer.setNumberOfReviews(reviewer.getNumberOfReviews() + 1);
+					
 					Map<String, Object> variableMap = new HashMap<String, Object>();
 					variableMap.put("bookProject", new BookProject()
 							.setTitle(bookTitleField.getValue().toString())
 							.setNrOfChapters(Integer.valueOf(nrChaptersField.getValue().toString()))
-							.setDescription(descriptionField.getValue().toString()));
+							.setDescription(descriptionField.getValue().toString())
+							.setReviewer(reviewer.getUsername()));
 					try {
 						viewManager.getApplication().getContextHelper()
 								.getRuntimeService().startProcessInstanceByKey("bookWritingProcess", variableMap);

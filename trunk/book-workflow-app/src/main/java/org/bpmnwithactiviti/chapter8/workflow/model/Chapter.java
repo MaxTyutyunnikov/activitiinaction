@@ -6,8 +6,9 @@ import java.util.Date;
 public class Chapter implements Serializable {
 	
   private static final long serialVersionUID = 1L;
-  int chapterNumber;
-	String title;
+  Integer chapterNumber;
+  String bookTitle;
+	String chapterTitle;
 	String author;
 	String filename;
 	int version;
@@ -15,18 +16,25 @@ public class Chapter implements Serializable {
 	Date lastReviewDate;
 	boolean approvedByReviewer;
 	
-	public int getChapterNumber() {
+	public Integer getChapterNumber() {
   	return chapterNumber;
   }
-	public Chapter setChapterNumber(int chapterNumber) {
+	public Chapter setChapterNumber(Integer chapterNumber) {
   	this.chapterNumber = chapterNumber;
   	return this;
+	}
+	public String getBookTitle() {
+  	return bookTitle;
   }
-	public String getTitle() {
-  	return title;
+	public Chapter setBookTitle(String bookTitle) {
+  	this.bookTitle = bookTitle;
+  	return this;
   }
-	public Chapter setTitle(String title) {
-  	this.title = title;
+	public String getChapterTitle() {
+  	return chapterTitle;
+  }
+	public Chapter setChapterTitle(String chapterTitle) {
+  	this.chapterTitle = chapterTitle;
   	return this;
   }
 	public String getAuthor() {

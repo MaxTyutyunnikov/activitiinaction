@@ -1,8 +1,12 @@
 package org.bpmnwithactiviti.chapter8.workflow;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.bpmnwithactiviti.chapter8.workflow.model.BookProject;
 import org.bpmnwithactiviti.chapter8.workflow.model.User;
 import org.bpmnwithactiviti.chapter8.workflow.ui.ViewManager;
 import org.bpmnwithactiviti.chapter8.workflow.ui.context.ContextHelper;
@@ -33,6 +37,8 @@ public class WorkflowApplication extends Application implements HttpServletReque
   protected Panel currentWorkArea; // right panel of ui where actual work happens
   protected ContextHelper context;
   
+  protected Map<String, User> userMap = new HashMap<String, User>();
+  
   // HttpServletRequestListener -------------------------------------------------------------------
   
   public void onRequestStart(HttpServletRequest request, HttpServletResponse response) {
@@ -60,6 +66,16 @@ public class WorkflowApplication extends Application implements HttpServletReque
   	context.getRepositoryService().createDeployment()
 			.addClasspathResource("org/bpmn20withactiviti/chapter8/workflow/process/bookwriting.bpmn20.xml")
 			.deploy();
+  	
+  	Map<String, Object> variableMap = new HashMap<String, Object>();
+		variableMap.put("bookProject", new BookProject()
+				.setTitle("Activiti in Action")
+				.setNrOfChapters(14)
+				.addAuthor("trademak")
+				.addAuthor("rvliempd")
+				.setReviewer("johndoe")
+				.setDescription("Executable BPMN 2.0 processes"));
+  	context.getRuntimeService().startProcessInstanceByKey("bookWritingProcess", variableMap);
   }
 
   protected void initMainWindow() {
@@ -106,5 +122,9 @@ public class WorkflowApplication extends Application implements HttpServletReque
 
   public ContextHelper getContextHelper() {
   	return context;
+  }
+  
+  public Map<String, User> getUserMap() {
+  	return userMap;
   }
 }

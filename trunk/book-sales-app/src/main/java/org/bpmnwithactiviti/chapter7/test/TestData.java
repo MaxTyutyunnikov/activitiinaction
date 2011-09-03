@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter7.errorevent.testdata;
+package org.bpmnwithactiviti.chapter7.test;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestData {
   
   public static void main(String args[]) {
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("sales-test-context.xml");
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("sales-testdata-context.xml");
     EntityManagerFactory factory = ctx.getBean("entityManagerFactory", EntityManagerFactory.class);
     EntityManager entityManager = factory.createEntityManager();
     entityManager.getTransaction().begin();

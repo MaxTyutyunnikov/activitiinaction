@@ -27,7 +27,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="transactionManager" ref="transactionManager" />
 		<property name="databaseSchemaUpdate" value="true" />
-		<property name="deploymentResources" value="classpath*:chapter7/transaction.test.bpmn20.xml" />
+		<property name="deploymentResources" value="classpath*:chapter8/transaction.test.bpmn20.xml" />
 	</bean>
 
 	<bean id="transactionManager"
@@ -41,13 +41,16 @@
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<bean id="runtimeService" factory-bean="processEngine"
-		factory-method="getRuntimeService" />
+	<bean id="historyService" factory-bean="processEngine"
+		factory-method="getHistoryService" />
+    
+  <bean id="runtimeService" factory-bean="processEngine"
+    factory-method="getRuntimeService" />
 	
 	<bean id="activitiRule" class="org.activiti.engine.test.ActivitiRule">
 		<property name="processEngine" ref="processEngine" />
 	</bean>
 
-	<bean id="transactionalBean" class="org.bpmnwithactiviti.chapter7.transaction.TransactionalBean"/>
+	<bean id="transactionalBean" class="org.bpmnwithactiviti.chapter8.transaction.TransactionalBean"/>
 
 </beans>

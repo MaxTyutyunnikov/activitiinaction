@@ -24,7 +24,7 @@ public class CustomerService {
   }
 
   public Customer storeSalesOpportunity(@WebParam(name="product") String product, 
-          @WebParam(name="expectedQuantity") int expectedQuantity,
+          @WebParam(name="expectedQuantity") long expectedQuantity,
           @WebParam(name="description") String description,
           @WebParam(name="customerId") long customerId) {
     
