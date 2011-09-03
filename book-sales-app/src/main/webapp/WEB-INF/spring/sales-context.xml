@@ -16,7 +16,7 @@
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<context:component-scan base-package="org.bpmnwithactiviti.chapter6" />
+	<context:component-scan base-package="org.bpmnwithactiviti.chapter7" />
 
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="false" />
@@ -42,10 +42,10 @@
 	  implementor="#customerService" 
 	  address="/customer" />
 	  
-	<bean id="customerService" class="org.bpmnwithactiviti.chapter6.ws.CustomerService">
+	<bean id="customerService" class="org.bpmnwithactiviti.chapter7.ws.CustomerService">
 		<property name="customerDAO" ref="customerDAO" />
 	</bean>
 
-	<bean id="customerDAO" class="org.bpmnwithactiviti.chapter6.data.dao.CustomerDAO" />
+	<bean id="customerDAO" class="org.bpmnwithactiviti.chapter7.data.dao.CustomerDAO" />
 
 </beans>

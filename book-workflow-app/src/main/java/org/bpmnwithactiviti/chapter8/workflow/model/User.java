@@ -12,6 +12,7 @@ public class User implements Serializable {
 	String username;
 	String password;
 	String role;
+	int numberOfReviews;
 	
 	public String getUsername() {
   	return username;
@@ -39,4 +40,13 @@ public class User implements Serializable {
   	this.role = role;
   	return this;
 	}
+
+	public int getNumberOfReviews() {
+  	return numberOfReviews;
+  }
+
+	public User setNumberOfReviews(int numberOfReviews) {
+  	this.numberOfReviews = numberOfReviews;
+  	return this;
+  }
 }

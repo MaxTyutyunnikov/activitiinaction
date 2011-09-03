@@ -14,11 +14,11 @@ public class TransactionalBean {
 
   @Transactional
 	public void execute(boolean throwError) throws Exception {
+  	
+  	runtimeService.startProcessInstanceByKey("transactionTest");
+  	
 		Map<String, Object> variableMap = new HashMap<String, Object>();
     variableMap.put("throwError", throwError);
     runtimeService.startProcessInstanceByKey("transactionTest", variableMap);
-		if(throwError) {
-			throw new IllegalArgumentException("Rollback!!");
-		}
 	}
 }

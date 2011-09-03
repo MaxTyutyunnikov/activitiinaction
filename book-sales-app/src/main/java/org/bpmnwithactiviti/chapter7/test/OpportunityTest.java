@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter7.errorevent.testdata;
+package org.bpmnwithactiviti.chapter7.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +17,7 @@ public class OpportunityTest {
   
   @Test
   public void validateOpportunity() {
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("sales-validate-context.xml");
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("sales-testdata-context.xml");
     EntityManagerFactory factory = ctx.getBean("entityManagerFactory", EntityManagerFactory.class);
     EntityManager entityManager = factory.createEntityManager();
     Customer customer = entityManager.find(Customer.class, 1l);

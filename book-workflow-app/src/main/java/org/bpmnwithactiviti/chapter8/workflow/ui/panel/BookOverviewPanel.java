@@ -77,10 +77,8 @@ public class BookOverviewPanel extends Panel {
     List<ProcessInstance> instanceList = viewManager.getApplication().getContextHelper()
     		.getRuntimeService().createProcessInstanceQuery().list();
     for (ProcessInstance processInstance : instanceList) {
-    	System.out.println("processInstance " + processInstance);
     	BookProject bookProject = (BookProject) viewManager.getApplication().getContextHelper()
     			.getRuntimeService().getVariable(processInstance.getProcessInstanceId(), "bookProject");
-    	System.out.println("bookProject " + bookProject);
     	Object newItemId = projectTable.addItem();
       Item newItem = projectTable.getItem(newItemId);
 

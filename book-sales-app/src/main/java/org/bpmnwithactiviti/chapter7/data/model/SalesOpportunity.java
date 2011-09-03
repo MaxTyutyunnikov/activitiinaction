@@ -17,7 +17,7 @@ public class SalesOpportunity {
   private long opportunityId;
   
   private String product;
-  private int expectedQuantity;
+  private long expectedQuantity;
   private String description;
   
   public long getOpportunityId() {
@@ -36,11 +36,11 @@ public class SalesOpportunity {
     this.product = product;
   }
   
-  public int getExpectedQuantity() {
+  public long getExpectedQuantity() {
     return expectedQuantity;
   }
   
-  public void setExpectedQuantity(int expectedQuantity) {
+  public void setExpectedQuantity(long expectedQuantity) {
     this.expectedQuantity = expectedQuantity;
   }
   

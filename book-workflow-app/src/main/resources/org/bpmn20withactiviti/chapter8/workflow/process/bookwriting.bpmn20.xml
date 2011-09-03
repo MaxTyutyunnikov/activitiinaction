@@ -15,15 +15,13 @@
 			<userTask id="submitChapterDraft" name="Submit chapter draft" activiti:candidateUsers="${bookProject.authors}" />
 			<sequenceFlow sourceRef="submitChapterDraft" targetRef="reviewChapter" />
 			<userTask id="reviewChapter" name="Review chapter" activiti:assignee="${bookProject.reviewer}" />
-			<sequenceFlow sourceRef="reviewChapter" targetRef="fillChapterInfo" />
-			<serviceTask id="fillChapterInfo" activiti:class="org.bpmnwithactiviti.chapter8.book.FillChapterInfo" />
-			<sequenceFlow sourceRef="fillChapterInfo" targetRef="chapterApproval" />
+			<sequenceFlow sourceRef="reviewChapter" targetRef="chapterApproval" />
 			<exclusiveGateway id="chapterApproval" />
 			<sequenceFlow sourceRef="chapterApproval" targetRef="theEndSubProcess">
-				<conditionExpression>${chapter.approvedByReviewer == true}</conditionExpression>
+				<conditionExpression>${chapterApproved == true}</conditionExpression>
 			</sequenceFlow>
 			<sequenceFlow sourceRef="chapterApproval" targetRef="submitChapterDraft">
-				<conditionExpression>${chapter.approvedByReviewer == false}</conditionExpression>
+				<conditionExpression>${chapterApproved == false}</conditionExpression>
 			</sequenceFlow>
 			<endEvent id="theEndSubProcess" />
 		</subProcess>

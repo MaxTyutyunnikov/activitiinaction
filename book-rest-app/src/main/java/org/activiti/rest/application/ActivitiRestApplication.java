@@ -16,6 +16,7 @@ package org.activiti.rest.application;
 import org.activiti.rest.api.ActivitiUtil;
 import org.activiti.rest.api.DefaultResource;
 import org.activiti.rest.api.engine.ProcessEngineResource;
+import org.activiti.rest.api.history.HistoryInstanceDetailsResource;
 import org.activiti.rest.api.identity.GroupResource;
 import org.activiti.rest.api.identity.GroupUsersResource;
 import org.activiti.rest.api.identity.LoginResource;
@@ -113,6 +114,8 @@ public class ActivitiRestApplication extends Application {
     router.attach("/task/{taskId}/{operation}", TaskOperationResource.class);
     
     router.attach("/form/{taskId}/properties", TaskPropertiesResource.class);
+    
+    router.attach("/history/processInstance/{processInstanceId}", HistoryInstanceDetailsResource.class);
     
     router.attach("/deployments", DeploymentsResource.class);
     router.attach("/deployment", DeploymentUploadResource.class);

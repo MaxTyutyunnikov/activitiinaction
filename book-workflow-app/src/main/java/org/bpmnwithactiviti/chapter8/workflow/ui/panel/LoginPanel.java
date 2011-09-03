@@ -1,6 +1,5 @@
 package org.bpmnwithactiviti.chapter8.workflow.ui.panel;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.bpmnwithactiviti.chapter8.workflow.model.User;
@@ -29,8 +28,6 @@ public class LoginPanel extends Panel implements Handler {
 
 	protected static final String USERNAME_FIELD = "Username";
 	protected static final String PASSWORD_FIELD = "Password";
-
-	protected Map<String, User> userMap = new HashMap<String, User>();
 	
 	// ui
 	protected Label titleLabel;
@@ -55,6 +52,7 @@ public class LoginPanel extends Panel implements Handler {
 	}
 	
 	protected void initUsers() {
+		Map<String, User> userMap = viewManager.getApplication().getUserMap();
 		userMap.clear();
 		userMap.put("admin", new User()
 			.setUsername("admin")
@@ -70,6 +68,16 @@ public class LoginPanel extends Panel implements Handler {
 			.setUsername("janedoe")
 			.setPassword("reviewer")
 			.setRole(User.ROLE_REVIEWER));
+		
+		userMap.put("trademak", new User()
+			.setUsername("trademak")
+			.setPassword("author")
+			.setRole(User.ROLE_USER));
+		
+		userMap.put("rvliempd", new User()
+			.setUsername("rvliempd")
+			.setPassword("author")
+			.setRole(User.ROLE_USER));
 	}
 
 	protected void initUi() {
@@ -141,6 +149,7 @@ public class LoginPanel extends Panel implements Handler {
 	}
 
 	protected void login() {
+		Map<String, User> userMap = viewManager.getApplication().getUserMap();
 		if(userMap.containsKey(usernameField.getValue().toString()) == false) {
 			viewManager.showErrorMessage("Username is not known");
 			viewManager.showLoginPage();
