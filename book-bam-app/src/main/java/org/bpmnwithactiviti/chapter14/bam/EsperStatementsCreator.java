@@ -30,7 +30,7 @@ public class EsperStatementsCreator implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent context) {
 		log.info("Creating Esper statements.");
 		Configuration configuration = new Configuration();
-		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter12.bam.event");
+		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter14.bam.event");
 		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(configuration);
 		epAdmin = epService.getEPAdministrator();
 		
