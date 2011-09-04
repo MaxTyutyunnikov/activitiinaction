@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter12.bam;
+package org.bpmnwithactiviti.chapter14.bam;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -8,8 +8,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
-import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestProcessedEvent;
-import org.bpmnwithactiviti.chapter12.bam.event.LoanRequestReceivedEvent;
+import org.bpmnwithactiviti.chapter14.bam.event.LoanRequestProcessedEvent;
+import org.bpmnwithactiviti.chapter14.bam.event.LoanRequestReceivedEvent;
 
 import com.espertech.esper.client.EPServiceProviderManager;
 

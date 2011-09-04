@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter12.bam.event;
+package org.bpmnwithactiviti.chapter14.bam.event;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
