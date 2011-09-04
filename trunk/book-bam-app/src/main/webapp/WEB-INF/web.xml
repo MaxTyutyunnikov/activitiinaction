@@ -4,21 +4,24 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>Book BAM</display-name>
-	<context-param>
+	
+  <context-param>
 		<description>Vaadin production mode</description>
 		<param-name>productionMode</param-name>
 		<param-value>true</param-value>
 	</context-param>
-	<listener>
-		<listener-class>org.bpmnwithactiviti.chapter12.bam.EsperStatementsCreator</listener-class>
+	
+  <listener>
+		<listener-class>org.bpmnwithactiviti.chapter14.bam.EsperStatementsCreator</listener-class>
 	</listener>
-	<servlet>
+	
+  <servlet>
 		<display-name>CXF JAX-RS Servlet</display-name>
 		<servlet-name>CXFJAX-RSServlet</servlet-name>
 		<servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
 		<init-param>
 			<param-name>jaxrs.serviceClasses</param-name>
-			<param-value>org.bpmnwithactiviti.chapter12.bam.EventResource</param-value>
+			<param-value>org.bpmnwithactiviti.chapter14.bam.EventResource</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -28,7 +31,7 @@
 		<servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class>
 		<init-param>
 			<param-name>application</param-name>
-			<param-value>org.bpmnwithactiviti.chapter12.bam.BAMApplication</param-value>
+			<param-value>org.bpmnwithactiviti.chapter14.bam.BAMApplication</param-value>
 		</init-param>
 		<init-param>
 			<param-name>widgetset</param-name>

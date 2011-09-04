@@ -22,7 +22,7 @@ public class LoanRequestProcessWithBAMTest extends AbstractTest {
 	private Random random;
 
 	@Test
-	@Deployment(resources={"chapter12/loanrequest_withbam.bpmn20.xml"})
+	@Deployment(resources={"chapter14/loanrequest_withbam.bpmn20.xml"})
 	public void testBAM() throws InterruptedException {
 		runtimeService = activitiRule.getRuntimeService();
 		taskService = activitiRule.getTaskService();

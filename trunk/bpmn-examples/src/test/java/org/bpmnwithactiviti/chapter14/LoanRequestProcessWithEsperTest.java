@@ -34,9 +34,9 @@ public class LoanRequestProcessWithEsperTest extends AbstractTest {
 	private EPAdministrator epAdmin;
 	
 	@Before
-	public void Setup() {
+	public void setup() {
 		Configuration configuration = new Configuration();
-		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter12.bam.event");
+		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter14.bam.event");
 		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(configuration);
 		epAdmin = epService.getEPAdministrator();
 		
@@ -57,7 +57,7 @@ public class LoanRequestProcessWithEsperTest extends AbstractTest {
 	}
 
 	@Test
-	@Deployment(resources={"chapter12/loanrequest_withespertest.bpmn20.xml"})
+	@Deployment(resources={"chapter14/loanrequest_withespertest.bpmn20.xml"})
 	public void firstTest() {
 		final RuntimeService runtimeService = activitiRule.getRuntimeService();
 		final TaskService taskService = activitiRule.getTaskService();
