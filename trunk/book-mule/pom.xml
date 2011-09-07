@@ -42,25 +42,75 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-      <groupId>org.mule.transports</groupId>
-      <artifactId>mule-transport-vm</artifactId>
-      <version>${mule-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mule.transports</groupId>
-      <artifactId>mule-transport-file</artifactId>
-      <version>${mule-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mule.modules</groupId>
-      <artifactId>mule-module-scripting</artifactId>
-      <version>${mule-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mule.modules</groupId>
-      <artifactId>mule-module-xml</artifactId>
-      <version>${mule-version}</version>
-    </dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-vm</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-file</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-scripting</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-xml</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-jdbc</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-json</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-http</artifactId>
+			<version>${mule-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-activiti</artifactId>
+			<version>3.2.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.mule</groupId>
+					<artifactId>mule-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mule.transports</groupId>
+					<artifactId>mule-transport-http</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mule.transports</groupId>
+					<artifactId>mule-transport-vm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mule.transports</groupId>
+					<artifactId>mule-transport-jdbc</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mule.modules</groupId>
+					<artifactId>mule-module-json</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.activiti</groupId>
+					<artifactId>activiti-engine</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.activiti</groupId>
+					<artifactId>activiti-spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -138,6 +188,12 @@
 		<repository>
 			<id>Activiti</id>
 			<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
+		</repository>
+		<repository>
+			<id>muleforge-repo</id>
+			<name>MuleForge Repository</name>
+			<url>http://repository.muleforge.org/release</url>
+			<layout>default</layout>
 		</repository>
 	</repositories>
 
