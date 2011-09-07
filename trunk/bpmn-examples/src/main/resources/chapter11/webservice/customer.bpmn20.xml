@@ -3,7 +3,7 @@
 		targetNamespace="http://www.bpmnwithactiviti.org"
 		xmlns:tns="http://www.bpmnwithactiviti.org"
 		xmlns:activiti="http://activiti.org/bpmn"
-		xmlns:sales="http://ws.chapter9.bpmnwithactiviti.org/">
+		xmlns:sales="http://ws.chapter11.bpmnwithactiviti.org/">
 
 	<import importType="http://schemas.xmlsoap.org/wsdl/"
         location="http://localhost:8081/book-sales-app/services/address?wsdl"
