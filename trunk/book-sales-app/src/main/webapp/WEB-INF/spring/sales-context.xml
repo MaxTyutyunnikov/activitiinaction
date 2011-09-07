@@ -45,6 +45,15 @@
 	<bean id="customerService" class="org.bpmnwithactiviti.chapter7.ws.CustomerService">
 		<property name="customerDAO" ref="customerDAO" />
 	</bean>
+  
+  <jaxws:endpoint 
+    id="addressWebService" 
+    implementor="#addressService" 
+    address="/address" />
+    
+  <bean id="addressService" class="org.bpmnwithactiviti.chapter9.ws.AddressService">
+    <property name="customerDAO" ref="customerDAO" />
+  </bean>
 
 	<bean id="customerDAO" class="org.bpmnwithactiviti.chapter7.data.dao.CustomerDAO" />
 

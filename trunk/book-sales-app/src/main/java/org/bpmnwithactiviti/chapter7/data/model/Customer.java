@@ -1,5 +1,6 @@
 package org.bpmnwithactiviti.chapter7.data.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -14,9 +15,11 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Customer {
+public class Customer implements Serializable {
   
-  @Id
+  private static final long serialVersionUID = 1L;
+
+	@Id
   @GeneratedValue
   private long customerId;
   
