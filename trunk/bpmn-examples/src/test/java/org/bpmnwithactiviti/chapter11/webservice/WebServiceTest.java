@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.webservice;
+package org.bpmnwithactiviti.chapter11.webservice;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +18,7 @@ public class WebServiceTest extends AbstractTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");
 	
 	@Test
-	@Deployment(resources={"chapter9/webservice/customer.bpmn20.xml"})
+	@Deployment(resources={"chapter11/webservice/customer.bpmn20.xml"})
 	public void queryTask() {
 	  Map<String, Object> variableMap = new HashMap<String, Object>();
 	  variableMap.put("name", "Alfresco");

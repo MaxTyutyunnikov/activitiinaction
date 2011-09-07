@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.camel.intro;
+package org.bpmnwithactiviti.chapter11.camel.intro;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;

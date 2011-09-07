@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.ws;
+package org.bpmnwithactiviti.chapter11.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

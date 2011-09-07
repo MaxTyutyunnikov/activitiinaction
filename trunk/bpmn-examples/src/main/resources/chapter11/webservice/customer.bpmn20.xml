@@ -7,7 +7,7 @@
 
 	<import importType="http://schemas.xmlsoap.org/wsdl/"
         location="http://localhost:8081/book-sales-app/services/address?wsdl"
-        namespace="http://ws.chapter9.bpmnwithactiviti.org/" />
+        namespace="http://ws.chapter11.bpmnwithactiviti.org/" />
   
   <message id="findCustomerAddressRequestMessage" itemRef="tns:findCustomerAddressRequestItem" />
 	<message id="findCustomerAddressResponseMessage" itemRef="tns:findCustomerAddressResponseItem" />
