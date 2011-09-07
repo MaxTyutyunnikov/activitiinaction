@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+		targetNamespace="http://www.bpmnwithactiviti.org"
+		xmlns:tns="http://www.bpmnwithactiviti.org"
+		xmlns:activiti="http://activiti.org/bpmn"
+		xmlns:sales="http://ws.chapter9.bpmnwithactiviti.org/">
+
+	<import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="http://localhost:8081/book-sales-app/services/address?wsdl"
+        namespace="http://ws.chapter9.bpmnwithactiviti.org/" />
+  
+  <message id="findCustomerAddressRequestMessage" itemRef="tns:findCustomerAddressRequestItem" />
+	<message id="findCustomerAddressResponseMessage" itemRef="tns:findCustomerAddressResponseItem" />
+  
+	<itemDefinition id="findCustomerAddressRequestItem" structureRef="sales:findCustomerAddress" />
+	<itemDefinition id="findCustomerAddressResponseItem" structureRef="sales:findCustomerAddressResponse" />
+	
+	<interface name="Find customer address" implementationRef="sales:AddressService">
+  	<operation id="findCustomerAddressOperation" name="Find customer address operation" 
+    				implementationRef="sales:findCustomerAddress">
+    	<inMessageRef>tns:findCustomerAddressRequestMessage</inMessageRef>
+      <outMessageRef>tns:findCustomerAddressResponseMessage</outMessageRef>
+    </operation>
+	</interface>
+	
+	<itemDefinition id="name" structureRef="string" />
+  <itemDefinition id="customerName" structureRef="string" />
+  <itemDefinition id="address" structureRef="string" />
+  <itemDefinition id="webserviceResponse" structureRef="string" />
+		
+	<process id="customer">
+		<startEvent id="startevent" name="Start"/>
+		<sequenceFlow sourceRef="startevent" targetRef="webService"/>
+		<serviceTask id="webService" 
+        	name="Find customer address web service"
+        	implementation="##WebService"
+        	operationRef="tns:findCustomerAddressOperation">
+        	
+    	<ioSpecification>
+        <dataInput itemSubjectRef="tns:findCustomerAddressRequestItem" id="dataInput" />
+        <dataOutput itemSubjectRef="tns:findCustomerAddressResponseItem" id="dataOutput" />
+        <inputSet>
+        	<dataInputRefs>dataInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        	<dataOutputRefs>dataOutput</dataOutputRefs>
+        </outputSet>
+			</ioSpecification>
+			<dataInputAssociation>
+        <sourceRef>name</sourceRef>
+        <targetRef>customerName</targetRef>
+			</dataInputAssociation>
+			<dataOutputAssociation>
+				<sourceRef>address</sourceRef>
+        <targetRef>webserviceResponse</targetRef>
+			</dataOutputAssociation>
+    </serviceTask>
+		<sequenceFlow sourceRef="webService" targetRef="waitState"/>
+		<receiveTask id="waitState" />
+		<sequenceFlow sourceRef="waitState" targetRef="endevent" />
+		<endEvent id="endevent" name="End"/>
+	</process>
+</definitions>
