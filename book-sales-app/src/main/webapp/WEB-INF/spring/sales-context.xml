@@ -51,7 +51,7 @@
     implementor="#addressService" 
     address="/address" />
     
-  <bean id="addressService" class="org.bpmnwithactiviti.chapter9.ws.AddressService">
+  <bean id="addressService" class="org.bpmnwithactiviti.chapter11.ws.AddressService">
     <property name="customerDAO" ref="customerDAO" />
   </bean>
 

@@ -6,7 +6,7 @@
 
 	<camelContext id="camelProcess" xmlns="http://camel.apache.org/schema/spring">
 		<packageScan>
-			<package>org.bpmnwithactiviti.chapter9.camel.helloworld</package>
+			<package>org.bpmnwithactiviti.chapter11.camel.helloworld</package>
 		</packageScan>
 	</camelContext>
 

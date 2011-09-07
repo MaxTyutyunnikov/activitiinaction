@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.mule.helloworld;
+package org.bpmnwithactiviti.chapter11.mule.helloworld;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

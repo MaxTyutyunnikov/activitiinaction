@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.chapter9.mule.intro;
+package org.bpmnwithactiviti.chapter11.mule.intro;
 
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
