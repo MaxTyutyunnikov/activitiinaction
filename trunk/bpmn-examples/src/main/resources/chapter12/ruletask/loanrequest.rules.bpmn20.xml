@@ -4,17 +4,24 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
 
 	<process id="loanrequestWithRules" name="Process to handle a loan request">
-		<startEvent id="theStart" activiti:formKey="loanRequest.form"/>
+		<startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="name" name="Name" required="true" type="string" />
+        <activiti:formProperty id="emailAddress" name="Email address" required="true" type="string" />
+        <activiti:formProperty id="income" name="Income" required="true" type="long" />
+        <activiti:formProperty id="loanAmount" name="Loan amount" required="true" type="long" />
+      </extensionElements>
+    </startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="createApplication" />
 		<serviceTask id="createApplication"
-			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.ApplicationCreator" />
+			activiti:class="org.bpmnwithactiviti.chapter12.ruletask.ApplicationCreator" />
 		<sequenceFlow sourceRef="createApplication" targetRef="checkCredit" />
 		<businessRuleTask id="checkCredit"
 			activiti:ruleVariablesInput="${loanApplicant}"
 			activiti:resultVariable="rulesOutput" activiti:rules="CreditCheckRule" />
 		<sequenceFlow sourceRef="checkCredit" targetRef="updateCreditCheck" />
 		<serviceTask id="updateCreditCheck"
-			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.CreditCheckUpdate" />
+			activiti:class="org.bpmnwithactiviti.chapter12.ruletask.CreditCheckUpdate" />
 		<sequenceFlow sourceRef="updateCreditCheck" targetRef="evaluateLoanRequest" />
 		<businessRuleTask id="evaluateLoanRequest"
 			activiti:ruleVariablesInput="${loanApplication}"
@@ -33,14 +40,25 @@
 			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status == 'approved'}</conditionExpression>
 		</sequenceFlow>
 		<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager"
-			activiti:formKey="handleLoanRequest.form"
-			activiti:candidateGroups="management" />
+			activiti:candidateGroups="management">
+      <extensionElements>
+        <activiti:formProperty id="customerName" name="Customer name" expression="${loanApplication.applicant.name}" writable="false"/>
+        <activiti:formProperty id="income" name="Income of customer" expression="${loanApplication.applicant.income}" writable="false"/>
+        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="${loanApplication.applicant.loanAmount}" writable="false"/>
+        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="${loanApplication.applicant.checkCreditOk}" writable="false"/>
+        <activiti:formProperty id="requestApproved" name="Do you approve the request?" required="true" type="enum">
+          <activiti:value id="true" name="Yes"/>
+          <activiti:value id="false" name="No"/>
+        </activiti:formProperty>
+        <activiti:formProperty id="motivation" name="Motivation"/>
+      </extensionElements>
+    </userTask>
 		<sequenceFlow sourceRef="evaluateRequestByManager" targetRef="updateManagerCheck" />
 		<serviceTask id="updateManagerCheck"
-			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.ManagerCheckUpdate" />
+			activiti:class="org.bpmnwithactiviti.chapter12.ruletask.ManagerCheckUpdate" />
 		<sequenceFlow sourceRef="updateManagerCheck" targetRef="displayResult" />
 		<serviceTask id="displayResult"
-			activiti:class="org.bpmnwithactiviti.chapter10.ruletask.ResultDisplayer" />
+			activiti:class="org.bpmnwithactiviti.chapter12.ruletask.ResultDisplayer" />
 		<sequenceFlow sourceRef="displayResult" targetRef="end" />
 		<endEvent id="end" />
 	</process>

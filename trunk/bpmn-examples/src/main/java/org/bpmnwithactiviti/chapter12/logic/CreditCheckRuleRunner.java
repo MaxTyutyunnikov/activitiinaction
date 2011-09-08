@@ -47,7 +47,7 @@ public class CreditCheckRuleRunner {
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbuilder.add(
-				ResourceFactory.newClassPathResource("chapter10" + File.separator + "rules" 
+				ResourceFactory.newClassPathResource("chapter12" + File.separator + "rules" 
 				        + File.separator + "CreditCheck.drl"),
 				ResourceType.DRL);
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();

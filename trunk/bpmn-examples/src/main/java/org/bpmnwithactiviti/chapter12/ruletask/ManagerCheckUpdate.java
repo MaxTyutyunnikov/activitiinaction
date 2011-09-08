@@ -8,7 +8,7 @@ public class ManagerCheckUpdate implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) {
 		LoanApplication la = (LoanApplication) execution.getVariable("loanApplication");
-		if((Boolean) execution.getVariable("requestApproved")) {
+		if("true".equalsIgnoreCase((String) execution.getVariable("requestApproved"))) {
 			la.setStatus("approved by manager");
 		} else {
 			la.setStatus("denied by manager");
