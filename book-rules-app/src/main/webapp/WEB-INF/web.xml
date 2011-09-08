@@ -18,7 +18,7 @@
 		<init-param>
 			<description>Vaadin application class to start</description>
 			<param-name>application</param-name>
-			<param-value>org.bpmnwithactiviti.chapter10.rules.RuleApplication</param-value>
+			<param-value>org.bpmnwithactiviti.chapter12.rules.RuleApplication</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
