@@ -31,7 +31,7 @@ public class CreditCheckDecisionTableRunner {
 		
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbuilder.add(
-				ResourceFactory.newClassPathResource("chapter10"
+				ResourceFactory.newClassPathResource("chapter12"
 						+ File.separator + "decisiontable" + File.separator + "CreditCheck.xls"),
 				ResourceType.DTABLE, dtconf);
 		

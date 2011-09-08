@@ -24,7 +24,7 @@ public class SimpleCreditCheckTest extends AbstractTest {
 
 	@SuppressWarnings("unchecked")
 	@Test
-	@Deployment(resources = { "chapter10/creditCheckRules.bpmn20.xml", "chapter10/CreditCheckTest.drl" })
+	@Deployment(resources = { "chapter12/creditCheckRules.bpmn20.xml", "chapter12/CreditCheckTest.drl" })
 	public void testCreditCheckFailed() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		
@@ -53,7 +53,7 @@ public class SimpleCreditCheckTest extends AbstractTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	@Deployment(resources = { "chapter10/creditCheckRules.bpmn20.xml", "chapter10/CreditCheckTest.drl" })
+	@Deployment(resources = { "chapter12/creditCheckRules.bpmn20.xml", "chapter12/CreditCheckTest.drl" })
 	public void testCreditCheckSucceeded() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		

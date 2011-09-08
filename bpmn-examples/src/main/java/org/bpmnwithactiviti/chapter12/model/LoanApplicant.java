@@ -5,16 +5,16 @@ import java.io.Serializable;
 public class LoanApplicant implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int income;
+	private long income;
 	private String name;
-	private int loanAmount;
+	private long loanAmount;
 	private String emailAddress;
 	private boolean checkCreditOk;
 	
-	public int getIncome() {
+	public long getIncome() {
 		return income;
 	}
-	public void setIncome(int income) {
+	public void setIncome(long income) {
 		this.income = income;
 	}
 	public String getName() {
@@ -23,10 +23,10 @@ public class LoanApplicant implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getLoanAmount() {
+	public long getLoanAmount() {
 		return loanAmount;
 	}
-	public void setLoanAmount(int loanAmount) {
+	public void setLoanAmount(long loanAmount) {
 		this.loanAmount = loanAmount;
 	}
 	public String getEmailAddress() {

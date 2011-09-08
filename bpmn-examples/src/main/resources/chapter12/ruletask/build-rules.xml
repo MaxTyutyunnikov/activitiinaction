@@ -3,7 +3,6 @@
 <project name="ruletask" default="create.ruletask">
 
 	<property name="dist.dir" value="./dist" />
-	<property name="m2.repo" value="${user.home}/.m2/repository/" />
 	<property name="drools.version" value="5.1.1" />
 
 	<target name="dist.rmdir">
@@ -19,18 +18,18 @@
 	<target name="ruletask.jar" depends="dist.mkdir">
 	 <jar destfile="${dist.dir}/enginelibs/ruletask.jar"
 	       basedir="../../../../../target/classes"
-	       includes="org/bpmnwithactiviti/chapter10/ruletask/**, org/bpmnwithactiviti/chapter10/model/**"
+	       includes="org/bpmnwithactiviti/chapter12/ruletask/**, org/bpmnwithactiviti/chapter12/model/**"
 	  />
-		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-api/${drools.version}/drools-api-${drools.version}.jar"/>
-		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-core/${drools.version}/drools-core-${drools.version}.jar"/>
-		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/drools/drools-compiler/${drools.version}/drools-compiler-${drools.version}.jar"/>
-		<copy todir="${dist.dir}/enginelibs" file="${m2.repo}/org/mvel/mvel2/2.0.16/mvel2-2.0.16.jar"/>
-		<copy todir="${dist.dir}/enginelibs" file="activiti-cfg.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="lib/drools-api-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="lib/drools-core-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="lib/drools-compiler-${drools.version}.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="lib/mvel2-2.0.16.jar"/>
+		<copy todir="${dist.dir}/enginelibs" file="lib/antlr-runtime-3.1.3.jar"/>
 	</target>
 	
 	<target name="ruletask.bar" depends="dist.mkdir">
 		 <jar destfile="${dist.dir}/deploy/ruletask.bar"
-		       basedir="." includes="*.bpmn20.xml, *.drl, *.form"
+		       basedir="." includes="*.bpmn20.xml, *.drl"
 		  />
 	</target>
 	
