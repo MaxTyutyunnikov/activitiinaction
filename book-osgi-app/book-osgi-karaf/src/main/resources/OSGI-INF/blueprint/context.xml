@@ -1,0 +1,19 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+  <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.0.0">
+    <command name="activiti/list-definitions">
+      <action class="org.bpmnwithactiviti.karaf.ListDefinitionsCommand">
+        <property name="repositoryService" ref="repositoryService"/>
+      </action>
+    </command>
+    <command name="activiti/start">
+      <action class="org.bpmnwithactiviti.karaf.StartInstanceCommand">
+        <property name="runtimeService" ref="runtimeService"/>
+      </action>
+    </command>
+  </command-bundle>
+  
+  <reference id="repositoryService" interface="org.activiti.engine.RepositoryService" />
+  <reference id="runtimeService" interface="org.activiti.engine.RuntimeService" />
+
+</blueprint>
