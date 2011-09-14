@@ -13,13 +13,8 @@
   <properties>
     <log4j.version>1.2.15</log4j.version>
     <spring.version>3.0.5.RELEASE</spring.version>
-    <camel.version>2.5.0</camel.version>
-    <camel.activiti.version>1.0.0-SNAPSHOT</camel.activiti.version>
     <activiti.version>5.7</activiti.version>
     <karaf.version>2.2.3</karaf.version>
-    <book.osgi.export>org.bpmnwithactiviti.*</book.osgi.export>
-    <book.osgi.import>*</book.osgi.import>
-    <book.osgi.dynamic.import />
   </properties>
 
   <build>
@@ -51,13 +46,8 @@
           <instructions>
             <Bundle-Name>${project.artifactId}</Bundle-Name>
             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-            <Export-Package>${book.osgi.export}</Export-Package>
-            <Import-Package>${book.osgi.import}</Import-Package>
-            <Require-Bundle></Require-Bundle>
-            <DynamicImport-Package>${book.osgi.dynamic.import}</DynamicImport-Package>
             <Implementation-Title>Activiti in Action - OSGi</Implementation-Title>
             <Implementation-Version>${project.version}</Implementation-Version>
-            <_include>-osgi.bnd</_include>
           </instructions>
         </configuration>
       </plugin>
@@ -69,7 +59,7 @@
   <modules>
     <module>book-osgi-task</module>
     <module>book-osgi-process</module>
-    <module>book-osgi-bundle</module>
+    <module>book-osgi-blueprint</module>
     <module>book-osgi-features</module>
     <module>book-osgi-karaf</module>
   </modules>
@@ -90,28 +80,6 @@
         <artifactId>log4j</artifactId>
         <version>1.2.14</version>
       </dependency>
-
-      <!-- JUNIT DEPENDENCY FOR TESTING -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <scope>test</scope>
-        <version>4.8.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.8.0</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>commons-beanutils</groupId>
-        <artifactId>commons-beanutils</artifactId>
-        <version>1.8.0</version>
-        <scope>test</scope>
-      </dependency>
-
 
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
