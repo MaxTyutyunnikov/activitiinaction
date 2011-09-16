@@ -31,7 +31,6 @@ public class ProcessEngineFactoryWithELResolver extends ProcessEngineFactory {
         compositeElResolver.add(new ArrayELResolver());
         compositeElResolver.add(new ListELResolver());
         compositeElResolver.add(new MapELResolver());
-        //compositeElResolver.add(new BeanELResolver());
         return compositeElResolver;
       }
     }

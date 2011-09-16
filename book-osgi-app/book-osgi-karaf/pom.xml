@@ -7,12 +7,12 @@
   <parent>
     <groupId>org.bpmnwithactiviti</groupId>
     <artifactId>book-osgi-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
   <artifactId>book-osgi-karaf</artifactId>
   <packaging>bundle</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Book Karaf Commmands</name>
   
   <build>
