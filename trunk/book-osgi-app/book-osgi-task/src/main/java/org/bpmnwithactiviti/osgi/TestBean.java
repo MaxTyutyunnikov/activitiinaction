@@ -11,7 +11,7 @@ public class TestBean extends BpmnActivityBehavior implements ActivityBehavior {
 
 	@Override
   public void execute(ActivityExecution execution) throws Exception {
-		System.out.println("invoked3!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("invoked2!!!!!!!!!!!!!!!!!!!!");
 		execution.takeAll(execution.getActivity().getOutgoingTransitions(), 
 				Collections.singletonList(execution));
   }

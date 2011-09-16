@@ -12,7 +12,7 @@
 
     <startEvent id="start" />
     <sequenceFlow id="flow1" sourceRef="start" targetRef="serviceTask"/>
-    <serviceTask id="serviceTask" activiti:delegateExpression="${testBean2}" />
+    <serviceTask id="serviceTask" activiti:delegateExpression="${testBean}" />
     <sequenceFlow id="flow2" sourceRef="serviceTask" targetRef="end"/>
     <endEvent id="end"/>
 

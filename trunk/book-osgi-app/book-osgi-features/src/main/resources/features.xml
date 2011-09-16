@@ -34,9 +34,6 @@
   
   <feature name="book-osgi" version="${project.version}">
     <feature version="${activiti.version}">activiti</feature>
-    <bundle>mvn:org.bpmnwithactiviti/book-osgi-common/${project.version}</bundle>
-    <bundle>mvn:org.bpmnwithactiviti/book-osgi-task/${project.version}</bundle>
-    <bundle>mvn:org.bpmnwithactiviti/book-osgi-bundle/${project.version}</bundle>
-    <bundle>mvn:org.bpmnwithactiviti/book-osgi-process/${project.version}</bundle>
+    <bundle>mvn:org.bpmnwithactiviti/book-osgi-blueprint/${project.version}</bundle>
   </feature>
 </features>

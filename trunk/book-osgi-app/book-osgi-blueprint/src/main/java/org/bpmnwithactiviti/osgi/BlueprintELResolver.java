@@ -32,21 +32,19 @@ public class BlueprintELResolver extends ELResolver {
 	}
 	
 	public void bindService(ActivityBehavior activity, Map props) {
-    System.out.println("bind service " + activity + " props " + props);
     String name = (String) props.get("osgi.service.blueprint.compname");
     if(activityMap.containsKey(name) == false) {
     	activityMap.put(name, activity);
     }
-    System.out.println("added " + name + " to the map");
+    System.out.println("added Activiti service " + name);
 	}
 
 	public void unbindService(ActivityBehavior activity, Map props) {
-		System.out.println("unbind service " + activity + " " + props);
 		String name = (String) props.get("osgi.service.blueprint.compname");
     if(activityMap.containsKey(name)) {
     	activityMap.remove(name);
     }
-    System.out.println("removed " + name + " from the map");
+    System.out.println("removed Activiti service " + name);
 	}
 
 	public boolean isReadOnly(ELContext context, Object base, Object property) {
