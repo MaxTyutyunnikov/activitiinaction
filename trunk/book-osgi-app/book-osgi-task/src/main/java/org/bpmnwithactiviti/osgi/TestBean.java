@@ -11,7 +11,7 @@ public class TestBean implements JavaDelegate {
 		System.out.println("invoked TestBean !!!!!!!!!!!!!!!!!!!!");
 		Customer customer = new Customer();
 		customer.setName("test");
-		execution.setVariable("name", customer);
+		execution.setVariable("customer", customer);
   }
 
 }

@@ -16,11 +16,9 @@
     <sequenceFlow sourceRef="serviceTask" targetRef="scripttask1"/>
     <scriptTask id="scripttask1" scriptFormat="groovy">
       <script>
-        out:println "script task name " + name.name;
+        out:println "script task name " + customer.name;
       </script>
     </scriptTask>
-    <sequenceFlow sourceRef="scripttask1" targetRef="serviceTask2"/>
-    <serviceTask id="serviceTask2" activiti:delegateExpression="${testBean2}" />
     <sequenceFlow sourceRef="scripttask1" targetRef="end"/>
     <endEvent id="end"/>
 
