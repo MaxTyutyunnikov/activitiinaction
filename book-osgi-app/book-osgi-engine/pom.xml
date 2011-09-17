@@ -10,7 +10,7 @@
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>book-osgi-blueprint</artifactId>
+  <artifactId>book-osgi-engine</artifactId>
   <name>Activiti in Action OSGi bundle</name>
   <packaging>bundle</packaging>
   
