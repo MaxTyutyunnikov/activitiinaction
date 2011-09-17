@@ -59,7 +59,7 @@
   <modules>
     <module>book-osgi-task</module>
     <module>book-osgi-process</module>
-    <module>book-osgi-blueprint</module>
+    <module>book-osgi-engine</module>
     <module>book-osgi-features</module>
     <module>book-osgi-karaf</module>
   </modules>
