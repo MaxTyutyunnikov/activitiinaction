@@ -11,9 +11,17 @@
   <process id="osgiProcess" name="Osgi process">
 
     <startEvent id="start" />
-    <sequenceFlow id="flow1" sourceRef="start" targetRef="serviceTask"/>
+    <sequenceFlow sourceRef="start" targetRef="serviceTask"/>
     <serviceTask id="serviceTask" activiti:delegateExpression="${testBean}" />
-    <sequenceFlow id="flow2" sourceRef="serviceTask" targetRef="end"/>
+    <sequenceFlow sourceRef="serviceTask" targetRef="scripttask1"/>
+    <scriptTask id="scripttask1" scriptFormat="groovy">
+      <script>
+        out:println "script task name " + name.name;
+      </script>
+    </scriptTask>
+    <sequenceFlow sourceRef="scripttask1" targetRef="serviceTask2"/>
+    <serviceTask id="serviceTask2" activiti:delegateExpression="${testBean2}" />
+    <sequenceFlow sourceRef="scripttask1" targetRef="end"/>
     <endEvent id="end"/>
 
   </process>

@@ -13,7 +13,7 @@
   <properties>
     <log4j.version>1.2.15</log4j.version>
     <spring.version>3.0.5.RELEASE</spring.version>
-    <activiti.version>5.7</activiti.version>
+    <activiti.version>5.8-SNAPSHOT</activiti.version>
     <karaf.version>2.2.3</karaf.version>
   </properties>
 
@@ -130,6 +130,11 @@
         <groupId>org.activiti</groupId>
         <artifactId>activiti-engine</artifactId>
         <version>${activiti.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy</artifactId>
+        <version>1.7.5</version>
       </dependency>
       <dependency>
         <groupId>com.h2database</groupId>

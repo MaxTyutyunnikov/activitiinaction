@@ -9,14 +9,15 @@
     <property name="password" value="" />
   </bean>
 
-  <bean id="configurationFactory" class="org.bpmnwithactiviti.osgi.ConfigurationFactory">
+  <bean id="configurationFactory" class="org.activiti.osgi.blueprint.ConfigurationFactory">
     <property name="dataSource" ref="dataSource" />
+    <property name="databaseSchemaUpdate" value="true" />
   </bean>
 
   <bean id="configuration" factory-ref="configurationFactory" factory-method="getConfiguration" />
 
   <bean id="processEngineFactory"
-      class="org.bpmnwithactiviti.osgi.ProcessEngineFactoryWithELResolver"
+      class="org.activiti.osgi.blueprint.ProcessEngineFactoryWithELResolver"
       init-method="init"
       destroy-method="destroy">
       
@@ -34,13 +35,13 @@
     factory-method="getRepositoryService" />
     
   <reference-list id="activityProviders" availability="optional" 
-      interface="org.activiti.engine.impl.pvm.delegate.ActivityBehavior"
+      interface="org.activiti.engine.delegate.JavaDelegate"
       activation="eager">
       
       <reference-listener ref="blueprintELResolver" bind-method="bindService" unbind-method="unbindService"/>
   </reference-list>
   
-  <bean id="blueprintELResolver" class="org.bpmnwithactiviti.osgi.BlueprintELResolver" />
+  <bean id="blueprintELResolver" class="org.activiti.osgi.blueprint.BlueprintELResolver" />
   
   <service ref="processEngine" interface="org.activiti.engine.ProcessEngine" />
   <service ref="runtimeService" interface="org.activiti.engine.RuntimeService" />
