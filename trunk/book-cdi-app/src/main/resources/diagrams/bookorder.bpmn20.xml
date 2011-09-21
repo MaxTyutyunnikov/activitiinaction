@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+		targetNamespace="http://www.bpmnwithactiviti.org"
+    xmlns:activiti="http://activiti.org/bpmn">
+		
+	<process id="bookorder" name="bookorder">
+		<startEvent id="startEvent" name="Start" activiti:formKey="taskForm_newOrder.jsf" />
+    <sequenceFlow id="toValidateTask" sourceRef="startEvent" targetRef="validateTask"/>
+		<serviceTask id="validateTask" activiti:expression="#{bookOrderTask.validate()}" />
+    <sequenceFlow id="toCompletedOrderTask" sourceRef="validateTask" targetRef="completeOrderTask"/>
+		<userTask id="completeOrderTask" name="Complete order" activiti:assignee="kermit" activiti:formKey="taskForm_completeOrder.jsf">
+      <documentation>Completing order for book with isbn ${bookOrder.isbn}</documentation>
+    </userTask>
+    <sequenceFlow id="toApproveTask" sourceRef="completeOrderTask" targetRef="approveTask"/>
+    <serviceTask id="approveTask" activiti:expression="#{bookOrderTask.approve()}" />
+    <sequenceFlow id="toEndEvent" sourceRef="approveTask" targetRef="endEvent"/>
+		<endEvent id="endEvent" name="End"/>
+	</process>
+</definitions>
