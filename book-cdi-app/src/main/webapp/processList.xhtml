@@ -8,7 +8,11 @@
 
 		<h1>List of deployed processes</h1>
 
-		<h:dataTable value="#{processDefinitionList}" var="v_process">
+		<h:dataTable value="#{processDefinitionList}" var="v_process"
+		    styleClass="order-table"
+        headerClass="order-table-header"
+        rowClasses="order-table-odd-row,order-table-even-row"
+        cellpadding="10">
 			<h:column>
 				<f:facet name="header">Key</f:facet>
 				#{v_process.key} 
