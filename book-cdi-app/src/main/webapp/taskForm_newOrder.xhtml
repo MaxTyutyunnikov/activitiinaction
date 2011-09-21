@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		<f:metadata>
+			<!-- bind the key of the process to be started -->
+			<f:viewParam id="processDefinitionKey" name="processDefinitionKey" />
+		</f:metadata>
+
+		<h1>New book order</h1>
+		<h:form>
+			<table>
+				<tr>
+					<td>ISBN:</td>
+					<td><h:inputText value="#{bookOrder.isbn}" />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><h:commandButton value="Submit"
+							action="#{businessProcess.startProcessByKey(processDefinitionKey)}" />
+					</td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn"
+  typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath"
+  targetNamespace="http://ejbexample">
+  
+  <process id="jee6" name="JEE6 example process">
+    <startEvent id="startevent1" name="Start">
+      <extensionElements>
+        <activiti:formProperty id="name" name="Name"
+          type="string" required="true" />
+      </extensionElements>
+    </startEvent>
+    <sequenceFlow sourceRef="startevent1" targetRef="servicetask1" />
+    <serviceTask id="servicetask1"
+      activiti:delegateExpression="#{helloDelegate}" />
+    <sequenceFlow sourceRef="servicetask1" targetRef="endevent1" />
+    <endEvent id="endevent1" name="End" />
+  </process>
+</definitions>
