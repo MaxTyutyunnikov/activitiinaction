@@ -2,6 +2,7 @@ package org.bpmnwithactiviti.chapter10;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class DelegateTaskTest extends AbstractTest {
 		taskService.saveTask(delegateTask);
 		Task queryTask = taskService.createTaskQuery().singleResult();
 		assertEquals("kermit", queryTask.getOwner());
+		assertNull(queryTask.getAssignee());
 		taskService.delegateTask(delegateTask.getId(), "fonzie");
 		queryTask = taskService.createTaskQuery().singleResult();
 		assertEquals("fonzie", queryTask.getAssignee());

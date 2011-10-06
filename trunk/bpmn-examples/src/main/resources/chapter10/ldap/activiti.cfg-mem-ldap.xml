@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+  
+    <property name="databaseSchemaUpdate" value="true" />
+    
+    <property name="customSessionFactories">
+      <list>
+        <bean class="org.bpmnwithactiviti.chapter10.ldap.LDAPUserManagerFactory">
+          <constructor-arg ref="ldapConnectionParams" />
+        </bean>
+        <bean class="org.bpmnwithactiviti.chapter10.ldap.LDAPGroupManagerFactory">
+          <constructor-arg ref="ldapConnectionParams" />
+        </bean>
+      </list>
+    </property>
+    
+  </bean>
+  
+  <bean id="ldapConnectionParams" class="org.bpmnwithactiviti.chapter10.ldap.LDAPConnectionParams">
+    <property name="ldapServer" value="localhost" />
+    <property name="ldapPort" value="10389" />
+    <property name="ldapUser" value="uid=admin,ou=system" />
+    <property name="ldapPassword" value="secret" />
+  </bean> 
+
+</beans>

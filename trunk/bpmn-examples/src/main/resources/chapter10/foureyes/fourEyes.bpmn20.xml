@@ -1,0 +1,19 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/foureyes">
+
+	<process id="fourEyesProcess">
+		<startEvent id="theStart" />
+		<sequenceFlow sourceRef="theStart" targetRef="firstTask" />
+		<userTask id="firstTask" activiti:candidateGroups="sales" />
+    <sequenceFlow sourceRef="firstTask" targetRef="secondTask" />
+    <userTask id="secondTask" activiti:candidateGroups="sales">
+      <extensionElements>
+        <activiti:taskListener class="org.bpmnwithactiviti.chapter10.foureyes.FourEyesListener" event="assignment">
+          <activiti:field name="otherTaskId" stringValue="firstTask" />
+        </activiti:taskListener>
+      </extensionElements>
+    </userTask>
+		<sequenceFlow sourceRef="secondTask" targetRef="theEnd" />
+		<endEvent id="theEnd" />
+	</process>
+</definitions>

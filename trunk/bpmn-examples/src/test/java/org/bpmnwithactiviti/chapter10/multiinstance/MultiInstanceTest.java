@@ -26,7 +26,7 @@ public class MultiInstanceTest extends AbstractTest {
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
 	
 	@Test
-	@Deployment(resources={"chapter8/multiinstance/multiinstance.bpmn20.xml"})
+	@Deployment(resources={"chapter10/multiinstance/multiinstance.bpmn20.xml"})
 	public void doMultiTasking() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("decisionInfo", "test");

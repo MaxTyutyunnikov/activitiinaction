@@ -4,7 +4,7 @@
 	<process id="decisionProcess" name="Decision making process">
 		<startEvent id="theStart" activiti:formKey="decisionItem.form" />
 		<sequenceFlow sourceRef="theStart" targetRef="createAssigneeList" />
-		<serviceTask id="createAssigneeList" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.CreateAssigneeList" />
+		<serviceTask id="createAssigneeList" activiti:class="org.bpmnwithactiviti.chapter10.multiinstance.CreateAssigneeList" />
 		<sequenceFlow sourceRef="createAssigneeList" targetRef="decisionSubProcess"/>
 		<subProcess id="decisionSubProcess">
 			<multiInstanceLoopCharacteristics isSequential="false" 
@@ -15,12 +15,12 @@
 			<sequenceFlow sourceRef="theStartSubProcess" targetRef="decisionTask" />
 			<userTask id="decisionTask" name="Decision task" activiti:assignee="${assignee}" />
 			<sequenceFlow sourceRef="decisionTask" targetRef="gatherDecisionVote" />
-			<serviceTask id="gatherDecisionVote" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.AddDecisionVote" />
+			<serviceTask id="gatherDecisionVote" activiti:class="org.bpmnwithactiviti.chapter10.multiinstance.AddDecisionVote" />
 			<sequenceFlow sourceRef="gatherDecisionVote" targetRef="theEndSubProcess" />
 			<endEvent id="theEndSubProcess" />
 		</subProcess>
 		<sequenceFlow sourceRef="decisionSubProcess" targetRef="outcomeTask" />
-		<serviceTask id="outcomeTask" activiti:class="org.bpmnwithactiviti.chapter8.multiinstance.PublishVotePoll" />
+		<serviceTask id="outcomeTask" activiti:class="org.bpmnwithactiviti.chapter10.multiinstance.PublishVotePoll" />
 		<sequenceFlow sourceRef="outcomeTask" targetRef="theEnd" />
 		<endEvent id="theEnd" />
 	</process>
