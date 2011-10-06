@@ -7,7 +7,7 @@
         <color>14540253</color>
       </controlProperties>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="307" y="185" w="29" h="238" measuredW="27" measuredH="195" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="307" y="185" w="29" h="238" measuredW="24" measuredH="197" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>16</size>
@@ -26,7 +26,7 @@
         <color>10470904</color>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="418" y="196" w="119" h="29" measuredW="107" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="418" y="196" w="119" h="29" measuredW="102" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>16</size>
@@ -39,7 +39,7 @@
         <color>10470904</color>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="424" y="264" w="104" h="29" measuredW="82" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="424" y="264" w="104" h="29" measuredW="75" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>16</size>
@@ -57,11 +57,11 @@
         <color>10470904</color>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="761" y="193" w="159" h="29" measuredW="149" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="761" y="193" w="159" h="29" measuredW="156" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>16</size>
-        <text>Camunda%20Fox%20Engine</text>
+        <text>camunda%20fox%20modules</text>
       </controlProperties>
     </control>
     <control controlID="10" controlTypeID="com.balsamiq.mockups::StickyNote" x="383" y="308" w="189" h="135" measuredW="109" measuredH="123" zOrder="10" locked="false" isInGroup="-1">
@@ -71,7 +71,7 @@
     </control>
     <control controlID="11" controlTypeID="com.balsamiq.mockups::StickyNote" x="740" y="236" w="189" h="135" measuredW="109" measuredH="123" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Camunda%20Fox%20provides%20additional%20modules%20for%20JBoss%20AS7%20integration</text>
+        <text>Camunda%20fox%20provides%20additional%20modules%20for%20JBoss%20AS7%20integration</text>
       </controlProperties>
     </control>
   </controls>
