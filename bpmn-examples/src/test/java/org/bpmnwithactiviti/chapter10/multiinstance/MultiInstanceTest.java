@@ -14,8 +14,6 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter10.multiinstance.DecisionVoting;
-import org.bpmnwithactiviti.chapter10.multiinstance.Vote;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,31 +26,35 @@ public class MultiInstanceTest extends AbstractTest {
 	@Test
 	@Deployment(resources={"chapter10/multiinstance/multiinstance.bpmn20.xml"})
 	public void doMultiTasking() {
-		Map<String, Object> variableMap = new HashMap<String, Object>();
+		String processDefinitionId = activitiRule.getRepositoryService().createProcessDefinitionQuery().singleResult().getId();
+		Map<String, String> variableMap = new HashMap<String, String>();
 		variableMap.put("decisionInfo", "test");
 		variableMap.put("participants", "kermit,fonzie,gonzo");
-		ProcessInstance processInstance = activitiRule.getRuntimeService()
-				.startProcessInstanceByKey("decisionProcess", variableMap);
+		ProcessInstance processInstance = activitiRule.getFormService()
+				.submitStartFormData(processDefinitionId, variableMap);
 		assertNotNull(processInstance);
 		List<Task> taskList = activitiRule.getTaskService().createTaskQuery().list();
 		assertEquals(3, taskList.size());
-		int counter = 0;
+		int counter = 1;
 		for (Task task : taskList) {
-			Map<String, Object> taskMap = new HashMap<String, Object>();
-			taskMap.put("vote", true);
-			if(counter < 2) {
-				activitiRule.getTaskService().complete(task.getId(), taskMap);
+			Map<String, String> taskMap = new HashMap<String, String>();
+			taskMap.put("vote", "true");
+			
+			if(counter < 3) {
+				activitiRule.getFormService().submitTaskFormData(task.getId(), taskMap);
 			}
 			counter++;
 		}
+		
 		boolean voteOutcomeTested = false;
 		List<HistoricDetail> historicVariableUpdateList = activitiRule.getHistoryService().createHistoricDetailQuery().variableUpdates().orderByTime().desc().list();
 		for (HistoricDetail historicDetail : historicVariableUpdateList) {
 			HistoricVariableUpdate historicVariableUpdate = (HistoricVariableUpdate) historicDetail;
 			if("voteOutcome".equals(historicVariableUpdate.getVariableName())) {
+				voteOutcomeTested = true;
 				DecisionVoting voting = (DecisionVoting) historicVariableUpdate.getValue();
 				assertTrue(voting.isDecisionVotingOutcome());
-				voteOutcomeTested = true;
+				assertEquals(2, voting.getVotes().size());
 				for (Vote vote : voting.getVotes()) {
 					assertTrue(vote.isApproved());
 				}
