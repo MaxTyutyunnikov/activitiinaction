@@ -7,10 +7,10 @@ public class AddDecisionVote implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) {
 		String assignee = (String) execution.getVariableLocal("assignee");
-		Boolean voteOutcome = (Boolean) execution.getVariable("vote");
+		String voteOutcome = (String) execution.getVariable("vote");
 		Vote vote = new Vote();
 		vote.setName(assignee);
-		vote.setApproved(voteOutcome);
+		vote.setApproved(Boolean.valueOf(voteOutcome));
 		DecisionVoting voting = (DecisionVoting) execution.getVariable("voteOutcome");
 		voting.addVote(vote);
 		execution.setVariable("voteOutcome", voting);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-6e7f7426-c2ed-49dc-9a46-719baba2435c" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-3ba67392-f232-40ab-aa89-2e40be3923ab" isExecutable="false">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-6261c1a6-99b8-4da2-b6e9-edcf31db8a1d" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <process id="sid-d75f38ff-c73a-4bc1-9808-13676fb79fb2" isExecutable="false">
       <startEvent id="sid-0C74D881-FE30-4081-9FDE-0B94FD9F62A7" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
@@ -19,13 +19,13 @@
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
          <incoming>sid-2FDBD9B3-46A5-48FE-B7DE-0F87B402AB02</incoming>
+         <multiInstanceLoopCharacteristics behavior="All" id="sid-a63c44da-2cd9-4235-9f39-848e200ee4a9" isSequential="false"/>
          <userTask completionQuantity="1" id="sid-6460EB80-5F7E-414E-8C63-918F7A4FFAE3" implementation="webService" isForCompensation="false" name="Approve or disapprove tentative decision" startQuantity="1">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
             </extensionElements>
             <incoming>sid-35576BB8-1266-4987-9EF6-43D9C27C2879</incoming>
             <outgoing>sid-EE8E3C49-0D0A-4BAE-AAEA-D9591D769AEC</outgoing>
-            <multiInstanceLoopCharacteristics behavior="All" id="sid-f7399e4b-7cbd-4a57-8f33-1e71aa120173" isSequential="false"/>
          </userTask>
          <startEvent id="sid-25543B32-42F1-4280-9A0D-85BE5FA3B5F4" name="">
             <extensionElements>
@@ -53,7 +53,7 @@
       <sequenceFlow id="sid-ADD2E670-06AA-4ECE-9430-7AE0C0B090DB" name="" sourceRef="sid-0C74D881-FE30-4081-9FDE-0B94FD9F62A7" targetRef="sid-01D7FE62-FA05-4FB4-8645-0F7619EC8A53"/>
       <sequenceFlow id="sid-2FDBD9B3-46A5-48FE-B7DE-0F87B402AB02" name="" sourceRef="sid-01D7FE62-FA05-4FB4-8645-0F7619EC8A53" targetRef="sid-BE6FA8DE-16DC-44C0-B954-B941E25D6B45"/>
    </process>
-   <process id="sid-d3226cd2-93d6-401e-bb08-cfc8cb04fc0b" isExecutable="false">
+   <process id="sid-c34f76ee-739e-476c-b12b-604a7116df54" isExecutable="false">
       <serviceTask completionQuantity="1" id="sid-2B46B462-638D-4DC3-A54F-C8BE6A78941E" implementation="webService" isForCompensation="false" name="Publish result of tentative decision poll" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
@@ -70,8 +70,8 @@
       <sequenceFlow id="sid-25FEA08B-44B9-4C96-80F2-38A4932BC9D6" name="" sourceRef="sid-2B46B462-638D-4DC3-A54F-C8BE6A78941E" targetRef="sid-4D2A02AF-B092-4794-BA8A-6291B3B9E2A1"/>
       <sequenceFlow id="sid-A3C1A1BD-6909-4375-9085-7B9E9B4B0701" name="" targetRef="sid-2B46B462-638D-4DC3-A54F-C8BE6A78941E"/>
    </process>
-   <bpmndi:BPMNDiagram id="sid-6978124d-9d99-4f1e-9362-806a1e59bc81">
-      <bpmndi:BPMNPlane bpmnElement="sid-d3226cd2-93d6-401e-bb08-cfc8cb04fc0b" id="sid-85672a03-21f9-44a6-966e-504ac11dfcc4">
+   <bpmndi:BPMNDiagram id="sid-cc5e683f-433a-4689-a774-e8c2f8c6c02a">
+      <bpmndi:BPMNPlane bpmnElement="sid-c34f76ee-739e-476c-b12b-604a7116df54" id="sid-87922918-398a-440a-b2ef-a555302a5b16">
          <bpmndi:BPMNShape bpmnElement="sid-0C74D881-FE30-4081-9FDE-0B94FD9F62A7" id="sid-0C74D881-FE30-4081-9FDE-0B94FD9F62A7_gui">
             <omgdc:Bounds height="30.0" width="30.0" x="90.0" y="47.5"/>
          </bpmndi:BPMNShape>

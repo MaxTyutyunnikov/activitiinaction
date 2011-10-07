@@ -2,7 +2,12 @@
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/multiinstance">
 
 	<process id="decisionProcess" name="Decision making process">
-		<startEvent id="theStart" activiti:formKey="decisionItem.form" />
+		<startEvent id="theStart">
+      <extensionElements>
+        <activiti:formProperty id="decisionInfo" name="Decision info" required="true" type="string" />
+        <activiti:formProperty id="participants" name="Participants (comma separated)" required="true" type="string" />
+      </extensionElements>
+    </startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="createAssigneeList" />
 		<serviceTask id="createAssigneeList" activiti:class="org.bpmnwithactiviti.chapter10.multiinstance.CreateAssigneeList" />
 		<sequenceFlow sourceRef="createAssigneeList" targetRef="decisionSubProcess"/>
@@ -10,10 +15,18 @@
 			<multiInstanceLoopCharacteristics isSequential="false" 
 		     		activiti:collection="assigneeList" activiti:elementVariable="assignee" >
 		    	<completionCondition>${nrOfCompletedInstances/nrOfInstances > 0.5 }</completionCondition>
-		  	</multiInstanceLoopCharacteristics>
+		  </multiInstanceLoopCharacteristics>
 			<startEvent id="theStartSubProcess" />
 			<sequenceFlow sourceRef="theStartSubProcess" targetRef="decisionTask" />
-			<userTask id="decisionTask" name="Decision task" activiti:assignee="${assignee}" />
+			<userTask id="decisionTask" name="Decision task" activiti:assignee="${assignee}">
+        <extensionElements>
+          <activiti:formProperty id="decisionInfo" name="Decision info" expression="${decisionInfo}" writable="false"/>
+          <activiti:formProperty id="vote" name="Do you approve the preliminary decision" required="true" type="enum">
+            <activiti:value id="true" name="Yes"/>
+            <activiti:value id="false" name="No"/>
+          </activiti:formProperty>
+        </extensionElements>
+      </userTask>
 			<sequenceFlow sourceRef="decisionTask" targetRef="gatherDecisionVote" />
 			<serviceTask id="gatherDecisionVote" activiti:class="org.bpmnwithactiviti.chapter10.multiinstance.AddDecisionVote" />
 			<sequenceFlow sourceRef="gatherDecisionVote" targetRef="theEndSubProcess" />
