@@ -26,8 +26,8 @@ public class LoanRequestTest extends AbstractTest {
 	public void creditCheckTrue() {
 		Map<String, Object> processVariables = new HashMap<String, Object>();
 		processVariables.put("name", "Miss Piggy");
-		processVariables.put("income", new Integer(100));
-		processVariables.put("loanAmount", new Integer(10));
+		processVariables.put("income", new Long(100));
+		processVariables.put("loanAmount", new Long(10));
 		processVariables.put("emailAddress", "miss.piggy@localhost");
 		activitiRule.getRuntimeService().startProcessInstanceByKey(
 		        "loanrequest", processVariables);
