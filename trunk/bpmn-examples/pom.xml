@@ -8,7 +8,7 @@
 	<name>Activiti in Action - Examples</name>
 
 	<properties>
-		<activiti-version>5.8-SNAPSHOT</activiti-version>
+		<activiti-version>5.7</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
 		<cxf-version>2.3.4</cxf-version>
 	</properties>
@@ -181,6 +181,32 @@
 			<artifactId>drools-transformer-xstream</artifactId>
 			<version>5.0.1</version>
 		</dependency>
+    <dependency>
+      <groupId>org.apache.chemistry.opencmis</groupId>
+      <artifactId>chemistry-opencmis-client-impl</artifactId>
+      <version>0.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>3.8-beta4</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml-schemas</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>ooxml-schemas</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.itextpdf</groupId>
+      <artifactId>itextpdf</artifactId>
+      <version>5.0.4</version>
+    </dependency>
 		<dependency>
 			<groupId>com.espertech</groupId>
 			<artifactId>esper</artifactId>
