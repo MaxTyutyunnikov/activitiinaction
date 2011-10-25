@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="taskAssigneeExample"
+	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/loanrequestcmis">
+
+	<process id="loanrequestCMIS" name="Process to handle a loan request with CMIS">
+    <extensionElements>
+      <activiti:executionListener class="org.bpmnwithactiviti.chapter13.process.listener.CreateApplicationVariable" event="start" />
+    </extensionElements>
+		<startEvent id="theStart" activiti:initiator="initiator"/>
+    <sequenceFlow sourceRef="theStart" targetRef="fillInLoanApplication" />
+    <userTask id="fillInLoanApplication" name="Fill-in the loan application details"
+      activiti:assignee="${initiator}">
+      <extensionElements>
+        <activiti:formProperty id="name" name="Name" expression="#{loanApplication.applicant.name}" required="true" type="string" />
+        <activiti:formProperty id="emailAddress" name="Email address" expression="#{loanApplication.applicant.emailAddress}" required="true" type="string" />
+        <activiti:formProperty id="income" name="Income" expression="#{loanApplication.applicant.income}" required="true" type="long" />
+        <activiti:formProperty id="loanAmount" name="Loan amount" expression="#{loanApplication.applicant.loanAmount}" required="true" type="long" />
+      </extensionElements>
+    </userTask>
+		<sequenceFlow sourceRef="fillInLoanApplication" targetRef="checkCredit" />
+		<serviceTask id="checkCredit" activiti:async="true" activiti:class="org.bpmnwithactiviti.chapter13.process.task.CreditCheckCMISTask" />
+		<sequenceFlow sourceRef="checkCredit" targetRef="evaluateLoanRequest" />
+    <serviceTask id="evaluateLoanRequest" activiti:class="org.bpmnwithactiviti.chapter13.process.task.EvaluationCMISTask" />
+    <sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
+		<exclusiveGateway id="approvalGateway" />
+		<sequenceFlow sourceRef="approvalGateway" targetRef="sendLetter">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status == 'denied'}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="approvalGateway" targetRef="evaluateRequestByManager">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status == 'needs manager approval'}</conditionExpression>
+		</sequenceFlow>
+		<sequenceFlow sourceRef="approvalGateway" targetRef="sendLetter">
+			<conditionExpression xsi:type="tFormalExpression">${loanApplication.status == 'approved'}</conditionExpression>
+		</sequenceFlow>
+		<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager"
+			activiti:candidateGroups="management">
+      <extensionElements>
+        <activiti:formProperty id="customerName" name="Customer name" expression="${loanApplication.applicant.name}" writable="false"/>
+        <activiti:formProperty id="income" name="Income of customer" expression="${loanApplication.applicant.income}" writable="false"/>
+        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="${loanApplication.applicant.loanAmount}" writable="false"/>
+        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="${loanApplication.applicant.checkCreditOk}" writable="false"/>
+        <activiti:formProperty id="requestApproved" name="Do you approve the request?" required="true" type="enum">
+          <activiti:value id="true" name="Yes"/>
+          <activiti:value id="false" name="No"/>
+        </activiti:formProperty>
+        <activiti:formProperty id="motivation" name="Motivation"/>
+      </extensionElements>
+    </userTask>
+		<sequenceFlow sourceRef="evaluateRequestByManager" targetRef="updateManagerCheck" />
+    <serviceTask id="updateManagerCheck"
+      activiti:class="org.bpmnwithactiviti.chapter13.process.task.ManagerCheckUpdate" />
+    <sequenceFlow sourceRef="updateManagerCheck" targetRef="sendLetter" />
+    <serviceTask id="sendLetter"
+      activiti:class="org.bpmnwithactiviti.chapter13.process.task.PDFLetterTask" />
+    <sequenceFlow sourceRef="sendLetter" targetRef="end" />
+    <endEvent id="end" />
+	</process>
+</definitions>
+
+

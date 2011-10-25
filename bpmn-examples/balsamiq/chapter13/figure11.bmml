@@ -1,0 +1,15 @@
+<mockup version="1.0" skin="sketch" measuredW="1084" measuredH="751" mockupW="1024" mockupH="731">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="60" y="20" w="-1" h="-1" measuredW="1009" measuredH="731" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/Screen%2520shot%25202011-10-14%2520at%252016.10.28.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="742" y="405" w="342" h="340" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13576743</borderColor>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

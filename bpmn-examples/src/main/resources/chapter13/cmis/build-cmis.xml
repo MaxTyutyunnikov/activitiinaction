@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="cmis" default="create.cmis">
+
+	<property name="dist.dir" value="./dist" />
+	
+	<target name="dist.rmdir">
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="dist.mkdir" depends="dist.rmdir">
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}/enginelibs" />
+		<mkdir dir="${dist.dir}/deploy" />
+	</target>
+	
+	<target name="cmis.jar" depends="dist.mkdir">
+	 <jar destfile="${dist.dir}/enginelibs/cmis.jar"
+	       basedir="../../../../../target/classes"
+	       includes="org/bpmnwithactiviti/chapter13/**, chapter13/cmis/*.gif"
+	  />
+		<copy todir="${dist.dir}/enginelibs">
+			<fileset dir="lib">
+			  <include name="*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="cmis.bar" depends="dist.mkdir">
+		 <jar destfile="${dist.dir}/deploy/cmis.bar"
+		       basedir="." includes="*.bpmn20.xml"
+		  />
+	</target>
+	
+	<target name="create.cmis" depends="dist.mkdir, cmis.jar, cmis.bar"/>
+
+</project>
