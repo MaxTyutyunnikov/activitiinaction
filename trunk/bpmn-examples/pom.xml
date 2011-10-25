@@ -8,7 +8,7 @@
 	<name>Activiti in Action - Examples</name>
 
 	<properties>
-		<activiti-version>5.7</activiti-version>
+		<activiti-version>5.8</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
 		<cxf-version>2.3.4</cxf-version>
 	</properties>
