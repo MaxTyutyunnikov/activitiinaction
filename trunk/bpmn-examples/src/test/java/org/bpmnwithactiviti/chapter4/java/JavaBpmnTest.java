@@ -5,12 +5,16 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import org.activiti.engine.ActivitiException;
 import org.activiti.engine.RuntimeService;
+import org.activiti.engine.impl.ProcessEngineImpl;
+import org.activiti.engine.impl.jobexecutor.JobExecutor;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter4.java.BookOrder;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,6 +35,18 @@ public class JavaBpmnTest extends AbstractTest {
 	@Deployment(resources={"chapter4/bookorder.java.bpmn20.xml"})
 	public void executeJavaService() {
 		ProcessInstance processInstance = startProcessInstance();
+		RuntimeService runtimeService = activitiRule.getRuntimeService();
+		Date validatetime = (Date) runtimeService.getVariable(processInstance.getId(), "validatetime");
+		assertNotNull(validatetime);
+		System.out.println("validatetime is " + validatetime);
+	}
+	
+	@Test
+	@Deployment(resources={"chapter4/bookorder.async.bpmn20.xml"})
+	public void executeAsyncService() {
+		ProcessInstance processInstance = startProcessInstance();
+		System.out.println("Started process instance");
+		waitForJobExecutorToProcessAllJobs(5000, 100);
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Date validatetime = (Date) runtimeService.getVariable(processInstance.getId(), "validatetime");
 		assertNotNull(validatetime);
@@ -60,4 +76,54 @@ public class JavaBpmnTest extends AbstractTest {
 		assertNotNull(validatetime);
 		System.out.println("validatetime is " + validatetime);
 	}
+	
+	private void waitForJobExecutorToProcessAllJobs(long maxMillisToWait, long intervalMillis) {
+    JobExecutor jobExecutor = ((ProcessEngineImpl) activitiRule.getProcessEngine()).getProcessEngineConfiguration().getJobExecutor();
+    jobExecutor.start();
+    
+    try {
+      Timer timer = new Timer();
+      InteruptTask task = new InteruptTask(Thread.currentThread());
+      timer.schedule(task, maxMillisToWait);
+      boolean areJobsAvailable = true;
+      try {
+        while (areJobsAvailable && !task.isTimeLimitExceeded()) {
+          Thread.sleep(intervalMillis);
+          areJobsAvailable = areJobsAvailable();
+        }
+      } catch (InterruptedException e) {
+      } finally {
+        timer.cancel();
+      }
+      if (areJobsAvailable) {
+        throw new ActivitiException("time limit of " + maxMillisToWait + " was exceeded");
+      }
+
+    } finally {
+      jobExecutor.shutdown();
+    }
+  }
+	
+	public boolean areJobsAvailable() {
+    return !activitiRule.getManagementService()
+      .createJobQuery()
+      .executable()
+      .list()
+      .isEmpty();
+  }
+
+  private static class InteruptTask extends TimerTask {
+    protected boolean timeLimitExceeded = false;
+    protected Thread thread;
+    public InteruptTask(Thread thread) {
+      this.thread = thread;
+    }
+    public boolean isTimeLimitExceeded() {
+      return timeLimitExceeded;
+    }
+    public void run() {
+      timeLimitExceeded = true;
+      thread.interrupt();
+    }
+  }
 }

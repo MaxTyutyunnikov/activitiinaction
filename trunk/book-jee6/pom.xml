@@ -11,7 +11,7 @@
   <name>Activiti in Action - JEE6</name>
 
   <properties>
-    <activiti.version>5.7</activiti.version>
+    <activiti.version>5.8</activiti.version>
   </properties>
 
   <build>

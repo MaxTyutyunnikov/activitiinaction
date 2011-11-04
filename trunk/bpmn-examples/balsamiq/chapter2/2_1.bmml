@@ -26,12 +26,12 @@
         <color>13421772</color>
       </controlProperties>
     </control>
-    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="879" y="81" w="164" h="25" measuredW="90" measuredH="25" zOrder="31" locked="false" isInGroup="-1">
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="879" y="81" w="164" h="25" measuredW="79" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Activiti%20Cycle</text>
       </controlProperties>
     </control>
-    <control controlID="71" controlTypeID="com.balsamiq.mockups::SubTitle" x="839" y="26" w="-1" h="-1" measuredW="210" measuredH="40" zOrder="32" locked="false" isInGroup="-1">
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::SubTitle" x="839" y="26" w="-1" h="-1" measuredW="195" measuredH="33" zOrder="32" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Collaboration%20Tool</text>
       </controlProperties>
@@ -88,22 +88,22 @@
         <color>15658734</color>
       </controlProperties>
     </control>
-    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="137" y="86" w="167" h="30" measuredW="59" measuredH="25" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="137" y="86" w="167" h="30" measuredW="53" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Alfresco</text>
       </controlProperties>
     </control>
-    <control controlID="91" controlTypeID="com.balsamiq.mockups::SubTitle" x="86" y="26" w="-1" h="-1" measuredW="189" measuredH="40" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::SubTitle" x="86" y="26" w="-1" h="-1" measuredW="179" measuredH="33" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Dedicated%20Tools</text>
       </controlProperties>
     </control>
-    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="125" y="399" w="164" h="25" measuredW="92" measuredH="25" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="125" y="399" w="164" h="25" measuredW="82" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Activiti%20Probe</text>
       </controlProperties>
     </control>
-    <control controlID="93" controlTypeID="com.balsamiq.mockups::Label" x="86" y="469" w="164" h="37" measuredW="109" measuredH="25" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Label" x="86" y="469" w="164" h="37" measuredW="94" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <text>Activiti%20Explorer</text>
@@ -114,7 +114,7 @@
         <color>15658734</color>
       </controlProperties>
     </control>
-    <control controlID="95" controlTypeID="com.balsamiq.mockups::Label" x="111" y="173" w="167" h="25" measuredW="107" measuredH="25" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Label" x="111" y="173" w="167" h="25" measuredW="93" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <text>Activiti%20Modeler</text>
@@ -125,7 +125,7 @@
         <color>15658734</color>
       </controlProperties>
     </control>
-    <control controlID="97" controlTypeID="com.balsamiq.mockups::Label" x="111" y="261" w="139" h="51" measuredW="208" measuredH="25" zOrder="28" locked="false" isInGroup="-1">
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Label" x="111" y="261" w="139" h="51" measuredW="185" measuredH="21" zOrder="28" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <text>Activiti%20Designer%20%28Eclipse%20plugin%29</text>
@@ -193,32 +193,32 @@
         <color>15658734</color>
       </controlProperties>
     </control>
-    <control controlID="108" controlTypeID="com.balsamiq.mockups::Label" x="475" y="85" w="167" h="25" measuredW="132" measuredH="25" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Label" x="475" y="85" w="167" h="25" measuredW="129" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Document%20Repository</text>
       </controlProperties>
     </control>
-    <control controlID="109" controlTypeID="com.balsamiq.mockups::Label" x="477" y="371" w="164" h="25" measuredW="97" measuredH="25" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Label" x="477" y="371" w="164" h="25" measuredW="84" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Activiti%20Engine</text>
       </controlProperties>
     </control>
-    <control controlID="110" controlTypeID="com.balsamiq.mockups::Label" x="492" y="157" w="167" h="25" measuredW="112" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Label" x="492" y="157" w="167" h="25" measuredW="105" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Model%20Repository</text>
       </controlProperties>
     </control>
-    <control controlID="111" controlTypeID="com.balsamiq.mockups::SubTitle" x="467" y="27" w="-1" h="-1" measuredW="184" measuredH="40" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::SubTitle" x="467" y="27" w="-1" h="-1" measuredW="170" measuredH="33" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Stored%20Content</text>
       </controlProperties>
     </control>
-    <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="494" y="425" w="164" h="25" measuredW="121" measuredH="25" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="494" y="425" w="164" h="25" measuredW="118" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Process%20Repository</text>
       </controlProperties>
     </control>
-    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="475" y="477" w="164" h="68" measuredW="286" measuredH="25" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="475" y="477" w="164" h="68" measuredW="258" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <text>Tasks%2C%20Process%20instances%2C%20History%20+%20Reports</text>
@@ -229,7 +229,7 @@
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="115" controlTypeID="com.balsamiq.mockups::Label" x="492" y="229" w="167" h="25" measuredW="105" measuredH="25" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::Label" x="492" y="229" w="167" h="25" measuredW="98" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <text>SVN%20Repository</text>
       </controlProperties>
@@ -239,7 +239,7 @@
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="117" controlTypeID="com.balsamiq.mockups::Label" x="492" y="302" w="167" h="25" measuredW="107" measuredH="25" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::Label" x="492" y="302" w="167" h="25" measuredW="98" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text>MVN%20Repository</text>
       </controlProperties>
