@@ -8,7 +8,7 @@
 	<name>BPMN 2.0 with Activiti - Camel examples</name>
 
 	<properties>
-		<activiti-version>5.7</activiti-version>
+		<activiti-version>5.8</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
 	</properties>
 

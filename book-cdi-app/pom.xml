@@ -9,7 +9,7 @@
 	<version>1.0</version>
 
 	<properties>
-		<activiti-version>5.8-SNAPSHOT</activiti-version>
+		<activiti-version>5.8</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
     <restlet-version>2.0.8</restlet-version>
 	</properties>

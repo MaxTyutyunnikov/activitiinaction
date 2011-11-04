@@ -5,7 +5,7 @@
         <color>14540253</color>
       </controlProperties>
     </control>
-    <control controlID="91" controlTypeID="com.balsamiq.mockups::SubTitle" x="91" y="25" w="-1" h="-1" measuredW="135" measuredH="37" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::SubTitle" x="91" y="25" w="-1" h="-1" measuredW="134" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Design%20tools</text>
       </controlProperties>
@@ -27,7 +27,7 @@
         <text>%20%0ANon-technical%20modeling%0A%28web-based%29</text>
       </controlProperties>
     </control>
-    <control controlID="120" controlTypeID="com.balsamiq.mockups::Label" x="72" y="61" w="167" h="25" measuredW="136" measuredH="29" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Label" x="72" y="61" w="167" h="25" measuredW="127" measuredH="26" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>
@@ -43,7 +43,7 @@
         <text>%20%0ATechnical%20modeling%0A%28Eclipse-plugin%29</text>
       </controlProperties>
     </control>
-    <control controlID="122" controlTypeID="com.balsamiq.mockups::Label" x="72" y="246" w="167" h="33" measuredW="142" measuredH="29" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::Label" x="72" y="246" w="167" h="33" measuredW="133" measuredH="26" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>
@@ -75,12 +75,12 @@
         <text>%20%0AProject%20management%20with%20collaboration%20%28web-based%29</text>
       </controlProperties>
     </control>
-    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="856" y="217" w="167" h="25" measuredW="116" measuredH="29" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="856" y="217" w="167" h="25" measuredW="151" measuredH="26" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>
         <state>disabled</state>
-        <text>Activiti%20Cycle</text>
+        <text>camunda%20fox%20cycle</text>
       </controlProperties>
     </control>
     <control controlID="128" controlTypeID="com.balsamiq.mockups::Canvas" x="439" y="18" w="251" h="509" measuredW="100" measuredH="70" zOrder="9" locked="false" isInGroup="-1">
@@ -96,7 +96,7 @@
         <text>%20%0A%20%0AThe%20core%20process%20engine%2C%20which%20can%20be%20embedded%20in%20your%20Java%20%28web%29%20application%20or%20can%20run%20standalone</text>
       </controlProperties>
     </control>
-    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="478" y="74" w="167" h="32" measuredW="124" measuredH="29" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="478" y="74" w="167" h="32" measuredW="115" measuredH="26" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>
@@ -127,7 +127,7 @@
         <text>Deploy%20advanced%20processes%20to%20the%20engine</text>
       </controlProperties>
     </control>
-    <control controlID="134" controlTypeID="com.balsamiq.mockups::SubTitle" x="478" y="30" w="-1" h="-1" measuredW="165" measuredH="37" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::SubTitle" x="478" y="30" w="-1" h="-1" measuredW="168" measuredH="33" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Process%20engine</text>
       </controlProperties>
@@ -137,7 +137,7 @@
         <color>14540253</color>
       </controlProperties>
     </control>
-    <control controlID="136" controlTypeID="com.balsamiq.mockups::SubTitle" x="856" y="24" w="-1" h="-1" measuredW="184" measuredH="37" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::SubTitle" x="856" y="24" w="-1" h="-1" measuredW="174" measuredH="33" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Supporting%20tools</text>
       </controlProperties>
@@ -150,7 +150,7 @@
         <text>%20%0AUse%20processes%20and%20tasks%20and%20process%20engine%20management%20%28web-based%29</text>
       </controlProperties>
     </control>
-    <control controlID="138" controlTypeID="com.balsamiq.mockups::Label" x="856" y="67" w="167" h="25" measuredW="141" measuredH="29" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::Label" x="856" y="67" w="167" h="25" measuredW="128" measuredH="26" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>
@@ -165,7 +165,7 @@
         <text>%20%0AWeb%20application%20that%20starts%20the%20process%20engine%20and%20provides%20a%20REST%20API</text>
       </controlProperties>
     </control>
-    <control controlID="144" controlTypeID="com.balsamiq.mockups::Label" x="478" y="379" w="167" h="29" measuredW="115" measuredH="29" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="144" controlTypeID="com.balsamiq.mockups::Label" x="478" y="379" w="167" h="29" measuredW="110" measuredH="26" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>18</size>

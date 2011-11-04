@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+		targetNamespace="http://www.bpmnwithactiviti.org"
+		xmlns:activiti="http://activiti.org/bpmn">
+		
+	<process id="bookorder" name="bookorder">
+		<startEvent id="startevent1" name="Start"/>
+		<serviceTask id="serviceTask1" name="Validate order" activiti:async="true" activiti:class="org.bpmnwithactiviti.chapter4.java.LongValidateService"/>
+		<sequenceFlow id="sequenceflow1" name="Validate order" sourceRef="startevent1" targetRef="serviceTask1"/>
+		<userTask id="usertask1" name="Complete order" activiti:candidateGroups="sales"/>
+		<sequenceFlow id="sequenceflow2" name="Sending to management" sourceRef="serviceTask1" targetRef="usertask1"/>
+		<endEvent id="endevent1" name="End"/>
+		<sequenceFlow id="sequenceflow3" name="flow" sourceRef="usertask1" targetRef="endevent1"/>
+	</process>
+</definitions>

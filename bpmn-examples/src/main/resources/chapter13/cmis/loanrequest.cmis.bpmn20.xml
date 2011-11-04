@@ -36,10 +36,10 @@
 		<userTask id="evaluateRequestByManager" name="Evaluate loan request by manager"
 			activiti:candidateGroups="management">
       <extensionElements>
-        <activiti:formProperty id="customerName" name="Customer name" expression="${loanApplication.applicant.name}" writable="false"/>
-        <activiti:formProperty id="income" name="Income of customer" expression="${loanApplication.applicant.income}" writable="false"/>
-        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="${loanApplication.applicant.loanAmount}" writable="false"/>
-        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="${loanApplication.applicant.checkCreditOk}" writable="false"/>
+        <activiti:formProperty id="customerName" name="Customer name" expression="#{loanApplication.applicant.name}" writable="false"/>
+        <activiti:formProperty id="income" name="Income of customer" expression="#{loanApplication.applicant.income}" writable="false"/>
+        <activiti:formProperty id="requestedAmount" name="Requested loan amount" expression="#{loanApplication.applicant.loanAmount}" writable="false"/>
+        <activiti:formProperty id="creditCheckOk" name="Outcome of credit check" expression="#{loanApplication.applicant.checkCreditOk}" writable="false"/>
         <activiti:formProperty id="requestApproved" name="Do you approve the request?" required="true" type="enum">
           <activiti:value id="true" name="Yes"/>
           <activiti:value id="false" name="No"/>
