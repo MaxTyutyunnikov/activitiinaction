@@ -71,7 +71,7 @@
     </sequenceFlow>
     <serviceTask id="informCustomer" activiti:type="mail">
       <extensionElements>
-        <activiti:field name="to" expression="${loanApplication.emailAddres}" />
+        <activiti:field name="to" expression="${loanApplication.emailAddress}" />
         <activiti:field name="subject" stringValue="Loan Request Denied" />
         <activiti:field name="html">
           <activiti:expression>
