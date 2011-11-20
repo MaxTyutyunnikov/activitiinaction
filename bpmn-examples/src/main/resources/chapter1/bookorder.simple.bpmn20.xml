@@ -4,7 +4,7 @@
 		
 	<process id="simplebookorder" name="Order book">
 		<startEvent id="startevent1" name="Start"/>
-		<sequenceFlow id="sequenceflow1" name="Validate order" sourceRef="startevent1" targetRef="endevent1"/>
+		<sequenceFlow id="sequenceflow1" sourceRef="startevent1" targetRef="endevent1"/>
 		<endEvent id="endevent1" name="End"/>
 	</process>
 </definitions>
