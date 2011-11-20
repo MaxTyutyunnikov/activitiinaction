@@ -1,8 +1,10 @@
 package org.bpmnwithactiviti.chapter1;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.activiti.engine.IdentityService;
@@ -37,8 +39,8 @@ public class BookOrderTest {
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(
 				"bookorder", variableMap);
 		assertNotNull(processInstance.getId());
-		Task task = taskService.createTaskQuery().taskCandidateUser("kermit").singleResult();
-		assertNotNull(task);
-		System.out.println("found task " + task.getName());
+		List<Task> taskList = taskService.createTaskQuery().taskCandidateUser("kermit").list();
+		assertEquals(1, taskList.size());
+		System.out.println("found task " + taskList.get(0).getName());
 	}
 }
