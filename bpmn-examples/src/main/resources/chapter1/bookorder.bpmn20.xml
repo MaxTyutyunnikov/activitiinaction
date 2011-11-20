@@ -19,7 +19,7 @@
 				</resourceAssignmentExpression>
 			</potentialOwner>
 		</userTask>
-		<sequenceFlow id="sequenceflow3" name="flow" sourceRef="usertask1" targetRef="endevent1"/>
+		<sequenceFlow id="sequenceflow3" name="Ending process" sourceRef="usertask1" targetRef="endevent1"/>
 		<endEvent id="endevent1" name="End"/>
 	</process>
 </definitions>
