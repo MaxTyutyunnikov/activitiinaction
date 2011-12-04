@@ -27,7 +27,7 @@ public class HistoryServiceTest extends AbstractTest {
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
 	
-	public String startAndComplete() {
+	private String startAndComplete() {
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		
 		Map<String, Object> variableMap = new HashMap<String, Object>();
