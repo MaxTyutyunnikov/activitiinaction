@@ -11,7 +11,6 @@ import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
-import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.BeforeClass;
@@ -25,7 +24,6 @@ public class RuntimeServiceTest extends AbstractTest {
 	public static void init() {
 		ProcessEngine processEngine = ProcessEngineConfiguration
 			.createStandaloneInMemProcessEngineConfiguration()
-			.setDatabaseSchemaUpdate("true")
 	 		.buildProcessEngine();
 		
 		RepositoryService repositoryService = processEngine.getRepositoryService();
@@ -55,17 +53,5 @@ public class RuntimeServiceTest extends AbstractTest {
 			System.out.println("id " + queryProcessInstance.getId() + 
 					", ended=" + queryProcessInstance.isEnded());
 		}
-	}
-	
-	@Test
-	public void queryProcessExecution() {
-		Execution execution = runtimeService.createExecutionQuery().processDefinitionKey("bookorder").singleResult();
-		assertNotNull(execution);
-		assertEquals(false, execution.isEnded());
-		System.out.println("id " + execution.getId() + ", ended=" + execution.isEnded());
-		List<String> activityList = runtimeService.getActiveActivityIds(execution.getId());
-		assertNotNull(activityList);
-		assertEquals(1, activityList.size());
-		System.out.println("Current activity id " + activityList.get(0));
 	}
 }
