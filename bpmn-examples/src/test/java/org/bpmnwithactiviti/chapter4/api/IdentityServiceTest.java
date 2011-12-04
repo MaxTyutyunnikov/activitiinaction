@@ -26,18 +26,19 @@ public class IdentityServiceTest extends AbstractTest {
 	@Test
 	@Deployment(resources = {"chapter4/bookorder.bpmn20.xml"})
 	public void testMembership() {
-		User newUser = activitiRule.getIdentityService().newUser("John Doe");
-		activitiRule.getIdentityService().saveUser(newUser);
-		User user = activitiRule.getIdentityService().createUserQuery().singleResult();
+		IdentityService identityService = activitiRule.getIdentityService();
+		
+		User newUser = identityService.newUser("John Doe");
+		identityService.saveUser(newUser);
+		User user = identityService.createUserQuery().singleResult();
 		assertEquals("John Doe", user.getId());
 		
-		Group newGroup = activitiRule.getIdentityService().newGroup("sales");
+		Group newGroup = identityService.newGroup("sales");
 		newGroup.setName("Sales");
-		activitiRule.getIdentityService().saveGroup(newGroup);
-		Group group = activitiRule.getIdentityService().createGroupQuery().singleResult();
+		identityService.saveGroup(newGroup);
+		Group group = identityService.createGroupQuery().singleResult();
 		assertEquals("Sales", group.getName());
 		
-		IdentityService identityService = activitiRule.getIdentityService();
 		identityService.createMembership("John Doe", "sales");
 		
 		identityService.setAuthenticatedUserId("John Doe");
