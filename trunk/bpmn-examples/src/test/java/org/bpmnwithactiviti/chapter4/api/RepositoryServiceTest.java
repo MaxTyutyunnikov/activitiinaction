@@ -33,12 +33,15 @@ public class RepositoryServiceTest extends AbstractTest {
 		Deployment deployment = repositoryService.createDeploymentQuery().singleResult();
 		assertNotNull(deployment);
 		assertEquals(deploymentID, deployment.getId());
-		
+		System.out.println("Found deployment " + deployment.getId() 
+		        + ", deployed at " + deployment.getDeploymentTime());
+
 		ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery()
 				.latestVersion().singleResult();
 		assertNotNull(processDefinition);
 		assertEquals("bookorder", processDefinition.getKey());
-		
+		System.out.println("Found process definition " + processDefinition.getId());
+
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("isbn", "123456");
