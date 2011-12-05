@@ -1,5 +1,6 @@
 package org.bpmnwithactiviti.chapter4.java;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.Date;
@@ -8,7 +9,6 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.activiti.engine.ActivitiException;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.impl.ProcessEngineImpl;
 import org.activiti.engine.impl.jobexecutor.JobExecutor;
@@ -27,7 +27,7 @@ public class JavaBpmnTest extends AbstractTest {
 	private ProcessInstance startProcessInstance() {
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Map<String, Object> variableMap = new HashMap<String, Object>();
-		variableMap.put("isbn", Long.valueOf("123456"));
+		variableMap.put("isbn", 123456L);
 		return runtimeService.startProcessInstanceByKey("bookorder", variableMap);
 	}
 	
@@ -44,13 +44,16 @@ public class JavaBpmnTest extends AbstractTest {
 	@Test
 	@Deployment(resources={"chapter4/bookorder.async.bpmn20.xml"})
 	public void executeAsyncService() {
+	    JobExecutor jobExecutor = ((ProcessEngineImpl) activitiRule.getProcessEngine()).getProcessEngineConfiguration().getJobExecutor();
+	    jobExecutor.start();
 		ProcessInstance processInstance = startProcessInstance();
 		System.out.println("Started process instance");
-		waitForJobExecutorToProcessAllJobs(5000, 100);
+		assertEquals(false, waitForJobExecutorToProcessAllJobs(5000, 100));
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		Date validatetime = (Date) runtimeService.getVariable(processInstance.getId(), "validatetime");
 		assertNotNull(validatetime);
 		System.out.println("validatetime is " + validatetime);
+	    jobExecutor.shutdown();
 	}
 	
 	@Test
@@ -69,7 +72,7 @@ public class JavaBpmnTest extends AbstractTest {
 		RuntimeService runtimeService = activitiRule.getRuntimeService();
 		BookOrder bookOrder = new BookOrder();
 		Map<String, Object> variableMap = new HashMap<String, Object>();
-		variableMap.put("isbn", Long.valueOf("123456"));
+		variableMap.put("isbn", 123456L);
 		variableMap.put("bookOrder", bookOrder);
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("bookorder", variableMap);
 		Date validatetime = (Date) runtimeService.getVariable(processInstance.getId(), "validatetime");
@@ -77,11 +80,7 @@ public class JavaBpmnTest extends AbstractTest {
 		System.out.println("validatetime is " + validatetime);
 	}
 	
-	private void waitForJobExecutorToProcessAllJobs(long maxMillisToWait, long intervalMillis) {
-    JobExecutor jobExecutor = ((ProcessEngineImpl) activitiRule.getProcessEngine()).getProcessEngineConfiguration().getJobExecutor();
-    jobExecutor.start();
-    
-    try {
+	private boolean waitForJobExecutorToProcessAllJobs(long maxMillisToWait, long intervalMillis) {
       Timer timer = new Timer();
       InteruptTask task = new InteruptTask(Thread.currentThread());
       timer.schedule(task, maxMillisToWait);
@@ -95,13 +94,7 @@ public class JavaBpmnTest extends AbstractTest {
       } finally {
         timer.cancel();
       }
-      if (areJobsAvailable) {
-        throw new ActivitiException("time limit of " + maxMillisToWait + " was exceeded");
-      }
-
-    } finally {
-      jobExecutor.shutdown();
-    }
+      return areJobsAvailable;
   }
 	
 	public boolean areJobsAvailable() {
