@@ -8,9 +8,7 @@ import java.util.Map;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
-import org.activiti.engine.test.ActivitiRule;
 import org.bpmnwithactiviti.common.AbstractTest;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +24,11 @@ public class SpringTest extends AbstractTest {
 
 	@Autowired
 	private TaskService taskService;
-	
-	@Autowired
-	@Rule
-	public ActivitiRule activitiSpringRule;
 
 	@Test
 	public void simpleProcessTest() {
 		Map<String, Object> variableMap = new HashMap<String, Object>();
-		variableMap.put("isbn", Long.valueOf("123456"));
+		variableMap.put("isbn", 123456L);
 		runtimeService.startProcessInstanceByKey("bookorder", variableMap);
 		Task task = taskService.createTaskQuery().singleResult();
 		assertEquals("Complete order", task.getName());
