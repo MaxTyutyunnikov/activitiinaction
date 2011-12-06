@@ -2,12 +2,8 @@ package org.bpmnwithactiviti.chapter4.spring;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
-import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
@@ -36,13 +32,10 @@ public class SpringWithDeploymentTest extends AbstractTest {
 	@Test
 	@Deployment(resources = { "chapter4/bookorder.spring.bpmn20.xml" })
 	public void simpleProcessTest() {
-		Map<String, Object> variableMap = new HashMap<String, Object>();
-		variableMap.put("isbn", Long.valueOf("123456"));
-		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(
-				"bookorder", variableMap);
+		runtimeService.startProcessInstanceByKey("bookorder");
 		Task task = taskService.createTaskQuery().singleResult();
 		assertEquals("Complete order", task.getName());
-		assertEquals(123456l, runtimeService.getVariable(
-				processInstance.getId(), "isbn"));
+		taskService.complete(task.getId());
+		assertEquals(0, runtimeService.createProcessInstanceQuery().count());
 	}
 }
