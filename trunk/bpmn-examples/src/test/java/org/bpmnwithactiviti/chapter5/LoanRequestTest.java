@@ -26,8 +26,8 @@ public class LoanRequestTest extends AbstractTest {
 	public void creditCheckTrue() {
 		Map<String, Object> processVariables = new HashMap<String, Object>();
 		processVariables.put("name", "Miss Piggy");
-		processVariables.put("income", new Long(100));
-		processVariables.put("loanAmount", new Long(10));
+		processVariables.put("income", 100l);
+		processVariables.put("loanAmount", 10l);
 		processVariables.put("emailAddress", "miss.piggy@localhost");
 		activitiRule.getRuntimeService().startProcessInstanceByKey(
 		        "loanrequest", processVariables);
@@ -35,13 +35,13 @@ public class LoanRequestTest extends AbstractTest {
 		List<HistoricDetail> historyVariables = activitiRule.getHistoryService()
 		    .createHistoricDetailQuery()
 		    .variableUpdates()
-		    .orderByTime()
-		    .desc()
+		    .orderByVariableName()
+		    .asc()
 		    .list();
 		
 		assertNotNull(historyVariables);
 		assertEquals(7, historyVariables.size());
-		HistoricVariableUpdate loanAppUpdate = ((HistoricVariableUpdate) historyVariables.get(0));
+		HistoricVariableUpdate loanAppUpdate = ((HistoricVariableUpdate) historyVariables.get(5));
 		assertEquals("loanApplication", loanAppUpdate.getVariableName());
 		LoanApplication la = (LoanApplication) loanAppUpdate.getValue();
 		assertEquals(true, la.isCreditCheckOk()); 
