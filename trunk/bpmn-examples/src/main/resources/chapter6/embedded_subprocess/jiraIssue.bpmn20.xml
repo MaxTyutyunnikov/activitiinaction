@@ -1,12 +1,11 @@
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/subprocess">
-	
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/subprocess">
+
 	<process id="escalationProcess" name="Escalation process example">
 		<startEvent id="theStart">
-      <extensionElements>
-        <activiti:formProperty id="issueNumber" name="Issue number" required="true" type="long" />
-      </extensionElements>
-    </startEvent>
+			<extensionElements>
+				<activiti:formProperty id="issueNumber" name="Issue number" required="true" type="long" />
+			</extensionElements>
+		</startEvent>
 		<sequenceFlow sourceRef="theStart" targetRef="LogIssue" />
 		<scriptTask id="LogIssue" scriptFormat="groovy">
 			<script>
@@ -21,17 +20,17 @@
 				<documentation>JIRA issue is ${issueNumber}</documentation>
 			</userTask>
 			<sequenceFlow sourceRef="DeveloperTask" targetRef="TestTask" />
-			<userTask id="TestTask" name="Test solution"
-					activiti:candidateGroups="engineering">
+			<userTask id="TestTask" name="Test solution" activiti:candidateGroups="engineering">
+				<documentation>JIRA issue is ${issueNumber}</documentation>
 				<extensionElements>
-          <activiti:formProperty id="solutionApproved" name="Do you approve the solution?" required="true" type="enum">
-            <activiti:value id="true" name="Yes"/>
-            <activiti:value id="false" name="No"/>
-          </activiti:formProperty>
-        </extensionElements>
+					<activiti:formProperty id="solutionApproved" name="Do you approve the solution?" required="true" type="enum">
+						<activiti:value id="true" name="Yes" />
+						<activiti:value id="false" name="No" />
+					</activiti:formProperty>
+				</extensionElements>
 			</userTask>
 			<sequenceFlow sourceRef="TestTask" targetRef="TestOK" />
-			<exclusiveGateway id="TestOK"/>
+			<exclusiveGateway id="TestOK" />
 			<sequenceFlow sourceRef="TestOK" targetRef="DeveloperReady">
 				<conditionExpression>${solutionApproved == true}</conditionExpression>
 			</sequenceFlow>
@@ -48,8 +47,8 @@
 		</subProcess>
 		<boundaryEvent id="escalationTimerDeveloper" cancelActivity="true" attachedToRef="developerSubProcess">
 			<timerEventDefinition>
-		    	<timeDuration>PT1M</timeDuration>
-		  	</timerEventDefinition>
+				<timeDuration>PT1M</timeDuration>
+			</timerEventDefinition>
 		</boundaryEvent>
 		<sequenceFlow sourceRef="escalationTimerDeveloper" targetRef="ProjectManagerEscalationTask" />
 		<userTask id="ProjectManagerEscalationTask" name="JIRA issue is not completed in time" activiti:candidateGroups="management">
