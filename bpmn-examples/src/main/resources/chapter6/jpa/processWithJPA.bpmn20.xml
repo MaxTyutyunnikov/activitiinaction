@@ -19,9 +19,7 @@
 		<sequenceFlow id="makeSubtitleYes" sourceRef="makeSubtitle" targetRef="createSubtitle">
 			<conditionExpression>${book.title == 'Activiti in Action'}</conditionExpression>
 		</sequenceFlow>
-		<sequenceFlow id="makeSubtitleNo" sourceRef="makeSubtitle" targetRef="makeSubtitleReady">
-			<conditionExpression>${book.title != 'Activiti in Action'}</conditionExpression>
-		</sequenceFlow>
+		<sequenceFlow id="makeSubtitleNo" sourceRef="makeSubtitle" targetRef="makeSubtitleReady"/>
 		<scriptTask id="createSubtitle" scriptFormat="groovy">
 			<script>
 			  book.subTitle = "Executable business processes in BPMN 2.0";
