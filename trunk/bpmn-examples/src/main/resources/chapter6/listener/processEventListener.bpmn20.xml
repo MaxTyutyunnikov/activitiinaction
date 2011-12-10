@@ -24,8 +24,8 @@
 		<sequenceFlow sourceRef="bradLeavesHouseTask" targetRef="bradHasADrinkTask" />
 		<userTask id="bradHasADrinkTask" activiti:assignee="Brad">
 			<extensionElements>
-				<activiti:taskListener expression="${gossipUserTask.gossipTask(task, task.eventName)}" event="create" />
 				<activiti:taskListener expression="${gossipUserTask.gossipTask(task, task.eventName)}" event="assignment" />
+				<activiti:taskListener expression="${gossipUserTask.gossipTask(task, task.eventName)}" event="create" />
 				<activiti:taskListener expression="${execution.setVariable('readyDrinking', true)}" event="complete"/>
 			</extensionElements>
 		</userTask>
