@@ -18,12 +18,11 @@ public class StoreOpportunityTask implements JavaDelegate {
     String description = (String) execution.getVariable("description");
     System.out.println("Storing sales opportunity for customer " + customer.getCustomerId());
     Customer responseCustomer = customerService.getCustomerServicePort().storeSalesOpportunity(product, expectedQuantity, 
-            description, Long.valueOf(customer.getCustomerId()));
+            description, customer.getCustomerId());
     System.out.println("Stored sales opportunity for customer " + responseCustomer.getCustomerName());
     for(SalesOpportunity opportunity : responseCustomer.getSaleOpportunities()) {
       System.out.println("opportunity " + opportunity.getOpportunityId() + 
               ", product " + opportunity.getProduct());
     }
   }
-
 }
