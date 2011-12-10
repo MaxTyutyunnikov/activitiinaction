@@ -22,16 +22,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter6/listener/gossip-application-context.xml")
 public class ProcessListenerTest extends AbstractTest {
-	
+
 	@Autowired
 	private RuntimeService runtimeService;
 
 	@Autowired
 	private TaskService taskService;
-	
+
 	@Autowired
 	private HistoryService historyService;
-	
+
 	@SuppressWarnings("unchecked")
 	@Test
 	public void gossip() {
@@ -40,20 +40,13 @@ public class ProcessListenerTest extends AbstractTest {
 		Task task = taskService.createTaskQuery().taskAssignee("John").singleResult();
 		taskService.complete(task.getId());
 		List<HistoricDetail> historyList = historyService.createHistoricDetailQuery().variableUpdates().list();
-		for(int i = 0; i < historyList.size(); i++) {
-			HistoricVariableUpdate variableUpdate = (HistoricVariableUpdate) historyList.get(i);
-			if(variableUpdate.getValue() instanceof Boolean) continue;
-			List<String> variableList = (List<String>) variableUpdate.getValue();
-			assertEquals("eventList", variableUpdate.getVariableName());
-			if(i == 0) {
-				assertEquals("process:start", variableList.get(0));
-			} else if(i == 1) {
-				assertEquals("transition:take", variableList.get(1));
-			} else if(i == 2) {
-				assertEquals("activity:start", variableList.get(2));
-			} else if(i == (historyList.size() - 1)) {
-				assertEquals("process:end", variableList.get(variableList.size() - 1));
-			}
-		}
+		assertEquals(9, historyList.size());
+		HistoricVariableUpdate variableUpdate = (HistoricVariableUpdate) historyList.get(historyList.size() - 1);
+		assertEquals("eventList", variableUpdate.getVariableName());
+		List<String> variableList = (List<String>) variableUpdate.getValue();
+		assertEquals("process:start", variableList.get(0));
+		assertEquals("transition:take", variableList.get(1));
+		assertEquals("activity:start", variableList.get(2));
+		assertEquals("process:end", variableList.get(variableList.size() - 1));
 	}
 }
