@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<name>Activiti - Rest</name>
@@ -11,7 +10,7 @@
 	<properties>
 		<activiti-version>5.8</activiti-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
-    <restlet-version>2.0.8</restlet-version>
+		<restlet-version>2.0.8</restlet-version>
 	</properties>
 
 	<build>
@@ -27,29 +26,29 @@
 				</configuration>
 			</plugin>
 			<plugin>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>maven-jetty-plugin</artifactId>
-        <version>6.1.24</version>
-        <configuration>
-          <connectors>
-            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-              <port>8081</port>
-              <maxIdleTime>60000</maxIdleTime>
-            </connector>
-          </connectors>
-          <stopPort>9966</stopPort>
-          <stopKey>book-rest-app</stopKey>
-          <!-- Redeploy every x seconds if changes are detected, 0 for no automatic redeployment -->
-          <scanIntervalSeconds>0</scanIntervalSeconds>
-          <!-- make sure Jetty also finds the widgetset -->
-          <webAppConfig>
-            <contextPath>/book-rest-app</contextPath>
-            <baseResource implementation="org.mortbay.resource.ResourceCollection">
-              <resourcesAsCSV>src/main/webapp</resourcesAsCSV>
-            </baseResource>
-          </webAppConfig>
-        </configuration>
-      </plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.24</version>
+				<configuration>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8081</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<stopPort>9966</stopPort>
+					<stopKey>book-rest-app</stopKey>
+					<!-- Redeploy every x seconds if changes are detected, 0 for no automatic redeployment -->
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<!-- make sure Jetty also finds the widgetset -->
+					<webAppConfig>
+						<contextPath>/book-rest-app</contextPath>
+						<baseResource implementation="org.mortbay.resource.ResourceCollection">
+							<resourcesAsCSV>src/main/webapp</resourcesAsCSV>
+						</baseResource>
+					</webAppConfig>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -73,45 +72,49 @@
 			<artifactId>h2</artifactId>
 			<version>1.2.132</version>
 		</dependency>
-    
-    <dependency>  
-      <groupId>org.restlet.jee</groupId>  
-      <artifactId>org.restlet</artifactId>
-      <version>${restlet-version}</version>
-    </dependency>  
-    <dependency>  
-      <groupId>org.restlet.jee</groupId>  
-      <artifactId>org.restlet.ext.servlet</artifactId>
-      <version>${restlet-version}</version>
-    </dependency>
-    <dependency>  
-      <groupId>org.restlet.jee</groupId>  
-      <artifactId>org.restlet.ext.jackson</artifactId>
-      <version>${restlet-version}</version>
-    </dependency>
-    <dependency>  
-      <groupId>org.restlet.jee</groupId>  
-      <artifactId>org.restlet.ext.fileupload</artifactId>
-      <version>${restlet-version}</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-      <version>1.2.2</version>
-    </dependency>
-    
+
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet</artifactId>
+			<version>${restlet-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet.ext.servlet</artifactId>
+			<version>${restlet-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet.ext.jackson</artifactId>
+			<version>${restlet-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet.ext.fileupload</artifactId>
+			<version>${restlet-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<repositories>
 		<repository>
 			<id>Activiti</id>
 			<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
+		</repository>
+		<repository>
+			<id>restlet</id>
+			<url>http://maven.restlet.org/</url>
 		</repository>
 	</repositories>
 
