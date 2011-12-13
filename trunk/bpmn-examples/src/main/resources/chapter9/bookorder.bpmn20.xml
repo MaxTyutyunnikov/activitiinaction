@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
-		targetNamespace="http://www.bpmnwithactiviti.org"
-    xmlns:activiti="http://activiti.org/bpmn">
-		
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" targetNamespace="http://www.bpmnwithactiviti.org" xmlns:activiti="http://activiti.org/bpmn">
+
 	<process id="bookorder" name="bookorder">
 		<startEvent id="startEvent" name="Start" />
-    <sequenceFlow sourceRef="startEvent" targetRef="validateOrder"/>
+		<sequenceFlow sourceRef="startEvent" targetRef="validateOrder" />
 		<serviceTask id="validateOrder" activiti:expression="#{validateTask.validate(isbn, amount)}" />
-    <sequenceFlow sourceRef="validateOrder" targetRef="scriptOutput"/>
-    <scriptTask id="scriptOutput" scriptFormat="groovy">
-      <script>
-        out:println "order for isbn " + bookOrder.isbn + " and amount " + bookOrder.amount + " is approved? " + bookOrder.approved + "\n";
-      </script>
-    </scriptTask>
-    <sequenceFlow sourceRef="scriptOutput" targetRef="endEvent"/>
-		<endEvent id="endEvent" name="End"/>
+		<sequenceFlow sourceRef="validateOrder" targetRef="scriptOutput" />
+		<scriptTask id="scriptOutput" scriptFormat="groovy">
+			<script>
+				out:println "order for isbn " + bookOrder.isbn + " and amount " + bookOrder.amount + " is approved? " + bookOrder.approved + "\n";
+			</script>
+		</scriptTask>
+		<sequenceFlow sourceRef="scriptOutput" targetRef="endEvent" />
+		<endEvent id="endEvent" name="End" />
 	</process>
 </definitions>
