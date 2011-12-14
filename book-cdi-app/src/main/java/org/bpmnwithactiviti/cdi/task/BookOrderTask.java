@@ -16,7 +16,7 @@ public class BookOrderTask {
 	private BookFeed bookFeed;
 	
 	public void validate() {
-		long numberIsbn = Long.valueOf(book.getIsbn().toString());
+		long numberIsbn = Long.valueOf(book.getIsbn());
 		if(numberIsbn < 100000 || numberIsbn > 999999) {
 			bookFeed.addNotApprovedIsbn(book.getIsbn());
 		}
