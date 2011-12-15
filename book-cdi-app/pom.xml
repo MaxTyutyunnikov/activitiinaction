@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<name>Activiti - CDI</name>
-	<groupId>org.bpmnwithactivti</groupId>
+	<groupId>org.bpmnwithactiviti</groupId>
 	<artifactId>book-cdi-app</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
