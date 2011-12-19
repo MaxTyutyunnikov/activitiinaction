@@ -33,25 +33,12 @@ public class SubTaskTest extends AbstractTest {
 		taskService.complete(taskList.get(1).getId());
 		taskList = taskService.getSubTasks(parentTask.getId());
 		assertEquals(0, taskList.size());
-		
 		List<HistoricTaskInstance> historicTaskList = activitiRule.getHistoryService().createHistoricTaskInstanceQuery().finished().list();
 		assertEquals(2, historicTaskList.size());
-		
 		taskService.complete(parentTask.getId());
-		
 		historicTaskList = activitiRule.getHistoryService().createHistoricTaskInstanceQuery().finished().list();
 		assertEquals(3, historicTaskList.size());
-		
-		List<String> taskIds = new ArrayList<String>();
-		for (HistoricTaskInstance historicTaskInstance : historicTaskList) {
-			assertNotNull(historicTaskInstance.getEndTime());
-			taskIds.add(historicTaskInstance.getId());
-		}
-		
-		// clean up
-		for(String taskId : taskIds) {
-			activitiRule.getHistoryService().deleteHistoricTaskInstance(taskId);
-		}
+		cleanUpTaskHistory();
 	}
 	
 	@Test
@@ -67,10 +54,21 @@ public class SubTaskTest extends AbstractTest {
 		taskService.complete(parentTask.getId());
 		taskList = taskService.getSubTasks(parentTask.getId());
 		assertEquals(0, taskList.size());
-		List<HistoricTaskInstance> historicTaskList = activitiRule.getHistoryService()
-				.createHistoricTaskInstanceQuery().finished().list();
+		List<HistoricTaskInstance> historicTaskList = activitiRule.getHistoryService().createHistoricTaskInstanceQuery().finished().list();
 		assertEquals(3, historicTaskList.size());
-		
+		cleanUpTaskHistory();
+	}
+	
+	private void createSubTask(String assignee, String parentTaskId) {
+		TaskService taskService = activitiRule.getTaskService();
+		Task subTask = taskService.newTask();
+		subTask.setAssignee(assignee);
+		subTask.setParentTaskId(parentTaskId);
+		taskService.saveTask(subTask);
+	}
+	
+	private void cleanUpTaskHistory() {
+		List<HistoricTaskInstance> historicTaskList = activitiRule.getHistoryService().createHistoricTaskInstanceQuery().finished().list();
 		List<String> taskIds = new ArrayList<String>();
 		for (HistoricTaskInstance historicTaskInstance : historicTaskList) {
 			assertNotNull(historicTaskInstance.getEndTime());
@@ -81,13 +79,6 @@ public class SubTaskTest extends AbstractTest {
 		for(String taskId : taskIds) {
 			activitiRule.getHistoryService().deleteHistoricTaskInstance(taskId);
 		}
-	}
-	
-	private void createSubTask(String assignee, String parentTaskId) {
-		TaskService taskService = activitiRule.getTaskService();
-		Task subTask = taskService.newTask();
-		subTask.setAssignee(assignee);
-		subTask.setParentTaskId(parentTaskId);
-		taskService.saveTask(subTask);
+		
 	}
 }
