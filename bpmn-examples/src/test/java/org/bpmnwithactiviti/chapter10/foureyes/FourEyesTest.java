@@ -45,7 +45,7 @@ public class FourEyesTest extends AbstractTest {
 		secondTask = taskService.createTaskQuery().taskId(secondTask.getId()).singleResult();
 		assertNull(secondTask.getAssignee());
 		
-		taskService.claim(secondTask.getId(), "fozzie");
+		taskService.claim(secondTask.getId(), "gonzo");
 		taskService.complete(secondTask.getId());
 	}
 }
