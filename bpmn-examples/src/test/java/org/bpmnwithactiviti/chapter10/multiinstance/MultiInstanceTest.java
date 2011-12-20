@@ -35,15 +35,12 @@ public class MultiInstanceTest extends AbstractTest {
 		assertNotNull(processInstance);
 		List<Task> taskList = activitiRule.getTaskService().createTaskQuery().list();
 		assertEquals(3, taskList.size());
-		int counter = 1;
 		for (Task task : taskList) {
-			Map<String, String> taskMap = new HashMap<String, String>();
-			taskMap.put("vote", "true");
-			
-			if(counter < 3) {
+			if (activitiRule.getTaskService().createTaskQuery().taskId(task.getId()).count() > 0 ) {
+				Map<String, String> taskMap = new HashMap<String, String>();
+				taskMap.put("vote", "true");
 				activitiRule.getFormService().submitTaskFormData(task.getId(), taskMap);
 			}
-			counter++;
 		}
 		
 		boolean voteOutcomeTested = false;
