@@ -191,6 +191,10 @@
   </dependencies>
   
   <repositories>
+	<repository>
+		<id>Activiti</id>
+		<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
+	</repository>
     <repository>
       <id>buzzmedia</id>
       <url>http://maven.thebuzzmedia.com</url> <!-- ImageScalr -->
