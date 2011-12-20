@@ -18,8 +18,12 @@ public class AddressService {
   public String findCustomerAddress(@WebParam(name="customerName") String customerName) {
     System.out.println("finding customer by customerName " + customerName);
     Customer customer = customerDAO.getCustomerByNameOrContactPerson(customerName, null);
-    System.out.println("returning customer " + customer.getCustomerAddress());
-    return customer.getCustomerAddress();
+    if (customer != null) {
+    	System.out.println("returning customer " + customer.getCustomerAddress());
+    	return customer.getCustomerAddress();
+    } else {
+    	throw new RuntimeException("Customer not found!");
+    }
   }
   
   @WebMethod(exclude=true)
