@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-camel</artifactId>
-			<version>5.6</version>
+			<version>${activiti-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
