@@ -55,13 +55,13 @@ public class SimpleCreditCheckTest extends AbstractTest {
 	@Test
 	@Deployment(resources = { "chapter12/creditCheckRules.bpmn20.xml", "chapter12/CreditCheckTest.drl" })
 	public void testCreditCheckSucceeded() {
-		Map<String, Object> variableMap = new HashMap<String, Object>();
 		
 		LoanApplicant piggy = new LoanApplicant();
 		piggy.setName("Miss Piggy");
 		piggy.setIncome(100);
-		piggy.setLoanAmount(40);
+		piggy.setLoanAmount(30);
 		
+		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("missPiggy", piggy);
 		
 		ProcessInstance processInstance = activitiRule.getRuntimeService()
