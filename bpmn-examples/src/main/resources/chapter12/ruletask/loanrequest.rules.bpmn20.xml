@@ -3,7 +3,7 @@
 	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
 
-	<process id="loanrequestWithRules" name="Process to handle a loan request">
+	<process id="loanrequestWithRules" name="Process to handle a loan request using rules">
 		<startEvent id="theStart">
       <extensionElements>
         <activiti:formProperty id="name" name="Name" required="true" type="string" />
