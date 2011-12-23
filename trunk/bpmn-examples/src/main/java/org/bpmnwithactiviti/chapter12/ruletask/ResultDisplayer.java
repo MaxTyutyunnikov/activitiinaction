@@ -8,6 +8,6 @@ public class ResultDisplayer implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) {
 		LoanApplication la = (LoanApplication) execution.getVariable("loanApplication");
-		System.out.println("LoanApplication = " + la);
+		System.out.println(">>> LoanApplication = " + la);
 	}
 }
