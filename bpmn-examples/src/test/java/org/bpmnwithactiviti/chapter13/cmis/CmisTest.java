@@ -20,7 +20,7 @@ public class CmisTest {
 
 	@Test
 	public void retrieveFolder() throws Exception {
-		Session session = CmisUtil.createCmisSession("admin", "rademakers", ALFRESCO_CMIS_URL);
+		Session session = CmisUtil.createCmisSession("admin", "secret", ALFRESCO_CMIS_URL);
 		Folder folder = CmisUtil.getFolder(session, "myExpenses");
 		assertNotNull(folder);
 		assertEquals(1, folder.getChildren().getTotalNumItems());
@@ -44,7 +44,7 @@ public class CmisTest {
 	@Test
 	public void versionDocument() {
 		// Create CMIS session with Alfresco
-		Session session = CmisUtil.createCmisSession("admin", "rademakers", ALFRESCO_CMIS_URL);
+		Session session = CmisUtil.createCmisSession("admin", "secret", ALFRESCO_CMIS_URL);
 		
 		Document doc = (Document) session.getObject("workspace://SpacesStore/007df67f-28a8-4973-a39b-459c835c0712");
 		
