@@ -24,6 +24,7 @@ import org.bpmnwithactiviti.chapter13.cmis.CmisUtil;
 public class POICMISHelper {
 	
 	private static final String ALFRESCO_CMIS_URL = "http://localhost:9090/alfresco/service/cmis";
+	private static final String ALFRESCO_ADMIN_PASSWORD = "secret";
 	
 	public Folder documentFolder;
 	
@@ -34,7 +35,7 @@ public class POICMISHelper {
 	private XSSFFormulaEvaluator evaluator;
 
   public void openWorkbook(String cmisWorkbookId) {
-  	session = CmisUtil.createCmisSession("admin", "rademakers", ALFRESCO_CMIS_URL);
+  	session = CmisUtil.createCmisSession("admin", ALFRESCO_ADMIN_PASSWORD, ALFRESCO_CMIS_URL);
 		Document doc = (Document) session.getObject(cmisWorkbookId);
 		sheetInputStream = doc.getContentStream().getStream();
 		try {
@@ -47,7 +48,7 @@ public class POICMISHelper {
   }
   
   public void createCmisSession() {
-  	session = CmisUtil.createCmisSession("admin", "rademakers", ALFRESCO_CMIS_URL);
+  	session = CmisUtil.createCmisSession("admin", ALFRESCO_ADMIN_PASSWORD, ALFRESCO_CMIS_URL);
   }
 	
   public void setCellValue(String text, int rowNumber, int cellNumber, boolean create) {
