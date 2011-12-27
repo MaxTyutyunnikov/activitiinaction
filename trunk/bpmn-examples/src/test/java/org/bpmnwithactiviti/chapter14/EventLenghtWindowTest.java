@@ -10,7 +10,7 @@ import com.espertech.esper.client.EPStatement;
 import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 
-public class SimpleEsperTest {
+public class EventLenghtWindowTest {
 	
 	public class LoanRequestEvent {
 		private final int amount;
