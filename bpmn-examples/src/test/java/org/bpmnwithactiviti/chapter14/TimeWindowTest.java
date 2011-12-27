@@ -22,13 +22,13 @@ import com.espertech.esper.client.time.CurrentTimeEvent;
 import com.espertech.esper.client.time.TimerControlEvent;
 import com.espertech.esper.client.time.TimerControlEvent.ClockType;
 
-public class ComplexEsperTest {
+public class TimeWindowTest {
 	
 	private EPRuntime epRuntime;
 	private EPAdministrator epAdmin;
 
 	@Before
-	public void Setup() {
+	public void startEsper() {
 		Configuration configuration = new Configuration();
 		configuration.addEventTypeAutoName("org.bpmnwithactiviti.chapter14.bam.event");
 		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(configuration);
@@ -36,58 +36,11 @@ public class ComplexEsperTest {
 		epAdmin = epService.getEPAdministrator();
 	}
 	
-	private Queue<Double> avgRequestedAmountQueue = new LinkedList<Double>();
-	private Queue<Integer> maxRequestedAmountQueue = new LinkedList<Integer>();
-	private Queue<Integer> sumRequestedAmountQueue = new LinkedList<Integer>();
-
-	@Test
-	public void testMonitoringRequestedAmount()
-	{
-		System.out.println("---------- Start monitoring requested amount ----------");
-		
-		EPStatement epStatement = epAdmin.createEPL(
-			"select avg(requestedAmount) as avgRequestedAmount, max(requestedAmount) as maxRequestedAmount, sum(requestedAmount) as sumRequestedAmount" +
-			" from LoanRequestReceivedEvent.win:length(3)");
-		
-		epStatement.addListenerWithReplay(new UpdateListener () {
-			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-				Assert.assertEquals(1, newEvents.length);
-				Assert.assertNull(oldEvents);
-				Double avgRequestedAmount = (Double) newEvents[0].get("avgRequestedAmount");
-				Integer maxRequestedAmount = (Integer) newEvents[0].get("maxRequestedAmount");
-				Integer sumRequestedAmount = (Integer) newEvents[0].get("sumRequestedAmount");
-				System.out.println("<<< avgRequestedAmount="+avgRequestedAmount+", maxRequestedAmount="+maxRequestedAmount+", sumRequestedAmount="+sumRequestedAmount);
-				avgRequestedAmountQueue.add(avgRequestedAmount);
-				maxRequestedAmountQueue.add(maxRequestedAmount);
-				sumRequestedAmountQueue.add(sumRequestedAmount);
-			}
-		} );
-		
-		assertMRA(null, null, null);
-		sendEvent(new LoanRequestReceivedEvent("1",   0, 100));
-		assertMRA(100.0, 100, 100);
-		sendEvent(new LoanRequestReceivedEvent("2", 300, 200));
-		assertMRA(150.0, 200, 300);
-		sendEvent(new LoanRequestReceivedEvent("3", 600, 300));
-		assertMRA(200.0, 300, 600);
-		sendEvent(new LoanRequestReceivedEvent("4", 900, 400));
-		assertMRA(300.0, 400, 900);
-
-		epStatement.destroy();
-	}
-		
-	// Assert Monitored Requested Amount
-	private void assertMRA(Double avgRequestedAmount, Integer maxRequestedAmount, Integer sumRequestedAmount) {
-		Assert.assertEquals(avgRequestedAmount, avgRequestedAmountQueue.poll());
-		Assert.assertEquals(maxRequestedAmount, maxRequestedAmountQueue.poll());
-		Assert.assertEquals(sumRequestedAmount, sumRequestedAmountQueue.poll());
-	}
-
 	private Queue<Long> numLoansQueue = new LinkedList<Long>();
 	private Queue<Integer> sumLoanedAmountQueue = new LinkedList<Integer>();
 	
 	@Test
-	public void testMonitoringLoanedAmount() {
+	public void monitorLoanedAmount() {
 		System.out.println("---------- Start monitoring loaned amount ----------");
 		
 		epRuntime.sendEvent(new TimerControlEvent(ClockType.CLOCK_EXTERNAL));
@@ -134,7 +87,7 @@ public class ComplexEsperTest {
 	private Queue<Long> maxProcessDurationQueue = new LinkedList<Long>();
 	
 	@Test
-	public void testMonitoringProcessDuration() {
+	public void monitorProcessDuration() {
 		System.out.println("---------- Start monitoring process duration ----------");
 		
 		epRuntime.sendEvent(new TimerControlEvent(ClockType.CLOCK_EXTERNAL));
@@ -148,7 +101,7 @@ public class ComplexEsperTest {
 				.append("every beginEvent = LoanRequestReceivedEvent ")
 				.append("-> endEvent = LoanRequestProcessedEvent(")
 				.append("processInstanceId=beginEvent.processInstanceId)")
-				.append("].win:time(1 sec)").toString());
+				.append("].win:time(5 sec)").toString());
 		
 		epStatement.addListener(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
@@ -163,24 +116,28 @@ public class ComplexEsperTest {
 		} );
 		
 		sendLoanRequestReceivedEvent (   0, "1", 100);
-		assertMPD(null, null);
+		assertMonitoredProcessDuration(null, null);
+		
 		sendLoanRequestReceivedEvent ( 300, "2", 200);
-		assertMPD(null, null);
+		assertMonitoredProcessDuration(null, null);
+		
 		sendLoanRequestProcessedEvent( 400, "2", true, 200);
-		assertMPD(100.0, 100L);
+		assertMonitoredProcessDuration(100.0, 100L);
+		
 		sendLoanRequestProcessedEvent( 600, "1", true, 100);
-		assertMPD(350.0, 600L);
+		assertMonitoredProcessDuration(350.0, 600L);
+		
 		sendLoanRequestReceivedEvent (1100, "3", 300);
-		assertMPD(null, null);
-		sendLoanRequestProcessedEvent(1400, "3", true, 300);
-		assertMPD(600.0, 600L);
-		assertMPD(450.0, 600L);
+		assertMonitoredProcessDuration(null, null);
+		
+		sendLoanRequestProcessedEvent(1600, "3", true, 300);
+		assertMonitoredProcessDuration(400.0, 600L);
 
 		epStatement.destroy();
 	}
 
 	// Assert Monitored Process Duration
-	private void assertMPD(Double avgProcessDuration, Long maxProcessDuration) {
+	private void assertMonitoredProcessDuration(Double avgProcessDuration, Long maxProcessDuration) {
 		Assert.assertEquals(avgProcessDuration, avgProcessDurationQueue.poll());
 		Assert.assertEquals(maxProcessDuration, maxProcessDurationQueue.poll());
 	}
@@ -191,11 +148,6 @@ public class ComplexEsperTest {
 
 	private void sendLoanRequestProcessedEvent(long time, String processInstanceId, boolean requestApproved, int loanedAmount) {
 		sendEvent(time, new LoanRequestProcessedEvent(processInstanceId, time, requestApproved, loanedAmount));
-	}
-	
-	private void sendEvent(Object event) {
-		System.out.println(">>> "+event);
-		epRuntime.sendEvent(event);
 	}
 
 	private void sendEvent(long time, Object event) {
