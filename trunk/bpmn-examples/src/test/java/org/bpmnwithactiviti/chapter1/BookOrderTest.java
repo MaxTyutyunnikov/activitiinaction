@@ -33,6 +33,12 @@ public class BookOrderTest {
 			.addClasspathResource("chapter1/bookorder.bpmn20.xml")
 			.deploy();
 		
+		// remove tasks already present
+		List<Task> availableTaskList = taskService.createTaskQuery().taskName("Work on order").list();
+		for (Task task : availableTaskList) {
+	    taskService.complete(task.getId());
+    }	
+		
 		Map<String, Object> variableMap = new HashMap<String, Object>();
 		variableMap.put("isbn", "123456");
 		identityService.setAuthenticatedUserId("kermit");
