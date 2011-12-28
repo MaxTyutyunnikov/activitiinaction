@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn"
 	targetNamespace="http://www.bpmnwithactiviti.org/loanrequest">
 
-	<process id="loanrequest_withespertest" name="Process to handle a loan request with BAM">
+	<process id="loanrequest_withespertest" name="Process to handle a loan request with Esper">
 		<extensionElements>
 			<activiti:executionListener class="org.bpmnwithactiviti.chapter14.test.ProcessStartExecutionListener" event="start" />
 			<activiti:executionListener class="org.bpmnwithactiviti.chapter14.test.ProcessEndExecutionListener" event="end" />
