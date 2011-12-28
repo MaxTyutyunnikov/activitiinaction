@@ -27,7 +27,7 @@ public class EventLenghtWindowTest {
 	private int sumAmount = 0;
 	
 	@Test
-	public void testEsper() {
+	public void testEventLengthWindow() {
 		Configuration configuration = new Configuration();
 		configuration.addEventType(LoanRequestEvent.class);
 		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(configuration);
