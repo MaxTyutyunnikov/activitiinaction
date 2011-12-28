@@ -73,6 +73,7 @@ public class TimeWindowTest {
 		assertMonitoredLoans(3L, 900);
 		sendLoanRequestProcessedEvent(2400, "6", false, 900);
 		assertMonitoredLoans(2L, 700);
+		assertMonitoredLoans(null, null);
 		
 		epStatement.destroy();
 	}
@@ -93,15 +94,10 @@ public class TimeWindowTest {
 		epRuntime.sendEvent(new TimerControlEvent(ClockType.CLOCK_EXTERNAL));
 
 		EPStatement epStatement = epAdmin.createEPL(new StringBuffer()
-				.append("select avg(endEvent.processedTime - ")
-				.append("beginEvent.receiveTime) as avgProcessDuration, ")
-				.append("max(endEvent.processedTime - ")
-				.append("beginEvent.receiveTime) as maxProcessDuration ")
-				.append("from pattern [")
-				.append("every beginEvent = LoanRequestReceivedEvent ")
-				.append("-> endEvent = LoanRequestProcessedEvent(")
-				.append("processInstanceId=beginEvent.processInstanceId)")
-				.append("].win:time(5 sec)").toString());
+				.append("select avg(endEvent.processedTime - beginEvent.receiveTime) as avgProcessDuration, ")
+				.append("max(endEvent.processedTime - beginEvent.receiveTime) as maxProcessDuration ")
+				.append("from pattern [every beginEvent=LoanRequestReceivedEvent -> endEvent=LoanRequestProcessedEvent(processInstanceId=beginEvent.processInstanceId)].win:time(5 sec)")
+				.toString());
 		
 		epStatement.addListener(new UpdateListener () {
 			public void update(EventBean[] newEvents, EventBean[] oldEvents) {
