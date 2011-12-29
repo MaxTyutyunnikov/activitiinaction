@@ -100,11 +100,11 @@ public class BAMApplication extends Application {
 		textualRepresentationPanel.setContent(gridLayout);
 		gridLayout.setMargin(true);
 		gridLayout.setSpacing(true);
-		addLabelAndValue(gridLayout, "Average requested amount", avgRequestedAmountLabel,"€");
-		addLabelAndValue(gridLayout, "Maximum requested amount", maxRequestedAmountLabel, "€");
-		addLabelAndValue(gridLayout, "Sum of requested amount", sumRequestedAmountLabel, "€");
+		addLabelAndValue(gridLayout, "Average requested amount", avgRequestedAmountLabel,"");
+		addLabelAndValue(gridLayout, "Maximum requested amount", maxRequestedAmountLabel, "");
+		addLabelAndValue(gridLayout, "Sum of requested amount", sumRequestedAmountLabel, "");
 		addLabelAndValue(gridLayout, "Number of loans", numLoansLabel, "");
-		addLabelAndValue(gridLayout, "Sum of loaned amount", sumLoanedAmountLabel, "€");
+		addLabelAndValue(gridLayout, "Sum of loaned amount", sumLoanedAmountLabel, "");
 		addLabelAndValue(gridLayout, "Average process duration", avgProcessDurationLabel, "ms.");
 		addLabelAndValue(gridLayout, "Maximum process duration", maxProcessDurationLabel, "ms.");
 		mainWindowLayout.addComponent(textualRepresentationPanel,1,1,1,2);
@@ -153,7 +153,7 @@ public class BAMApplication extends Application {
 				sumLoanedAmountGauge.setOption("yellowTo", 300);
 				sumLoanedAmountGauge.setOption("minorTicks",4);
 				sumLoanedAmountGauge.setSizeFull();
-				sumLoanedAmountGauge.add("€", (sumLoanedAmount!=null)?sumLoanedAmount:0);
+				sumLoanedAmountGauge.add("", (sumLoanedAmount!=null)?sumLoanedAmount:0);
 				
 				loanInfoPanel.addComponent(numLoansGauge);
 				loanInfoPanel.addComponent(sumLoanedAmountGauge);
