@@ -45,7 +45,7 @@ public class BookOrderTest {
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(
 				"bookorder", variableMap);
 		assertNotNull(processInstance.getId());
-		List<Task> taskList = taskService.createTaskQuery().taskCandidateUser("kermit").list();
+		List<Task> taskList = taskService.createTaskQuery().taskName("Work on order").list();
 		assertEquals(1, taskList.size());
 		System.out.println("found task " + taskList.get(0).getName());
 	}
