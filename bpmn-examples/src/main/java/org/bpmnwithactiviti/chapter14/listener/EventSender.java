@@ -26,8 +26,7 @@ public class EventSender {
 			OutputStream out = connection.getOutputStream();
 			JAXBContext.newInstance(event.getClass()).createMarshaller().marshal(event, out);
 			out.close();
-			int rc = connection.getResponseCode();
-			log.debug("rc="+rc);
+			log.debug("rc="+connection.getResponseCode());
 		} catch (Exception e) {
 			log.warn("Event could not be send to BAM application",e);
 		} finally {
