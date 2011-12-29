@@ -44,13 +44,13 @@ public class LoanRequestProcessWithEsperTest extends AbstractTest {
 				" ].win:length(20)", "processDuration");
 	}
 	
-	Double avgProcessDuration = null;
+	private Double avgProcessDuration = null;
 
 	@Test
 	@Deployment(resources={"chapter14/loanrequest_withespertest.bpmn20.xml"})
-	public void firstTest() throws Exception {
-		final RuntimeService runtimeService = activitiRule.getRuntimeService();
-		final TaskService taskService = activitiRule.getTaskService();
+	public void testEsperActivitiSetup() throws Exception {
+		RuntimeService runtimeService = activitiRule.getRuntimeService();
+		TaskService taskService = activitiRule.getTaskService();
 		
 		EPStatement epStatement = epAdmin.getStatement("processDuration");
 	  epStatement.addListener(new UpdateListener () {
@@ -71,7 +71,7 @@ public class LoanRequestProcessWithEsperTest extends AbstractTest {
 		processVariables.put("requestApproved", true);
 		taskService.complete(taskService.createTaskQuery().singleResult().getId(), processVariables);
 		
-		System.out.println("avgProcessDuration " + avgProcessDuration);
+		System.out.println("<<< avgProcessDuration = " + avgProcessDuration);
 		assertTrue(avgProcessDuration >= 1000);
 
 		// Start second loan request
@@ -86,7 +86,7 @@ public class LoanRequestProcessWithEsperTest extends AbstractTest {
 		processVariables.put("requestApproved", true);
 		taskService.complete(taskService.createTaskQuery().singleResult().getId(), processVariables);
 		
-		System.out.println("avgProcessDuration " + avgProcessDuration);
+		System.out.println("<<< avgProcessDuration = " + avgProcessDuration);
 		assertTrue(avgProcessDuration >= 1500);
 	}
 }
