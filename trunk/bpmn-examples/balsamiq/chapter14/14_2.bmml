@@ -1,0 +1,231 @@
+<mockup version="1.0" skin="sketch" measuredW="1008" measuredH="498" mockupW="920" mockupH="445">
+  <controls>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Canvas" x="349" y="116" w="141" h="72" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>0</borderColor>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Label" x="376" y="137" w="124" h="22" measuredW="47" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Filter</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Canvas" x="329" y="53" w="564" h="379" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>0</borderColor>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Arrow" x="691" y="177" w="38" h="35" measuredW="150" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::SubTitle" x="349" y="53" w="-1" h="-1" measuredW="181" measuredH="46" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>CEP%20ENGINE</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::SubTitle" x="149" y="102" w="-1" h="-1" measuredW="68" measuredH="40" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Input</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::SubTitle" x="922" y="122" w="-1" h="-1" measuredW="86" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Output</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::RoundButton" x="88" y="178" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::RoundButton" x="138" y="161" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::RoundButton" x="185" y="192" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::RoundButton" x="232" y="161" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::RoundButton" x="281" y="178" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::RoundButton" x="88" y="300" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::RoundButton" x="138" y="283" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::RoundButton" x="185" y="314" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::RoundButton" x="232" y="283" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::RoundButton" x="281" y="300" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Canvas" x="349" y="212" w="141" h="72" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>0</borderColor>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Label" x="376" y="233" w="124" h="22" measuredW="85" measuredH="29" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Aggregate</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Canvas" x="349" y="310" w="141" h="72" measuredW="100" measuredH="70" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>0</borderColor>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Label" x="397" y="327" w="44" h="29" measuredW="37" measuredH="29" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Join</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Canvas" x="744" y="212" w="141" h="72" measuredW="100" measuredH="70" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>0</borderColor>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Label" x="761" y="233" w="124" h="22" measuredW="116" measuredH="29" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Pattern%20match</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::RoundButton" x="515" y="137" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::RoundButton" x="612" y="137" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::RoundButton" x="581" y="348" w="48" h="40" measuredW="32" measuredH="32" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::RoundButton" x="587" y="304" w="48" h="40" measuredW="32" measuredH="32" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::RoundButton" x="941" y="264" w="57" h="50" measuredW="32" measuredH="32" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::RoundButton" x="941" y="179" w="57" h="71" measuredW="32" measuredH="32" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::RoundButton" x="555" y="116" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::RoundButton" x="659" y="116" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Arrow" x="698" y="289" w="38" h="44" measuredW="150" measuredH="100" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Arrow" x="691" y="243" w="38" h="12" measuredW="150" measuredH="100" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Arrow" x="407" y="442" w="354" h="16" measuredW="150" measuredH="100" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::SubTitle" x="547" y="458" w="-1" h="-1" measuredW="60" measuredH="40" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Time</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::RoundButton" x="604" y="222" w="48" h="40" measuredW="32" measuredH="32" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::RoundButton" x="539" y="224" w="48" h="40" measuredW="32" measuredH="32" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>parallelogram</shape>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
