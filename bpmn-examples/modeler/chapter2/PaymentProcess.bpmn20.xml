@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-30029d86-06bb-486e-8734-ed1c4ba29fa7" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-ee174437-58cf-475e-ba8a-2f183647ae9e" isExecutable="false">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-58b71514-5ad9-4567-ac69-ee261a4e1431" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <process id="sid-a671df12-8551-409c-a4b4-3e2308287e7a" isExecutable="false">
       <subProcess completionQuantity="1" id="sid-34DD9490-C528-47CC-A942-7DBE50058D4F" isForCompensation="false" name="Process payment" startQuantity="1" triggeredByEvent="false">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
@@ -44,7 +44,7 @@
                <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
             </extensionElements>
             <incoming>sid-456E008E-75C2-4AA2-817A-ECA478DFE987</incoming>
-            <errorEventDefinition errorRef="sid-fce069b2-8e3e-4042-af02-078c0c061a72" id="sid-c0b98508-e399-4275-97b7-a629983930e1"/>
+            <errorEventDefinition errorRef="sid-fdecf14f-574c-4a4a-b67e-6eba0fae63fd" id="sid-b09bc99b-b15e-4d94-b626-101278b40abc"/>
          </endEvent>
          <subProcess completionQuantity="1" id="sid-41B2717A-5E2D-4E75-9890-2EA368FE0FE8" isForCompensation="false" name="" startQuantity="1" triggeredByEvent="true">
             <extensionElements>
@@ -55,15 +55,15 @@
                   <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
                </extensionElements>
                <outgoing>sid-D434D2B2-1E6A-4D93-B750-2F975CE14D2A</outgoing>
-               <errorEventDefinition errorRef="sid-31472db9-b358-4f6f-bd62-73f9876458d2" id="sid-f7e0fce3-6e19-4620-89b2-c4b31018dcb5"/>
+               <errorEventDefinition errorRef="sid-249477c7-599b-4a01-a378-fd40c33c5da5" id="sid-b5955779-9278-423c-8c75-087e9d0c8219"/>
             </startEvent>
-            <manualTask completionQuantity="1" id="sid-C735CEFD-E074-44C0-976F-E84419D89827" isForCompensation="false" name="Contact customer" startQuantity="1">
+            <userTask completionQuantity="1" id="sid-C735CEFD-E074-44C0-976F-E84419D89827" implementation="webService" isForCompensation="false" name="Contact customer" startQuantity="1">
                <extensionElements>
                   <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
                </extensionElements>
                <incoming>sid-D434D2B2-1E6A-4D93-B750-2F975CE14D2A</incoming>
                <outgoing>sid-D0B8BE1F-4356-473D-B3D9-2A1E5180C16D</outgoing>
-            </manualTask>
+            </userTask>
             <exclusiveGateway gatewayDirection="Diverging" id="sid-95EEE99C-3BF2-4F91-935D-E31F02C6F7E9" name="Resolved?">
                <extensionElements>
                   <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
@@ -83,7 +83,7 @@
                   <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
                </extensionElements>
                <incoming>sid-704DE8E2-D308-49A4-A009-CB5DB87C6D09</incoming>
-               <errorEventDefinition errorRef="sid-8845344c-cbd6-4186-aef7-6b6961325410" id="sid-2484e9e2-1d63-4f54-ad5f-4eb05b3c6623"/>
+               <errorEventDefinition errorRef="sid-6c849f39-83eb-462a-950e-62217bba5b2b" id="sid-90bbcf25-9b5a-4efd-a18f-7a2efa3b9129"/>
             </endEvent>
             <sequenceFlow id="sid-D434D2B2-1E6A-4D93-B750-2F975CE14D2A" name="" sourceRef="sid-29A570D9-CBA4-459A-9BD0-9DE4461EDCFC" targetRef="sid-C735CEFD-E074-44C0-976F-E84419D89827"/>
             <sequenceFlow id="sid-D0B8BE1F-4356-473D-B3D9-2A1E5180C16D" name="" sourceRef="sid-C735CEFD-E074-44C0-976F-E84419D89827" targetRef="sid-95EEE99C-3BF2-4F91-935D-E31F02C6F7E9"/>
@@ -97,20 +97,20 @@
          <sequenceFlow id="sid-76491671-7294-4D4D-B26B-AB6FBB739874" name="Ok" sourceRef="sid-AE25DFBA-429B-40C1-B6E0-F092A2EF638B" targetRef="sid-57672E89-9484-4029-B0F8-C7E2D6B28922"/>
       </subProcess>
    </process>
-   <process id="sid-87aec241-7f8a-44f2-8928-0e4e6b5bf983" isExecutable="false">
+   <process id="sid-492f903f-28f5-4f07-b3bd-4968c39eb1ef" isExecutable="false">
       <intermediateCatchEvent id="sid-6A8DEABF-DFBA-4E21-9379-1AB52C800C79" name="Reject order">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
          <outgoing>sid-D1E7BD21-8EDB-4D8C-AD8F-95B8EFCE4AA3</outgoing>
-         <errorEventDefinition errorRef="sid-f4e8f326-2f5c-44b8-afcc-402fe630dcea" id="sid-70938702-3f10-4909-8838-79114760de88"/>
+         <errorEventDefinition errorRef="sid-96aa22b4-24df-4cc9-8216-8d9921cf2e0b" id="sid-ed902259-2197-43cc-a57f-b9ac43db7452"/>
       </intermediateCatchEvent>
       <endEvent id="sid-83D5DCED-BB9B-474B-928E-E91742069349" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
          <incoming>sid-D1E7BD21-8EDB-4D8C-AD8F-95B8EFCE4AA3</incoming>
-         <terminateEventDefinition id="sid-725021fd-dd24-4b83-a7fb-2e4fdd548016"/>
+         <terminateEventDefinition id="sid-95bb800b-9e8c-4ea4-a5d0-8cd7df7ae1ea"/>
       </endEvent>
       <sequenceFlow id="sid-D1E7BD21-8EDB-4D8C-AD8F-95B8EFCE4AA3" name="" sourceRef="sid-6A8DEABF-DFBA-4E21-9379-1AB52C800C79" targetRef="sid-83D5DCED-BB9B-474B-928E-E91742069349"/>
       <association associationDirection="None" id="sid-6D400456-7581-4131-8B15-994F70FCDFDA" sourceRef="sid-D1E7BD21-8EDB-4D8C-AD8F-95B8EFCE4AA3" targetRef="sid-B9B1BB24-4F5C-49A5-A068-26DA6997313A"/>
@@ -118,64 +118,64 @@
          <text>Terminate order</text>
       </textAnnotation>
    </process>
-   <process id="sid-8f6cc3a7-77b9-49f6-9dfe-9a82177e4712" isExecutable="false">
+   <process id="sid-d2e7b4e4-93a6-4bf5-97a0-14187ec02b7c" isExecutable="false">
       <serviceTask completionQuantity="1" id="sid-792F9B8A-544D-4EDA-880E-AA1D7C0BDEAD" implementation="webService" isForCompensation="false" name="Invoice creditcard" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
       </serviceTask>
    </process>
-   <process id="sid-9f8f0b9b-a970-439f-8452-f6bda243084e" isExecutable="false">
-      <manualTask completionQuantity="1" id="sid-756478BA-568F-4148-91D8-2723A4EAE273" isForCompensation="false" name="Contact customer" startQuantity="1">
+   <process id="sid-b28615a2-f9fe-436c-b466-f5946159e905" isExecutable="false">
+      <userTask completionQuantity="1" id="sid-756478BA-568F-4148-91D8-2723A4EAE273" implementation="webService" isForCompensation="false" name="Contact customer" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
-      </manualTask>
+      </userTask>
    </process>
-   <process id="sid-72dd5561-f232-4678-a73e-12b9cea9d0ec" isExecutable="false">
+   <process id="sid-b56e769c-31d8-4766-94f9-12c512745659" isExecutable="false">
       <subProcess completionQuantity="1" id="sid-C6A29082-B408-4046-8933-5FAC73722775" isForCompensation="false" name="Process payment" startQuantity="1" triggeredByEvent="false">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
       </subProcess>
    </process>
-   <process id="sid-cb0607f3-4981-4319-8c23-c582cc031bd8" isExecutable="false">
+   <process id="sid-1dc72c01-9ce0-461f-a147-7eece904cbd2" isExecutable="false">
       <endEvent id="sid-5644C1E1-7213-4B9E-B24B-6F6974E84EC4" name="Bad creditcard">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
-         <errorEventDefinition errorRef="sid-ebba7add-75aa-41f0-b81f-932b587cd632" id="sid-76c8a82b-8997-4e6c-90a1-fe0cd137e218"/>
+         <errorEventDefinition errorRef="sid-064460c0-e40e-4662-9b4c-0bcab5a672bd" id="sid-767fa3a4-0c2c-4ab3-81b2-446264ecc54d"/>
       </endEvent>
    </process>
-   <process id="sid-e1c333e8-684b-4e86-a015-27414a6a7310" isExecutable="false">
+   <process id="sid-0c6c5947-7f1b-4310-9770-87aa7ebb9642" isExecutable="false">
       <startEvent id="sid-5CC74C25-A975-4548-8E95-9B97464CC9EF" name="Bad creditcard">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
-         <errorEventDefinition errorRef="sid-cc667905-728b-4199-a812-7ed48efeb09a" id="sid-c8ee8092-82d7-40cf-bbcb-3bebaec6a68c"/>
+         <errorEventDefinition errorRef="sid-9512b634-b1fc-4945-bf53-12be27726c6f" id="sid-abadb0bb-596f-4908-aee2-6f4c0bc4aaf1"/>
       </startEvent>
    </process>
-   <process id="sid-6db36280-d4a0-45b8-b76f-88b893d90129" isExecutable="false">
+   <process id="sid-bbdba33a-40b5-4927-a91a-052378b04a11" isExecutable="false">
       <intermediateCatchEvent id="sid-2479A30B-49E7-40CE-B3B7-B1186C08B264" name="Reject order">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
-         <errorEventDefinition errorRef="sid-8363f741-6830-4215-b491-fb443f095419" id="sid-9d36fbdf-3963-4cbc-b4ff-66f3d463632a"/>
+         <errorEventDefinition errorRef="sid-106a961b-306c-46c3-8f50-f8eab84762a3" id="sid-58b8131f-61ee-4c5d-a221-97f68da45c74"/>
       </intermediateCatchEvent>
    </process>
-   <process id="sid-57118ca1-0f99-4e96-8e2a-d9bcf08b3fe3" isExecutable="false">
+   <process id="sid-c8d85868-de75-4335-9add-57156b7517be" isExecutable="false">
       <endEvent id="sid-023707EB-0235-4171-BDA6-CDC4DE4EE38B" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
-         <terminateEventDefinition id="sid-7896f8bf-19ba-4e4d-8be6-5855f1255faf"/>
+         <terminateEventDefinition id="sid-5faa0b11-70e0-4f49-bb7f-4d4b943c7616"/>
       </endEvent>
       <textAnnotation id="sid-2E73DA49-8FD7-4085-AE7A-20D1036F2425" textFormat="text/plain">
          <text>Terminate order</text>
       </textAnnotation>
    </process>
-   <bpmndi:BPMNDiagram id="sid-5de2d89c-c9f2-4712-9673-022f539e5d25">
-      <bpmndi:BPMNPlane bpmnElement="sid-57118ca1-0f99-4e96-8e2a-d9bcf08b3fe3" id="sid-f7066d7f-7cde-4dba-b255-853ce19d8e4a">
+   <bpmndi:BPMNDiagram id="sid-5512f422-abe0-46a1-8faa-9f8752b188b3">
+      <bpmndi:BPMNPlane bpmnElement="sid-c8d85868-de75-4335-9add-57156b7517be" id="sid-6bb3e8b2-201c-49cd-b7c6-a7f723a05d6c">
          <bpmndi:BPMNShape bpmnElement="sid-34DD9490-C528-47CC-A942-7DBE50058D4F" id="sid-34DD9490-C528-47CC-A942-7DBE50058D4F_gui" isExpanded="true">
             <omgdc:Bounds height="351.0" width="498.0" x="105.0" y="86.0"/>
          </bpmndi:BPMNShape>
