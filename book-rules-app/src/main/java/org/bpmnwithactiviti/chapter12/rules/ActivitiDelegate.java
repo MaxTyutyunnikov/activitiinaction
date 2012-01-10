@@ -105,6 +105,8 @@ public class ActivitiDelegate {
 			ZipOutputStream out = new ZipOutputStream(new FileOutputStream(filename));
 			for (String file : fileNames) {
 				
+				if(ruleFileName.equalsIgnoreCase(file)) continue;
+				
 				InputStream resourceStream = getRepositoryService().getResourceAsStream(deployment.getId(), file);
 	      
 	      // Add ZIP entry to output stream.
@@ -124,7 +126,7 @@ public class ActivitiDelegate {
 			out.write(drlContent.getBytes());
 			out.closeEntry();
 		} catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Error while deploying the changed rule " + ruleFileName, e);
 		}
 
 		DefaultHttpClient client = new DefaultHttpClient();
