@@ -3,6 +3,7 @@ package org.bpmnwithactiviti.chapter12.ruletask;
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
 import org.bpmnwithactiviti.chapter12.model.LoanApplicant;
+import org.bpmnwithactiviti.chapter12.model.LoanApplication;
 
 public class ApplicationCreator implements JavaDelegate {
 
@@ -13,6 +14,10 @@ public class ApplicationCreator implements JavaDelegate {
 		applicant.setLoanAmount((Long) execution.getVariable("loanAmount"));
 		applicant.setEmailAddress((String) execution.getVariable("emailAddress"));
 		execution.setVariable("loanApplicant", applicant);
+		
+		LoanApplication la = new LoanApplication();
+		la.setApplicant(applicant);
+		execution.setVariable("loanApplication", la);
 	}
 
 }

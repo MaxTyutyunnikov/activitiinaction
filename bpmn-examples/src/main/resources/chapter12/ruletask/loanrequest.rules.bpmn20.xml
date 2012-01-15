@@ -19,10 +19,7 @@
 		<businessRuleTask id="checkCredit"
 			activiti:ruleVariablesInput="${loanApplicant}"
 			activiti:resultVariable="rulesOutput" activiti:rules="CreditCheckRule" />
-		<sequenceFlow sourceRef="checkCredit" targetRef="updateCreditCheck" />
-		<serviceTask id="updateCreditCheck"
-			activiti:class="org.bpmnwithactiviti.chapter12.ruletask.CreditCheckUpdate" />
-		<sequenceFlow sourceRef="updateCreditCheck" targetRef="evaluateLoanRequest" />
+		<sequenceFlow sourceRef="checkCredit" targetRef="evaluateLoanRequest" />
 		<businessRuleTask id="evaluateLoanRequest"
 			activiti:ruleVariablesInput="${loanApplication}"
 			activiti:resultVariable="rulesOutput"
