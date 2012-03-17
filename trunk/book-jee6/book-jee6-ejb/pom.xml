@@ -16,7 +16,7 @@
   <dependencies>
     <dependency>
       <groupId>org.bpmnwithactiviti</groupId>
-      <artifactId>book-jee6-process</artifactId>
+      <artifactId>book-jee6-interface</artifactId>
     </dependency>
     <dependency>
       <groupId>javax</groupId>
@@ -33,7 +33,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Dependencies>deployment.book-jee6-process.jar</Dependencies>
+              <Dependencies>deployment.book-jee6-interface.jar</Dependencies>
             </manifestEntries>
           </archive>
         </configuration>

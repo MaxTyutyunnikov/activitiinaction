@@ -11,7 +11,7 @@
   <name>Activiti in Action - JEE6</name>
 
   <properties>
-    <activiti.version>5.8</activiti.version>
+    <activiti.version>5.9</activiti.version>
   </properties>
 
   <build>
@@ -32,6 +32,7 @@
   </build>
 
   <modules>
+    <module>book-jee6-interface</module>
     <module>book-jee6-ejb</module>
     <module>book-jee6-process</module>
   </modules>
@@ -48,7 +49,7 @@
     <dependencies>
       <dependency>
         <groupId>org.bpmnwithactiviti</groupId>
-        <artifactId>book-jee6-process</artifactId>
+        <artifactId>book-jee6-interface</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

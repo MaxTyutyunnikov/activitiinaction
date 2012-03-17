@@ -13,7 +13,7 @@
     </startEvent>
     <sequenceFlow sourceRef="startevent1" targetRef="servicetask1" />
     <serviceTask id="servicetask1"
-      activiti:delegateExpression="#{helloDelegate}" />
+      activiti:expression="#{helloDelegate.sayHello(name)}" />
     <sequenceFlow sourceRef="servicetask1" targetRef="endevent1" />
     <endEvent id="endevent1" name="End" />
   </process>
