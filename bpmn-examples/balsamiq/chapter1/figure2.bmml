@@ -66,23 +66,6 @@
         <text>Import%20BPMN%20XML%20file%20into%20the%20Activiti%20Designer</text>
       </controlProperties>
     </control>
-    <control controlID="126" controlTypeID="com.balsamiq.mockups::TextArea" x="842" y="217" w="200" h="90" measuredW="200" measuredH="140" zOrder="24" locked="false" isInGroup="-1">
-      <controlProperties>
-        <align>center</align>
-        <bold>false</bold>
-        <size>16</size>
-        <state>disabled</state>
-        <text>%20%0AProject%20management%20with%20collaboration%20%28web-based%29</text>
-      </controlProperties>
-    </control>
-    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="856" y="217" w="167" h="25" measuredW="151" measuredH="26" zOrder="25" locked="false" isInGroup="-1">
-      <controlProperties>
-        <align>center</align>
-        <size>18</size>
-        <state>disabled</state>
-        <text>camunda%20fox%20cycle</text>
-      </controlProperties>
-    </control>
     <control controlID="128" controlTypeID="com.balsamiq.mockups::Canvas" x="439" y="18" w="251" h="509" measuredW="100" measuredH="70" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <color>14540253</color>
@@ -132,7 +115,7 @@
         <text>Process%20engine</text>
       </controlProperties>
     </control>
-    <control controlID="135" controlTypeID="com.balsamiq.mockups::Canvas" x="817" y="18" w="251" h="341" measuredW="100" measuredH="70" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::Canvas" x="817" y="18" w="251" h="191" measuredW="100" measuredH="70" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <color>14540253</color>
       </controlProperties>

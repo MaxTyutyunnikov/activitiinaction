@@ -38,7 +38,7 @@
           <activiti:value id="true" name="Yes"/>
           <activiti:value id="false" name="No"/>
         </activiti:formProperty>
-        <activiti:formProperty id="motivation" name="Motivation"/>
+        <activiti:formProperty id="explanation" name="Explanation"/>
       </extensionElements>
     </userTask>
     <sequenceFlow sourceRef="evaluateLoanRequest" targetRef="approvalGateway" />
@@ -58,7 +58,7 @@
           <activiti:value id="true" name="Yes"/>
           <activiti:value id="false" name="No"/>
         </activiti:formProperty>
-        <activiti:formProperty id="motivation" name="Motivation"/>
+        <activiti:formProperty id="explanation" name="Explanation"/>
       </extensionElements>
     </userTask>
     <sequenceFlow sourceRef="evaluateRequestByManager" targetRef="approvalGateway" />
@@ -80,7 +80,7 @@
                 <body>
                   Hello ${loanApplication.customerName},<br/><br/>
                   
-                  Your loan request has been denied for the following reason: ${motivation}.<br/><br/>
+                  Your loan request has been denied for the following reason: ${explanation}.<br/><br/>
                   
                   Kind regards,<br/>
                   

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-e4f5867d-625a-4601-8663-959138f51141" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-ff2a160b-b675-4be0-a3be-80fa41b3071f" isExecutable="false">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-dbc352d0-1330-4f3a-8da8-e1ab75b2ad95" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <process id="sid-04b8555f-eb33-43ea-b148-3a37bc7daeeb" isExecutable="false">
       <startEvent id="sid-4CB989A2-0678-4B80-80CC-BB7653648F55" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
@@ -37,7 +37,7 @@
          <incoming>sid-902B388B-448B-4848-9DB2-0AE8B690F909</incoming>
          <outgoing>sid-0B8923A1-B55C-43CB-A998-CC6F2B1EA9BA</outgoing>
       </userTask>
-      <userTask completionQuantity="1" id="sid-3B477C53-C24B-432D-9964-571ACA627A53" implementation="webService" isForCompensation="false" name="Send e-mail with arrival date" startQuantity="1">
+      <userTask completionQuantity="1" id="sid-3B477C53-C24B-432D-9964-571ACA627A53" implementation="webService" isForCompensation="false" name="Send email with arrival date" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -66,8 +66,8 @@
       <sequenceFlow id="sid-68749406-CBA2-47D0-BEB0-050AFF4319E8" name="" sourceRef="sid-6BDAED32-C408-4842-BF78-40C0CC44838F" targetRef="sid-4577B13A-D057-442D-A26A-9EA8EF840DE2"/>
       <sequenceFlow id="sid-0B8923A1-B55C-43CB-A998-CC6F2B1EA9BA" name="" sourceRef="sid-6CB197DE-222D-4DD7-A63A-B14315DA44EE" targetRef="sid-46174D69-26A7-420F-B546-0733E29F4E63"/>
    </process>
-   <bpmndi:BPMNDiagram id="sid-8e70cb03-5287-4015-89ae-3123a6c7dbc4">
-      <bpmndi:BPMNPlane bpmnElement="sid-ff2a160b-b675-4be0-a3be-80fa41b3071f" id="sid-5bdf9e82-d97d-4ca8-88e2-b476d00e0fc1">
+   <bpmndi:BPMNDiagram id="sid-efd808c0-922f-4dda-adae-450a59c23262">
+      <bpmndi:BPMNPlane bpmnElement="sid-04b8555f-eb33-43ea-b148-3a37bc7daeeb" id="sid-76b1b119-f317-4596-9982-e42cf6b9f92c">
          <bpmndi:BPMNShape bpmnElement="sid-4CB989A2-0678-4B80-80CC-BB7653648F55" id="sid-4CB989A2-0678-4B80-80CC-BB7653648F55_gui">
             <omgdc:Bounds height="30.0" width="30.0" x="125.0" y="230.0"/>
          </bpmndi:BPMNShape>

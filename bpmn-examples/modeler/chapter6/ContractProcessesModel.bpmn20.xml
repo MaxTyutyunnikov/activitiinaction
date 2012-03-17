@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-b0fa20ff-6c62-430b-947c-30421d2c5757" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-a4b768bb-9976-4122-b443-20b2b47fecf5" isClosed="false" isExecutable="false" name="Personal mobile contract process" processType="None">
-      <laneSet id="sid-b752cf89-ed54-46e0-9744-cf366899be46">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-c7244cfd-3e47-4caf-b534-29c6dc10de7e" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <collaboration id="sid-66d9e735-f362-49d1-85d0-5970f01ece87">
+      <participant id="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A" name="Check credit process" processRef="sid-66768870-9b64-4608-8576-3cc3c3cd5cec">
+         <extensionElements>
+            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
+         </extensionElements>
+      </participant>
+      <participant id="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB" name="Personal mobile contract process" processRef="sid-b17ef0b7-7413-4235-b225-3e29d35360ce">
+         <extensionElements>
+            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
+         </extensionElements>
+      </participant>
+      <participant id="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78" name="Business mobile contract process" processRef="sid-0fb44aab-670c-4538-8dd2-54d2d8bd57d1">
+         <extensionElements>
+            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
+         </extensionElements>
+      </participant>
+   </collaboration>
+   <process id="sid-b17ef0b7-7413-4235-b225-3e29d35360ce" isClosed="false" isExecutable="false" name="Personal mobile contract process" processType="None">
+      <laneSet id="sid-074b7ce7-dcb8-486c-a1a9-e320387a66bc">
          <lane id="sid-019D70BA-14D3-4D74-A6C4-08D08DAE6A3E">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -63,8 +80,8 @@
       <sequenceFlow id="sid-6DE8E1C9-81A5-4621-B1F2-8789B1A716B2" name="" sourceRef="sid-9495F1EF-6765-44A7-B40C-EE6B0B155769" targetRef="sid-2167B218-0049-4BE5-9FB0-BE7E6BB24284"/>
       <sequenceFlow id="sid-0B83EB7F-A633-46CC-861C-4A0BCC09D723" name="Disapproved" sourceRef="sid-2167B218-0049-4BE5-9FB0-BE7E6BB24284" targetRef="sid-2592D870-9387-441A-AA73-77E014BF00C0"/>
    </process>
-   <process id="sid-d3c08d9b-a53f-4362-8e6d-12ec575ecc9c" isClosed="false" isExecutable="false" name="Check credit process" processType="None">
-      <laneSet id="sid-14de21ba-e4ab-4473-80a3-5c199c7a393c">
+   <process id="sid-66768870-9b64-4608-8576-3cc3c3cd5cec" isClosed="false" isExecutable="false" name="Check credit process" processType="None">
+      <laneSet id="sid-beef40c4-e277-430a-936d-95b32da95440">
          <lane id="sid-1530CFB6-0837-47D6-AC65-35E3A74CF416">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -113,12 +130,12 @@
       </endEvent>
       <sequenceFlow id="sid-E564110E-4EAB-4992-A679-6F6DB507D232" name="" sourceRef="sid-0FB7C470-CEA3-4DE9-B33F-58449695582C" targetRef="sid-ED7E8317-BA6F-4771-815F-8F37D78ACA7F"/>
       <sequenceFlow id="sid-C68C556B-CE56-4A8F-AB81-23204DA90ED3" name="" sourceRef="sid-ED7E8317-BA6F-4771-815F-8F37D78ACA7F" targetRef="sid-CA712067-4860-416C-B9DA-1E4FFBD36F47"/>
-      <sequenceFlow id="sid-943D52AC-C55A-459F-9F8A-7BAFC9B2E67E" name="disapproved" sourceRef="sid-CA712067-4860-416C-B9DA-1E4FFBD36F47" targetRef="sid-A97816A5-654A-4637-9CD3-894BA64A7C60"/>
-      <sequenceFlow id="sid-09A83268-0195-4582-98EB-29A12C0C8C64" name="approved" sourceRef="sid-CA712067-4860-416C-B9DA-1E4FFBD36F47" targetRef="sid-8E5B957E-22F9-49B5-B423-0594DD72004F"/>
       <sequenceFlow id="sid-D7410E5B-E5CB-4BED-8C49-1C29995E15F0" name="" sourceRef="sid-A97816A5-654A-4637-9CD3-894BA64A7C60" targetRef="sid-8E5B957E-22F9-49B5-B423-0594DD72004F"/>
+      <sequenceFlow id="sid-943D52AC-C55A-459F-9F8A-7BAFC9B2E67E" name="Disapproved" sourceRef="sid-CA712067-4860-416C-B9DA-1E4FFBD36F47" targetRef="sid-A97816A5-654A-4637-9CD3-894BA64A7C60"/>
+      <sequenceFlow id="sid-09A83268-0195-4582-98EB-29A12C0C8C64" name="Approved" sourceRef="sid-CA712067-4860-416C-B9DA-1E4FFBD36F47" targetRef="sid-8E5B957E-22F9-49B5-B423-0594DD72004F"/>
    </process>
-   <process id="sid-ae3ffc6d-9179-477b-9d7a-44c9cdc94f90" isClosed="false" isExecutable="false" name="Business mobile contract process" processType="None">
-      <laneSet id="sid-30a62e11-6efc-43a4-9227-e1930eed7c8b">
+   <process id="sid-0fb44aab-670c-4538-8dd2-54d2d8bd57d1" isClosed="false" isExecutable="false" name="Business mobile contract process" processType="None">
+      <laneSet id="sid-8bd2b4bd-5237-4a91-a44c-719efb208ad0">
          <lane id="sid-5688E384-0656-49C8-83C7-FD46AE3EB1F1">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -208,25 +225,17 @@
       <sequenceFlow id="sid-651D41D2-59F7-4859-A05B-49E7B5397BB4" name="" targetRef="sid-81E55278-4142-41E6-A2A2-830FEA947CB1"/>
       <sequenceFlow id="sid-507605AE-F66C-40AD-850F-E4FC2FB59A07" name="Second chance" sourceRef="sid-6AA074E0-5A7C-45A5-AF5E-1647C225E6F9"/>
    </process>
-   <collaboration id="sid-eb842dbc-216d-4932-9e42-ca4e9b5e44c3">
-      <participant id="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A" name="Check credit process" processRef="sid-d3c08d9b-a53f-4362-8e6d-12ec575ecc9c">
-         <extensionElements>
-            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
-         </extensionElements>
-      </participant>
-      <participant id="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB" name="Personal mobile contract process" processRef="sid-a4b768bb-9976-4122-b443-20b2b47fecf5">
-         <extensionElements>
-            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
-         </extensionElements>
-      </participant>
-      <participant id="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78" name="Business mobile contract process" processRef="sid-ae3ffc6d-9179-477b-9d7a-44c9cdc94f90">
-         <extensionElements>
-            <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
-         </extensionElements>
-      </participant>
-   </collaboration>
-   <bpmndi:BPMNDiagram id="sid-2d16b85f-e06e-49be-87c2-9f5c7f9f33c1">
-      <bpmndi:BPMNPlane bpmnElement="sid-eb842dbc-216d-4932-9e42-ca4e9b5e44c3" id="sid-5c277657-96ba-40bb-97e2-5c148e110c43">
+   <bpmndi:BPMNDiagram id="sid-016ed509-4cc3-4a74-82bb-2d8272303bc5">
+      <bpmndi:BPMNPlane bpmnElement="sid-0fb44aab-670c-4538-8dd2-54d2d8bd57d1" id="sid-f39c6704-09e6-4b4d-bcd9-b4d3b970f283">
+         <bpmndi:BPMNShape bpmnElement="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A" id="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A_gui" isHorizontal="false">
+            <omgdc:Bounds height="252.0" width="571.0" x="93.0" y="435.0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape bpmnElement="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB" id="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB_gui" isHorizontal="false">
+            <omgdc:Bounds height="298.0" width="571.0" x="90.0" y="90.0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape bpmnElement="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78" id="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78_gui" isHorizontal="false">
+            <omgdc:Bounds height="407.0" width="777.0" x="705.0" y="93.5"/>
+         </bpmndi:BPMNShape>
          <bpmndi:BPMNShape bpmnElement="sid-019D70BA-14D3-4D74-A6C4-08D08DAE6A3E" id="sid-019D70BA-14D3-4D74-A6C4-08D08DAE6A3E_gui" isHorizontal="true">
             <omgdc:Bounds height="298.0" width="541.0" x="120.0" y="90.0"/>
          </bpmndi:BPMNShape>
@@ -295,15 +304,6 @@
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape bpmnElement="sid-0A7E429C-CF89-4AA1-9011-15FBBB18985F" id="sid-0A7E429C-CF89-4AA1-9011-15FBBB18985F_gui" isExpanded="false">
             <omgdc:Bounds height="80.0" width="100.0" x="990.0" y="197.0"/>
-         </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape bpmnElement="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A" id="sid-8FB7704B-4678-4E8A-A432-9C3F476A908A_gui" isHorizontal="false">
-            <omgdc:Bounds height="252.0" width="571.0" x="93.0" y="435.0"/>
-         </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape bpmnElement="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB" id="sid-4A2C97B1-9EEB-44D0-B427-87B6FBEE7FAB_gui" isHorizontal="false">
-            <omgdc:Bounds height="298.0" width="571.0" x="90.0" y="90.0"/>
-         </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape bpmnElement="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78" id="sid-79DBEA6A-C192-4D43-A2E5-C6C23D273C78_gui" isHorizontal="false">
-            <omgdc:Bounds height="407.0" width="777.0" x="705.0" y="93.5"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNEdge bpmnElement="sid-6DE8E1C9-81A5-4621-B1F2-8789B1A716B2" id="sid-6DE8E1C9-81A5-4621-B1F2-8789B1A716B2_gui">
             <omgdi:waypoint x="329.0" y="233.0"/>

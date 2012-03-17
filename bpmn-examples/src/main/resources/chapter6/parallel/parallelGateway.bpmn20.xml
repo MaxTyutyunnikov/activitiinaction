@@ -11,7 +11,7 @@
 		<sequenceFlow sourceRef="twitterTask" targetRef="facebookTask" />
 		<manualTask id="facebookTask" />
 		<sequenceFlow sourceRef="facebookTask" targetRef="backlogEmailTask" />
-		<userTask id="backlogEmailTask" name="Read e-mail backlog" activiti:assignee="kermit"/>
+		<userTask id="backlogEmailTask" name="Read email backlog" activiti:assignee="kermit"/>
 		<sequenceFlow sourceRef="backlogEmailTask" targetRef="join" />
 		<intermediateCatchEvent id="coffeebreak">
 	        <timerEventDefinition>
