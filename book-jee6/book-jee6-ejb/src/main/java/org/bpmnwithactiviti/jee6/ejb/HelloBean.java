@@ -2,7 +2,7 @@ package org.bpmnwithactiviti.jee6.ejb;
 
 import javax.ejb.Stateless;
 
-import org.bpmnwithactiviti.jee6.task.Hello;
+import org.bpmnwithactiviti.jee6.Hello;
 
 @Stateless
 public class HelloBean implements Hello {

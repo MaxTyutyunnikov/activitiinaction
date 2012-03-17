@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<processes>
-	<processEngine name="default" />
-	<undeployment delete="true" />
-</processes>
+<processArchive>
+  <configuration>
+    <undeployment delete="false" />
+  </configuration>
+</processArchive>

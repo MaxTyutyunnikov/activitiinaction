@@ -1,4 +1,4 @@
-package org.bpmnwithactiviti.jee6.task;
+package org.bpmnwithactiviti.jee6;
 
 
 public interface Hello {
