@@ -10,7 +10,7 @@ public class LoanApplication implements Serializable {
 	private long income;
 	private long requestedAmount;
 	private boolean creditCheckOk;
-	private String motivation;
+	private String explanation;
 	private String emailAddress;
 	
 	public String getCustomerName() {
@@ -37,11 +37,11 @@ public class LoanApplication implements Serializable {
 	public void setCreditCheckOk(boolean creditCheckOk) {
   	this.creditCheckOk = creditCheckOk;
   }
-	public String getMotivation() {
-  	return motivation;
+	public String getExplanation() {
+  	return explanation;
   }
-	public void setMotivation(String motivation) {
-  	this.motivation = motivation;
+	public void setExplanation(String explanation) {
+  	this.explanation = explanation;
   }
 	public String getEmailAddress() {
   	return emailAddress;
