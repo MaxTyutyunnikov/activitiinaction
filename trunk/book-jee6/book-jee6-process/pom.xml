@@ -14,7 +14,7 @@
   <packaging>war</packaging>
   
   <properties>
-    <fox.version>0.18.0-SNAPSHOT</fox.version>
+    <fox.version>1.18.4.CR</fox.version>
   </properties>
   
   <dependencies>
@@ -27,12 +27,6 @@
       <groupId>com.camunda.fox</groupId>
       <artifactId>fox-platform-client</artifactId>
       <version>${fox.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.camunda.fox</groupId>
-      <artifactId>fox-engine</artifactId>
-      <version>${fox.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>javax</groupId>

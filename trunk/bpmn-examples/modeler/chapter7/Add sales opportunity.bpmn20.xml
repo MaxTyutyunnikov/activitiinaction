@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-fbc85b56-a019-448d-bd06-e4f970742c45" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-b71fd27f-1405-4251-9d9c-16b7b1e379c6" isExecutable="false">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-a549145f-2159-4995-b7fa-95b9cf74f203" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <process id="sid-30e47675-8b4a-48eb-b13f-799b80bffa1e" isExecutable="false">
       <startEvent id="sid-1B74AA3B-88FE-4C0B-BEC2-C76C684DFB9E" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
@@ -68,12 +68,12 @@
                <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
             </extensionElements>
             <incoming>sid-7A6276EE-AE6F-4A51-97C4-E26D3892001E</incoming>
-            <errorEventDefinition errorRef="sid-318f58c3-92a0-422a-9c3a-010435b30333" id="sid-aaf182ed-e119-4930-9aa5-b1ab9b81fc6b"/>
+            <errorEventDefinition errorRef="sid-98af9f47-de41-48df-8d1d-6a08bc49bbf9" id="sid-ab92a62f-30a9-4dc5-a65a-149744ad18fb"/>
          </endEvent>
          <sequenceFlow id="sid-912639F8-53E9-4E1F-9E52-F42487F4D8B2" name="" sourceRef="sid-960BBDF3-68E9-43AD-9AD9-BB9883971C38" targetRef="sid-31BA2817-87D2-4EFB-BC71-1FB7AF1BBDE4"/>
          <sequenceFlow id="sid-6BC04356-D980-4B71-95E8-84A84329D260" name="" sourceRef="sid-31BA2817-87D2-4EFB-BC71-1FB7AF1BBDE4" targetRef="sid-44D5BBD4-91F8-45C9-A748-A9D768B38D17"/>
-         <sequenceFlow id="sid-7A6276EE-AE6F-4A51-97C4-E26D3892001E" name="customer not found" sourceRef="sid-44D5BBD4-91F8-45C9-A748-A9D768B38D17" targetRef="sid-55D4E914-F8AD-4A35-AA80-B9770FA13AEF"/>
-         <sequenceFlow id="sid-346058EA-27EB-4F36-86F2-F19BF33F7C6E" name="customer found" sourceRef="sid-44D5BBD4-91F8-45C9-A748-A9D768B38D17" targetRef="sid-E42DCAA7-48AC-4426-90CF-0600F5439448"/>
+         <sequenceFlow id="sid-346058EA-27EB-4F36-86F2-F19BF33F7C6E" name="Customer found" sourceRef="sid-44D5BBD4-91F8-45C9-A748-A9D768B38D17" targetRef="sid-E42DCAA7-48AC-4426-90CF-0600F5439448"/>
+         <sequenceFlow id="sid-7A6276EE-AE6F-4A51-97C4-E26D3892001E" name="Customer not found" sourceRef="sid-44D5BBD4-91F8-45C9-A748-A9D768B38D17" targetRef="sid-55D4E914-F8AD-4A35-AA80-B9770FA13AEF"/>
       </subProcess>
       <serviceTask completionQuantity="1" id="sid-E1D1C549-4D5E-4917-ABAB-FA1EE77BDC53" implementation="webService" isForCompensation="false" name="Add sales opportunity" startQuantity="1">
          <extensionElements>
@@ -92,7 +92,7 @@
       </userTask>
       <boundaryEvent attachedToRef="sid-CE7E5E0A-F686-4474-AFAB-0ADB732FB210" cancelActivity="true" id="sid-5533F4BC-E4A0-4041-BD4D-E95090A10C7C" name="" parallelMultiple="false">
          <outgoing>sid-95CA8674-7FF6-4E3C-9CDA-AAEA5AC780F9</outgoing>
-         <errorEventDefinition errorRef="sid-1777e86b-40e8-4dc8-b5bf-d3199688074c" id="sid-a022db23-a2da-4c01-a50d-f33d67d0a5d3"/>
+         <errorEventDefinition errorRef="sid-7a45ba3f-c4bd-4a4c-b592-0cae2c6c68ae" id="sid-ebf0c049-8509-4f36-ae3a-e6efc9ce77ce"/>
       </boundaryEvent>
       <endEvent id="sid-17CC8B15-7016-4DC1-BE47-A9094F2272C0" name="">
          <extensionElements>
@@ -108,10 +108,10 @@
       <sequenceFlow id="sid-696865A3-2DA6-4C12-909F-4BF0BE590770" name="" sourceRef="sid-B05EA4DB-2B92-40FE-BDC6-F91E4C03E30A" targetRef="sid-E1D1C549-4D5E-4917-ABAB-FA1EE77BDC53"/>
       <sequenceFlow id="sid-082800F0-59B2-4EDD-BEC7-32D147E2B1BA" name="" sourceRef="sid-E1D1C549-4D5E-4917-ABAB-FA1EE77BDC53" targetRef="sid-17CC8B15-7016-4DC1-BE47-A9094F2272C0"/>
       <sequenceFlow id="sid-137965A7-D630-46EB-AEA8-6AD29F8792F3" name="customerId present" sourceRef="sid-FAEB5E67-0880-454D-AF8E-1DF6C1A6ED43" targetRef="sid-A0FF08E6-3DF3-4383-952E-499021F6A225"/>
-      <sequenceFlow id="sid-5612F326-9421-472B-AFC5-C21234B412DB" name="no customerId" sourceRef="sid-FAEB5E67-0880-454D-AF8E-1DF6C1A6ED43" targetRef="sid-2E99A411-0AD1-40F4-BE94-0A19A131FF85"/>
+      <sequenceFlow id="sid-5612F326-9421-472B-AFC5-C21234B412DB" name="No customerId" sourceRef="sid-FAEB5E67-0880-454D-AF8E-1DF6C1A6ED43" targetRef="sid-2E99A411-0AD1-40F4-BE94-0A19A131FF85"/>
    </process>
-   <bpmndi:BPMNDiagram id="sid-8d6037a1-db65-46df-9255-e08ac85a4a8d">
-      <bpmndi:BPMNPlane bpmnElement="sid-b71fd27f-1405-4251-9d9c-16b7b1e379c6" id="sid-115d613c-358c-443f-895a-af9eac0660dc">
+   <bpmndi:BPMNDiagram id="sid-2176d010-84c9-4af5-958e-561199047562">
+      <bpmndi:BPMNPlane bpmnElement="sid-30e47675-8b4a-48eb-b13f-799b80bffa1e" id="sid-556792aa-4897-4bb8-ae59-57757044dbb1">
          <bpmndi:BPMNShape bpmnElement="sid-1B74AA3B-88FE-4C0B-BEC2-C76C684DFB9E" id="sid-1B74AA3B-88FE-4C0B-BEC2-C76C684DFB9E_gui">
             <omgdc:Bounds height="30.0" width="30.0" x="45.0" y="302.0"/>
          </bpmndi:BPMNShape>
