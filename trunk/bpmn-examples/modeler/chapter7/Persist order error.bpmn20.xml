@@ -14,7 +14,7 @@
          <incoming>sid-38023F42-2F95-4ABA-B59E-6EDC8A0D36E4</incoming>
          <outgoing>sid-24A13CC4-2F68-4642-B7D8-8A1C66AFC32D</outgoing>
       </userTask>
-      <subProcess completionQuantity="1" id="sid-973A629A-466A-4DE9-B5FD-FE90664B69E7" isForCompensation="false" name="" startQuantity="1" triggeredByEvent="false">
+      <subProcess completionQuantity="1" id="sid-973A629A-466A-4DE9-B5FD-FE90664B69E7" isForCompensation="false" name="" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
