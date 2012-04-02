@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="450"
+   height="630"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="figure_15_08.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         id="path3858"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3834"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         id="path3852"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       id="filter5095"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5097"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5099"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5101"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5103">
+        <feMergeNode
+           id="feMergeNode5105"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5107"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5109"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5111"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5113"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5115"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5117">
+        <feMergeNode
+           id="feMergeNode5119"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5121"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5123"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5125"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5127"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5129"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5131">
+        <feMergeNode
+           id="feMergeNode5133"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5135"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3940"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3942"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3944"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset3946"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3948">
+        <feMergeNode
+           id="feMergeNode3950"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3952"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.1213203"
+     inkscape:cx="170.4759"
+     inkscape:cy="556.07913"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1680"
+     inkscape:window-height="937"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     units="in"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     gridtolerance="10">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="10px"
+       spacingy="10px" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-35.355339,688.0149"
+       id="guide3944" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-47.376154,688.0149"
+       id="guide3946" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-422.36234)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3869"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(-4.9220582,451.41388)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><flowRegion
+         id="flowRegion3871"><rect
+           id="rect3873"
+           width="56.214989"
+           height="27.930717"
+           x="104.6518"
+           y="55.122185" /></flowRegion><flowPara
+         id="flowPara3875" /></flowRoot>    <path
+       transform="matrix(0.4775,0,0,0.4775,344.83819,464.5739)"
+       d="m 160,40 c 0,11.045695 -8.95431,20 -20,20 -11.04569,0 -20,-8.954305 -20,-20 0,-11.045695 8.95431,-20 20,-20 11.04569,0 20,8.954305 20,20 z"
+       sodipodi:ry="20"
+       sodipodi:rx="20"
+       sodipodi:cy="40"
+       sodipodi:cx="140"
+       id="path3846"
+       style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:6.28272247;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter5095)"
+       sodipodi:type="arc"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 40,482.36234 30,0"
+       id="path3960"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4935"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(0,462.36209)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><flowRegion
+         id="flowRegion4937"><rect
+           id="rect4939"
+           width="32.333332"
+           height="16.666666"
+           x="95.333336"
+           y="59.333332" /></flowRegion><flowPara
+         id="flowPara4941" /></flowRoot>    <g
+       style="filter:url(#filter5095)"
+       id="g3050"
+       transform="matrix(0.61917527,0,0,0.61827889,199.49124,85.224795)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:1.04712045;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="path3058"
+         sodipodi:cx="140"
+         sodipodi:cy="40"
+         sodipodi:rx="20"
+         sodipodi:ry="20"
+         d="m 160,40 c 0,11.045695 -8.95431,20 -20,20 -11.04569,0 -20,-8.954305 -20,-20 0,-11.045695 8.95431,-20 20,-20 11.04569,0 20,8.954305 20,20 z"
+         transform="matrix(0.77118713,0,0,0.7723052,-380.97652,611.43531)" />
+    </g>
+    <g
+       id="g3093"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <g
+         style="filter:url(#filter5095)"
+         inkscape:export-ydpi="180"
+         inkscape:export-xdpi="180"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_06.png"
+         transform="matrix(0.61917527,0,0,0.61827889,38.541239,110.34855)"
+         id="g5034">
+        <rect
+           ry="16.173933"
+           rx="16.150517"
+           y="577.836"
+           x="51.211285"
+           height="47.713097"
+           width="128.39661"
+           id="rect3782"
+           style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3087"
+         y="484.36234"
+         x="110"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           style="font-size:7px;text-align:center;text-anchor:middle"
+           id="tspan3091"
+           y="484.36234"
+           x="110"
+           sodipodi:role="line">Service task 1</tspan></text>
+    </g>
+    <g
+       id="g3100"
+       transform="translate(110,0)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <g
+         id="g3102"
+         transform="matrix(0.61917527,0,0,0.61827889,38.541239,110.34855)"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_06.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"
+         style="filter:url(#filter5095)">
+        <rect
+           style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3104"
+           width="128.39661"
+           height="47.713097"
+           x="51.211285"
+           y="577.836"
+           rx="16.150517"
+           ry="16.173933" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="110"
+         y="484.36234"
+         id="text3106"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="110"
+           y="484.36234"
+           style="font-size:7px;text-align:center;text-anchor:middle"
+           id="tspan3132">Service task 2</tspan></text>
+    </g>
+    <path
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:connector-curvature="0"
+       id="path3112"
+       d="m 150,482.36234 30,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 260,482.36234 30,0"
+       id="path3114"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <g
+       transform="translate(220,0)"
+       id="g3116"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <g
+         style="filter:url(#filter5095)"
+         inkscape:export-ydpi="180"
+         inkscape:export-xdpi="180"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_06.png"
+         transform="matrix(0.61917527,0,0,0.61827889,38.541239,110.34855)"
+         id="g3118">
+        <rect
+           ry="16.173933"
+           rx="16.150517"
+           y="577.836"
+           x="51.211285"
+           height="47.713097"
+           width="128.39661"
+           id="rect3120"
+           style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3122"
+         y="484.36234"
+         x="110"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           style="font-size:7px;text-align:center;text-anchor:middle"
+           y="484.36234"
+           x="110"
+           sodipodi:role="line"
+           id="tspan3136">Service task 3</tspan></text>
+    </g>
+    <path
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:connector-curvature="0"
+       id="path3128"
+       d="m 370,482.36234 30,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <g
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       id="g3058"
+       transform="translate(110,140)">
+      <g
+         id="g3060"
+         transform="matrix(0.61917527,0,0,0.61827889,38.541239,110.34855)"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_06.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"
+         style="filter:url(#filter5095)">
+        <rect
+           style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3062"
+           width="128.39661"
+           height="47.713097"
+           x="51.211285"
+           y="577.836"
+           rx="16.150517"
+           ry="16.173933" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="110"
+         y="484.36234"
+         id="text3064"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="110"
+           y="484.36234"
+           id="tspan3066"
+           style="font-size:7px;text-align:center;text-anchor:middle">Activiti database</tspan></text>
+    </g>
+    <g
+       transform="translate(170,70)"
+       id="g3068"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <g
+         style="filter:url(#filter5095)"
+         inkscape:export-ydpi="180"
+         inkscape:export-xdpi="180"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_06.png"
+         transform="matrix(0.61917527,0,0,0.61827889,38.541239,110.34855)"
+         id="g3070">
+        <rect
+           ry="16.173933"
+           rx="16.150517"
+           y="577.836"
+           x="51.211285"
+           height="47.713097"
+           width="128.39661"
+           id="rect3072"
+           style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811101;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3074"
+         y="484.36234"
+         x="110"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           style="font-size:7px;text-align:center;text-anchor:middle"
+           id="tspan3076"
+           y="484.36234"
+           x="110"
+           sodipodi:role="line">Job executor</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3087-8"
+       y="454.3623"
+       x="214"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         style="font-size:7px;text-align:center;text-anchor:middle"
+         id="tspan3091-7"
+         y="454.3623"
+         x="214"
+         sodipodi:role="line">async=&quot;true&quot;</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3252"
+       d="m 190,442.36234 0,80"
+       style="fill:none;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 190,532.36234 0,70"
+       id="path3931"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 250,538.09825 0,-39.66666"
+       id="path3933"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:connector-curvature="0"
+       id="path3935"
+       d="m 249.98078,567.60721 0,39.66666"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="254"
+       y="514.3623"
+       id="text3937"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         sodipodi:role="line"
+         x="254"
+         y="514.3623"
+         id="tspan3939"
+         style="font-size:7px;text-align:start;text-anchor:start">3. Signal the start of </tspan><tspan
+         sodipodi:role="line"
+         x="254"
+         y="523.1123"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         id="tspan3941">the service task</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3943"
+       y="584.3623"
+       x="254"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         id="tspan3947"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         y="584.3623"
+         x="254"
+         sodipodi:role="line">2. Query for jobs</tspan><tspan
+         style="font-size:7px;text-align:start;text-anchor:start"
+         y="593.1123"
+         x="254"
+         sodipodi:role="line"
+         id="tspan3951">and lock them</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="130"
+       y="554.3623"
+       id="text3953"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         id="tspan3957"
+         sodipodi:role="line"
+         x="130"
+         y="554.3623"
+         style="font-size:7px;text-align:start;text-anchor:start">1. Persist</tspan><tspan
+         sodipodi:role="line"
+         x="130"
+         y="563.1123"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         id="tspan3961">process state and</tspan><tspan
+         sodipodi:role="line"
+         x="130"
+         y="571.8623"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         id="tspan3963">create async</tspan><tspan
+         sodipodi:role="line"
+         x="130"
+         y="580.6123"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         id="tspan3965">continuation job</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:connector-curvature="0"
+       id="path3967"
+       d="m 410,492.36234 c -1.93321,75.50707 -38.20801,128.02743 -150,130"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3969"
+       y="590.3623"
+       x="384"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter15/figure_15_08.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         id="tspan3977"
+         style="font-size:7px;text-align:start;text-anchor:start"
+         y="590.3623"
+         x="384"
+         sodipodi:role="line">4. End process and</tspan><tspan
+         style="font-size:7px;text-align:start;text-anchor:start"
+         y="599.1123"
+         x="384"
+         sodipodi:role="line"
+         id="tspan3988">store history</tspan></text>
+  </g>
+</svg>
