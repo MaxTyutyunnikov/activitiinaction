@@ -30,7 +30,7 @@
          <incoming>sid-137965A7-D630-46EB-AEA8-6AD29F8792F3</incoming>
          <outgoing>sid-E2DC102D-1AF9-4CB3-B1C5-1729C44DB483</outgoing>
       </exclusiveGateway>
-      <subProcess completionQuantity="1" id="sid-CE7E5E0A-F686-4474-AFAB-0ADB732FB210" isForCompensation="false" name="" startQuantity="1" triggeredByEvent="false">
+      <subProcess completionQuantity="1" id="sid-CE7E5E0A-F686-4474-AFAB-0ADB732FB210" isForCompensation="false" name="" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
