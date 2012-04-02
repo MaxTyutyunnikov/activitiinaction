@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-e5c17a4d-9d20-494f-bb6c-e7dd120e659d" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <collaboration id="sid-c622f4f4-88c0-46c6-b279-ecd769a32bd6">
-      <participant id="sid-81F0945D-2110-43E1-B7DB-5599C9B9D249" name="Sales" processRef="sid-75cbaa0d-7adf-4703-bdff-1a07024d2f6c">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-90aa5545-a5bc-407e-a63f-47a6081a1925" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <collaboration id="sid-ca6a8d13-8f68-4edd-aafb-a080981bad90">
+      <participant id="sid-81F0945D-2110-43E1-B7DB-5599C9B9D249" name="Sales" processRef="sid-c571bbcf-0301-4097-bb4c-180de37ad28b">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
       </participant>
-      <participant id="sid-D33FC0F4-B7E9-4CD3-A843-9FA1A4C820E9" name="Publisher" processRef="sid-e9bf3785-e66c-447d-b296-f057281ce5c9">
+      <participant id="sid-D33FC0F4-B7E9-4CD3-A843-9FA1A4C820E9" name="Publisher" processRef="sid-ad4b62c6-7b6f-4245-a0f8-9733fae66577">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
       </participant>
-      <participant id="sid-A5F26033-CE92-4A08-995D-0DC576D3D763" name="Inventory" processRef="sid-5e3bacdf-9da4-49f3-847a-f43eb595217a">
+      <participant id="sid-A5F26033-CE92-4A08-995D-0DC576D3D763" name="Inventory" processRef="sid-ad6f980c-e47f-4b03-a5c9-a3b83f04f068">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
       </participant>
-      <participant id="sid-E6F94AC9-0D08-4718-B25E-D93AA7D5011D" name="New book order" processRef="sid-956135f5-d365-4548-8ec6-598479c42623">
+      <participant id="sid-E6F94AC9-0D08-4718-B25E-D93AA7D5011D" name="New book order" processRef="sid-466f16f0-52b3-4d42-9996-5198a913c26f">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
       </participant>
-      <participant id="sid-8D50ECA8-0073-4A24-8055-3602E700053C" name="Customer" processRef="sid-12850251-844c-403d-89c7-620351c84eb4">
+      <participant id="sid-8D50ECA8-0073-4A24-8055-3602E700053C" name="Customer" processRef="sid-a3077f00-d40f-40f4-a87e-d5eb74ccedd1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
@@ -31,8 +31,8 @@
       <messageFlow id="sid-C22268FC-6857-47AA-9C86-D88338BD27CF" name="" targetRef="sid-D33FC0F4-B7E9-4CD3-A843-9FA1A4C820E9"/>
       <messageFlow id="sid-DA26985A-D208-47C9-8983-7BFDA35E1FBE" name="" sourceRef="sid-9EED64F3-5E9A-418A-B98F-FF3F264A261B" targetRef="sid-8D50ECA8-0073-4A24-8055-3602E700053C"/>
    </collaboration>
-   <process id="sid-12850251-844c-403d-89c7-620351c84eb4" isClosed="false" isExecutable="false" name="Customer" processType="None">
-      <laneSet id="sid-e0a4f5a2-ae9d-4a28-a5f9-1d1c3f5b4a0a">
+   <process id="sid-a3077f00-d40f-40f4-a87e-d5eb74ccedd1" isClosed="false" isExecutable="false" name="Customer" processType="None">
+      <laneSet id="sid-712a2a8b-32d4-4913-8f07-f61832dd2719">
          <lane id="sid-763E73DB-A18B-4A0E-ACE5-EF0CDD64162A">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -40,8 +40,8 @@
          </lane>
       </laneSet>
    </process>
-   <process id="sid-75cbaa0d-7adf-4703-bdff-1a07024d2f6c" isClosed="false" isExecutable="false" name="Sales" processType="None">
-      <laneSet id="sid-877bc794-1c1b-41ad-8809-25a08a1116af">
+   <process id="sid-c571bbcf-0301-4097-bb4c-180de37ad28b" isClosed="false" isExecutable="false" name="Sales" processType="None">
+      <laneSet id="sid-60618fc0-e911-4752-8395-1270e74d3cde">
          <lane id="sid-2E9F49C8-B49A-4326-8F70-CA6DFDF3E43A">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -49,8 +49,8 @@
          </lane>
       </laneSet>
    </process>
-   <process id="sid-5e3bacdf-9da4-49f3-847a-f43eb595217a" isClosed="false" isExecutable="false" name="Inventory" processType="None">
-      <laneSet id="sid-1e779a48-d7c6-4b8a-9530-6d7a77f85595">
+   <process id="sid-ad6f980c-e47f-4b03-a5c9-a3b83f04f068" isClosed="false" isExecutable="false" name="Inventory" processType="None">
+      <laneSet id="sid-edd8e28d-2458-4ecc-9907-3572783d5922">
          <lane id="sid-36ADC12F-F121-4678-ADF2-F9B0D80F6F92">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -58,8 +58,8 @@
          </lane>
       </laneSet>
    </process>
-   <process id="sid-956135f5-d365-4548-8ec6-598479c42623" isClosed="false" isExecutable="false" name="New book order" processType="None">
-      <laneSet id="sid-098008a8-4dc5-48a8-a2ad-c8fcf3060fe8">
+   <process id="sid-466f16f0-52b3-4d42-9996-5198a913c26f" isClosed="false" isExecutable="false" name="New book order" processType="None">
+      <laneSet id="sid-3f1908e6-deda-4d66-810d-cc62cf335566">
          <lane id="sid-F9166900-48C3-41E4-862D-3D819B1F21C1">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -67,8 +67,8 @@
          </lane>
       </laneSet>
    </process>
-   <process id="sid-e9bf3785-e66c-447d-b296-f057281ce5c9" isClosed="false" isExecutable="false" name="Publisher" processType="None">
-      <laneSet id="sid-343f118b-7bb1-4601-b080-a8a83b9a31ad">
+   <process id="sid-ad4b62c6-7b6f-4245-a0f8-9733fae66577" isClosed="false" isExecutable="false" name="Publisher" processType="None">
+      <laneSet id="sid-c2cc3fc2-c2a5-4b55-80a8-43aadc6c7ca3">
          <lane id="sid-AE57AEA1-1733-4847-8B50-77A16061391D">
             <extensionElements>
                <signavio:signavioMetaData metaKey="bgcolor" metaValue=""/>
@@ -76,8 +76,8 @@
          </lane>
       </laneSet>
    </process>
-   <process id="sid-c695b86f-0a9e-4273-9499-1713b8e35922" isExecutable="false">
-      <task completionQuantity="1" id="sid-8EF13842-E39A-4969-A1C7-0143CF79B181" isForCompensation="false" name="Send e-mail with arrival date" startQuantity="1">
+   <process id="sid-08b83490-a897-46ca-a419-76e01afcf964" isExecutable="false">
+      <task completionQuantity="1" id="sid-8EF13842-E39A-4969-A1C7-0143CF79B181" isForCompensation="false" name="Send email with arrival date" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -167,8 +167,8 @@
       <sequenceFlow id="sid-BA7FF8A4-7E4A-4545-9E39-F42A96B25ECF" name="" sourceRef="sid-3239C10E-20A3-4981-8AC8-C628B792CC1A" targetRef="sid-1BDF29D5-C0C2-4B17-A0D7-C5F703CDAAD0"/>
       <sequenceFlow id="sid-A7B0969D-8867-4DBA-9B05-D67F78229EC7" name="" sourceRef="sid-8EF13842-E39A-4969-A1C7-0143CF79B181" targetRef="sid-9EED64F3-5E9A-418A-B98F-FF3F264A261B"/>
    </process>
-   <bpmndi:BPMNDiagram id="sid-7c5ba230-605a-4227-ae14-e89291cfaaea">
-      <bpmndi:BPMNPlane bpmnElement="sid-c695b86f-0a9e-4273-9499-1713b8e35922" id="sid-7e67c13e-7825-4b19-8128-9debd1164555">
+   <bpmndi:BPMNDiagram id="sid-ed56c8ff-ff4b-45c0-b5df-930ebc328f02">
+      <bpmndi:BPMNPlane bpmnElement="sid-08b83490-a897-46ca-a419-76e01afcf964" id="sid-ae4e4d37-840d-4ee3-88d7-174d7d3057ab">
          <bpmndi:BPMNShape bpmnElement="sid-81F0945D-2110-43E1-B7DB-5599C9B9D249" id="sid-81F0945D-2110-43E1-B7DB-5599C9B9D249_gui" isHorizontal="false">
             <omgdc:Bounds height="173.0" width="1016.0" x="284.0" y="375.0"/>
          </bpmndi:BPMNShape>

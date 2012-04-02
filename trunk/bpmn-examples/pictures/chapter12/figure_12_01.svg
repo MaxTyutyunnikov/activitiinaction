@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="450"
+   height="630"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="figure_12_01.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         id="path3858"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3834"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         id="path3852"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       id="filter5095"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5097"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5099"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5101"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5103">
+        <feMergeNode
+           id="feMergeNode5105"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5107"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5109"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5111"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5113"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5115"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5117">
+        <feMergeNode
+           id="feMergeNode5119"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5121"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5123"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5125"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5127"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5129"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5131">
+        <feMergeNode
+           id="feMergeNode5133"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5135"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3940"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3942"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3944"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset3946"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3948">
+        <feMergeNode
+           id="feMergeNode3950"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3952"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter4092"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4094"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix4096"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset4098"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge4100">
+        <feMergeNode
+           id="feMergeNode4102"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode4104"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5000001"
+     inkscape:cx="68.679155"
+     inkscape:cy="385.65338"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="937"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     units="in"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     gridtolerance="10">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="10px"
+       spacingy="10px" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-35.355339,688.0149"
+       id="guide3944" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-47.376154,688.0149"
+       id="guide3946" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-422.36234)">
+    <g
+       style="filter:url(#filter5095)"
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       transform="matrix(1.1825501,0,0,1.7665116,-20.08244,-381.96306)"
+       id="g3082">
+      <rect
+         ry="5.6608748"
+         rx="8.4563017"
+         y="528.90985"
+         x="50.807522"
+         height="96.234886"
+         width="270.60165"
+         id="rect3084"
+         style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.34594095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g5034"
+       transform="matrix(0.61917527,0,0,0.61827889,93.901751,131.93158)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       style="filter:url(#filter5095)">
+      <rect
+         style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3782"
+         width="241.45021"
+         height="96.234886"
+         x="50.807522"
+         y="528.90985"
+         rx="16.150517"
+         ry="16.173933" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3869"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(-4.9220582,451.41388)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><flowRegion
+         id="flowRegion3871"><rect
+           id="rect3873"
+           width="56.214989"
+           height="27.930717"
+           x="104.6518"
+           y="55.122185" /></flowRegion><flowPara
+         id="flowPara3875" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4935"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(0,462.36209)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><flowRegion
+         id="flowRegion4937"><rect
+           id="rect4939"
+           width="32.333332"
+           height="16.666666"
+           x="95.333336"
+           y="59.333332" /></flowRegion><flowPara
+         id="flowPara4941" /></flowRoot>    <g
+       id="g4088"
+       transform="translate(-121.75,-312.59346)"
+       style="filter:url(#filter4092)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.49999997000000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 280.00002,972.89987 0,29.48313 c 0,5.63 19.19578,10.1941 42.87499,10.1941 23.67922,0 42.875,-4.5641 42.875,-10.1941 l 0,-29.48313 -85.74999,0 z"
+         id="path4083"
+         inkscape:connector-curvature="0" />
+      <path
+         transform="matrix(0.8575,0,0,0.4077632,22.75,810.03542)"
+         d="m 400,399.40942 c 0,13.80712 -22.38576,25 -50,25 -27.61424,0 -50,-11.19288 -50,-25 0,-13.80711 22.38576,-25 50,-25 27.61424,0 50,11.19289 50,25 z"
+         sodipodi:ry="25"
+         sodipodi:rx="50"
+         sodipodi:cy="399.40942"
+         sodipodi:cx="350"
+         id="path4072"
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.84556872000000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+    </g>
+    <text
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       sodipodi:linespacing="125%"
+       id="text4106"
+       y="684.36237"
+       x="202"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"><tspan
+         style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+         y="684.36237"
+         x="202"
+         sodipodi:role="line"
+         id="tspan3133">Business rules</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="200"
+       y="492.36234"
+       id="text3078"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         sodipodi:role="line"
+         id="tspan3080"
+         x="200"
+         y="492.36234"
+         style="font-size:11px;text-align:center;text-anchor:middle">Business applications</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3086"
+       y="567.07642"
+       x="50"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         style="font-size:11px;text-align:start;text-anchor:start"
+         y="567.07642"
+         x="50"
+         id="tspan3088"
+         sodipodi:role="line">BRMS</tspan></text>
+    <g
+       id="g3901"
+       transform="translate(-9.75,-0.25002572)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         ry="10.000001"
+         rx="10"
+         y="582.86237"
+         x="60"
+         height="29.5"
+         width="79.5"
+         id="rect3099"
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         inkscape:export-ydpi="180"
+         inkscape:export-xdpi="180"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_09.png"
+         sodipodi:linespacing="125%"
+         id="text3887"
+         y="596.36237"
+         x="100"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           y="596.36237"
+           x="100"
+           sodipodi:role="line"
+           id="tspan3889">Rule testing</tspan><tspan
+           id="tspan3891"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           y="605.11237"
+           x="100"
+           sodipodi:role="line">tools</tspan></text>
+    </g>
+    <g
+       transform="translate(100.25,-0.25002572)"
+       id="g3907"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3909"
+         width="79.5"
+         height="29.5"
+         x="60"
+         y="582.86237"
+         rx="10"
+         ry="10.000001" />
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="100"
+         y="600.36237"
+         id="text3911"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_09.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"><tspan
+           sodipodi:role="line"
+           x="100"
+           y="600.36237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3915">Rule engine</tspan></text>
+    </g>
+    <g
+       transform="translate(210.25,-10.250026)"
+       id="g3919"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3921"
+         width="79.5"
+         height="29.5"
+         x="60"
+         y="582.86237"
+         rx="10"
+         ry="10.000001" />
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="100"
+         y="596.36237"
+         id="text3923"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_09.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"><tspan
+           sodipodi:role="line"
+           x="100"
+           y="596.36237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3927">Rule engine</tspan><tspan
+           sodipodi:role="line"
+           x="100"
+           y="605.11237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3931">monitoring</tspan></text>
+    </g>
+    <g
+       transform="translate(210.25,39.749974)"
+       id="g3933"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3935"
+         width="79.5"
+         height="29.5"
+         x="60"
+         y="582.86237"
+         rx="10"
+         ry="10.000001" />
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="100"
+         y="596.36237"
+         id="text3937"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_09.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"><tspan
+           sodipodi:role="line"
+           x="100"
+           y="596.36237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3941">Configuration</tspan><tspan
+           sodipodi:role="line"
+           x="100"
+           y="605.11237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3945">management</tspan></text>
+    </g>
+    <g
+       transform="translate(-9.75,59.749974)"
+       id="g3947"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3949"
+         width="79.5"
+         height="29.5"
+         x="60"
+         y="582.86237"
+         rx="10"
+         ry="10.000001" />
+      <text
+         xml:space="preserve"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="100"
+         y="596.36237"
+         id="text3951"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter4/figure_04_09.png"
+         inkscape:export-xdpi="180"
+         inkscape:export-ydpi="180"><tspan
+           id="tspan3953"
+           sodipodi:role="line"
+           x="100"
+           y="596.36237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial">Rule authoring</tspan><tspan
+           sodipodi:role="line"
+           x="100"
+           y="605.11237"
+           style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+           id="tspan3955">tools</tspan></text>
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3893"
+       d="m 170,518.02901 c 20.59301,25.09007 17.16351,44.31656 20,64.33333"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 220,582.36234 c -3.5766,-40 -10,-49.33333 -20,-63.52472"
+       id="path3957"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="150"
+       y="542.36237"
+       id="text3959"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         id="tspan3961"
+         sodipodi:role="line"
+         x="150"
+         y="542.36237"
+         style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial">business objects</tspan></text>
+    <text
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       sodipodi:linespacing="125%"
+       id="text3963"
+       y="542.36237"
+       x="255.66666"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"><tspan
+         style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial"
+         y="542.36237"
+         x="255.66666"
+         sodipodi:role="line"
+         id="tspan3965">rule execution results</tspan></text>
+    <path
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 130,592.36234 c 5.25968,0 16.49684,-4.3501 30,0"
+       id="path3967"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3969"
+       d="m 160.76352,603.13594 c -5.25968,0 -16.49684,4.3501 -30,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3971"
+       d="m 130,654.36234 c 5.25968,0 16.49684,-4.3501 30,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3973"
+       d="m 200,648.69567 c 0,-16.33333 0,-16.33333 0,-36.33333"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3975"
+       d="m 270,632.36234 c -10,-20 -10,-20 -30,-30"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3977"
+       d="m 240,592.36234 c 5.25968,0 10,-10 30,-10"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 244.33333,672.36234 c 15.66667,0 35.66667,-10 45.66667,-20"
+       id="path3979"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="235.66667"
+       y="645.69568"
+       id="text3981"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter12/figure_12_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         id="tspan3983"
+         sodipodi:role="line"
+         x="235.66667"
+         y="645.69568"
+         style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial">Rule repository</tspan></text>
+  </g>
+</svg>

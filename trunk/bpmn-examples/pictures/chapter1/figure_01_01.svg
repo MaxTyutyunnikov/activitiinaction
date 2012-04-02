@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="450"
+   height="630"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="figure_01_01.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         id="path3858"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3834"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         id="path3852"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       id="filter5095"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5097"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5099"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5101"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5103">
+        <feMergeNode
+           id="feMergeNode5105"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5107"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5109"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5111"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5113"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5115"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5117">
+        <feMergeNode
+           id="feMergeNode5119"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5121"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter5123"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5125"
+         in="SourceAlpha"
+         stdDeviation="2"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix5127"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+      <feOffset
+         id="feOffset5129"
+         in="bluralpha"
+         dx="2"
+         dy="2"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge5131">
+        <feMergeNode
+           id="feMergeNode5133"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode5135"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="227.87195"
+     inkscape:cy="522.40624"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="937"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     units="in"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="10px"
+       spacingy="10px" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-35.355339,688.0149"
+       id="guide3944" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-47.376154,688.0149"
+       id="guide3946" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-422.36234)">
+    <g
+       id="g5034"
+       style="filter:url(#filter5095)"
+       transform="matrix(0.61917527,0,0,0.61827889,-10.958764,110.84854)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3782"
+         width="160.69765"
+         height="257.97418"
+         x="50.403763"
+         y="560.85339"
+         rx="16.150517"
+         ry="16.173933" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3786"
+         y="584.7099"
+         x="130.75258"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:16.16222px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold"
+           y="584.7099"
+           x="130.75258"
+           id="tspan3788"
+           sodipodi:role="line">Design tools</tspan></text>
+      <g
+         id="g3804"
+         transform="translate(6.5542833,2.8131496)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3784"
+           width="128.39661"
+           height="71.973991"
+           x="59.999996"
+           y="590.38812"
+           rx="16.150517"
+           ry="16.173933" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3790"
+           y="607.77502"
+           x="124.1983"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold"
+             y="607.77502"
+             x="124.1983"
+             id="tspan3792"
+             sodipodi:role="line">Activiti Modeler</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+           x="124.1983"
+           y="630.41858"
+           id="text3794"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3796"
+             x="124.1983"
+             y="630.41858"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">Non-technical modeling</tspan><tspan
+             sodipodi:role="line"
+             x="124.1983"
+             y="644.56055"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan3800">(web-based)</tspan></text>
+      </g>
+      <g
+         transform="translate(3.8146973e-6,130.00001)"
+         id="g3812">
+        <rect
+           ry="16.173933"
+           rx="16.150517"
+           y="592.59265"
+           x="66.554276"
+           height="71.973991"
+           width="128.39661"
+           id="rect3814"
+           style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="130.75258"
+           y="609.97968"
+           id="text3816"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3818"
+             x="130.75258"
+             y="609.97968"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold">Activiti Designer</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text3820"
+           y="632.62317"
+           x="130.75258"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="632.62317"
+             x="130.75258"
+             id="tspan3822"
+             sodipodi:role="line">Technical modeling</tspan><tspan
+             id="tspan3824"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="646.76514"
+             x="130.75258"
+             sodipodi:role="line">(Eclipse-plugin)</tspan></text>
+      </g>
+      <path
+         transform="translate(0,527.95265)"
+         inkscape:connector-curvature="0"
+         id="path4686"
+         d="m 163.05361,137.62692 c 0,32.34787 0,56.60876 0,56.60876"
+         style="fill:none;stroke:#000000;stroke-width:1.6162219;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend)"
+         sodipodi:nodetypes="cc" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4923"
+         y="680.21985"
+         x="58.201138"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           y="680.21985"
+           x="58.201138"
+           id="tspan4925"
+           sodipodi:role="line"
+           style="font-size:11.31355381px">Import BPMN XML</tspan><tspan
+           id="tspan4927"
+           y="694.36182"
+           x="58.201138"
+           sodipodi:role="line"
+           style="font-size:11.31355381px">file into the</tspan><tspan
+           id="tspan4929"
+           y="708.50372"
+           x="58.201138"
+           sodipodi:role="line"
+           style="font-size:11.31355381px">Activiti Designer</tspan></text>
+    </g>
+    <g
+       id="g5059"
+       style="filter:url(#filter5109)"
+       transform="matrix(0.61917527,0,0,0.61827889,-10.958764,110.84854)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3778"
+         width="160.69765"
+         height="257.97418"
+         x="308.81201"
+         y="560.85339"
+         rx="16.150517"
+         ry="16.173933" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="389.16083"
+         y="584.7099"
+         id="text4654"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4656"
+           x="389.16083"
+           y="584.7099"
+           style="font-size:16.16222px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold">Process engine</tspan></text>
+      <g
+         transform="translate(264.96254,3.247969)"
+         id="g4931">
+        <rect
+           ry="16.173933"
+           rx="16.150517"
+           y="589.95325"
+           x="59.999996"
+           height="104.32185"
+           width="128.39661"
+           id="rect4933"
+           style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="124.1983"
+           y="607.34021"
+           id="text4935"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4937"
+             x="124.1983"
+             y="607.34021"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">Activiti Engine</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4939"
+           y="632.36206"
+           x="126.11572"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             id="tspan4943"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             y="632.36206"
+             x="127.68459"
+             sodipodi:role="line">The core process </tspan><tspan
+             id="tspan4947"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             y="646.50403"
+             x="127.68459"
+             sodipodi:role="line">engine, which can be </tspan><tspan
+             id="tspan4949"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             y="660.64594"
+             x="127.68459"
+             sodipodi:role="line">embedded in your Java </tspan><tspan
+             id="tspan4951"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             y="674.7879"
+             x="127.68459"
+             sodipodi:role="line">(web) application or can </tspan><tspan
+             id="tspan4953"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+             y="688.92981"
+             x="126.11572"
+             sodipodi:role="line">run standalone</tspan></text>
+      </g>
+      <g
+         id="g4955"
+         transform="translate(250,130.00001)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect4957"
+           width="128.39661"
+           height="88.147926"
+           x="74.962532"
+           y="584.50568"
+           rx="16.150517"
+           ry="16.173933" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4959"
+           y="600.27527"
+           x="139.16083"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold"
+             y="600.27527"
+             x="139.16083"
+             id="tspan4961"
+             sodipodi:role="line">Activiti REST</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="137.59196"
+           y="616.44922"
+           id="text4963"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="139.16083"
+             y="616.44922"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan4967">Web application that </tspan><tspan
+             id="tspan4971"
+             sodipodi:role="line"
+             x="139.16083"
+             y="630.59119"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial">starts the process </tspan><tspan
+             id="tspan4973"
+             sodipodi:role="line"
+             x="139.16083"
+             y="644.73309"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial">engine and provides a </tspan><tspan
+             sodipodi:role="line"
+             x="137.59196"
+             y="658.87506"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan3919">REST API</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5082"
+       style="filter:url(#filter5123)"
+       transform="matrix(0.61917527,0,0,0.61827889,-10.958764,110.84854)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
+      <rect
+         ry="16.173933"
+         rx="16.150515"
+         y="560.85339"
+         x="567.22028"
+         height="257.97418"
+         width="160.69765"
+         id="rect3780"
+         style="fill:#eaeaea;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4658"
+         y="584.7099"
+         x="647.56909"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:16.16222px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold"
+           y="584.7099"
+           x="647.56909"
+           id="tspan4660"
+           sodipodi:role="line">Supporting tools</tspan></text>
+      <g
+         transform="translate(522.23754,6.6957206)"
+         id="g4975">
+        <rect
+           ry="16.173931"
+           rx="16.150517"
+           y="586.50549"
+           x="61.133247"
+           height="104.32185"
+           width="128.39661"
+           id="rect4977"
+           style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.80811095;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="125.33154"
+           y="603.89246"
+           id="text4979"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4981"
+             x="125.33154"
+             y="603.89246"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial Bold">Activiti Explorer</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4983"
+           y="632.36206"
+           x="126.11572"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="632.36206"
+             x="127.68459"
+             sodipodi:role="line"
+             id="tspan4989">Use processes and </tspan><tspan
+             id="tspan4996"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="646.50403"
+             x="127.68459"
+             sodipodi:role="line">tasks and process </tspan><tspan
+             id="tspan4998"
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="660.64594"
+             x="127.68459"
+             sodipodi:role="line">engine management </tspan><tspan
+             style="font-size:11.31355381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+             y="674.7879"
+             x="126.11572"
+             sodipodi:role="line"
+             id="tspan3909">(web-based)</tspan></text>
+      </g>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5000"
+       d="m 120,502.36234 c 6.19175,0 60,0 60,0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend)"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.18726921px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="149.89139"
+       y="482.71185"
+       id="text5006"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       transform="scale(1.0007246,0.99927592)"><tspan
+         sodipodi:role="line"
+         id="tspan5008"
+         x="149.89139"
+         y="482.71185"
+         style="font-size:7px;text-align:center;text-anchor:middle">Deploy simple</tspan><tspan
+         sodipodi:role="line"
+         x="149.89139"
+         y="491.46185"
+         id="tspan5010"
+         style="font-size:7px;text-align:center;text-anchor:middle">processes to the</tspan><tspan
+         sodipodi:role="line"
+         x="149.89139"
+         y="500.21185"
+         id="tspan5012"
+         style="font-size:7px;text-align:center;text-anchor:middle">engine</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.18726921px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="149.89139"
+       y="562.76984"
+       id="text5014"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       transform="scale(1.0007246,0.99927592)"><tspan
+         sodipodi:role="line"
+         id="tspan5016"
+         x="149.89139"
+         y="562.76984"
+         style="font-size:7px;text-align:center;text-anchor:middle">Deploy advanced</tspan><tspan
+         sodipodi:role="line"
+         x="150.86209"
+         y="571.51984"
+         id="tspan5018"
+         style="font-size:7px;text-align:center;text-anchor:middle">processes to the </tspan><tspan
+         sodipodi:role="line"
+         x="149.89139"
+         y="580.26984"
+         id="tspan5020"
+         style="font-size:7px;text-align:center;text-anchor:middle">engine</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.18726921px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="309.77554"
+       y="482.71185"
+       id="text5022"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       transform="scale(1.0007246,0.99927592)"><tspan
+         sodipodi:role="line"
+         id="tspan5024"
+         x="309.77554"
+         y="482.71185"
+         style="font-size:7px;text-align:center;text-anchor:middle">Start processes,</tspan><tspan
+         sodipodi:role="line"
+         x="310.74625"
+         y="491.46185"
+         id="tspan5026"
+         style="font-size:7px;text-align:center;text-anchor:middle">tasks and </tspan><tspan
+         sodipodi:role="line"
+         x="309.77554"
+         y="500.21185"
+         id="tspan5028"
+         style="font-size:7px;text-align:center;text-anchor:middle">manage engine</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend)"
+       d="m 120,582.36234 c 6.19175,0 60,0 60,0"
+       id="path5030"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend)"
+       d="m 340,502.36234 c -6.19176,0 -60,0 -60,0"
+       id="path5032"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3869"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(-4.9220582,411.41413)"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter1/figure_01_01.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><flowRegion
+         id="flowRegion3871"><rect
+           id="rect3873"
+           width="56.214989"
+           height="27.930717"
+           x="104.6518"
+           y="55.122185" /></flowRegion><flowPara
+         id="flowPara3875" /></flowRoot>  </g>
+</svg>
