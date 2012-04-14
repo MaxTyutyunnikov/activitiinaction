@@ -28,7 +28,7 @@ public class PDFLetterTask implements JavaDelegate {
 		writer.setBoxSize("art", new Rectangle(36, 54, 559, 788));
     HeaderFooter event = new HeaderFooter();
     writer.setPageEvent(event);
-    pdf.addAuthor("Shark Insurances");
+    pdf.addAuthor("Loan Sharks");
     pdf.addTitle("Subject: loan request");
     pdf.addSubject("Reference number 100898");
     pdf.open();
@@ -44,10 +44,10 @@ public class PDFLetterTask implements JavaDelegate {
 		if("approved".equalsIgnoreCase(loanApplication.getStatus()) ||
 				"approved by manager".equalsIgnoreCase(loanApplication.getStatus())) {
 			
-			pdf.add(new Paragraph("After analysis regarding your loan request we are happy to inform you that your loan request for "
-					+ loanApplication.getApplicant().getLoanAmount() + " is approved. Enclosed you find all the details regarding the next steps in the process of your loan request."));
+			pdf.add(new Paragraph("After analysis regarding your loan request we are happy to inform you that your loan request for $"
+					+ loanApplication.getApplicant().getLoanAmount() + " is approved. Enclosed, you'll find all the details regarding the next steps in the process of your loan request."));
 		} else {
-			pdf.add(new Paragraph("After analysis regarding your loan request we regret to inform you that your loan request for "
+			pdf.add(new Paragraph("After analysis regarding your loan request we regret to inform you that your loan request for $"
 					+ loanApplication.getApplicant().getLoanAmount() + " is denied."));
 		}
 		pdf.add(new Paragraph(" "));
@@ -57,7 +57,7 @@ public class PDFLetterTask implements JavaDelegate {
 		pdf.add(new Paragraph(" "));
 		pdf.add(new Paragraph(" "));
 		pdf.add(new Paragraph("John Shark"));
-		pdf.add(new Paragraph("Manager Shark Insurances Loans"));
+		pdf.add(new Paragraph("Manager Loan Sharks"));
 		pdf.close();
 		
 		POICMISHelper helper = new POICMISHelper();
@@ -72,7 +72,7 @@ public class PDFLetterTask implements JavaDelegate {
     public void onEndPage (PdfWriter writer, Document document) {
       Rectangle rect = writer.getBoxSize("art");
       ColumnText.showTextAligned(writer.getDirectContent(),
-              Element.ALIGN_RIGHT, new Phrase("Shark Insurances"),
+              Element.ALIGN_RIGHT, new Phrase("Loan Sharks"),
               rect.getRight(), rect.getTop(), 0);
       
       ColumnText.showTextAligned(writer.getDirectContent(),
@@ -80,11 +80,11 @@ public class PDFLetterTask implements JavaDelegate {
               rect.getRight(), rect.getTop() - 15, 0);
       
       ColumnText.showTextAligned(writer.getDirectContent(),
-              Element.ALIGN_RIGHT, new Phrase("Bay city, 38989 "),
+              Element.ALIGN_RIGHT, new Phrase("Bay City, 38989 "),
               rect.getRight(), rect.getTop() - 30, 0);
       
       ColumnText.showTextAligned(writer.getDirectContent(),
-              Element.ALIGN_RIGHT, new Phrase("E-mail: info@sharks.com"),
+              Element.ALIGN_RIGHT, new Phrase("E-mail: info@loansharks.com"),
               rect.getRight(), rect.getTop() - 60, 0);
     }
   }
