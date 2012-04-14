@@ -1,10 +1,5 @@
-<mockup version="1.0" skin="sketch" measuredW="1098" measuredH="615" mockupW="958" mockupH="461">
+<mockup version="1.0" skin="sketch" measuredW="1085" measuredH="615" mockupW="944" mockupH="448">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="140" y="154" w="-1" h="-1" measuredW="958" measuredH="252" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/Screen%2520shot%25202011-10-20%2520at%252014.47.26.png</src>
-      </controlProperties>
-    </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="693" y="483" w="-1" h="-1" measuredW="127" measuredH="39" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/Screen%2520shot%25202011-10-20%2520at%252014.49.11.png</src>
@@ -123,6 +118,11 @@
         <align>center</align>
         <size>16</size>
         <text>Create%20and%20store%20new%20PDF%20document</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Image" x="142" y="167" w="-1" h="-1" measuredW="943" measuredH="209" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/Screen%2520Shot%25202012-04-14%2520at%252014.43.14.png</src>
       </controlProperties>
     </control>
   </controls>

@@ -24,7 +24,7 @@ import org.bpmnwithactiviti.chapter13.cmis.CmisUtil;
 public class POICMISHelper {
 	
 	private static final String ALFRESCO_CMIS_URL = "http://localhost:9090/alfresco/service/cmis";
-	private static final String ALFRESCO_ADMIN_PASSWORD = "secret";
+	private static final String ALFRESCO_ADMIN_PASSWORD = "rademakers";
 	
 	public Folder documentFolder;
 	
