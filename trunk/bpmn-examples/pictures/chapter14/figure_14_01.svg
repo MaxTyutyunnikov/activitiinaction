@@ -272,7 +272,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.9328875"
      inkscape:cx="208.3586"
-     inkscape:cy="494.17558"
+     inkscape:cy="489.26065"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -486,7 +486,7 @@
          y="472.36234"
          x="188"
          id="tspan3093"
-         sodipodi:role="line">2. Analysis</tspan></text>
+         sodipodi:role="line">2. Analyze</tspan></text>
     <text
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
@@ -501,7 +501,7 @@
          id="tspan3097"
          x="370"
          y="472.36234"
-         style="font-size:11px;text-align:start;text-anchor:start">3. Reporting</tspan></text>
+         style="font-size:11px;text-align:start;text-anchor:start">3. Report</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
        d="m 40,502.36234 30,0"

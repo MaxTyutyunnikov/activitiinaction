@@ -304,9 +304,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3667579"
-     inkscape:cx="274.71628"
-     inkscape:cy="356.4657"
+     inkscape:zoom="2.7335158"
+     inkscape:cx="207.25342"
+     inkscape:cy="498.35299"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -359,7 +359,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="matrix(0.95989807,0,0,1.8251336,129.39422,-497.16736)"
+       transform="matrix(0.95989807,0,0,1.8251336,149.39422,-497.16736)"
        id="g3082">
       <rect
          ry="5.4790511"
@@ -403,7 +403,7 @@
        sodipodi:linespacing="125%"
        id="text3086"
        y="472.36237"
-       x="180"
+       x="200"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        xml:space="preserve"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
@@ -411,12 +411,12 @@
        inkscape:export-ydpi="180"><tspan
          style="font-size:11px;text-align:start;text-anchor:start"
          y="472.36237"
-         x="180"
+         x="200"
          id="tspan3088"
          sodipodi:role="line">CEP engine</tspan></text>
     <g
        id="g3901"
-       transform="translate(120.25,-124.9641)"
+       transform="translate(140.25,-124.9641)"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
        inkscape:export-xdpi="180"
        inkscape:export-ydpi="180">
@@ -466,18 +466,18 @@
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="392"
+       x="412"
        y="472.36234"
        id="text3095"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3097"
-         x="392"
+         x="412"
          y="472.36234"
          style="font-size:11px;text-align:start;text-anchor:start">Output</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
-       d="M 343.7809,552.36234 C 340,537.80166 333.92104,528.07861 310,516.99551"
+       d="M 363.7809,552.36234 C 360,537.80166 353.92104,528.07861 330,516.99551"
        id="path4183"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -643,7 +643,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="translate(120.25,-84.9641)"
+       transform="translate(140.25,-84.9641)"
        id="g3966">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -672,7 +672,7 @@
     </g>
     <g
        id="g3974"
-       transform="translate(120.25,-44.964102)"
+       transform="translate(140.25,-44.964102)"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
        inkscape:export-xdpi="180"
        inkscape:export-ydpi="180">
@@ -705,7 +705,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="translate(240.25,-44.964102)"
+       transform="translate(260.25,-44.964102)"
        id="g3982">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -737,7 +737,7 @@
        ry="9.2941809"
        rx="0"
        y="506.5506"
-       x="412.94547"
+       x="432.94547"
        height="30.947201"
        width="19.5"
        id="rect3990"
@@ -748,7 +748,7 @@
     <g
        style="filter:url(#filter5095-7)"
        id="g3992"
-       transform="matrix(0.61917527,0,0,0.61827889,458.59124,95.2248)"
+       transform="matrix(0.61917527,0,0,0.61827889,478.59124,95.2248)"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
        inkscape:export-xdpi="180"
        inkscape:export-ydpi="180">
@@ -768,7 +768,7 @@
        id="rect3996"
        width="19.5"
        height="30.947201"
-       x="472.94547"
+       x="492.94547"
        y="506.5506"
        rx="0"
        ry="9.2941809"
@@ -780,7 +780,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="matrix(0.61917527,0,0,0.61827889,518.59124,95.2248)"
+       transform="matrix(0.61917527,0,0,0.61827889,538.59124,95.2248)"
        id="g3998"
        style="filter:url(#filter5095-7)">
       <path
@@ -799,7 +799,7 @@
        id="rect4002"
        width="19.5"
        height="30.947201"
-       x="425.62753"
+       x="445.62753"
        y="548.51288"
        rx="0"
        ry="9.2941809"
@@ -811,7 +811,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="matrix(0.61917527,0,0,0.61827889,458.59124,135.2248)"
+       transform="matrix(0.61917527,0,0,0.61827889,478.59124,135.2248)"
        id="g4004"
        style="filter:url(#filter5095-7)">
       <path
@@ -830,7 +830,7 @@
        ry="9.2941809"
        rx="0"
        y="590.47516"
-       x="438.3096"
+       x="458.3096"
        height="30.947201"
        width="19.5"
        id="rect4008"
@@ -841,7 +841,7 @@
     <g
        style="filter:url(#filter5095-7)"
        id="g4010"
-       transform="matrix(0.61917527,0,0,0.61827889,429.04124,211.07607)"
+       transform="matrix(0.61917527,0,0,0.61827889,449.04124,211.07607)"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
        inkscape:export-xdpi="180"
        inkscape:export-ydpi="180">
@@ -863,7 +863,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path4014"
-       d="M 300,567.36334 C 289.83077,555.36346 290,556.24946 282,546.99551"
+       d="M 320,567.36334 C 309.83077,555.36346 310,556.24946 302,546.99551"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
     <path
        inkscape:export-ydpi="180"
@@ -872,14 +872,14 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path4016"
-       d="M 317.7809,594.94747 C 314,609.50815 290,602.36234 280,592.36234"
+       d="M 337.7809,594.94747 C 334,609.50815 310,602.36234 300,592.36234"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.51211756;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4018"
        width="19.5"
        height="30.947201"
-       x="559.28638"
+       x="579.28638"
        y="527.53174"
        rx="0"
        ry="9.2941809"
@@ -891,7 +891,7 @@
        inkscape:export-ydpi="180"
        inkscape:export-xdpi="180"
        inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
-       transform="matrix(0.61917527,0,0,0.61827889,569.04124,151.07607)"
+       transform="matrix(0.61917527,0,0,0.61827889,589.04124,151.07607)"
        id="g4020"
        style="filter:url(#filter5095-7)">
       <path
@@ -912,11 +912,11 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3105"
-       d="M 343.7809,552.36234 C 340,537.80166 333.92104,528.07861 310,516.99551"
+       d="M 363.7809,552.36234 C 360,537.80166 353.92104,528.07861 330,516.99551"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
-       d="M 343.7809,552.36234 C 340,537.80166 333.92104,528.07861 310,516.99551"
+       d="M 363.7809,552.36234 C 360,537.80166 353.92104,528.07861 330,516.99551"
        id="path3107"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -930,12 +930,12 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3109"
-       d="m 180,652.36234 c 50,-10 100,-10 170,-10"
+       d="m 200,652.36234 c 50,-10 100,-10 170,-10"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="270"
+       x="290"
        y="652.36237"
        id="text3986-7"
        sodipodi:linespacing="125%"
@@ -944,8 +944,17 @@
        inkscape:export-ydpi="180"><tspan
          id="tspan3988-9"
          sodipodi:role="line"
-         x="270"
+         x="290"
          y="652.36237"
          style="font-size:7px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Arial">Time</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 150,532.36234 c 10,0 30,0 40,0"
+       id="path3110"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/Users/tiesebarrell/Dropbox/ActivitiBook/work-tiese/chapter14/figure_14_02.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
   </g>
 </svg>
