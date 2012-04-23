@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-1038e6bc-247d-48be-85d7-e325b7d83433" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
-   <process id="sid-f8b4bb7b-e9ad-4e03-962d-1f2bb4f07792" isExecutable="false">
-      <startEvent id="sid-41DFE9FF-5008-4889-8FCF-674C2DB82A7F" name="Receive Loan Request">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:signavio="http://www.signavio.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="Signavio Process Editor, http://www.signavio.com" exporterVersion="" expressionLanguage="http://www.w3.org/1999/XPath" id="sid-657605c1-4d23-455b-9644-ee70e28e67da" targetNamespace="http://www.signavio.com/bpmn20" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+   <process id="sid-9ff37910-5038-4471-991d-8c2765be9df0" isExecutable="false">
+      <startEvent id="sid-41DFE9FF-5008-4889-8FCF-674C2DB82A7F" name="Receive loan request">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
          <outgoing>sid-F2E10D77-A9B6-4350-BC92-418FF42AB6ED</outgoing>
       </startEvent>
-      <scriptTask completionQuantity="1" id="sid-7D7A778D-CAFC-43D4-9B2A-56956BCFA29F" isForCompensation="false" name="Check Credit" scriptFormat="" startQuantity="1">
+      <scriptTask completionQuantity="1" id="sid-7D7A778D-CAFC-43D4-9B2A-56956BCFA29F" isForCompensation="false" name="Check credit" scriptFormat="" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -15,7 +15,7 @@
          <outgoing>sid-1A602660-CE7F-4298-98F0-DA038A2C8700</outgoing>
          <script/>
       </scriptTask>
-      <serviceTask completionQuantity="1" id="sid-05FC2FCD-3395-4446-BAA4-0CCFC7AF2D74" implementation="webService" isForCompensation="false" name="Create Application" startQuantity="1">
+      <serviceTask completionQuantity="1" id="sid-05FC2FCD-3395-4446-BAA4-0CCFC7AF2D74" implementation="webService" isForCompensation="false" name="Create application" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -26,8 +26,8 @@
       <sequenceFlow id="sid-1A602660-CE7F-4298-98F0-DA038A2C8700" name="" sourceRef="sid-7D7A778D-CAFC-43D4-9B2A-56956BCFA29F" targetRef="sid-05FC2FCD-3395-4446-BAA4-0CCFC7AF2D74"/>
       <sequenceFlow id="sid-56FE7175-61CB-4404-911F-C17B21D73298" name="" sourceRef="sid-05FC2FCD-3395-4446-BAA4-0CCFC7AF2D74"/>
    </process>
-   <process id="sid-b40c27fc-6b92-426d-ab3b-ddda891748d5" isExecutable="false">
-      <userTask completionQuantity="1" id="sid-B4D307AE-ED60-42AA-A274-87F39940A545" implementation="webService" isForCompensation="false" name="Evaluate Loan Request" startQuantity="1">
+   <process id="sid-4fe5a8ce-e4fe-47b5-8d89-a7b8d706a39d" isExecutable="false">
+      <userTask completionQuantity="1" id="sid-B4D307AE-ED60-42AA-A274-87F39940A545" implementation="webService" isForCompensation="false" name="Evaluate loan request" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -41,7 +41,7 @@
          <outgoing>sid-4C6EA5D7-013F-420B-9DFB-FC92AF205FD9</outgoing>
          <outgoing>sid-F6484E66-A075-4364-BFEE-35AC9CE53B52</outgoing>
       </exclusiveGateway>
-      <userTask completionQuantity="1" id="sid-8CAE1CEB-2700-42D5-A5AC-0DB6FA7F2356" implementation="webService" isForCompensation="false" name="Process Request" startQuantity="1">
+      <userTask completionQuantity="1" id="sid-8CAE1CEB-2700-42D5-A5AC-0DB6FA7F2356" implementation="webService" isForCompensation="false" name="Process request" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -55,21 +55,21 @@
          <incoming>sid-30592A62-4C4F-4D3C-AF1A-8785027E1FFF</incoming>
          <incoming>sid-8EEC7AA5-19A6-46D1-97AC-7C5609FCA377</incoming>
       </endEvent>
-      <serviceTask completionQuantity="1" id="sid-6E4CB473-83C8-477C-B76D-EF7E26EC1C70" implementation="webService" isForCompensation="false" name="Inform Customer of Denial" startQuantity="1">
+      <serviceTask completionQuantity="1" id="sid-6E4CB473-83C8-477C-B76D-EF7E26EC1C70" implementation="webService" isForCompensation="false" name="Inform customer of denial" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
          <incoming>sid-F6484E66-A075-4364-BFEE-35AC9CE53B52</incoming>
          <outgoing>sid-30592A62-4C4F-4D3C-AF1A-8785027E1FFF</outgoing>
       </serviceTask>
-      <sequenceFlow id="sid-4C6EA5D7-013F-420B-9DFB-FC92AF205FD9" name="approved" sourceRef="sid-020F0837-939B-490D-8613-AE5952093847" targetRef="sid-8CAE1CEB-2700-42D5-A5AC-0DB6FA7F2356"/>
       <sequenceFlow id="sid-27F0472C-DB83-4FEA-AADF-33CEB95B70B8" name="" sourceRef="sid-B4D307AE-ED60-42AA-A274-87F39940A545" targetRef="sid-020F0837-939B-490D-8613-AE5952093847"/>
-      <sequenceFlow id="sid-F6484E66-A075-4364-BFEE-35AC9CE53B52" name="not approved" sourceRef="sid-020F0837-939B-490D-8613-AE5952093847" targetRef="sid-6E4CB473-83C8-477C-B76D-EF7E26EC1C70"/>
       <sequenceFlow id="sid-8EEC7AA5-19A6-46D1-97AC-7C5609FCA377" name="" sourceRef="sid-8CAE1CEB-2700-42D5-A5AC-0DB6FA7F2356" targetRef="sid-CCF91DBC-0B52-4801-9846-6F519E4F044B"/>
       <sequenceFlow id="sid-30592A62-4C4F-4D3C-AF1A-8785027E1FFF" name="" sourceRef="sid-6E4CB473-83C8-477C-B76D-EF7E26EC1C70" targetRef="sid-CCF91DBC-0B52-4801-9846-6F519E4F044B"/>
+      <sequenceFlow id="sid-4C6EA5D7-013F-420B-9DFB-FC92AF205FD9" name="Approved" sourceRef="sid-020F0837-939B-490D-8613-AE5952093847" targetRef="sid-8CAE1CEB-2700-42D5-A5AC-0DB6FA7F2356"/>
+      <sequenceFlow id="sid-F6484E66-A075-4364-BFEE-35AC9CE53B52" name="Not approved" sourceRef="sid-020F0837-939B-490D-8613-AE5952093847" targetRef="sid-6E4CB473-83C8-477C-B76D-EF7E26EC1C70"/>
    </process>
-   <process id="sid-a762c790-8bad-4d1c-a285-8e74231b8e9f" isExecutable="false">
-      <userTask completionQuantity="1" id="sid-5387249D-49D0-4C80-A572-A7A6EED199B4" implementation="webService" isForCompensation="false" name="Evaluate Request by Manager" startQuantity="1">
+   <process id="sid-62b3e620-59b7-4887-8cf4-4e31fb140a22" isExecutable="false">
+      <userTask completionQuantity="1" id="sid-5387249D-49D0-4C80-A572-A7A6EED199B4" implementation="webService" isForCompensation="false" name="Evaluate request by manager" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc"/>
          </extensionElements>
@@ -77,18 +77,18 @@
       </userTask>
       <sequenceFlow id="sid-C850A945-5F13-46EA-BB6F-62D108AABC9D" name="" sourceRef="sid-5387249D-49D0-4C80-A572-A7A6EED199B4"/>
    </process>
-   <process id="sid-11660c9f-c038-44f1-8566-2369e5f7c7c3" isExecutable="false">
+   <process id="sid-ddb2eacf-f1a7-47cc-8e71-7f66e02469e2" isExecutable="false">
       <intermediateCatchEvent id="sid-6421380A-19C1-4A22-97BA-C89A3B818371" name="">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
          </extensionElements>
          <outgoing>sid-9548E94B-12B6-43C2-8C5F-38ADACC944E1</outgoing>
-         <timerEventDefinition id="sid-5a39669c-7d66-4327-8345-e41f75e76939"/>
+         <timerEventDefinition id="sid-ad99bdc0-0811-478c-aa67-38b59089da77"/>
       </intermediateCatchEvent>
       <sequenceFlow id="sid-9548E94B-12B6-43C2-8C5F-38ADACC944E1" name="" sourceRef="sid-6421380A-19C1-4A22-97BA-C89A3B818371"/>
    </process>
-   <bpmndi:BPMNDiagram id="sid-08a0a2b6-0c90-4c72-b1fd-2ec019346d01">
-      <bpmndi:BPMNPlane bpmnElement="sid-11660c9f-c038-44f1-8566-2369e5f7c7c3" id="sid-5af69482-f811-49a9-bd3a-96864e112303">
+   <bpmndi:BPMNDiagram id="sid-23b4bb73-ad7c-44d2-8022-4e0a61c0a0ae">
+      <bpmndi:BPMNPlane bpmnElement="sid-ddb2eacf-f1a7-47cc-8e71-7f66e02469e2" id="sid-4f899505-7608-439a-ad5f-db61d1826954">
          <bpmndi:BPMNShape bpmnElement="sid-41DFE9FF-5008-4889-8FCF-674C2DB82A7F" id="sid-41DFE9FF-5008-4889-8FCF-674C2DB82A7F_gui">
             <omgdc:Bounds height="30.0" width="30.0" x="75.0" y="295.0"/>
          </bpmndi:BPMNShape>
