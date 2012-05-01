@@ -316,14 +316,14 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.0000001"
      inkscape:cx="123.63373"
-     inkscape:cy="419.47043"
+     inkscape:cy="534.72042"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="937"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="1682"
+     inkscape:window-y="36"
      inkscape:window-maximized="1"
      units="in"
      showguides="true"
@@ -537,11 +537,16 @@
          x="26.191292"
          y="582.66681"
          style="font-size:7px"
-         id="tspan3888">started via for example a</tspan><tspan
+         id="tspan3888">started via a</tspan><tspan
          sodipodi:role="line"
          x="26.191292"
          y="591.41681"
          style="font-size:7px"
-         id="tspan3890">ServletContextListener</tspan></text>
+         id="tspan3890">ServletContextListener, </tspan><tspan
+         sodipodi:role="line"
+         x="26.191292"
+         y="600.16681"
+         style="font-size:7px"
+         id="tspan3066">for example</tspan></text>
   </g>
 </svg>
