@@ -11,7 +11,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<activiti-version>5.8</activiti-version>
+		<activiti-version>5.9</activiti-version>
 	</properties>
 
 	<build>
@@ -24,12 +24,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
-			<!--
-				A simple Jetty test server at
-				http://localhost:8081/activiti-kickstart can be launched with the
-				Maven goal jetty:run and stopped with jetty:stop
-			-->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
@@ -63,7 +57,7 @@
 	<repositories>
 		<repository>
 			<id>Activiti</id>
-			<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
+			<url>http://maven.alfresco.com/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
 

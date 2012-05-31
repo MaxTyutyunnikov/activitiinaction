@@ -1,8 +1,8 @@
-<mockup version="1.0" skin="sketch" measuredW="1121" measuredH="586" mockupW="915" mockupH="553">
+<mockup version="1.0" skin="sketch" measuredW="1123" measuredH="586" mockupW="917" mockupH="553">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="206" y="33" w="-1" h="-1" measuredW="915" measuredH="269" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="206" y="33" w="-1" h="-1" measuredW="917" measuredH="272" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>./assets/figure_06_11.png</src>
+        <src>../../pictures/chapter6/figure_06_11.png</src>
       </controlProperties>
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="260" y="346" w="840" h="240" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
@@ -65,55 +65,55 @@
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="232" y="387" w="20" h="25" measuredW="14" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="232" y="387" w="20" h="25" measuredW="13" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
         <text>1</text>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Canvas" x="350" y="175" w="35" h="33" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Canvas" x="303" y="177" w="35" h="33" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="357" y="178" w="20" h="25" measuredW="14" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="310" y="180" w="20" h="25" measuredW="13" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
         <text>1</text>
       </controlProperties>
     </control>
-    <control controlID="15" controlTypeID="com.balsamiq.mockups::Canvas" x="730" y="142" w="35" h="33" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Canvas" x="740" y="152" w="35" h="33" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="737" y="145" w="20" h="25" measuredW="17" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="747" y="155" w="20" h="25" measuredW="16" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
         <text>2</text>
       </controlProperties>
     </control>
-    <control controlID="17" controlTypeID="com.balsamiq.mockups::Canvas" x="434" y="169" w="35" h="33" measuredW="100" measuredH="70" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Canvas" x="401" y="167" w="35" h="33" measuredW="100" measuredH="70" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="441" y="172" w="20" h="25" measuredW="16" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="408" y="170" w="20" h="25" measuredW="16" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
         <text>3</text>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::Canvas" x="471" y="170" w="35" h="33" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Canvas" x="438" y="168" w="35" h="33" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::Label" x="478" y="173" w="20" h="25" measuredW="17" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Label" x="445" y="171" w="20" h="25" measuredW="17" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
@@ -125,7 +125,7 @@
         <borderStyle>roundedDotted</borderStyle>
       </controlProperties>
     </control>
-    <control controlID="22" controlTypeID="com.balsamiq.mockups::Label" x="232" y="426" w="20" h="25" measuredW="17" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Label" x="232" y="426" w="20" h="25" measuredW="16" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>16</size>
