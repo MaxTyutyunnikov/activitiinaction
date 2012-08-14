@@ -12,9 +12,9 @@
 
   <properties>
     <log4j.version>1.2.15</log4j.version>
-    <spring.version>3.0.5.RELEASE</spring.version>
-    <activiti.version>5.9</activiti.version>
-    <karaf.version>2.2.3</karaf.version>
+    <spring.version>3.1.2.RELEASE</spring.version>
+    <activiti.version>5.10</activiti.version>
+    <karaf.version>2.2.8</karaf.version>
   </properties>
 
   <build>
@@ -134,7 +134,7 @@
       <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy</artifactId>
-        <version>1.7.5</version>
+        <version>1.8.6</version>
       </dependency>
       <dependency>
         <groupId>com.h2database</groupId>
