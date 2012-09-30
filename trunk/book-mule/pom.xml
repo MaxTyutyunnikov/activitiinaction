@@ -189,11 +189,15 @@
 			<id>Activiti</id>
 			<url>https://maven.alfresco.com/nexus/content/groups/public</url>
 		</repository>
+    <repository>
+      <id>codehaus-repo</id>
+      <name>Codehaus Repository</name>
+      <url>http://repository.codehaus.org</url>
+    </repository>
 		<repository>
 			<id>muleforge-repo</id>
 			<name>MuleForge Repository</name>
 			<url>http://repository.muleforge.org/release</url>
-			<layout>default</layout>
 		</repository>
 	</repositories>
 

@@ -50,7 +50,7 @@ public class LDAPGroupManager extends GroupManager {
   }
 
 	@Override
-  public List<Group> findGroupByQueryCriteria(Object query, Page page) {
+  public List<Group> findGroupByQueryCriteria(GroupQueryImpl query, Page page) {
 		List<Group> groupList = new ArrayList<Group>();
 		
 	  // Query is a GroupQueryImpl instance
@@ -99,7 +99,7 @@ public class LDAPGroupManager extends GroupManager {
   }
 
 	@Override
-  public long findGroupCountByQueryCriteria(Object query) {
+  public long findGroupCountByQueryCriteria(GroupQueryImpl query) {
 	  return findGroupByQueryCriteria(query, null).size();
   }
 

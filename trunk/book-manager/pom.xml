@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <name>Book - Webapp - Manager</name>
   <groupId>org.bpmnwithactiviti</groupId>
   <artifactId>book-manager</artifactId>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.activiti</groupId>
     <artifactId>activiti-root</artifactId>
-    <version>5.9</version>
+    <version>5.10</version>
   </parent>
 
   <properties>
@@ -19,28 +19,15 @@
   </properties>
 
   <build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<configuration>
-				<source>1.5</source>
-				<target>1.5</target>
-			</configuration>
-		</plugin>
-		<plugin>
-			<groupId>org.zeroturnaround</groupId>
-			<artifactId>jrebel-maven-plugin</artifactId>
-			<executions>
-				<execution>
-					<id>generate-rebel-xml</id>
-					<phase>process-resources</phase>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-				</execution>
-			</executions>
-		</plugin>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.2.1</version>
@@ -57,7 +44,8 @@
         <configuration>
           <stopPort>9966</stopPort>
           <stopKey>book-manager</stopKey>
-          <!-- Redeploy every x seconds if changes are detected, 0 for no automatic redeployment -->
+          <!-- Redeploy every x seconds if changes are detected, 0 for no 
+            automatic redeployment -->
           <scanIntervalSeconds>0</scanIntervalSeconds>
           <!-- make sure Jetty also finds the widgetset -->
           <webAppConfig>
@@ -83,7 +71,7 @@
       <groupId>org.activiti</groupId>
       <artifactId>activiti-spring</artifactId>
     </dependency>
-    
+
     <!-- Vaadin -->
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -94,17 +82,17 @@
       <groupId>com.vaadin</groupId>
       <artifactId>vaadin</artifactId>
     </dependency>
-    
+
     <!-- Database -->
     <dependency>
-        <groupId>commons-dbcp</groupId>
-        <artifactId>commons-dbcp</artifactId>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
     </dependency>
-    
+
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -113,8 +101,8 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-    </dependency>    
-     <dependency>
+    </dependency>
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
     </dependency>
@@ -128,7 +116,7 @@
       <artifactId>imgscalr-lib</artifactId>
       <version>3.1</version>
     </dependency>
-    
+
     <!-- Running example processes -->
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
@@ -154,20 +142,20 @@
       <artifactId>drools-transformer-xstream</artifactId>
       <version>5.0.1</version>
     </dependency>
-    
+
     <!-- Testing -->
-	  <dependency>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	  </dependency>
-   
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
   </dependencies>
-  
+
   <repositories>
-  	<repository>
-		<id>Activiti</id>
-		<url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
-	</repository>
+    <repository>
+      <id>Activiti</id>
+      <url>http://maven.alfresco.com/nexus/content/repositories/activiti</url>
+    </repository>
     <repository>
       <id>Activiti</id>
       <url>https://maven.alfresco.com/nexus/content/groups/public</url>
