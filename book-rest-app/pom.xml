@@ -8,9 +8,9 @@
 	<version>1.0</version>
 
 	<properties>
-		<activiti-version>5.9</activiti-version>
-		<spring-version>3.0.5.RELEASE</spring-version>
-		<restlet-version>2.0.8</restlet-version>
+		<activiti-version>5.10</activiti-version>
+		<spring-version>3.1.2.RELEASE</spring-version>
+		<restlet-version>2.0.15</restlet-version>
 	</properties>
 
 	<build>

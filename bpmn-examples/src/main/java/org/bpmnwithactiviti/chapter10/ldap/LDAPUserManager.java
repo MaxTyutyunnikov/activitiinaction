@@ -56,18 +56,16 @@ public class LDAPUserManager extends UserManager {
   }
 
 	@Override
-  public List<User> findUserByQueryCriteria(Object query, Page page) {
+  public List<User> findUserByQueryCriteria(UserQueryImpl query, Page page) {
 		
 		List<User> userList = new ArrayList<User>();
 		
-	  // Query is a UserQueryImpl instance
-		UserQueryImpl userQuery = (UserQueryImpl) query;
 		StringBuilder searchQuery = new StringBuilder();
-		if(StringUtils.isNotEmpty(userQuery.getId())) {
-			searchQuery.append("(uid=").append(userQuery.getId()).append(")");
+		if(StringUtils.isNotEmpty(query.getId())) {
+			searchQuery.append("(uid=").append(query.getId()).append(")");
 			
-		} else if(StringUtils.isNotEmpty(userQuery.getLastName())) {
-			searchQuery.append("(sn=").append(userQuery.getLastName()).append(")");
+		} else if(StringUtils.isNotEmpty(query.getLastName())) {
+			searchQuery.append("(sn=").append(query.getLastName()).append(")");
 		
 		} else {
 			searchQuery.append("(uid=*)");
@@ -108,7 +106,7 @@ public class LDAPUserManager extends UserManager {
   }
 
 	@Override
-  public long findUserCountByQueryCriteria(Object query) {
+  public long findUserCountByQueryCriteria(UserQueryImpl query) {
 	  return findUserByQueryCriteria(query, null).size();
   }
 

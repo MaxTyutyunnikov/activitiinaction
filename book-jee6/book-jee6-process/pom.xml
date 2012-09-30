@@ -14,7 +14,7 @@
   <packaging>war</packaging>
   
   <properties>
-    <fox.version>1.18.4.CR</fox.version>
+    <fox.version>1.19.0</fox.version>
   </properties>
   
   <dependencies>
@@ -24,7 +24,7 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.camunda.fox</groupId>
+      <groupId>com.camunda.fox.platform</groupId>
       <artifactId>fox-platform-client</artifactId>
       <version>${fox.version}</version>
     </dependency>
@@ -67,7 +67,7 @@
     <repository>
       <id>camunda-fox</id>
       <name>camunda fox Maven Repository</name>
-      <url>http://fox.camunda.com/mvn/</url>
+      <url>https://app.camunda.com/nexus/content/repositories/fox-ce</url>
     </repository> 
   </repositories>
   
