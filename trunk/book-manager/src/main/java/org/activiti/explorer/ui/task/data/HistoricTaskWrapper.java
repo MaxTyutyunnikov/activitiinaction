@@ -137,4 +137,8 @@ public class HistoricTaskWrapper implements Task {
     return parentTaskId;
   }
 
+	public boolean isSuspended() {
+	  return false;
+  }
+
 }
