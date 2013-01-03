@@ -40,7 +40,7 @@ public class LDAPGroupManager extends GroupManager {
   }
 
 	@Override
-  public void updateGroup(Group updatedGroup) {
+  public void updateGroup(GroupEntity updatedGroup) {
 		throw new ActivitiException("LDAP group manager doesn't support updating a new group");
   }
 

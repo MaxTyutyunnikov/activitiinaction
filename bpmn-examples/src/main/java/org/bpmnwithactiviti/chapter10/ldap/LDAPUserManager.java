@@ -41,7 +41,7 @@ public class LDAPUserManager extends UserManager {
   }
 
 	@Override
-  public void updateUser(User updatedUser) {
+  public void updateUser(UserEntity updatedUser) {
 		throw new ActivitiException("LDAP user manager doesn't support updating a user");
   }
 
