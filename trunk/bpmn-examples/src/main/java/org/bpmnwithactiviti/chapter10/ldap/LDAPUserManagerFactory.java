@@ -2,7 +2,7 @@ package org.bpmnwithactiviti.chapter10.ldap;
 
 import org.activiti.engine.impl.interceptor.Session;
 import org.activiti.engine.impl.interceptor.SessionFactory;
-import org.activiti.engine.impl.persistence.entity.UserManager;
+import org.activiti.engine.impl.persistence.entity.UserEntityManager;
 
 public class LDAPUserManagerFactory implements SessionFactory {
 
@@ -14,7 +14,7 @@ public class LDAPUserManagerFactory implements SessionFactory {
 	
 	@Override
   public Class<?> getSessionType() {
-	  return UserManager.class;
+	  return UserEntityManager.class;
   }
 
 	@Override

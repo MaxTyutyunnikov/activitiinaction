@@ -9,7 +9,7 @@ import org.activiti.engine.identity.User;
 import org.activiti.engine.impl.Page;
 import org.activiti.engine.impl.UserQueryImpl;
 import org.activiti.engine.impl.persistence.entity.UserEntity;
-import org.activiti.engine.impl.persistence.entity.UserManager;
+import org.activiti.engine.impl.persistence.entity.UserEntityManager;
 import org.apache.commons.lang.StringUtils;
 import org.apache.directory.ldap.client.api.LdapConnection;
 import org.apache.directory.ldap.client.api.message.BindResponse;
@@ -20,7 +20,7 @@ import org.apache.directory.shared.ldap.entry.EntryAttribute;
 import org.apache.directory.shared.ldap.filter.SearchScope;
 import org.apache.directory.shared.ldap.message.ResultCodeEnum;
 
-public class LDAPUserManager extends UserManager {
+public class LDAPUserManager extends UserEntityManager {
 
 	private static final String USER_GROUP = "ou=users,ou=system";
 	
