@@ -27,7 +27,11 @@
     <bundle>mvn:com.h2database/h2/1.2.143</bundle>
     <bundle>mvn:com.fasterxml.uuid/java-uuid-generator/3.1.2</bundle>
     <bundle>mvn:javax.mail/mail/1.4.3</bundle>
-    <bundle>mvn:org.codehaus.groovy/groovy/1.8.6</bundle>
+    <bundle>mvn:org.codehaus.groovy/groovy-all/2.0.4</bundle>
+    <bundle>mvn:commons-lang/commons-lang/2.4</bundle>
+    <bundle>mvn:joda-time/joda-time/2.1</bundle>
+    <bundle>mvn:org.activiti/activiti-bpmn-model/${activiti.version}</bundle>
+    <bundle>mvn:org.activiti/activiti-bpmn-converter/${activiti.version}</bundle>
     <bundle>mvn:org.activiti/activiti-engine/${activiti.version}</bundle>
     <bundle>mvn:org.activiti/activiti-osgi/${activiti.version}</bundle>
   </feature>
