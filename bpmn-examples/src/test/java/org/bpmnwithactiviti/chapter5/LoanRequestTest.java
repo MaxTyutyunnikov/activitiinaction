@@ -11,12 +11,10 @@ import org.activiti.engine.history.HistoricDetail;
 import org.activiti.engine.history.HistoricVariableUpdate;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.chapter5.LoanApplication;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class LoanRequestTest extends AbstractTest {	
+public class LoanRequestTest {	
 	
   @Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");

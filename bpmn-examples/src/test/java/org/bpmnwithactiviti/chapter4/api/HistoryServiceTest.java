@@ -18,11 +18,10 @@ import org.activiti.engine.history.HistoricVariableUpdate;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class HistoryServiceTest extends AbstractTest {
+public class HistoryServiceTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-fullhistory.xml");
@@ -65,7 +64,7 @@ public class HistoryServiceTest extends AbstractTest {
 		startAndComplete();
 		HistoryService historyService = activitiRule.getHistoryService();
 		List<HistoricActivityInstance> activityList = historyService.createHistoricActivityInstanceQuery().list();
-		assertEquals(3, activityList.size());
+		assertEquals(4, activityList.size());
 		for (HistoricActivityInstance historicActivityInstance : activityList) {
 			assertNotNull(historicActivityInstance.getActivityId());
 			System.out.println("history activity " + historicActivityInstance.getActivityName() +

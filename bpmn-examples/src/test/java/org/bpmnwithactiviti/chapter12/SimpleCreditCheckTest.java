@@ -12,11 +12,10 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
 import org.bpmnwithactiviti.chapter12.model.LoanApplicant;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class SimpleCreditCheckTest extends AbstractTest {
+public class SimpleCreditCheckTest {
 
 	@Rule
 	public ActivitiRule activitiRule = new ActivitiRule(

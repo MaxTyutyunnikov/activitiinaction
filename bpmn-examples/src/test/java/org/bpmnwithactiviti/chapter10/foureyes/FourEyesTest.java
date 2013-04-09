@@ -9,10 +9,9 @@ import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.ProcessEngines;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 
-public class FourEyesTest extends AbstractTest {
+public class FourEyesTest {
 	
 	@Test
 	public void validateFourEyes() {

@@ -12,7 +12,6 @@ import org.activiti.engine.history.HistoricDetail;
 import org.activiti.engine.history.HistoricVariableUpdate;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter6/listener/gossip-application-context.xml")
-public class ProcessListenerTest extends AbstractTest {
+public class ProcessListenerTest {
 
 	@Autowired
 	private RuntimeService runtimeService;

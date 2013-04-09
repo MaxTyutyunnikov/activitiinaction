@@ -11,11 +11,10 @@ import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.task.DelegationState;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class DelegateTaskTest extends AbstractTest {
+public class DelegateTaskTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");

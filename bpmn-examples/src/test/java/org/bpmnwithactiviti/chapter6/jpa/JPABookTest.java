@@ -15,8 +15,6 @@ import org.activiti.engine.FormService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
-import org.bpmnwithactiviti.chapter6.jpa.Book;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +23,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter6/jpa/jpa-application-context.xml")
-public class JPABookTest extends AbstractTest {
+public class JPABookTest {
 	
 	@PersistenceContext
 	private EntityManager entityManager;

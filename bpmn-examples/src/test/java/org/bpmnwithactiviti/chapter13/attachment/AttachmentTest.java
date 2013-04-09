@@ -10,11 +10,10 @@ import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Attachment;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class AttachmentTest extends AbstractTest {	
+public class AttachmentTest {	
 	
   @Rule
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg.xml");

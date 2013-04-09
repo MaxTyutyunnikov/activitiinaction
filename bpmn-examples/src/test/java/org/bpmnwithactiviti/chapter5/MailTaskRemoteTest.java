@@ -5,11 +5,10 @@ import java.util.Map;
 
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class MailTaskRemoteTest extends AbstractTest {
+public class MailTaskRemoteTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem-mail.xml");
