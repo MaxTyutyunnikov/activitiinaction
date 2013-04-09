@@ -13,8 +13,8 @@
   <properties>
     <log4j.version>1.2.15</log4j.version>
     <spring.version>3.1.2.RELEASE</spring.version>
-    <activiti.version>5.10</activiti.version>
-    <karaf.version>2.2.8</karaf.version>
+    <activiti.version>5.12</activiti.version>
+    <karaf.version>2.3.0</karaf.version>
   </properties>
 
   <build>
