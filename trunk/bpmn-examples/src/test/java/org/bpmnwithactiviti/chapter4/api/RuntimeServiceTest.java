@@ -12,11 +12,10 @@ import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.runtime.ProcessInstance;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class RuntimeServiceTest extends AbstractTest {
+public class RuntimeServiceTest {
 	
 	private static RuntimeService runtimeService;
 	

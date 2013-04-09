@@ -7,11 +7,10 @@ import java.util.List;
 
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.test.ActivitiRule;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class LDAPGroupTest extends AbstractTest {
+public class LDAPGroupTest {
 
 	@Rule
 	public ActivitiRule activitiRule = new ActivitiRule("chapter10/ldap/activiti.cfg-mem-ldap.xml");

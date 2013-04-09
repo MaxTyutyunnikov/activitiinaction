@@ -3,11 +3,9 @@ package org.bpmnwithactiviti.chapter8.rest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.bpmnwithactiviti.chapter8.rest.ActivitiRestClient;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 
-public class RestTest extends AbstractTest {
+public class RestTest {
 	
 	@Test
 	public void restAPITest() throws Exception {

@@ -7,11 +7,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.activiti.engine.identity.User;
 import org.activiti.engine.test.ActivitiRule;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class LDAPUserTest extends AbstractTest {
+public class LDAPUserTest {
 
 	@Rule
 	public ActivitiRule activitiRule = new ActivitiRule("chapter10/ldap/activiti.cfg-mem-ldap.xml");

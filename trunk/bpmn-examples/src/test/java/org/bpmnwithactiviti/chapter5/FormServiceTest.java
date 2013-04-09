@@ -14,11 +14,10 @@ import org.activiti.engine.history.HistoricFormProperty;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class FormServiceTest extends AbstractTest {
+public class FormServiceTest {
 	
 	@Rule 
 	public ActivitiRule activitiRule = new ActivitiRule("activiti.cfg-mem.xml");

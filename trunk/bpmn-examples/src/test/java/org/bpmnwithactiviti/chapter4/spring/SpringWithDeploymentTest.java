@@ -7,7 +7,6 @@ import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.activiti.engine.test.Deployment;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:chapter4/spring-nodeployment-application-context.xml")
-public class SpringWithDeploymentTest extends AbstractTest {
+public class SpringWithDeploymentTest {
 
 	@Autowired
 	private RuntimeService runtimeService;
