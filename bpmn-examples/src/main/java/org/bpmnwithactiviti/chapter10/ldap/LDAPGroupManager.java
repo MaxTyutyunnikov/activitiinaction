@@ -9,7 +9,7 @@ import org.activiti.engine.identity.Group;
 import org.activiti.engine.impl.GroupQueryImpl;
 import org.activiti.engine.impl.Page;
 import org.activiti.engine.impl.persistence.entity.GroupEntity;
-import org.activiti.engine.impl.persistence.entity.GroupManager;
+import org.activiti.engine.impl.persistence.entity.GroupEntityManager;
 import org.apache.commons.lang.StringUtils;
 import org.apache.directory.ldap.client.api.LdapConnection;
 import org.apache.directory.ldap.client.api.message.SearchResponse;
@@ -18,7 +18,7 @@ import org.apache.directory.shared.ldap.cursor.Cursor;
 import org.apache.directory.shared.ldap.entry.EntryAttribute;
 import org.apache.directory.shared.ldap.filter.SearchScope;
 
-public class LDAPGroupManager extends GroupManager {
+public class LDAPGroupManager extends GroupEntityManager {
 
 	private static final String USER_ENTRY = "ou=users,ou=system";
 	private static final String GROUP_ENTRY = "ou=groups,ou=system";

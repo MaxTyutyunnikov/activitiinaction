@@ -2,7 +2,7 @@ package org.bpmnwithactiviti.chapter10.ldap;
 
 import org.activiti.engine.impl.interceptor.Session;
 import org.activiti.engine.impl.interceptor.SessionFactory;
-import org.activiti.engine.impl.persistence.entity.GroupManager;
+import org.activiti.engine.impl.persistence.entity.GroupEntityManager;
 
 public class LDAPGroupManagerFactory implements SessionFactory {
 
@@ -14,7 +14,7 @@ public class LDAPGroupManagerFactory implements SessionFactory {
 	
 	@Override
   public Class<?> getSessionType() {
-	  return GroupManager.class;
+	  return GroupEntityManager.class;
   }
 
 	@Override
