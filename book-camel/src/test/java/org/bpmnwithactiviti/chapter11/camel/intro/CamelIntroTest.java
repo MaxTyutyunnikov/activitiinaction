@@ -3,11 +3,9 @@ package org.bpmnwithactiviti.chapter11.camel.intro;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.bpmnwithactiviti.chapter11.camel.intro.CamelIntroRoute;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Test;
 
-public class CamelIntroTest extends AbstractTest {
+public class CamelIntroTest {
 
 	@Test
 	public void sendMessages() throws Exception {
