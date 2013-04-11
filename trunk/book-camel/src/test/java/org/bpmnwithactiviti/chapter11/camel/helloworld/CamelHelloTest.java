@@ -10,7 +10,6 @@ import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
-import org.bpmnwithactiviti.common.AbstractTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:helloworld/application-context.xml")
-public class CamelHelloTest extends AbstractTest {
+public class CamelHelloTest {
 
 	@Autowired
 	private CamelContext camelContext;
