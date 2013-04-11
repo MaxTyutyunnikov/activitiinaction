@@ -6,8 +6,7 @@
 	<process id="helloCamelProcess">
 		<startEvent id="start" />
 		<sequenceFlow sourceRef="start" targetRef="serviceTask1" />
-		<serviceTask id="serviceTask1"
-			activiti:delegateExpression="${camel}" />
+		<serviceTask id="serviceTask1" activiti:type="camel" />
 		<sequenceFlow sourceRef="serviceTask1" targetRef="userTask1" />
 		<userTask id="userTask1" name="HelloTask" activiti:assignee="kermit"/>
 		<sequenceFlow sourceRef="userTask1" targetRef="end" />
